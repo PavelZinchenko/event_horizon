@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1f5dc41-018f-43c2-bbf8-ec66b13b6d13" name="Changes" comment="">
+    <list default="true" id="d1f5dc41-018f-43c2-bbf8-ec66b13b6d13" name="Changes" comment="chore: removed platform-specific APIs">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Starship/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Starship/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/Background.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Background.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/MapBackground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/MapBackground.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ServicesInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ServicesInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/GooglePlayGames.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/GooglePlayGames/GooglePlayGamesService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/GooglePlayGames/GooglePlayGamesService.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/AppleCloudStorage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/AppleCloudStorage.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/GoogleCloudStorage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/GoogleCloudStorage.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/script/Config/Generated/AppConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/script/Config/Generated/AppConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/script/Security/CertificateChecker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/script/Security/CertificateChecker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Background/CombatBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Background/CombatBackground.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Background/PlanetBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Background/PlanetBackground.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/script/Map/MapBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/script/Map/MapBackground.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +16,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/EH/foss/Starship/Assets/Scripts/Combat/Background/CombatBackground.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/EH/foss/Starship/Assets/Scripts/Combat/Background/PlanetBackground.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/EH/foss/Starship/Assets/Scripts/Installers/ServicesInstaller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/EH/foss/Starship/Assets/script/Config/Generated/AppConfig.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@1.4.1/Scripts/Editor/TMP_BaseShaderGUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/EH/foss/Starship/ProjectSettings/EditorSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/EH/foss/Starship/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/EH/foss/Starship/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -99,7 +98,7 @@
       <workItem from="1661324299633" duration="2743000" />
       <workItem from="1661359192097" duration="698000" />
       <workItem from="1661363577249" duration="942000" />
-      <workItem from="1661366506417" duration="1333000" />
+      <workItem from="1661366506417" duration="3313000" />
     </task>
     <task id="LOCAL-00001" summary="chore: removed platform-specific APIs">
       <created>1661363942450</created>
@@ -108,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661363942450</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chore: removed platform-specific APIs">
+      <created>1661369438501</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661369438501</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
