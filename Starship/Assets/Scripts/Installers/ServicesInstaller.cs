@@ -42,9 +42,9 @@ namespace Installers
 
             Container.Bind<ILocalization>().To<LocalizationManager>().AsSingle();
 
-#if UNITY_STANDALONE_WIN && !UNITY_EDITOR
-            Container.BindAllInterfaces<DiscordController>().To<DiscordController>().AsSingle().NonLazy();
-#endif
+// #if UNITY_STANDALONE_WIN && !UNITY_EDITOR
+//             Container.BindAllInterfaces<DiscordController>().To<DiscordController>().AsSingle().NonLazy();
+// #endif
 
             Container.Bind<ICoroutineManager>().To<CoroutineManager>().FromGameObject().AsSingle();
 

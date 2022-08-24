@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f5dc41-018f-43c2-bbf8-ec66b13b6d13" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/StringEncryptorWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/StringEncryptorWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll.mdb.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameDatabase/Storage/FileDatabaseStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameDatabase/Storage/FileDatabaseStorage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/EmptyCloudStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/EmptyCloudStorage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/LocalStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/LocalStorage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Zenject/OptionalExtras/AutoMocking.zip.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Zenject/OptionalExtras/IntegrationTests.zip.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Zenject/OptionalExtras/TestingFramework.zip.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Zenject/OptionalExtras/UnitTests.zip.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/script/Security/JavaWrappers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/script/Security/JavaWrappers.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/script/Security/StringEncryptor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/script/Security/StringEncryptor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Starship/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Starship/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Starship/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Starship/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/MapBackground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/MapBackground.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ServicesInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ServicesInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Discord/DiscordController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Discord/DiscordController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +18,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="RESET_MODE" value="HARD" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/EH/foss/Starship/Assets/Plugins/UniRx/Scripts/Operators/ZipLatest.cs.meta" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -89,6 +80,7 @@
       <workItem from="1661203567650" duration="1123000" />
       <workItem from="1661323898422" duration="322000" />
       <workItem from="1661324299633" duration="2743000" />
+      <workItem from="1661359192097" duration="698000" />
     </task>
     <servers />
   </component>
