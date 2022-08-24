@@ -14,8 +14,9 @@ namespace Services.Account
 
         public void SignIn()
         {
-            Status = Status.Connecting;
-            Observable.Timer(System.TimeSpan.FromSeconds(1)).Subscribe(value => Status = Status.Connected);
+            // Status = Status.Connecting;
+            // Observable.Timer(System.TimeSpan.FromSeconds(1)).Subscribe(value => Status = Status.Connected);
+            Status = Status.Connected;
         }
 
         public void SignOut()
