@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+<string name="Language">한국어</string>
+<string name="LanguageLabel">언어:</string>
+<string name="CombatLabel">전투</string>
+<string name="AudioLabel">오디오</string>
+<string name="OtherLabel">기타</string>
+<string name="SavedGameLabel">저장된 게임</string>
+<string name="MenuNewGame">새로운 게임</string>
+<string name="MenuContinueGame">이어서 하기</string>
+<string name="MenuCombat">빠른 전투</string>
+<string name="MenuSettings">환경설정</string>
+<string name="Settings">환경설정</string>
+<string name="DeleteSavedGameText">만약 저장된 게임을 초기화하고 싶으시다면, 이 버튼을 누르세요.</string>
+<string name="DeleteConfirmationText">정말로 게임을 초기화하시겠습니까? (구매하신 항목은 저장됩니다)</string>
+<string name="Delete">초기화</string>
+<string name="Configure">조절</string>
+<string name="PowerSavingMode">절전모드</string>
+<string name="QuickTravel">빠른 여행 애니메이션</string>
+<string name="CenterOnPlayer">플레이어에게 중심 맞추기</string>
+<string name="CameraZoom">확대</string>
+<string name="NotSignedIn">연동되지 않음</string>
+<string name="LoadGame">게임 불러오기</string>
+<string name="SaveGame">게임 저장하기</string>
+<string name="SelectGameToLoad">게임 불러오기</string>
+<string name="SelectSavedGame">게임 저장하기</string>
+<string name="GameLoaded">불러옴</string>
+<string name="GameSaved">저장됨</string>
+<string name="LoadGameFailed">게임을 불러오느데 실패했습니다: $1</string>
+<string name="SaveGameFailed">게임을 저장하는데 실패했습니다: $1</string>
+<string name="RestorePurchases">구매한 항목 복원</string>
+<string name="EnableAutoSave">GooglePlay에 게임을 자동으로 저장합니다.</string>
+<string name="GameLoadingText">로딩중...</string>
+<string name="GameSavingText">저장중...</string>
+<string name="AutoSave">자동저장</string>
+<string name="ControlsJoystick">조이스틱</string>
+<string name="ControlsThrust">전진</string>
+<string name="ControlsLeft">왼쪽</string>
+<string name="ControlsRight">오른쪽</string>
+<string name="ControlsAction0">무기 1</string>
+<string name="ControlsAction1">무기 2</string>
+<string name="ControlsAction2">무기 3</string>
+<string name="ControlsAction3">무기 4</string>
+<string name="ControlsAction4">무기 5</string>
+<string name="ControlsAction5">무기 6</string>
+<string name="ControlEnabled">활성화</string>
+<string name="LoadPreset">설정 불러오기:</string>
+<string name="Test">테스트</string>
+<string name="SlideToMove">손가락으로 화면을 슬라이드하면서 배를 움직일수 있습니다.</string>
+<string name="UseJoystickForThrust">조이스틱을 사용해 배를 음직일수 있습니다.</string>
+<string name="StopWhenShooting">발사할때 엔진을 끕니다.</string>
+<string name="AutoLaunchDrones">드론들을 자동으로 발사합니다.</string>
+<string name="SignIn">연동하기</string>
+<string name="SignOut">연동해제</string>
+<string name="Achievements">도전과제</string>
+<string name="Difficulty">게임 난이도</string>
+<string name="GameDifficultyInfo">난이도가 올라갈수록 적들이 강해지지만, 전리품도 많아집니다. 난이도는 새로운 게임 시작시에만 변경 가능합니다.</string>
+<string name="CombatDifficultyInfo">난이도가 올라갈수록 적들이 강해집니다.</string>
+<string name="Easy">쉬움</string>
+<string name="Normal">어려움</string>
+
+</resources>

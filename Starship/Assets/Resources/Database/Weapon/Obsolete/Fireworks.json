@@ -1,0 +1,8 @@
+{
+  "ItemType": 3,
+  "Id": 18,
+  "FireRate": 1.0,
+  "Spread": 1.0,
+  "ActivationType": 1,
+  "ControlButtonIcon": "controls_shot"
+}

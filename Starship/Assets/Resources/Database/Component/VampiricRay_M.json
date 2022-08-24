@@ -1,0 +1,22 @@
+{
+  "ItemType": 1,
+  "Id": 103,
+  "Name": "$VampiricRay_M",
+  "DisplayCategory": 1,
+  "ComponentStatsId": 1,
+  "Faction": -1,
+  "Icon": "energybeam2",
+  "Color": "#FF0000",
+  "Layout": "010010010",
+  "CellType": "4",
+  "WeaponId": 88,
+  "AmmunitionId": 88,
+  "WeaponSlotType": "L",
+  "PossibleModifications": [
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

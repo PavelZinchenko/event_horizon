@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CloudGameLoaded">Игра успешно загружена</string>
+    <string name="CloudGameSaved">Игра успешно сохранена</string>
+    <string name="CloudOperationFailed">Ошибка:\n$1</string>
+    <string name="BadSavegameError">Некорректный формат файла</string>
+    <string name="GoogleSingInRequired">Требуется войти в аккаунт Google</string>
+    <string name="InternalError">Внутренняя ошибка</string>
+    <string name="CommonConfirmation">Вы уверены что хотите это сделать?</string>
+    <string name="LoginFailedText">Не удалось подключиться к серверу. Попробуйте позже.</string>
+</resources>

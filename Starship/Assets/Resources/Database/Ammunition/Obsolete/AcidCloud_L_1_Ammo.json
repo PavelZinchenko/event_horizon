@@ -1,0 +1,13 @@
+{
+  "ItemType": 4,
+  "Id": 95,
+  "AmmunitionClass": 1,
+  "DamageType": 3,
+  "Size": 6.0,
+  "Damage": 30.0,
+  "Velocity": 2.0,
+  "LifeTime": 30.0,
+  "IgnoresShipVelocity": true,
+  "Color": "#AAF40A",
+  "BulletPrefab": "Cloud"
+}

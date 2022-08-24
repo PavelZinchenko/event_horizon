@@ -1,0 +1,8 @@
+{
+  "ItemType": 11,
+  "Id": 199,
+  "Type": 1,
+  "EnergyRechargeRate": -0.1,
+  "Weight": 10.0,
+  "Autopilot": true
+}

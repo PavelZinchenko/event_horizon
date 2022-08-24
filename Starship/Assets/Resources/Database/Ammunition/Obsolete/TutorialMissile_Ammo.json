@@ -1,0 +1,21 @@
+{
+  "ItemType": 4,
+  "Id": 85,
+  "AmmunitionClass": 19,
+  "DamageType": 2,
+  "Impulse": 0.3,
+  "Size": 0.8,
+  "InitialPosition": {
+    "x": 0.5
+  },
+  "AreaOfEffect": 3.0,
+  "Damage": 10.0,
+  "Range": 70.0,
+  "Velocity": 10.0,
+  "LifeTime": 10.0,
+  "HitPoints": 1,
+  "EnergyCost": 5.0,
+  "FireSound": "shot_01",
+  "HitSound": "explosion_02",
+  "BulletPrefab": "TutorialRocket"
+}

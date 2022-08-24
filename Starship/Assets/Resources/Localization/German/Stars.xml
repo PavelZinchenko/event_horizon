@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Gasplanet</string>
+    <string name="PlanetTypeBarren">Karger Planet</string>
+    <string name="PlanetTypeTerran">Erdähnlicher Planet</string>
+    <string name="PlanetTypeAsteroids">Asteroidengürtel</string>
+    <string name="PlanetTypeInfected">Nest</string>
+    <string name="StarInfo">$1\nAbwehr: $2</string>
+    <string name="CapturedStarInfo">$1\nLevel: $2</string>
+    <string name="ExtractionLabel">Sammeln...</string>
+    <string name="AddNote">Notiz hinzufügen</string>
+    <string name="PlanetTemperature">Temperatur</string>
+    <string name="PlanetToxicity">Giftigkeit</string>
+    <string name="PlanetHostility">Feindlichkeit</string>
+    <string name="ExplorationProgress">$1% erforscht</string>
+    <string name="NotExplored">Bisher noch nicht erforscht</string>
+    <string name="ObjectStarBase">Sternenbasis</string>
+    <string name="ObjectSurvival">Überleben</string>
+    <string name="ObjectBoss">Flaggschiff</string>
+    <string name="ObjectWormhole">Wurmloch</string>
+    <string name="ObjectMultiplayer">Mehrspieler</string>
+    <string name="ObjectArena">Arena</string>
+    <string name="ObjectChallenge">Herausforderung</string>
+    <string name="ObjectBlackMarket">Schmugglerbasis</string>
+    <string name="ObjectRuins">verlassene Raumstation</string>
+    <string name="ObjectMilitary">Militärbasis</string>
+    <string name="ObjectEvent">Rettungsbake</string>
+    <string name="ObjectXmas">Frohe Weihnachten!</string>
+    <string name="ObjectHive">Nest</string>
+</resources>

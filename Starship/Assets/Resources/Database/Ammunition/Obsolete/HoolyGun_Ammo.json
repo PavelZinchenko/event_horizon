@@ -1,0 +1,18 @@
+{
+  "ItemType": 4,
+  "Id": 90,
+  "AmmunitionClass": 4,
+  "Impulse": 0.02,
+  "Recoil": 0.05,
+  "Size": 0.7,
+  "AreaOfEffect": 5.0,
+  "Damage": 50.0,
+  "Range": 20.0,
+  "Velocity": 20.0,
+  "LifeTime": 1.0,
+  "EnergyCost": 5.0,
+  "Color": "#C73F21",
+  "FireSound": "shot_07",
+  "HitSound": "explosion_02",
+  "BulletPrefab": "Rocket"
+}

@@ -1,0 +1,39 @@
+{
+  "ItemType": 6,
+  "Id": 64,
+  "Name": "$fa_Destroyer",
+  "Faction": 9,
+  "SizeClass": 1,
+  "IconImage": "fas2",
+  "IconScale": 0.7,
+  "ModelImage": "fas2",
+  "ModelScale": 1.5,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#40FFFFFF",
+  "EngineSize": 0.2,
+  "Layout": "0000040000000001410000000024200000000242000000002220000000022200000000222000014222222241142222222410411555114000005550000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      },
+      "WeaponClass": "T"
+    },
+    {
+      "Position": {
+        "x": -0.3,
+        "y": 0.9
+      },
+      "WeaponClass": "LC"
+    },
+    {
+      "Position": {
+        "x": -0.3,
+        "y": -0.9
+      },
+      "WeaponClass": "LC"
+    }
+  ]
+}

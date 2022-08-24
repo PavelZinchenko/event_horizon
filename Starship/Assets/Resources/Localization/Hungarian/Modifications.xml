@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="HitPointsMod">Életerő $1</string>
+    <string name="DefenseMod">Védelem $1</string>
+    <string name="WeightMod">Súly $1</string>
+    <string name="EnergyCostMod">Energiahasználat $1</string>
+    <string name="DamageMod">Sebzés $1</string>
+    <string name="CooldownMod">Újratöltési Idő $1</string>
+    <string name="RangeMod">Hatótávolság $1</string>
+    <string name="BulletVelocityMod">Lövedék Sebessége $1</string>
+    <string name="EnergyMod">Energiakapacitás $1</string>
+    <string name="RepairRateMod">Javítási Sebesség $1</string>
+    <string name="EnginePowerMod">Hajtómű Ereje $1</string>
+    <string name="EnergyRechargeMod">Energiatermelés $1</string>
+    <string name="BulletVelocityMod2">Lövedék Sebessége $1, Sebzés $2</string>
+    <string name="AreaOfEffectMod">Hatóterület $1</string>
+    <string name="ShieldPowerMod">Pajzs Ereje $1</string>
+    <string name="DamageMod2">Sebzés $1\nÚjratöltési Idő $2</string>
+    <string name="DroneSpeedMod">Drón Sebessége $1</string>
+    <string name="RecoilMod">Lövedék Súlya $1</string>
+    <string name="Ship_EmptySlot">[üres fejlesztési hely]</string>
+    <string name="Ship_AutoTargeting">Beépített Célzórendszer</string>
+    <string name="Ship_HeatDefense">Megnövelt hőellenállás</string>
+    <string name="Ship_KineticDefense">Megnövelt kinetikus ellenállás</string>
+    <string name="Ship_EnergyDefense">Megnövelt energiaellenállás</string>
+    <string name="Ship_ExtraBlueCells">Extra felszerelés cellák</string>
+    <string name="Ship_Lightweight">Hajó alapsúlya -$1%</string>
+    <string name="Ship_Infected">$1% kevesebb életerő, $2% regenerálása másodpercenként</string>
+</resources>

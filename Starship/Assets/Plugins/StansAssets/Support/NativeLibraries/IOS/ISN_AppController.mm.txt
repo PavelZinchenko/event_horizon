@@ -1,0 +1,281 @@
+//#define USER_NOTIFICATIONS_ENABLED
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// @module IOS Native Plugin
+// @author Osipov Stanislav (Stan's Assets)
+// @support support@stansassets.com
+// @website https://stansassets.com
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+#import <Foundation/Foundation.h>
+#import "UnityAppController.h"   //our link to the base class.
+#import "ISN_NativeCore.h"
+
+#ifdef USER_NOTIFICATIONS_ENABLED
+#import "ISN_UserNotifications.h"
+#endif
+
+
+#import <UserNotifications/UserNotifications.h>
+
+
+NSString * const UNITY_SPLITTER = @"|";
+NSString * const UNITY_EOF = @"endofline";
+NSString * const ARRAY_SPLITTER = @"%%%";
+
+#define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+
+@interface ISN_AppController : UnityAppController<UNUserNotificationCenterDelegate>  //extend from UnityAppController.
+
++ (void) subscribe;
+@end
+
+
+@implementation ISN_AppController
+
+static bool IsUnitySubscribed = false;
+
+
+
+//--------------------------------------
+//  Static Methods
+//--------------------------------------
+
++ (void) subscribe {
+    IsUnitySubscribed = true;
+}
+
+
++ (void) sendEvent: (NSString* ) event {
+    [self sendEvent:event withParams:@""];
+}
+
+
++ (void) sendEvent: (NSString* ) event withParams:(NSString*) params {
+    if(!IsUnitySubscribed) {
+        return;
+    }
+    
+    UnitySendMessage("SA.IOSNative.Core.AppController", [ISN_DataConvertor NSStringToChar:event], [ISN_DataConvertor NSStringToChar:params]);
+}
+
+
+//--------------------------------------
+//  Unity Events
+//--------------------------------------
+
+-(void) startUnity: (UIApplication*) application {
+    [super startUnity: application];
+}
+
+
+//--------------------------------------
+//  Application State Events
+//--------------------------------------
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+    
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate = self;
+    
+    return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
+
+
+//--------------------------------------
+//  User Notifications
+//--------------------------------------
+
+
+
+#ifdef USER_NOTIFICATIONS_ENABLED
+//UserNotifications - Called when a notification is delivered to a foreground app.
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+    NSString* notificationString = [[ISN_UserNotifications sharedInstance]unNotificationRequestToNSString:notification.request];
+    UnitySendMessage("SA.IOSNative.UserNotifications.NativeReceiver", "WillPresentNotification", [ISN_DataConvertor NSStringToChar:notificationString]);
+    completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
+}
+
+
+//Called to let your app know which action was selected by the user for a given notification.
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
+    NSString *launchNotificationString = [[ISN_UserNotifications sharedInstance]unNotificationRequestToNSString:response.notification.request];
+    [[ISN_UserNotifications sharedInstance] setLaunchNotificationString:launchNotificationString];
+    UnitySendMessage("SA.IOSNative.UserNotifications.NativeReceiver", "LaunchNotification", [ISN_DataConvertor NSStringToChar:launchNotificationString]);
+    completionHandler();
+}
+#endif
+
+//--------------------------------------
+//  App Shortcut
+//--------------------------------------
+
+static NSString* appOpenshortcutItem  = @"";
+
+#if !TARGET_OS_TV
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem  completionHandler:(void (^)(BOOL succeeded))completionHandler {
+    
+    NSLog(@"performActionForShortcutItem");
+    
+    appOpenshortcutItem = [shortcutItem type];
+    UnitySendMessage("SA.IOSNative.Gestures.ForceTouch", "performActionForShortcutItem", [ISN_DataConvertor NSStringToChar:appOpenshortcutItem]);
+    
+}
+#endif
+
++ (NSString*) getAppOpenshortcutItem {
+    return  appOpenshortcutItem;
+}
+
+- (void)applicationDidEnterBackground:(UIApplication*)application {
+    [ISN_AppController sendEvent:@"applicationDidEnterBackground"];
+    [super applicationDidEnterBackground:application];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication*)application {
+    [super applicationWillEnterForeground:application];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication*)application {
+    [ISN_AppController sendEvent:@"applicationDidBecomeActive"];
+    [super applicationDidBecomeActive:application];
+    
+}
+
+- (void)applicationWillResignActive:(UIApplication*)application {
+    [ISN_AppController sendEvent:@"applicationWillResignActive"];
+    [super applicationWillResignActive:application];
+}
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication*)application {
+    [ISN_AppController sendEvent:@"applicationDidReceiveMemoryWarning"];
+    [super applicationDidReceiveMemoryWarning:application];
+}
+
+- (void)applicationWillTerminate:(UIApplication*)application {
+    [ISN_AppController sendEvent:@"applicationWillTerminate"];
+    [super applicationWillTerminate:application];
+}
+
+
+//--------------------------------------
+//  Universal Links (Deeplinking)
+//--------------------------------------
+
+static NSString* webpageURL  = @"";
+
+
+
+-(BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+    
+    if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
+        webpageURL = userActivity.webpageURL.absoluteString;
+        [ISN_AppController sendEvent:@"continueUserActivity" withParams:webpageURL];
+    }
+    
+    return true;
+}
+
+
++ (NSString*) getLunchUniversalLink {
+    return  webpageURL;
+}
+
+
+
+//--------------------------------------
+//  Application URL Sheme
+//--------------------------------------
+
+
+static NSString* appOpenUrl  = @"";
+static NSString* appSourceApplication  = @"";
+
+#if !TARGET_OS_TV
+- (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation {
+    appOpenUrl = [url absoluteString];
+    appSourceApplication = sourceApplication;
+    [ISN_AppController sendEvent:@"openURL" withParams:[ISN_AppController getLunchURLData]];
+    
+    return [super application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+}
+#endif
+
++ (NSString*) getLunchURLData {
+    NSMutableString *data = [[NSMutableString alloc] init] ;
+    [data appendString:appOpenUrl];
+    [data appendString:UNITY_SPLITTER];
+    [data appendString:appSourceApplication];
+    
+    return  data;
+}
+
+
+@end
+
+IMPL_APP_CONTROLLER_SUBCLASS( ISN_AppController )
+
+
+
+extern "C" {
+    
+    void _ISN_AppController_Subscribe() {
+        [ISN_AppController subscribe];
+    }
+    
+    
+    char* _ISN_GetLunchURLData() {
+        
+        NSString *Data = [ISN_AppController getLunchURLData];
+        
+        const char* string = [ISN_DataConvertor NSStringToChar:Data];
+        char* res = (char*)malloc(strlen(string) + 1);
+        strcpy(res, string);
+        return res;
+    }
+    
+    
+    char* _ISN_GetLunchUniversalLink() {
+        
+        NSString *Data = [ISN_AppController getLunchUniversalLink];
+        
+        const char* string = [ISN_DataConvertor NSStringToChar:Data];
+        char* res = (char*)malloc(strlen(string) + 1);
+        strcpy(res, string);
+        return res;
+    }
+    
+    char* _ISN_FT_AppOpenshortcutItem() {
+        NSString *Data = [ISN_AppController getAppOpenshortcutItem];
+        
+        const char* string = [ISN_DataConvertor NSStringToChar:Data];
+        char* res = (char*)malloc(strlen(string) + 1);
+        strcpy(res, string);
+        return res;
+    }
+    
+    char* _ISN_GetLunchUserNotification() {
+        
+        NSString *launchNotificationString = @"";
+        #ifdef USER_NOTIFICATIONS_ENABLED
+        if([[ISN_UserNotifications sharedInstance] launchNotificationString] != NULL) {
+            launchNotificationString = [[ISN_UserNotifications sharedInstance] launchNotificationString];
+        }
+        #endif
+        
+        const char* string = [ISN_DataConvertor NSStringToChar:launchNotificationString];
+        char* res = (char*)malloc(strlen(string) + 1);
+        strcpy(res, string);
+        return res;
+    }
+    
+    
+}
+

@@ -1,0 +1,131 @@
+{
+  "ItemType": 8,
+  "Id": 72,
+  "ShipId": 50,
+  "BuildFaction": -1,
+  "Components": [
+    {
+      "ComponentId": 57,
+      "Locked": true,
+      "X": 3,
+      "Y": 8,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 127,
+      "Locked": true,
+      "X": 4,
+      "Y": 1
+    },
+    {
+      "ComponentId": 78,
+      "Locked": true,
+      "X": 5,
+      "Y": 5,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 78,
+      "Locked": true,
+      "X": 3,
+      "Y": 5,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 78,
+      "Locked": true,
+      "X": 3,
+      "Y": 4,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 78,
+      "Locked": true,
+      "X": 5,
+      "Y": 4,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 78,
+      "Locked": true,
+      "X": 5,
+      "Y": 3,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 78,
+      "Locked": true,
+      "X": 3,
+      "Y": 3,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 67,
+      "Locked": true,
+      "X": 5,
+      "Y": 6,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 67,
+      "Locked": true,
+      "X": 3,
+      "Y": 6,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 12,
+      "Locked": true,
+      "X": 7,
+      "Y": 5,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 12,
+      "Locked": true,
+      "X": 1,
+      "Y": 5,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 67,
+      "Locked": true,
+      "X": 4,
+      "Y": 5,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 126,
+      "Locked": true,
+      "X": 5,
+      "Y": 1
+    },
+    {
+      "ComponentId": 126,
+      "Locked": true,
+      "X": 3,
+      "Y": 1
+    },
+    {
+      "ComponentId": 56,
+      "Locked": true,
+      "X": 4,
+      "Y": 6,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 57,
+      "Locked": true,
+      "X": 5,
+      "Y": 8,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 60,
+      "Locked": true,
+      "X": 4,
+      "Y": 8,
+      "BarrelId": -1
+    }
+  ]
+}

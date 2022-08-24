@@ -1,0 +1,51 @@
+{
+  "ItemType": 6,
+  "Id": 20,
+  "Name": "$f1_Cruiser",
+  "Faction": 1,
+  "SizeClass": 2,
+  "IconImage": "f1s3",
+  "IconScale": 0.9,
+  "ModelImage": "f1s3",
+  "ModelScale": 2.0,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40FFF096",
+  "EngineSize": 0.3,
+  "Layout": "000001100000000032230000000022220000000022220000000032230000000002200000000002200000000102201000014142241410014145541410004145541400000005500000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": -0.24,
+        "y": 0.45
+      },
+      "Rotation": 4.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": -0.2,
+        "y": 0.35
+      },
+      "Rotation": 1.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": -0.2,
+        "y": -0.35
+      },
+      "Rotation": -1.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": -0.24,
+        "y": -0.45
+      },
+      "Rotation": -4.0,
+      "WeaponClass": "C"
+    }
+  ]
+}

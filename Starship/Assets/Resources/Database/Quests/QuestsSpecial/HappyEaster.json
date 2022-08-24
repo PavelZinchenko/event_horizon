@@ -1,0 +1,77 @@
+{
+  "ItemType": 15,
+  "Id": 10,
+  "QuestType": 2,
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 15,
+      "DefaultTransition": 4,
+      "Transitions": [
+        {
+          "TargetNode": 2,
+          "Requirement": {
+            "Type": 9,
+            "ItemId": 100
+          }
+        },
+        {
+          "TargetNode": 3,
+          "Requirement": {
+            "Type": 10,
+            "ItemId": 100
+          }
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 10,
+      "Message": "$HappyEaster_Message1",
+      "Loot": 20,
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 5,
+          "ButtonText": "$ACTION_Continue"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Type": 10,
+      "Message": "$HappyEaster_Message2",
+      "Loot": 20,
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 5,
+          "ButtonText": "$ACTION_Continue"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "Type": 10,
+      "Message": "$HappyEaster_Message3",
+      "Loot": 20,
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 5,
+          "ButtonText": "$ACTION_Continue"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "Type": 35,
+      "DefaultTransition": 6,
+      "Loot": 20
+    },
+    {
+      "Id": 6,
+      "Type": 40
+    }
+  ]
+}

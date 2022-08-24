@@ -1,0 +1,25 @@
+{
+  "ItemType": 6,
+  "Id": 110,
+  "ShipCategory": 6,
+  "Name": "Drone",
+  "Faction": -1,
+  "IconImage": "salvage_drone",
+  "IconScale": 1.0,
+  "ModelImage": "salvage_drone",
+  "ModelScale": 1.0,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#407FFF7F",
+  "EngineSize": 0.2,
+  "BuiltinDevices": [],
+  "Layout": "0004000001410001141101022201102220100555000005000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.8
+      }
+    }
+  ]
+}

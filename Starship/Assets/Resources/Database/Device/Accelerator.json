@@ -1,0 +1,17 @@
+{
+  "ItemType": 2,
+  "Id": 1,
+  "EnergyConsumption": 2.0,
+  "PassiveEnergyConsumption": 2.0,
+  "Power": 20.0,
+  "Size": 2.0,
+  "Cooldown": 1.0,
+  "Offset": {
+    "x": -0.1
+  },
+  "ActivationType": 1,
+  "Color": "#C0FFFF80",
+  "Sound": "explosion_08",
+  "EffectPrefab": "Flicker",
+  "ControlButtonIcon": "controls_boost"
+}

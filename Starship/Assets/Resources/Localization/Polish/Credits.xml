@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Credits_Title">Horyzont Zdarzeń</string>
+    <string name="Credits_Title2">Frontier</string>
+    <string name="Credits_GameDesign">Design gry</string>
+    <string name="Credits_Program">Programowanie</string>
+    <string name="Credits_Graphics">Design graficzny</string>
+    <string name="Credits_Localization">Tłumaczenie</string>
+    <string name="Credits_Music">Muzyka</string>
+    <string name="Credits_Sound">Efekty dźwiękowe</string>
+    <string name="Credits_Thanks">Specjalne podziękowania</string>
+    <string name="Credits_GameDesign_Content">Pavel Zinchenko</string>
+    <string name="Credits_Program_Content">Pavel Zinchenko</string>
+    <string name="Credits_Graphics_Content">Pavel Zinchenko</string>
+    <string name="Credits_Localization_Content">Moritz Schuh (MegumiKitaniji)\nViktor López (Anacheron)\nDaniel Jader (Agred)\nAnthony Barest (SnowedEarth)\nPedro Duque (MrD)\nDongHo Jang (BUP5013511)\nTürker Yüceer(lord24turker)\nThe Grey Cardinal (Michael Kananov)\nCapitalist Commie\nDavido\nChris Dance (Crdguy)\nUnmaker Omega</string>
+    <string name="Credits_Music_Content">Matthew Le Blanc (SynthR) - www.synthr.net\nRobson Cozendey - www.cozendey.com\nVertex Studio</string>
+    <string name="Credits_Sound_Content">freesound.org</string>
+    <string name="Credits_Thanks_Content">Vitaliy Malyshev\nMikhail Lilikin\nNanane</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="HitPointsMod">Can $1</string>
+    <string name="DefenseMod">Defans $1</string>
+    <string name="WeightMod">Ağırlık $1</string>
+    <string name="EnergyCostMod">Enerji Maliyeti $1</string>
+    <string name="DamageMod">Hasar $1</string>
+    <string name="CooldownMod">Bekleme Süresi $1</string>
+    <string name="RangeMod">Menzil $1</string>
+    <string name="BulletVelocityMod">Mermi Hızı $1</string>
+    <string name="EnergyMod">Enerji Kapasitesi $1</string>
+    <string name="RepairRateMod">Tamir Oranı $1</string>
+    <string name="EnginePowerMod">Motor Gücü $1</string>
+    <string name="EnergyRechargeMod">Enerji Şarj Olma Oranı $1</string>
+    <string name="BulletVelocityMod2">Mermi Hızı $1
+Hasar $2</string>
+    <string name="AreaOfEffectMod">Etki Alanı Menzili $1</string>
+    <string name="ShieldPowerMod">Kalkan Gücü $1</string>
+    <string name="DamageMod2">Hasar $1\nBekleme Süresi $2</string>
+    <string name="DroneSpeedMod">Dron hızı $1</string>
+    <string name="RecoilMod">Mermi ağırlığı $1</string>
+    <string name="Ship_EmptySlot">Boş slot</string>
+    <string name="Ship_AutoTargeting">Dahili otomatik hedefe kilitlenme sistemi</string>
+    <string name="Ship_HeatDefense">Artırılmış ısı direnci</string>
+    <string name="Ship_KineticDefense">Artırılımış kinetik direnci</string>
+    <string name="Ship_EnergyDefense">Artırılmış enerji direnci</string>
+    <string name="Ship_ExtraBlueCells">Ekstra ekipman yeri</string>
+    <string name="Ship_Lightweight">Geminin temel ağırlığı $1% azaltıldı</string>
+    <string name="Ship_Infected">$1% daha az zırh, yenileme $2% / sn</string>
+</resources>

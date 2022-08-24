@@ -1,0 +1,19 @@
+{
+  "ItemType": 1,
+  "Id": 189,
+  "Name": "$DroneNavigationComputer_M",
+  "DisplayCategory": 5,
+  "Availability": 1,
+  "ComponentStatsId": 189,
+  "Faction": 5,
+  "Level": 60,
+  "Icon": "drone_power2",
+  "Color": "#C0C0FF",
+  "Layout": "110111111",
+  "CellType": "2",
+  "PossibleModifications": [
+    20,
+    1,
+    2
+  ]
+}

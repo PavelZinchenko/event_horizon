@@ -1,0 +1,27 @@
+{
+  "ItemType": 6,
+  "Id": 47,
+  "Name": "$f6_Cruiser",
+  "Faction": 6,
+  "SizeClass": 2,
+  "IconImage": "f6s3",
+  "IconScale": 0.9,
+  "ModelImage": "f6s3",
+  "ModelScale": 1.6,
+  "EnginePosition": {
+    "x": -0.7
+  },
+  "EngineColor": "#40FFAE23",
+  "EngineSize": 0.5,
+  "HeatResistance": 1.0,
+  "Regeneration": true,
+  "Layout": "0000000000000044444000001444441000114444411001122222110011222221100112222211001122222110001222221000005555500000000000000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.9
+      },
+      "WeaponClass": "TS"
+    }
+  ]
+}

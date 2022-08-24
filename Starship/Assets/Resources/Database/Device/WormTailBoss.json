@@ -1,0 +1,15 @@
+{
+  "ItemType": 2,
+  "Id": 21,
+  "DeviceClass": 15,
+  "PassiveEnergyConsumption": 5.0,
+  "Power": 0.3,
+  "Size": 15.0,
+  "Offset": {
+    "x": 0.45,
+    "y": 0.35
+  },
+  "Color": "#000000",
+  "ObjectPrefab": "WormSegment2",
+  "ControlButtonIcon": "controls_gear"
+}

@@ -1,0 +1,330 @@
+////////////////////////////////////////////////////////////////////////////////
+//  
+// @module IOS Native Plugin
+// @author Osipov Stanislav (Stan's Assets) 
+// @support support@stansassets.com
+// @website https://stansassets.com
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#import <Foundation/Foundation.h>
+
+#if UNITY_VERSION < 450
+#include "iPhone_View.h"
+#endif
+
+#import "ISN_NativeCore.h"
+
+NSString *const INNER_EVENT_INITIALIZE_HIGHWAY      = @"sg_initialize_highway";
+NSString *const INNER_DICT_ELEMENT_GAME_KEY         = @"gameKey";
+NSString *const INNER_DICT_ELEMENT_ENV_KEY          = @"envKey";
+NSString *const INNER_DICT_ELEMENT_REFERRER         = @"referrer";
+NSString *const EVENT_HIGHWAY_INITIALIZED           = @"sg_highway_initialized";
+NSString *const EVENT_HIGHWAY_CONNECTED             = @"sg_highway_connected";
+NSString *const EVENT_HIGHWAY_DISCONNECTED          = @"sg_highway_disconnected";
+
+NSString *const INNER_DICT_ELEMENT_PURCHASABLE_PROD_ID     = @"PurchasableVirtualItemProductId";
+NSString *const INNER_EVENT_MARKET_PURCHASE_STARTED       = @"sg_MarketPurchaseProcessStarted";
+NSString *const  INNER_EVENT_MARKET_PURCHASED             = @"sg_MarketPurchased";
+NSString *const INNER_DICT_ELEMENT_ITEM_PRICE_MICROS      = @"itemPriceMicros";
+NSString *const INNER_DICT_ELEMENT_ITEM_CURRENCY_CODE     = @"itemCurrencyCode";
+NSString *const INNER_EVENT_BILLING_NOT_SUPPORTED         = @"sg_BillingNotSupported";
+NSString *const INNER_EVENT_BILLING_SUPPORTED             = @"sg_BillingSupported";
+NSString *const INNER_EVENT_MARKET_PURCHASE_CANCELLED     = @"sg_MarketPurchaseCancelled";
+NSString *const INNER_EVENT_UNEXPECTED_ERROR_IN_STORE     = @"sg_UnexpectedErrorInStore";
+NSString *const INNER_EVENT_RESTORE_TRANSACTIONS_STARTED  = @"sg_RestoreTransactionsStarted";
+NSString *const INNER_EVENT_RESTORE_TRANSACTIONS_FINISHED = @"sg_RestoreTransactionsFinished";
+NSString *const INNER_DICT_ELEMENT_ERROR_CODE               = @"error_code";
+NSString *const INNER_DICT_ELEMENT_SUCCESS                  = @"success";
+
+
+NSString *const INNER_EVENT_UP_SOCIAL_ACTION_STARTED         = @"sg_up_social_action_started";
+NSString *const INNER_EVENT_UP_SOCIAL_ACTION_FINISHED        = @"sg_up_social_action_finished";
+NSString *const INNER_EVENT_UP_SOCIAL_ACTION_CANCELLED       = @"sg_up_social_action_cancelled";
+NSString *const INNER_EVENT_UP_SOCIAL_ACTION_FAILED          = @"sg_up_social_action_failed";
+
+NSString *const  INNER_DICT_ELEMENT_PROVIDER                  = @"provider";
+NSString *const  INNER_DICT_ELEMENT_SOCIAL_ACTION_TYPE        = @"socialActiontype";
+
+int const ERR_PURCHASE_FAIL = 3;
+int const ERR_VERIFICATION_FAIL = 2;
+
+@interface ISN_Soomla : NSObject
+
+
++ (id) sharedInstance;
+
+- (void) soomlaInit:(NSString*)gameKey envKey: (NSString*) envKey;
+- (void) purchaseStarted:(NSString*)productId;
+- (void) purchaseFinished:(NSString*)productId price: (NSString*) price currencyCode: (NSString*) currencyCode;
+- (void) setPurhsesSupportedState:(bool)isSupported;
+- (void) purchaseCanceled:(NSString*)productId;
+- (void) purchaseError;
+- (void) RestoreStarted;
+- (void) RestoreFinished:(bool)state;
+- (void) socialAction:(int)provider actionState: (int) actionState actionType: (int) actionType;
+- (void) verificationFailed;
+
+@end
+
+
+
+
+@implementation ISN_Soomla
+
+static ISN_Soomla * sm_sharedInstance;
+
+
++ (id)sharedInstance {
+    
+    if (sm_sharedInstance == nil)  {
+        sm_sharedInstance = [[self alloc] init];
+    }
+    
+    return sm_sharedInstance;
+}
+
+
+- (void) soomlaInit:(NSString *)gameKey envKey:(NSString *)envKey {
+    NSDictionary* userInfo = @{ INNER_DICT_ELEMENT_GAME_KEY : gameKey,
+                               INNER_DICT_ELEMENT_ENV_KEY : envKey,
+                               INNER_DICT_ELEMENT_REFERRER : @"stansassets" };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:INNER_EVENT_INITIALIZE_HIGHWAY
+                                      object:nil
+                                    userInfo:userInfo];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector (HihgWayInitialized:)
+                                                 name: EVENT_HIGHWAY_INITIALIZED
+                                               object: nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector (HihgWayConnected:)
+                                                 name: EVENT_HIGHWAY_CONNECTED
+                                               object: nil];
+
+    
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector (HihgWayDisconnected:)
+                                                 name: EVENT_HIGHWAY_DISCONNECTED
+                                               object: nil];
+
+    NSLog(@"ISN Soomla init with envKey: %@", envKey);
+    NSLog(@"ISN Soomla init with gameKey: %@", gameKey);
+
+    
+  }
+
+
+-(void) socialAction:(int)provider actionState:(int)actionState actionType:(int)actionType {
+    
+    NSLog(@"ISN Soomla Social Action with provider: %d",provider);
+    
+    NSString* SoomlaAction;
+    switch (actionState) {
+        case 1:
+            SoomlaAction = INNER_EVENT_UP_SOCIAL_ACTION_STARTED;
+            break;
+        case 2:
+            SoomlaAction = INNER_EVENT_UP_SOCIAL_ACTION_FINISHED;
+            break;
+        case 3:
+            SoomlaAction = INNER_EVENT_UP_SOCIAL_ACTION_CANCELLED;
+            break;
+        case 4:
+            SoomlaAction = INNER_EVENT_UP_SOCIAL_ACTION_FAILED;
+            break;
+            
+        default:
+            SoomlaAction = INNER_EVENT_UP_SOCIAL_ACTION_STARTED;
+            break;
+    }
+    
+    NSDictionary* userInfo = @{ INNER_DICT_ELEMENT_PROVIDER : [NSNumber numberWithInt:provider] ,
+                                INNER_DICT_ELEMENT_SOCIAL_ACTION_TYPE : [NSNumber numberWithInt:actionType]};
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:SoomlaAction
+                                                        object:nil
+                                                      userInfo:userInfo];
+    
+}
+
+-(void) purchaseStarted:(NSString *)productId {
+    NSDictionary* userInfo = @{ INNER_DICT_ELEMENT_PURCHASABLE_PROD_ID : productId };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:INNER_EVENT_MARKET_PURCHASE_STARTED
+                                                        object:nil
+                                                      userInfo:userInfo];
+}
+
+-(void) purchaseFinished:(NSString *)productId price:(NSString *)price currencyCode:(NSString *)currencyCode {
+    NSDictionary* userInfo = @{ INNER_DICT_ELEMENT_PURCHASABLE_PROD_ID : productId,
+                                INNER_DICT_ELEMENT_ITEM_PRICE_MICROS : price,
+                                INNER_DICT_ELEMENT_ITEM_CURRENCY_CODE : currencyCode };
+
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:INNER_EVENT_MARKET_PURCHASED
+                                                        object:nil
+                                                      userInfo:userInfo];
+}
+
+
+-(void) setPurhsesSupportedState:(bool)isSupported {
+    NSString* eventName = INNER_EVENT_BILLING_SUPPORTED;
+    if(!isSupported) {
+        eventName = INNER_EVENT_BILLING_NOT_SUPPORTED;
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:eventName
+                                                        object:nil
+                                                      userInfo:nil];
+
+}
+
+
+- (void) purchaseCanceled:(NSString *)productId {
+    NSDictionary* userInfo = @{ INNER_DICT_ELEMENT_PURCHASABLE_PROD_ID : productId };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:INNER_EVENT_MARKET_PURCHASE_CANCELLED
+                                                        object:nil
+                                                      userInfo:userInfo];
+}
+
+- (void) purchaseError {
+    NSDictionary* userInfo = @{ INNER_DICT_ELEMENT_ERROR_CODE : [NSNumber numberWithInt:ERR_PURCHASE_FAIL] };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:INNER_EVENT_UNEXPECTED_ERROR_IN_STORE
+                                                        object:nil
+                                                      userInfo:userInfo];
+
+}
+
+- (void) verificationFailed {
+    NSDictionary* userInfo = @{ INNER_DICT_ELEMENT_ERROR_CODE : [NSNumber numberWithInt:ERR_VERIFICATION_FAIL] };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:INNER_EVENT_UNEXPECTED_ERROR_IN_STORE
+                                                        object:nil
+                                                      userInfo:userInfo];
+}
+
+-(void) RestoreStarted {
+    [[NSNotificationCenter defaultCenter] postNotificationName:INNER_EVENT_RESTORE_TRANSACTIONS_STARTED
+                                                        object:nil
+                                                      userInfo:nil];
+}
+
+
+-(void) RestoreFinished:(bool)state {
+    NSDictionary* userInfo;
+    
+    if(state) {
+         userInfo = @{ INNER_DICT_ELEMENT_SUCCESS : @TRUE };
+    } else {
+        userInfo = @{ INNER_DICT_ELEMENT_SUCCESS : @FALSE };
+    }
+    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:INNER_EVENT_RESTORE_TRANSACTIONS_FINISHED
+                                                        object:nil
+                                                      userInfo:userInfo];
+
+}
+
+
+
+
+#pragma events
+
+
+- (void) HihgWayInitialized: (NSNotification *) notification {
+    NSLog(@"HihgWayInitialized");
+    UnitySendMessage("ISN_Soomla", "OnHihgWayInitialized", "");
+
+}
+
+- (void) HihgWayConnected: (NSNotification *) notification {
+    NSLog(@"HihgWayConnected");
+    UnitySendMessage("ISN_Soomla", "OnHihgWayConnected", "");
+
+    
+}
+
+- (void) HihgWayDisconnected: (NSNotification *) notification {
+    NSLog(@"HihgWayDisconnected");
+    UnitySendMessage("ISN_Soomla", "OnHihgWayDisconnected", "");
+
+    
+}
+
+
+
+@end
+
+
+extern "C" {
+    
+    void _ISN_SM_Init(char* gk, char* ek) {
+        NSString *gameKey = [ISN_DataConvertor charToNSString:gk];
+        NSString *evnKey = [ISN_DataConvertor charToNSString:ek];
+        
+        [[ISN_Soomla sharedInstance] soomlaInit:gameKey envKey:evnKey];
+        
+    }
+    
+    void _ISN_SM_PurchaseStarted(char* prodcut) {
+        NSString *prodcutId = [ISN_DataConvertor charToNSString:prodcut];
+        
+        
+        [[ISN_Soomla sharedInstance] purchaseStarted:prodcutId];
+        
+    }
+
+    void _ISN_SM_PurchaseFinished(char* prodcut, char *priceInMicros, char *currency) {
+         NSString *prodcutId = [ISN_DataConvertor charToNSString:prodcut];
+         NSString *price = [ISN_DataConvertor charToNSString:priceInMicros];
+         NSString *currencyCode = [ISN_DataConvertor charToNSString:currency];
+        
+        [[ISN_Soomla sharedInstance] purchaseFinished:prodcutId price:price currencyCode:currencyCode];
+    }
+    
+    void _ISN_SM_SetPurhsesSupportedState(bool isSupported) {
+        [[ISN_Soomla sharedInstance] setPurhsesSupportedState:isSupported];
+    }
+    
+    
+    void _ISN_SM_PurchaseCanceled(char* prodcut) {
+        NSString *prodcutId = [ISN_DataConvertor charToNSString:prodcut];
+        [[ISN_Soomla sharedInstance] purchaseCanceled:prodcutId];
+    }
+    
+    void _ISN_SM_PurchaseError() {
+        [[ISN_Soomla sharedInstance] purchaseError];
+    }
+    
+    void _ISN_SM_VerificationFailed() {
+        [[ISN_Soomla sharedInstance] verificationFailed];
+    }
+    
+    
+   
+    void _ISN_SM_RestoreStarted() {
+        [[ISN_Soomla sharedInstance] RestoreStarted];
+    }
+    
+    void _ISN_SM_RestoreFinished(bool state) {
+        [[ISN_Soomla sharedInstance] RestoreFinished:state];
+    }
+    
+   
+    void _ISN_SM_SocialAction(int provider, int actionState, int actionType) {
+        [[ISN_Soomla sharedInstance] socialAction:provider actionState:actionState actionType:actionType];
+    }
+    
+       
+}
+
+
+
+

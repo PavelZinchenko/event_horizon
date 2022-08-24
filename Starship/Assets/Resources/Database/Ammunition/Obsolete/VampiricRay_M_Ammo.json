@@ -1,0 +1,15 @@
+{
+  "ItemType": 4,
+  "Id": 88,
+  "AmmunitionClass": 22,
+  "DamageType": 3,
+  "Size": 1.0,
+  "Damage": 10.0,
+  "Range": 10.0,
+  "LifeTime": 0.05,
+  "EnergyCost": 10.0,
+  "Color": "#80FF4020",
+  "FireSound": "*flux_04",
+  "HitEffectPrefab": "FlashAdditive",
+  "BulletPrefab": "EnergyBeam"
+}

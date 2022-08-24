@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlayerRating">Spielerwertung</string>
+    <string name="ArenaRating">Flottenwertung</string>
+    <string name="ArenaRegistrationRequired">Du bist bisher noch nicht in der Arena angemeldet.</string>
+    <string name="ArenaSignInRequired">Melde dich an bevor du startest.</string>
+    <string name="ConnectionError">Kann keine Verbindung zum Server herstellen. Versuche es nochmal.</string>
+    <string name="ArenaTraining">Trainiere mit deinen eigenen Schiffen.</string>
+    <string name="ArenaOpponent">Gegner:</string>
+    <string name="ArenaFight">Fordere diesen Gegner heraus.</string>
+    <string name="ArenaShop">Such dir eine Belohnung aus.</string>
+    <string name="ArenaFindOpponent">Finde einen Gegner.</string>
+    <string name="ArenaEmptyFleet">Du hast keine Schiffe in deinem Hangar</string>
+    <string name="ArenaShipNotAllowed">Das Schiff $1 darf nicht teilnehmen.</string>
+    <string name="ArenaBattlesAvailable">$1 ${1|Kampf|Kämpfe} verfügbar</string>
+    <string name="ArenaMoreBattles">10 Kämpfe mehr kaufen</string>
+    <string name="ArenaShipReady">bereit für den Kampf</string>
+    <string name="ArenaShipNotReady">nicht zugelassen</string>
+    <string name="ArenaWatchAd">Werbung Anschauen</string>
+</resources>

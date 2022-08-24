@@ -1,0 +1,27 @@
+{
+  "ItemType": 1,
+  "Id": 154,
+  "Name": "$ProtoonTorpedo_S_1",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 3,
+  "Icon": "torpedo4",
+  "Color": "#C0FFC0",
+  "Layout": "1010",
+  "CellType": "4",
+  "WeaponId": 58,
+  "AmmunitionId": 58,
+  "PossibleModifications": [
+    14,
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

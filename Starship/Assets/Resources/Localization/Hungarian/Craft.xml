@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Szükséges szint:</string>
+    <string name="CraftPrice">Ár:</string>
+    <string name="CraftCommonItem">Általános minőségű modul készítése</string>
+    <string name="CraftImprovedItem">Javított minőségű modul készítése</string>
+    <string name="CraftSuperiorItem">Kiváló minőségű modul készítése</string>
+    <string name="CraftNotAvailable">Nem elérhető ehhez a tárgyhoz</string>
+    <string name="CraftItem">Általános tárgy készítése</string>
+    <string name="RareResourceLabel">Ritka erőforrások</string>
+    <string name="RareResource">Gyártási hozzávaló</string>
+    <string name="CraftQueue">Gyártás</string>
+    <string name="CraftCompleted">Kész</string>
+    <string name="CraftInQueue">Várakozás</string>
+    <string name="EmptyBuildQueue">A gyártósor üres</string>
+    <string name="Blueprint">Tervrajz: $1</string>
+    <string name="Shipyard">Hajódokk</string>
+    <string name="UpgradeShipDescription">FIGYELEM: Ha fejleszted a hajót, a szintje csökken $1 szinttel.</string>
+    <string name="RequiredShipyardLevel">A hajódokknak $1 szintűnek kell lennie és $2 frakcióhoz tartoznia.</string>
+    <string name="RequiredShipLevel">A hajódnak $1 vagy nagyobb szintűnek kell lennie.</string>
+    <string name="InstallModConfirmation">Biztos alkalmazni akarod ezt a fejlesztést?</string>
+    <string name="DeleteModConfirmation">Biztos el akarod távolítani ezt a fejlesztést? Az árát nem kapod vissza.</string>
+    <string name="SelectCellType">Válassz cellatípust</string>
+    <string name="SelectCellPlace">Válaszd ki az új cella helyét</string>
+    <string name="AddShipCell">Új cella hozzáadása</string>
+    <string name="RemoveShipCells">Összes extra cella eltávolítása</string>
+    <string name="RemoveShipCellsWarning">Biztosan el akarsz távolítani minden extra cellát a hajóról?</string>
+</resources>

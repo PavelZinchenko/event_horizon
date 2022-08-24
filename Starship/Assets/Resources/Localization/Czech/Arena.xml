@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlayerRating">Hodnocení hráče:</string>
+    <string name="ArenaRating">Hodnocení flotily:</string>
+    <string name="ArenaRegistrationRequired">Nejste ještě registrovaní v aréně.</string>
+    <string name="ArenaSignInRequired">Přihlaste se, než začnete.</string>
+    <string name="ConnectionError">Nelze se připojit k serveru. Prosím zkuste znova později.</string>
+    <string name="ArenaTraining">Trénink boje s vlastními loděmi.</string>
+    <string name="ArenaOpponent">Soupeř:</string>
+    <string name="ArenaFight">Vyzvat soupeře.</string>
+    <string name="ArenaShop">Vyberte si odměnu.</string>
+    <string name="ArenaFindOpponent">Najít soupeře.</string>
+    <string name="ArenaEmptyFleet">Nemáte žádné lodě v hangáru.</string>
+    <string name="ArenaShipNotAllowed">Jedné z lodí není povoleno účastnit se.</string>
+    <string name="ArenaBattlesAvailable">$1 ${1|souboj|soubojů} dostupných</string>
+    <string name="ArenaMoreBattles">Koupit 10 dalších soubojů</string>
+    <string name="ArenaShipReady">Připraven k boji</string>
+    <string name="ArenaShipNotReady">Nepovoleno</string>
+</resources>

@@ -1,0 +1,25 @@
+{
+  "ItemType": 6,
+  "Id": 96,
+  "ShipCategory": 6,
+  "Name": "Drone",
+  "Faction": -1,
+  "IconImage": "santa_drone",
+  "IconScale": 0.8,
+  "ModelImage": "santa_drone",
+  "ModelScale": 0.8,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#AA00FBFF",
+  "EngineSize": 0.1,
+  "BuiltinDevices": [],
+  "Layout": "440022440022442222022220552255550055",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.5
+      }
+    }
+  ]
+}

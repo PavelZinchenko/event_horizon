@@ -1,0 +1,8 @@
+{
+  "ItemType": 11,
+  "Id": 160,
+  "EnergyRechargeRate": -1.25,
+  "Weight": 50.0,
+  "WeaponRangeModifier": 0.2,
+  "WeaponEnergyCostModifier": 0.2
+}

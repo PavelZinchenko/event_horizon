@@ -1,0 +1,25 @@
+{
+  "ItemType": 6,
+  "Id": 57,
+  "Name": "$f8_Cruiser",
+  "Faction": 10,
+  "SizeClass": 2,
+  "IconImage": "f8s3",
+  "IconScale": 0.8,
+  "ModelImage": "f8s3",
+  "ModelScale": 1.5,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40E0E0FF",
+  "EngineSize": 0.2,
+  "Layout": "000014410000000014410000100014410001100124421001100222222001011122221110011122221110011122221110011122221110000155551000000555555000000055550000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      },
+      "WeaponClass": "L"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ItemType": 1,
+  "Id": 144,
+  "Name": "$SingularityCannon_M_1",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 6,
+  "Level": 105,
+  "Icon": "accelerator1",
+  "Color": "#FFC07D",
+  "Layout": "1111",
+  "CellType": "4",
+  "WeaponId": 77,
+  "AmmunitionId": 77,
+  "WeaponSlotType": "S",
+  "PossibleModifications": [
+    14,
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

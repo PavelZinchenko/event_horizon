@@ -1,0 +1,14 @@
+{
+  "ItemType": 2,
+  "Id": 16,
+  "DeviceClass": 10,
+  "Power": 1.0,
+  "Range": 20.0,
+  "Size": 4.0,
+  "Cooldown": 15.0,
+  "ActivationType": 1,
+  "Color": "#FF0000",
+  "Sound": "launch_06",
+  "EffectPrefab": "FlashAdditive",
+  "ControlButtonIcon": "controls_gear"
+}

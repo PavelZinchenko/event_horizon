@@ -1,0 +1,18 @@
+{
+  "ItemType": 4,
+  "Id": 49,
+  "DamageType": 2,
+  "Impulse": 0.01,
+  "Recoil": 0.001,
+  "Size": 0.5,
+  "Damage": 3.5,
+  "Range": 18.0,
+  "Velocity": 30.0,
+  "LifeTime": 0.3,
+  "EnergyCost": 1.5,
+  "Color": "#C0FFA7",
+  "FireSound": "shot_14",
+  "HitSound": "hit_03",
+  "HitEffectPrefab": "FlashAdditive",
+  "BulletPrefab": "Bullet"
+}

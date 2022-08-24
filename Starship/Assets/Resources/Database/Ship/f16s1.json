@@ -1,0 +1,35 @@
+{
+  "ItemType": 6,
+  "Id": 120,
+  "Name": "$f16_Scout",
+  "Faction": 16,
+  "IconImage": "slime",
+  "IconScale": 1.0,
+  "ModelImage": "slime",
+  "ModelScale": 1.0,
+  "EngineColor": "#40FF00FF",
+  "Engines": [
+    {
+      "Position": {
+        "x": -0.8
+      },
+      "Size": 0.5
+    }
+  ],
+  "KineticResistance": 5.0,
+  "Regeneration": true,
+  "BaseWeightModifier": -0.75,
+  "BuiltinDevices": [
+    18
+  ],
+  "Layout": "0044400022222002222202222222222222233555330055500",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.9
+      },
+      "PlatformType": 2,
+      "WeaponClass": "C"
+    }
+  ]
+}

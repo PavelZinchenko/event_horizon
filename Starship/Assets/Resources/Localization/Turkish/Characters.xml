@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Name">İsim:</string>
+    <string name="Gender">Cinsiyet:</string>
+    <string name="Experience">Deneyim:</string>
+    <string name="PlayerName">Sensin</string>
+    <string name="Gender_HumanMale">Erkek İnsan</string>
+    <string name="Gender_HumanFemale">Kadın İnsan</string>
+    <string name="Gender_Android">Android</string>
+    <string name="Gender_Alien">Uzaylı</string>
+    <string name="PerkName_Attack">Topçu</string>
+    <string name="PerkName_Defense">Zırhçı</string>
+    <string name="PerkName_CommandPoint">Tuğamiral</string>
+    <string name="PerkName_FavoriteShip">Uzman</string>
+    <string name="PerkName_QuickRecovery">Teknisyen</string>
+    <string name="PerkInfo_Attack">$1% saldırı bonusu</string>
+    <string name="PerkInfo_Defense">$1% defans bonusu</string>
+    <string name="PerkInfo_CommandPoint">Ekstra komuta puanı verir</string>
+    <string name="PerkInfo_FavoriteShip">$1 gemisiyle çok yetenekli</string>
+    <string name="PerkInfo_QuickRecovery">Gemi vurulduğunda daha hızlı tamir olur</string>
+    <string name="ShipLevelText">Gemi Seviyesi:</string>
+    <string name="AttackBonusText">Saldırı Bonusu:</string>
+    <string name="DefenseBonusText">Savunma Bonusu:</string>
+    <string name="Speciality">Uzmanlık:</string>
+</resources>

@@ -1,0 +1,18 @@
+{
+  "ItemType": 4,
+  "Id": 77,
+  "AmmunitionClass": 20,
+  "DamageType": 1,
+  "Size": 1.0,
+  "AreaOfEffect": 1.0,
+  "Damage": 5.0,
+  "Range": 20.0,
+  "Velocity": 16.0,
+  "LifeTime": 1.25,
+  "EnergyCost": 5.0,
+  "Color": "#FF883A",
+  "FireSound": "shot_09",
+  "HitSound": "hit_09",
+  "HitEffectPrefab": "FlashAdditive",
+  "BulletPrefab": "Energy2"
+}

@@ -1,0 +1,278 @@
+#if !TARGET_OS_TV
+
+////////////////////////////////////////////////////////////////////////////////
+//  
+// @module IOS Native Plugin
+// @author Osipov Stanislav (Stan's Assets) 
+// @support support@stansassets.com
+// @website https://stansassets.com
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+#import "ELCImagePickerController.h"
+#import <Foundation/Foundation.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import "ISN_NativeCore.h"
+#if UNITY_VERSION < 450
+#include "iPhone_View.h"
+#endif
+
+
+
+NSString * const UNITY_SPLITTER = @"|";
+NSString * const UNITY_SPLITTER2 = @"|%|";
+NSString * const UNITY_EOF = @"endofline";
+
+
+@interface UIImage (fixOrientation)
+
+- (UIImage *)fixOrientation;
+
+@end
+
+@implementation UIImage (fixOrientation)
+
+- (UIImage *)fixOrientation {
+    
+    // No-op if the orientation is already correct
+    if (self.imageOrientation == UIImageOrientationUp) return self;
+    
+    // We need to calculate the proper transformation to make the image upright.
+    // We do it in 2 steps: Rotate if Left/Right/Down, and then flip if Mirrored.
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    
+    switch (self.imageOrientation) {
+        case UIImageOrientationDown:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, self.size.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, 0);
+            transform = CGAffineTransformRotate(transform, M_PI_2);
+            break;
+            
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, 0, self.size.height);
+            transform = CGAffineTransformRotate(transform, -M_PI_2);
+            break;
+        case UIImageOrientationUp:
+        case UIImageOrientationUpMirrored:
+            break;
+    }
+    
+    switch (self.imageOrientation) {
+        case UIImageOrientationUpMirrored:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+            
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.height, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+        case UIImageOrientationUp:
+        case UIImageOrientationDown:
+        case UIImageOrientationLeft:
+        case UIImageOrientationRight:
+            break;
+    }
+    
+    // Now we draw the underlying CGImage into a new context, applying the transform
+    // calculated above.
+    CGContextRef ctx = CGBitmapContextCreate(NULL, self.size.width, self.size.height,
+                                             CGImageGetBitsPerComponent(self.CGImage), 0,
+                                             CGImageGetColorSpace(self.CGImage),
+                                             CGImageGetBitmapInfo(self.CGImage));
+    CGContextConcatCTM(ctx, transform);
+    switch (self.imageOrientation) {
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            // Grr...
+            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.height,self.size.width), self.CGImage);
+            break;
+            
+        default:
+            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.width,self.size.height), self.CGImage);
+            break;
+    }
+    
+    // And now we just create a new UIImage from the drawing context
+    CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
+    UIImage *img = [UIImage imageWithCGImage:cgimg];
+    CGContextRelease(ctx);
+    CGImageRelease(cgimg);
+    return img;
+}
+
+@end
+
+
+
+
+
+
+@interface ISN_FilePicker : NSObject<ELCImagePickerControllerDelegate>
+
+@property float ImageCompressionRate;
+@property int MaxImageSize;
+@property int encodingType;
+
++ (id) sharedInstance;
+
+-(void) SelectImages:(int) maxCount;
+
+@end
+
+
+@implementation ISN_FilePicker
+
+static ISN_FilePicker * mp_sharedInstance;
+
+
++ (id)sharedInstance {
+    
+    if (mp_sharedInstance == nil)  {
+        mp_sharedInstance = [[self alloc] init];
+    }
+    
+    return mp_sharedInstance;
+}
+
+
+-(void) SelectImages:(int) maxCount {
+    
+    ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initImagePicker];
+    
+    if(maxCount != 0) {
+        elcPicker.maximumImagesCount = maxCount;
+    }
+    
+    elcPicker.returnsOriginalImage = NO; //Only return the fullScreenImage, not the fullResolutionImage
+    elcPicker.returnsImage = YES; //Return UIimage if YES. If NO, only return asset location information
+    elcPicker.onOrder = YES; //For multiple image selection, display and return selected order of images
+    
+    elcPicker.imagePickerDelegate = self;
+    
+    UIViewController *vc =  UnityGetGLViewController();
+    [vc presentViewController:elcPicker animated:YES completion:nil];
+    
+    
+}
+
+
+- (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info {
+    
+    UIViewController *vc =  UnityGetGLViewController();
+    [vc dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    
+    NSMutableString * data = [[NSMutableString alloc] init];
+    
+    for( NSDictionary *i  : info) {
+        
+        UIImage *photo = [i objectForKey:UIImagePickerControllerOriginalImage];
+        //NSLog(@"phpo: %@", photo);
+        
+        NSString* str = [[ISN_FilePicker sharedInstance] EncodeImage:photo];
+        // NSLog(@"str: %@", str);
+        
+        [data appendString:str];
+        [data appendString:UNITY_SPLITTER2];
+        
+    }
+    
+    [data appendString:UNITY_EOF];
+     UnitySendMessage("ISN_FilePicker", "OnSelectImagesComplete", [ISN_DataConvertor NSStringToChar:data]);
+    
+}
+
+/**
+ * Called when image selection was cancelled, by tapping the 'Cancel' BarButtonItem.
+ */
+- (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker {
+    UnitySendMessage("ISN_FilePicker", "OnSelectImagesComplete", "");
+    UIViewController *vc =  UnityGetGLViewController();
+    [vc dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (NSString*) EncodeImage:(UIImage *)image {
+    image = [image fixOrientation];
+    
+    
+    if(image.size.width > [self MaxImageSize] || image.size.height > [self MaxImageSize] ) {
+        [[ISN_NativeUtility sharedInstance] ISN_NativeLog: @"resizing image"];
+        CGSize s = CGSizeMake([self MaxImageSize], [self MaxImageSize]);
+        
+        if(image.size.width > image.size.height) {
+            CGFloat new_height = [self MaxImageSize] / (image.size.width / image.size.height);
+            s.height = new_height;
+            
+        } else {
+            CGFloat new_width = [self MaxImageSize] / (image.size.height / image.size.width);
+            s.width = new_width;
+            
+        }
+        
+        image =   [ISN_FilePicker imageWithImage:image scaledToSize:s];
+        
+    }
+    
+    NSData *imageData = nil;
+    [[ISN_NativeUtility sharedInstance] ISN_NativeLog: @"ImageCompressionRate: %f", [self ImageCompressionRate]];
+    
+    if([self encodingType] == 0) {
+        imageData = UIImagePNGRepresentation(image);
+    } else {
+        imageData = UIImageJPEGRepresentation(image, [self ImageCompressionRate]);
+    }
+    
+    return  [imageData base64Encoding];
+}
+
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 1.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+
+
+extern "C" {
+    
+    
+    //--------------------------------------
+    //  IOS Native Plugin Section
+    //--------------------------------------
+    
+    
+    void _ISN_PickImages(int maxCount) {
+        [[ISN_FilePicker sharedInstance] SelectImages:maxCount];
+    }
+    
+    void _ISN_InitPicerAPI(float compressionRate, int maxSize, int encodingType) {
+        [[ISN_FilePicker sharedInstance] setImageCompressionRate:compressionRate];
+        [[ISN_FilePicker sharedInstance] setMaxImageSize:maxSize];
+        [[ISN_FilePicker sharedInstance] setEncodingType:encodingType];
+    }
+    
+}
+
+
+@end
+
+#endif

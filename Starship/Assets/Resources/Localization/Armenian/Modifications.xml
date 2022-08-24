@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="HitPointsMod">Կենսունակության միավորներ $1</string>
+    <string name="DefenseMod">Պաշտպանություն $1</string>
+    <string name="WeightMod">Ծանրություն $1</string>
+    <string name="EnergyCostMod">Էներգիայի Արժեք $1</string>
+    <string name="DamageMod">Վնասի չափը $1</string>
+    <string name="CooldownMod">Վերալիցքավորման Ժամանակ $1</string>
+    <string name="RangeMod">հեռավորություն $1</string>
+    <string name="BulletVelocityMod">Ռումբերի Արագություն $1</string>
+    <string name="EnergyMod">Էներգատարություն $1</string>
+    <string name="RepairRateMod">Վերանորոգման Արժեք $1</string>
+    <string name="EnginePowerMod">Շարժիչի Հզորություն $1</string>
+    <string name="EnergyRechargeMod">Էներգիայի Վերականգնման Արագություն $1</string>
+    <string name="BulletVelocityMod2">Ռումբերի Արագություն $1, Վնաս $2</string>
+    <string name="AreaOfEffectMod">Գործողության Շրջակայքի հեռավորություն $1</string>
+    <string name="ShieldPowerMod">Վահանի Հզորություն $1</string>
+    <string name="DamageMod2">Վնաս $1 Վերալիցքավորման Ժամանակ $2</string>
+    <string name="DroneSpeedMod">Դրոնների արագություն $1</string>
+    <string name="RecoilMod">Զինամթերքի քաշ $1</string>
+    <string name="Ship_EmptySlot">[դատարկ բջիջ]</string>
+    <string name="Ship_AutoTargeting">Ներկառուցված ավտոմատ ուղղորդման համակարգ</string>
+    <string name="Ship_HeatDefense">Բարձր ջերմադիմադրություն</string>
+    <string name="Ship_KineticDefense">Բարձր կինետիկ դիմադրություն</string>
+    <string name="Ship_EnergyDefense">Բարձր էներգադիմադրություն</string>
+    <string name="Ship_ExtraBlueCells">Լրացուցիչ սարքավորումների բջիջներ</string>
+    <string name="Ship_Lightweight">Նավի հիմնական քաշը փոքրացել է $1%</string>
+    <string name="Ship_Infected">$ 1% ավելի քիչ զրահ, վերականգնում է $2% / վրկ</string>
+</resources>

@@ -1,0 +1,21 @@
+{
+  "ItemType": 1,
+  "Id": 73,
+  "Name": "$PointDefense",
+  "DisplayCategory": 2,
+  "Availability": 1,
+  "ComponentStatsId": 3,
+  "Faction": 1,
+  "Level": 40,
+  "Icon": "pointdefense",
+  "Color": "#C0FFC0",
+  "Layout": "000010111",
+  "CellType": "2",
+  "DeviceId": 10,
+  "PossibleModifications": [
+    2,
+    7,
+    1,
+    6
+  ]
+}

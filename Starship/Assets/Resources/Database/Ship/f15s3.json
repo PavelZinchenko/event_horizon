@@ -1,0 +1,43 @@
+{
+  "ItemType": 6,
+  "Id": 117,
+  "Name": "$f15_Battleship",
+  "Faction": 15,
+  "SizeClass": 3,
+  "IconImage": "fs3",
+  "IconScale": 1.0,
+  "ModelImage": "fs3",
+  "ModelScale": 2.4,
+  "EnginePosition": {
+    "x": -0.85
+  },
+  "EngineColor": "#40FF7F00",
+  "EngineSize": 0.3,
+  "Layout": "0000033444400000000033344443000000003334444300000000333333330000000033333333000000044333333440000004433333344000000443333334400000003333333300000000333333330000000003333330000000000033330000000000005555000000000000555500000000000055550000000000005555000000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.5
+      },
+      "Offset": 0.6,
+      "PlatformType": 2,
+      "WeaponClass": "L",
+      "Image": "scavenger_arm",
+      "Size": 0.6
+    },
+    {
+      "Position": {
+        "x": 0.25,
+        "y": 0.5
+      },
+      "WeaponClass": "M"
+    },
+    {
+      "Position": {
+        "x": 0.25,
+        "y": -0.5
+      },
+      "WeaponClass": "M"
+    }
+  ]
+}

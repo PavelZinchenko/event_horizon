@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Požadovaný level:</string>
+    <string name="CraftPrice">Cena:</string>
+    <string name="CraftCommonItem">Vytvořit item běžné kvality</string>
+    <string name="CraftImprovedItem">Vytvořit item lepší kvality</string>
+    <string name="CraftSuperiorItem">Vytvořit item nejlepší kvality</string>
+    <string name="CraftNotAvailable">Nedostupné pro tento item</string>
+    <string name="CraftItem">Vytvořit běžný item</string>
+    <string name="RareResourceLabel">Vzácné suroviny</string>
+    <string name="RareResource">Crafting ingredience</string>
+    <string name="CraftQueue">Produkce</string>
+    <string name="CraftCompleted">Hotovo</string>
+    <string name="CraftInQueue">Čekání</string>
+    <string name="EmptyBuildQueue">Fronta stavění je prázdná</string>
+    <string name="Blueprint">Blueprint: $1</string>
+    <string name="Shipyard">Přístav</string>
+    <string name="UpgradeShipDescription">VAROVÁNÍ: Pokud vylepšíte loď, její level se sníží o $1.</string>
+    <string name="RequiredShipyardLevel">Přístav musí mít level $1 a patřit k $2.</string>
+    <string name="RequiredShipLevel">Vaše loď musí mít level $1 nebo vyšší.</string>
+    <string name="InstallModConfirmation">Jste si jisti, že chcete instalovat tuto modifikaci?</string>
+    <string name="DeleteModConfirmation">Jste si jisti, že chcete odstranit tuto modifikaci? Nedostanete zpátky peníze.</string>
+    <string name="SelectCellType">Vyberte typ buňky</string>
+    <string name="SelectCellPlace">Vyberte místo nové buňky</string>
+    <string name="AddShipCell">Vytvořit extra buňku</string>
+    <string name="RemoveShipCells">Resetovat rozložení</string>
+    <string name="RemoveShipCellsWarning">Jste si jisti, že chcete odstranit všechny buňky navíc?</string>
+</resources>

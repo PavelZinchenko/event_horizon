@@ -1,0 +1,17 @@
+{
+  "ItemType": 1,
+  "Id": 1,
+  "Name": "$EnergyAbsorber_L",
+  "DisplayCategory": 2,
+  "Availability": 1,
+  "ComponentStatsId": 4,
+  "Faction": 8,
+  "Level": 50,
+  "Icon": "armor33",
+  "Layout": "111111111",
+  "CellType": "1",
+  "PossibleModifications": [
+    1,
+    3
+  ]
+}

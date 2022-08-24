@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Nível exigido:</string>
+    <string name="CraftPrice">Preço</string>
+    <string name="CraftCommonItem">Criar um item de qualidade comum</string>
+    <string name="CraftImprovedItem">Criar um item de qualidade aprimorada</string>
+    <string name="CraftSuperiorItem">Criar um item de qualidade superior</string>
+    <string name="CraftNotAvailable">Não disponível para esse item</string>
+    <string name="CraftItem">Criar item comum</string>
+    <string name="RareResourceLabel">Recursos raros</string>
+    <string name="RareResource">Materiais de Construção</string>
+    <string name="CraftQueue">Produção</string>
+    <string name="CraftCompleted">Completou</string>
+    <string name="CraftInQueue">Esperando</string>
+    <string name="EmptyBuildQueue">A fila de construção está vazia</string>
+    <string name="Blueprint">Diagrama: $1</string>
+    <string name="Shipyard">Estaleiro</string>
+    <string name="UpgradeShipDescription">AVISO: Se você atualizar esta nave, seu nível diminuirá em $ 1.</string>
+    <string name="RequiredShipyardLevel">O estaleiro deve ser de nível $ 1 e pertencer a $ 2.</string>
+    <string name="RequiredShipLevel">Sua nave deve estar no nível $ 1 ou superior.</string>
+    <string name="InstallModConfirmation">Tem certeza de que deseja instalar esta modificação?</string>
+    <string name="DeleteModConfirmation">Tem certeza de que deseja remover esta modificação?  Você não receberá o dinheiro de volta.</string>
+    <string name="SelectCellType">Selecione o tipo de célula</string>
+    <string name="SelectCellPlace">Selecione o lugar para uma nova célula</string>
+    <string name="AddShipCell">Crie uma célula extra</string>
+    <string name="RemoveShipCells">Repor o layout da nave</string>
+    <string name="RemoveShipCellsWarning">Tem certeza de que deseja remover todas as células extras da sua nave?</string>
+</resources>

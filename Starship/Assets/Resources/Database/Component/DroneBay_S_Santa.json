@@ -1,0 +1,23 @@
+{
+  "ItemType": 1,
+  "Id": 219,
+  "Name": "$DroneBay_Santa",
+  "DisplayCategory": 5,
+  "Availability": 4,
+  "ComponentStatsId": 2,
+  "Level": 100,
+  "Icon": "dronebay1",
+  "Color": "#C5AFFF",
+  "Layout": "110110110",
+  "CellType": "1",
+  "DroneBayId": 1,
+  "DroneId": 231,
+  "PossibleModifications": [
+    17,
+    18,
+    19,
+    20,
+    1,
+    2
+  ]
+}

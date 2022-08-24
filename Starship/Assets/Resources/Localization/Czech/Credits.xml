@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Credits_Title">Event Horizon</string>
+    <string name="Credits_Title2">Frontier</string>
+    <string name="Credits_GameDesign">Game Design</string>
+    <string name="Credits_Program">Programming</string>
+    <string name="Credits_Graphics">Graphic Design</string>
+    <string name="Credits_Localization">Localization</string>
+    <string name="Credits_Music">Hudba</string>
+    <string name="Credits_Sound">Zvukové Efekty</string>
+    <string name="Credits_Thanks">Special Thanks</string>
+    <string name="Credits_GameDesign_Content">Pavel Zinchenko</string>
+    <string name="Credits_Program_Content">Pavel Zinchenko</string>
+    <string name="Credits_Graphics_Content">Pavel Zinchenko</string>
+    <string name="Credits_Localization_Content">Moritz Schuh (MegumiKitaniji)\nViktor López (Anacheron)\nDaniel Jader (Agred)\nAnthony Barest (SnowedEarth)\nPedro Duque (MrD)\nDongHo Jang (BUP5013511)\nTürker Yüceer(lord24turker)\nThe Grey Cardinal (Michael Kananov)\nCapitalist Commie\nDavido\nChris Dance (Crdguy)\nUnmaker Omega</string>
+    <string name="Credits_Music_Content">Matthew Le Blanc (SynthR) - www.synthr.net\nRobson Cozendey - www.cozendey.com\nVertex Studio</string>
+    <string name="Credits_Sound_Content">freesound.org</string>
+    <string name="Credits_Thanks_Content">Vitaliy Malyshev\nMikhail Lilikin\nNanane</string>
+</resources>

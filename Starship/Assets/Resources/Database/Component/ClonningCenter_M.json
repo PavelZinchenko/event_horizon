@@ -1,0 +1,27 @@
+{
+  "ItemType": 1,
+  "Id": 256,
+  "Name": "$ClonningCenter_M",
+  "DisplayCategory": 6,
+  "Availability": 2,
+  "ComponentStatsId": 3,
+  "Faction": 16,
+  "Level": 50,
+  "Icon": "zygote2",
+  "Layout": "111111111",
+  "CellType": "2",
+  "DeviceId": 26,
+  "Restrictions": {
+    "ShipSizes": [
+      0,
+      1,
+      2
+    ],
+    "NotForMechanicShips": true
+  },
+  "PossibleModifications": [
+    1,
+    2,
+    6
+  ]
+}

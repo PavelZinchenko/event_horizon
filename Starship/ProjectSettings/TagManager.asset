@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Star
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ship1
+  - Ship2
+  - Ship3
+  - Ship4
+  - Missile1
+  - Missile2
+  - Missile3
+  - Missile4
+  - Energy1
+  - Energy2
+  - Energy3
+  - Energy4
+  - Drone1
+  - Drone2
+  - Drone3
+  - Drone4
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

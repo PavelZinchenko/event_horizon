@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CloudGameLoaded">Játék sikeresen betöltve</string>
+    <string name="CloudGameSaved">Játék sikeresen elmentve</string>
+    <string name="CloudOperationFailed">Művelet sikertelen: \n$1</string>
+    <string name="BadSavegameError">Helytelen mentési formátum</string>
+    <string name="GoogleSingInRequired">Google Play hitelesítés szükséges</string>
+    <string name="InternalError">Belső hiba</string>
+    <string name="CommonConfirmation">Biztos vagy benne?</string>
+    <string name="LoginFailedText">Nem sikerült bejelentkezni a szerverre, próbálkozz később.</string>
+</resources>

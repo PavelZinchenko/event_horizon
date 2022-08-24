@@ -1,0 +1,10 @@
+{
+  "ItemType": 3,
+  "Id": 4,
+  "WeaponClass": 5,
+  "FireRate": 0.1,
+  "ActivationType": 1,
+  "ChargeSound": "shot_06",
+  "ShotEffectPrefab": "Charge3",
+  "ControlButtonIcon": "controls_mine"
+}

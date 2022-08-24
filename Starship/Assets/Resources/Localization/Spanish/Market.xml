@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Estrellas</string>
+    <string name="TokenCurrency">Fichas.</string>
+    <string name="Snowflakes">Copos de Nieve</string>
+    <string name="NoItemsInCategory">No se encontraron objetos pertenecientes a esta categoría.</string>
+    <string name="IapErrorText">Un error inesperado ha ocurrido. La compra no se ha completado.</string>
+    <string name="FacebookItemDescription">Compartir en Facebook.</string>
+    <string name="AdItemDescription">Ve un vídeo y obtén una recompensa.</string>
+    <string name="XmasBox">Caja navideña</string>
+    <string name="AlienTechnology">Tecnología alienígena</string>
+    <string name="Commodity_Scraps">Chatarra</string>
+    <string name="Commodity_Artifacts">Artefactos Alienígenas</string>
+    <string name="Commodity_Minerals">Minerales</string>
+    <string name="Commodity_PreciousMetals">Metales Preciosos</string>
+    <string name="Commodity_GemStones">Gemas</string>
+    <string name="Commodity_Alloys">Aleaciones metálicas</string>
+    <string name="Commodity_Polymers">Polímeros</string>
+    <string name="Commodity_ToxicWaste">Desperdicio Tóxico</string>
+    <string name="SellTrash">Vender objetos inútiles.</string>
+    <string name="SellAllTrashConfirmation">Realmente quieres vender todos los objetos de baja calidad?</string>
+    <string name="BestDeal">MEJOR OFERTA.</string>
+    <string name="MostPopular">MAS POPULAR.</string>
+    <string name="FalconPack">Oferta Especial.</string>
+    <string name="FalconPackDescription">Una nave especial con un arma poderosa y un capitán experto.</string>
+    <string name="StarPack1">Paquete de estrellas pequeño.</string>
+    <string name="StarPackDetails1">Contiene 50 estrellas.</string>
+    <string name="StarPack2">Paquete de estrellas.</string>
+    <string name="StarPackDetails2">Contiene 500 estrellas.</string>
+    <string name="StarPack3">Paquete de estrellas grandes.</string>
+    <string name="StarPackDetails3">Contiene 5000 estrellas.</string>
+</resources>

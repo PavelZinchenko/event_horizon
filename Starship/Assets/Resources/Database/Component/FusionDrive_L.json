@@ -1,0 +1,19 @@
+{
+  "ItemType": 1,
+  "Id": 55,
+  "Name": "$FusionDrive_L",
+  "DisplayCategory": 4,
+  "Availability": 1,
+  "ComponentStatsId": 55,
+  "Faction": -1,
+  "Level": 50,
+  "Icon": "engine4",
+  "Color": "#C0DCFF",
+  "Layout": "1111",
+  "CellType": "5",
+  "PossibleModifications": [
+    11,
+    1,
+    2
+  ]
+}

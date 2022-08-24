@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Credits_Title">Event Horizon</string>
+    <string name="Credits_GameDesign">Spiel Design</string>
+    <string name="Credits_Program">Programmierung</string>
+    <string name="Credits_Graphics">Grafik Design</string>
+    <string name="Credits_Localization">Lokalisation</string>
+    <string name="Credits_Music">Musik</string>
+    <string name="Credits_Sound">Sound Effekte</string>
+    <string name="Credits_Thanks">Speziellen Dank an</string>
+    <string name="Credits_GameDesign_Content">Pavel Zinchenko</string>
+    <string name="Credits_Program_Content">Pavel Zinchenko</string>
+    <string name="Credits_Graphics_Content">Pavel Zinchenko</string>
+</resources>

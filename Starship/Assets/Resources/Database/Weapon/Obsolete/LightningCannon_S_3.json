@@ -1,0 +1,8 @@
+{
+  "ItemType": 3,
+  "Id": 34,
+  "FireRate": 5.0,
+  "Spread": 60.0,
+  "ActivationType": 1,
+  "ControlButtonIcon": "controls_shock"
+}

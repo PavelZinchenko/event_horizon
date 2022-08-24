@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CloudGameLoaded">游戏载入成功</string>
+    <string name="CloudGameSaved">游戏保存成功</string>
+    <string name="CloudOperationFailed">操作失败:\n$1</string>
+    <string name="BadSavegameError">损坏的存档</string>
+    <string name="GoogleSingInRequired">需要谷歌play商店的身份验证</string>
+    <string name="InternalError">内部错误</string>
+    <string name="CommonConfirmation">你确定要这么做吗?</string>
+    <string name="LoginFailedText">无法登入服务器，请稍后再试。</string>
+</resources>

@@ -1,0 +1,35 @@
+{
+  "ItemType": 6,
+  "Id": 27,
+  "Name": "$f2_Battleship",
+  "Faction": 2,
+  "SizeClass": 3,
+  "IconImage": "f2s4",
+  "IconScale": 1.0,
+  "ModelImage": "f2s4",
+  "ModelScale": 2.0,
+  "EnginePosition": {
+    "x": -0.7
+  },
+  "EngineColor": "#40FFBABA",
+  "EngineSize": 0.4,
+  "Layout": "000000121000000000000222000000000000222000000000000222000000000000121000000000000020000000000000121000000000000222000000000000222000000000000222000000444132222231444444132252231444044115555511440000000555000000000000050000000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": -0.4,
+        "y": 0.7
+      },
+      "Rotation": 10.0,
+      "WeaponClass": "M"
+    },
+    {
+      "Position": {
+        "x": -0.4,
+        "y": -0.7
+      },
+      "Rotation": -10.0,
+      "WeaponClass": "M"
+    }
+  ]
+}

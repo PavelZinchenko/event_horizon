@@ -1,0 +1,19 @@
+{
+  "ItemType": 1,
+  "Id": 184,
+  "Name": "$DroneDamageAmplifier_L",
+  "DisplayCategory": 5,
+  "Availability": 1,
+  "ComponentStatsId": 184,
+  "Faction": 5,
+  "Level": 100,
+  "Icon": "drone_power3",
+  "Color": "#FFC0C0",
+  "Layout": "0110111111110110",
+  "CellType": "2",
+  "PossibleModifications": [
+    17,
+    1,
+    2
+  ]
+}

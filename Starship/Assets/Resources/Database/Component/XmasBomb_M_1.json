@@ -1,0 +1,28 @@
+{
+  "ItemType": 1,
+  "Id": 96,
+  "Name": "$FireworkCannon_M_1",
+  "DisplayCategory": 1,
+  "Availability": 3,
+  "ComponentStatsId": 1,
+  "Faction": -1,
+  "Level": 100,
+  "Icon": "firework",
+  "Color": "#FDB5FF",
+  "Layout": "010010010",
+  "CellType": "4",
+  "WeaponId": 91,
+  "AmmunitionId": 91,
+  "PossibleModifications": [
+    14,
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

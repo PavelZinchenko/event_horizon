@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Требуется уровень:</string>
+    <string name="CraftPrice">Стоимость:</string>
+    <string name="CraftCommonItem">Создать предмет обычного качества</string>
+    <string name="CraftImprovedItem">Создать предмет высокого качества</string>
+    <string name="CraftSuperiorItem">Создать предмет превосходного качества</string>
+    <string name="CraftNotAvailable">Недоступно для предметов этого типа</string>
+    <string name="CraftItem">Сделать обычный</string>
+    <string name="RareResourceLabel">Редкие материалы</string>
+    <string name="RareResource">Материал для крафта</string>
+    <string name="CraftQueue">Производство</string>
+    <string name="CraftCompleted">Завершено</string>
+    <string name="CraftInQueue">В очереди</string>
+    <string name="EmptyBuildQueue">Ничего не строится</string>
+    <string name="Blueprint">Схема: $1</string>
+    <string name="Shipyard">Верфь</string>
+    <string name="UpgradeShipDescription">ВНИМАНИЕ: При улучшении уровень корабля уменьшится на $1.</string>
+    <string name="RequiredShipyardLevel">Верфь должна быть $1 уровня и принадлежать фракции $2.</string>
+    <string name="RequiredShipLevel">Корабль должен быть не ниже $1 уровня.</string>
+    <string name="InstallModConfirmation">Вы уверены что хотите установить эту модификацию?</string>
+    <string name="DeleteModConfirmation">Вы уверены что хотите удалить эту модификацию? Вы не вернете деньги за нее.</string>
+    <string name="SelectCellType">Выберите тип слота</string>
+    <string name="SelectCellPlace">Выберите место для нового слота</string>
+    <string name="AddShipCell">Добавить новый слот</string>
+    <string name="RemoveShipCells">Вернуть все как было</string>
+    <string name="RemoveShipCellsWarning">Вы точно хотите убрать все модификации с вашего корабля?</string>
+</resources>

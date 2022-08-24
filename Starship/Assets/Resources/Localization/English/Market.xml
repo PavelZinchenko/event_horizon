@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Stars</string>
+    <string name="TokenCurrency">Tokens</string>
+    <string name="Snowflakes">Snowflakes</string>
+    <string name="NoItemsInCategory">No items were found in this category</string>
+    <string name="IapErrorText">An unexpected error has occurred, and your purchase has not been completed.</string>
+    <string name="FacebookItemDescription">Share on Facebook</string>
+    <string name="AdItemDescription">Watch a video ad to get one star</string>
+    <string name="XmasBox">Christmas Box</string>
+    <string name="AlienTechnology">Alien Technology</string>
+    <string name="Commodity_Scraps">Scraps</string>
+    <string name="Commodity_Artifacts">Alien Artifacts</string>
+    <string name="Commodity_Minerals">Minerals</string>
+    <string name="Commodity_PreciousMetals">Precious Metals</string>
+    <string name="Commodity_GemStones">Gemstones</string>
+    <string name="Commodity_Alloys">Metal Alloys</string>
+    <string name="Commodity_Polymers">Polymers</string>
+    <string name="Commodity_ToxicWaste">Toxic Waste</string>
+    <string name="SellTrash">Sell all junk</string>
+    <string name="SellAllTrashConfirmation">Do you really want to sell all low-quality items?</string>
+    <string name="BestDeal">BEST DEAL</string>
+    <string name="MostPopular">MOST POPULAR</string>
+    <string name="FalconPack">Special Offer</string>
+    <string name="FalconPackDescription">Unique ship with a powerful weapon and a skilled captain</string>
+    <string name="StarPack1">Small Star Pack</string>
+    <string name="StarPackDetails1">Contains 50 stars</string>
+    <string name="StarPack2">Star Pack</string>
+    <string name="StarPackDetails2">Contains 500 stars</string>
+    <string name="StarPack3">Big Star Pack</string>
+    <string name="StarPackDetails3">Contains 5000 stars</string>
+</resources>

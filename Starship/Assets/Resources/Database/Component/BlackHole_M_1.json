@@ -1,0 +1,29 @@
+{
+  "ItemType": 1,
+  "Id": 94,
+  "Name": "$BlackHole_M_1",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 9,
+  "Level": 170,
+  "Icon": "detonator1",
+  "Color": "#402020",
+  "Layout": "111111111",
+  "CellType": "4",
+  "WeaponId": 6,
+  "AmmunitionId": 6,
+  "WeaponSlotType": "S",
+  "PossibleModifications": [
+    14,
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

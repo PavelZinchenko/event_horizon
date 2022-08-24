@@ -1,0 +1,18 @@
+{
+  "ItemType": 1,
+  "Id": 91,
+  "Name": "$TargetingUnit",
+  "DisplayCategory": 6,
+  "Availability": 1,
+  "ComponentStatsId": 91,
+  "Faction": 5,
+  "Level": 70,
+  "Icon": "TargetingUnit",
+  "Color": "#8CABD0",
+  "Layout": "1",
+  "CellType": "4",
+  "PossibleModifications": [
+    1,
+    2
+  ]
+}

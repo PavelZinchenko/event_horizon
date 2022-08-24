@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+<string name="CraftRequirements">필요한것:</string>
+<string name="CraftLevel">작업실 레벨:</string>
+<string name="CraftResources">자원:</string>
+<string name="CraftPrice">비용:</string>
+<string name="CraftInProgress">제작중...</string>
+<string name="CraftItem">제작하기</string>
+<string name="RareResourceLabel">희귀한 자원</string>
+<string name="RareResource">제작 자원</string>
+<string name="StarCurrency">별</string>
+<string name="CraftQueue">제작</string>
+<string name="CraftCompleted">완료됨</string>
+<string name="CraftInQueue">기다리는중</string>
+<string name="EmptyBuildQueue">제작 목록이 비어있습니다.</string>
+<string name="Blueprint">청사진: $1</string>
+
+</resources>

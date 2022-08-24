@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+<string name="NoItemsInCategory">Nie znaleziono przedmiotów w tej kategorii</string>
+<string name="Commodity_Scraps">Fragmenty</string>
+<string name="Commodity_Artifacts">Obce artefakty</string>
+<string name="Commodity_Minerals">Minerały</string>
+<string name="Commodity_PreciousMetals">Metale szlachetne</string>
+<string name="Commodity_GemStones">Kamienie szlachetne</string>
+<string name="Commodity_Alloys">Stopy metali</string>
+<string name="Commodity_Polymers">Polimery</string>
+<string name="Commodity_ToxicWaste">Toksyczne odpady</string>
+
+</resources>

@@ -1,0 +1,16 @@
+{
+  "ItemType": 1,
+  "Id": 69,
+  "Name": "$InertialDamper",
+  "DisplayCategory": 6,
+  "Availability": 1,
+  "ComponentStatsId": 69,
+  "Faction": -1,
+  "Level": 30,
+  "Icon": "intertial_damper1",
+  "Layout": "1",
+  "CellType": "2",
+  "PossibleModifications": [
+    2
+  ]
+}

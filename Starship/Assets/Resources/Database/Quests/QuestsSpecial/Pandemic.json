@@ -1,0 +1,120 @@
+{
+  "ItemType": 15,
+  "Id": 200,
+  "Name": "$Quest_Covid",
+  "QuestType": 4,
+  "StartCondition": 7,
+  "Weight": 0.3,
+  "Origin": {
+    "Type": 2,
+    "Factions": {
+      "List": [
+        16,
+        12,
+        4,
+        6
+      ]
+    },
+    "MinDistance": 10,
+    "MaxDistance": 40
+  },
+  "Level": 50,
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 10,
+      "Message": "$Covidr_Message1",
+      "Character": 3,
+      "Actions": [
+        {
+          "TargetNode": 2,
+          "ButtonText": "$ACTION_Continue"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 15,
+      "Transitions": [
+        {
+          "TargetNode": 3,
+          "Requirement": {
+            "Type": 30
+          }
+        },
+        {
+          "TargetNode": 10,
+          "Requirement": {
+            "Type": 40,
+            "MaxValue": 3
+          }
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Type": 10,
+      "Message": "$Covidr_Message2",
+      "Enemy": 15,
+      "Actions": [
+        {
+          "TargetNode": 5,
+          "ButtonText": "$ACTION_Continue"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "Type": 20,
+      "DefaultTransition": 13,
+      "FailureTransition": 10,
+      "Enemy": 15
+    },
+    {
+      "Id": 10,
+      "Type": 61,
+      "DefaultTransition": 11
+    },
+    {
+      "Id": 11,
+      "Type": 62,
+      "DefaultTransition": 12,
+      "Faction": 16
+    },
+    {
+      "Id": 12,
+      "Type": 51,
+      "DefaultTransition": 100,
+      "Value": -100
+    },
+    {
+      "Id": 13,
+      "Type": 56,
+      "DefaultTransition": 14,
+      "Value": 50
+    },
+    {
+      "Id": 14,
+      "Type": 10,
+      "Message": "$Covidr_Message3",
+      "Loot": 21,
+      "Character": 3,
+      "Actions": [
+        {
+          "TargetNode": 15,
+          "ButtonText": "$ACTION_Continue"
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "Type": 35,
+      "DefaultTransition": 100,
+      "Loot": 21
+    },
+    {
+      "Id": 100,
+      "Type": 40
+    }
+  ]
+}

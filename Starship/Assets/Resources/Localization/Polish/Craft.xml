@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Poziom warsztatu:</string>
+    <string name="CraftPrice">Cena:</string>
+    <string name="CraftCommonItem">Stwórz przedmiot zwyczajnej jakości</string>
+    <string name="CraftImprovedItem">Stwórz przedmiot lepszej jakości</string>
+    <string name="CraftSuperiorItem">Stwórz przedmiot najwyższej jakości</string>
+    <string name="CraftNotAvailable">Niedostępne dla tego przedmiotu</string>
+    <string name="CraftItem">Stwórz zwykły przedmiot</string>
+    <string name="RareResourceLabel">Rzadkie zasoby</string>
+    <string name="RareResource">Składniki rzemiosła</string>
+    <string name="CraftQueue">Produkcja</string>
+    <string name="CraftCompleted">Ukończono</string>
+    <string name="CraftInQueue">Oczekiwanie</string>
+    <string name="EmptyBuildQueue">Kolejka konstrukcji jest pusta</string>
+    <string name="Blueprint">Projekt: $1</string>
+    <string name="Shipyard">Stocznia</string>
+    <string name="UpgradeShipDescription">UWAGA: jeżeli ulepszysz ten statek, jego poziom spadnie o $1.</string>
+    <string name="RequiredShipyardLevel">Stocznia musi być poziomu $1 i należeć do $2.</string>
+    <string name="RequiredShipLevel">Statek musi być poziomu $1 lub wyższego.</string>
+    <string name="InstallModConfirmation">Czy na pewno chcesz zainstalować tę modyfikację?</string>
+    <string name="DeleteModConfirmation">Czy na pewno chcesz usunąć tę modyfikację? Nie dostaniesz pieniędzy spowrotem.</string>
+    <string name="SelectCellType">Wybierz typ komórki</string>
+    <string name="SelectCellPlace">Wybierz miejsce na nową komórkę</string>
+    <string name="AddShipCell">Stwórz dodatkową komórkę</string>
+    <string name="RemoveShipCells">Resetuj statek</string>
+    <string name="RemoveShipCellsWarning">Czy na pewno chcesz usunąć wszystkie dodatkowe komórki z tego statku?</string>
+</resources>

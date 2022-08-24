@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Name">Имя:</string>
+    <string name="Gender">Раса:</string>
+    <string name="Experience">Опыт:</string>
+    <string name="PlayerName">Это вы</string>
+    <string name="FalconCaptainName">Ян Сало</string>
+    <string name="Gender_HumanMale">Человек, мужчина</string>
+    <string name="Gender_HumanFemale">Человек, женщина</string>
+    <string name="Gender_Android">Андроид</string>
+    <string name="Gender_Alien">Инопланетянин</string>
+    <string name="PerkName_Attack">Канонир</string>
+    <string name="PerkName_Defense">Оружейник</string>
+    <string name="PerkName_CommandPoint">Контр-адмирал</string>
+    <string name="PerkName_FavoriteShip">Специалист</string>
+    <string name="PerkName_QuickRecovery">Техник</string>
+    <string name="PerkName_Scavenger">Мусорщик</string>
+    <string name="PerkInfo_Attack">$1% бонус к атаке</string>
+    <string name="PerkInfo_Defense">$1% бонус к защите</string>
+    <string name="PerkInfo_CommandPoint">Увеличивает ваши очки командования на 1</string>
+    <string name="PerkInfo_FavoriteShip">Хорошо знаком с кораблем $1</string>
+    <string name="PerkInfo_QuickRecovery">Быстрее восстнанавливает корабль</string>
+    <string name="PerkInfo_Scavenger">После уничтожения корабля остаются ценные трофеи</string>
+    <string name="ShipLevelText">Уровень корабля:</string>
+    <string name="AttackBonusText">Бонус к атаке:</string>
+    <string name="DefenseBonusText">Бонус к защите:</string>
+    <string name="Speciality">Специальность:</string>
+    <string name="SpecialityFrigate">Фрегаты</string>
+    <string name="SpecialityDestroyer">Эсминцы</string>
+    <string name="SpecialityCruiser">Крейсера</string>
+    <string name="SpecialityBattleship">Линкоры</string>
+    <string name="SpecialityTitan">Титаны</string>
+</resources>

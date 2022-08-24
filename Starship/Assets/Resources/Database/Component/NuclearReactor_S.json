@@ -1,0 +1,17 @@
+{
+  "ItemType": 1,
+  "Id": 78,
+  "Name": "$NuclearReactor_S",
+  "DisplayCategory": 3,
+  "Availability": 1,
+  "ComponentStatsId": 78,
+  "Faction": -1,
+  "Icon": "reactor1",
+  "Color": "#FFDCFF",
+  "Layout": "1",
+  "CellType": "2",
+  "PossibleModifications": [
+    12,
+    1
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "ItemType": 6,
+  "Id": 42,
+  "Name": "$f5_Cruiser",
+  "Faction": 5,
+  "SizeClass": 2,
+  "IconImage": "f5s3",
+  "IconScale": 0.8,
+  "ModelImage": "f5s3",
+  "ModelScale": 1.6,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#40FFCC6F",
+  "EngineSize": 0.2,
+  "Layout": "0000010000000012221000001222221000133000331001330403310013304033100133040331001330003310001222221000005555500000005050000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.1
+      },
+      "Offset": 0.6,
+      "PlatformType": 1,
+      "WeaponClass": "T"
+    }
+  ]
+}

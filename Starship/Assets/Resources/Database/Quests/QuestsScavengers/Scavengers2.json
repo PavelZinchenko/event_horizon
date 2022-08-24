@@ -1,0 +1,117 @@
+{
+  "ItemType": 15,
+  "Id": 106,
+  "Name": "$Quest_ScavengerShip",
+  "QuestType": 2,
+  "StartCondition": 1,
+  "Weight": 0.1,
+  "Requirement": {
+    "Type": 25,
+    "ItemId": 30
+  },
+  "Level": 200,
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 10,
+      "Message": "$Scavengers_2_Intro",
+      "Actions": [
+        {
+          "TargetNode": 8,
+          "ButtonText": "$Continue"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "Type": 10,
+      "Message": "$Scavengers_2_Message",
+      "Character": 7,
+      "Actions": [
+        {
+          "TargetNode": 9,
+          "Requirement": {
+            "Type": 25,
+            "ItemId": 30
+          },
+          "ButtonText": "$Action_UseArtifact"
+        },
+        {
+          "TargetNode": 7,
+          "ButtonText": "$Action_Ignore"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "Type": 10,
+      "Message": "$Scavengers_2_Message2",
+      "Loot": 18,
+      "Character": 7,
+      "Actions": [
+        {
+          "TargetNode": 2,
+          "ButtonText": "$Action_Accept"
+        },
+        {
+          "TargetNode": 7,
+          "ButtonText": "$Action_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 17,
+      "Transitions": [
+        {
+          "TargetNode": 3,
+          "Requirement": {
+            "Type": 2,
+            "Requirements": [
+              {
+                "Type": 27,
+                "ItemId": 18
+              },
+              {
+                "Type": 30
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Type": 36,
+      "DefaultTransition": 4,
+      "Loot": 18
+    },
+    {
+      "Id": 4,
+      "Type": 10,
+      "Message": "$Scavengers_2_Completed",
+      "Loot": 19,
+      "Character": 7,
+      "Actions": [
+        {
+          "TargetNode": 5,
+          "ButtonText": "$Continue"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "Type": 35,
+      "DefaultTransition": 6,
+      "Loot": 19
+    },
+    {
+      "Id": 6,
+      "Type": 40
+    },
+    {
+      "Id": 7,
+      "Type": 41
+    }
+  ]
+}

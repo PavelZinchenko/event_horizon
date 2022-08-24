@@ -1,0 +1,26 @@
+{
+  "ItemType": 1,
+  "Id": 110,
+  "Name": "$PlasmaCannon_S_1",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 3,
+  "Icon": "gun1",
+  "Color": "#FFFFB4",
+  "Layout": "1",
+  "CellType": "4",
+  "WeaponId": 48,
+  "AmmunitionId": 48,
+  "PossibleModifications": [
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

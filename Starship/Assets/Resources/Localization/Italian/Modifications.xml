@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="HitPointsMod">Punti Ferita $1</string>
+    <string name="DefenseMod">Difesa $1</string>
+    <string name="WeightMod">Peso $1</string>
+    <string name="EnergyCostMod">Consumo Energetico $1</string>
+    <string name="DamageMod">Danno $1</string>
+    <string name="CooldownMod">Tempo di Recupero $1</string>
+    <string name="RangeMod">Portata $1</string>
+    <string name="BulletVelocityMod">Velocità proiettile $1</string>
+    <string name="EnergyMod">Capacità energetica $1</string>
+    <string name="RepairRateMod">Velocità di Riparazione $1</string>
+    <string name="EnginePowerMod">Potenza Motori $1</string>
+    <string name="EnergyRechargeMod">Velocità Ricarica Energia $1</string>
+    <string name="BulletVelocityMod2">Velocità proiettile $1\nDanno $2</string>
+    <string name="AreaOfEffectMod">Area dell\'effetto $1</string>
+    <string name="ShieldPowerMod">Potenza Scudo $1</string>
+    <string name="DamageMod2">Danno $1\nTempo di Recupero $2</string>
+    <string name="Ship_AutoTargeting">Sistema di puntamento integrato</string>
+    <string name="Ship_HeatDefense">Resistenza al calore aumentata</string>
+    <string name="Ship_KineticDefense">Resistenza cinetica aumentata</string>
+    <string name="Ship_EnergyDefense">Resistenza all\'energia aumentata</string>
+    <string name="Ship_ExtraBlueCells">Spazi di equipaggiamento extra</string>
+</resources>

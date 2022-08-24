@@ -1,0 +1,20 @@
+{
+  "ItemType": 1,
+  "Id": 28,
+  "Name": "$CloakingSystem",
+  "DisplayCategory": 2,
+  "Availability": 1,
+  "ComponentStatsId": 3,
+  "Faction": 1,
+  "Level": 50,
+  "Icon": "doom1",
+  "Color": "#C0FFC0",
+  "Layout": "1111",
+  "CellType": "2",
+  "DeviceId": 3,
+  "PossibleModifications": [
+    2,
+    1,
+    6
+  ]
+}

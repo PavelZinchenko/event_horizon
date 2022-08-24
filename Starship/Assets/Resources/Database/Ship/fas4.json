@@ -1,0 +1,41 @@
+{
+  "ItemType": 6,
+  "Id": 68,
+  "Name": "$fa_Battleship",
+  "Faction": 9,
+  "SizeClass": 3,
+  "IconImage": "fas4",
+  "IconScale": 1.0,
+  "ModelImage": "fas4",
+  "ModelScale": 2.0,
+  "EnginePosition": {
+    "x": -0.7
+  },
+  "EngineColor": "#40FFFFFF",
+  "EngineSize": 0.3,
+  "Layout": "0004000000400000040000004000000400000040000004000000400000040444404000000324444230000003244442300000032222223000011222222221101122222222221111025555552011010155555510100001000000100000010000001000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0,
+        "y": 0.49
+      },
+      "Rotation": -1.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 1.0,
+        "y": -0.49
+      },
+      "Rotation": 1.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.6
+      },
+      "WeaponClass": "S"
+    }
+  ]
+}

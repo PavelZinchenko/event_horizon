@@ -1,0 +1,42 @@
+{
+  "ItemType": 6,
+  "Id": 123,
+  "Name": "$f16_Battleship",
+  "Faction": 16,
+  "SizeClass": 3,
+  "IconScale": 1.0,
+  "ModelImage": "devourer",
+  "ModelScale": 5.0,
+  "EngineColor": "#407F7F7F",
+  "Regeneration": true,
+  "BaseWeightModifier": -0.75,
+  "BuiltinDevices": [
+    18
+  ],
+  "Layout": "000000444000000000011444110000000111444111000001112222211100011122222221110011222222222110112222222222211112222222222211112222222222211444222222222444444222222222444444122555221444000115555511000000015555510000000000555000000",
+  "Barrels": [
+    {
+      "Offset": 0.8,
+      "AutoAimingArc": 60.0,
+      "WeaponClass": "L",
+      "Image": "devourer_turret",
+      "Size": 0.2
+    },
+    {
+      "Rotation": 120.0,
+      "Offset": 0.8,
+      "AutoAimingArc": 60.0,
+      "WeaponClass": "L",
+      "Image": "devourer_turret",
+      "Size": 0.2
+    },
+    {
+      "Rotation": -120.0,
+      "Offset": 0.8,
+      "AutoAimingArc": 60.0,
+      "WeaponClass": "L",
+      "Image": "devourer_turret",
+      "Size": 0.2
+    }
+  ]
+}

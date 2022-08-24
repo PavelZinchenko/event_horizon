@@ -1,0 +1,35 @@
+{
+  "ItemType": 6,
+  "Id": 33,
+  "Name": "$f3_Battleship",
+  "Faction": 3,
+  "SizeClass": 3,
+  "IconImage": "f3s4",
+  "IconScale": 1.0,
+  "ModelImage": "f3s4",
+  "ModelScale": 2.0,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#4098E5FF",
+  "EngineSize": 0.3,
+  "Layout": "000000111000000000001222100000000003222300000000003222300000000003323300000000003323300000000003323300000000001323100000000000131000000000000131000000000000131000000000004131400000011324555423110001324555423100000004555400000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": -0.55,
+        "y": 0.6
+      },
+      "Rotation": 2.0,
+      "WeaponClass": "T"
+    },
+    {
+      "Position": {
+        "x": -0.55,
+        "y": -0.6
+      },
+      "Rotation": -2.0,
+      "WeaponClass": "T"
+    }
+  ]
+}

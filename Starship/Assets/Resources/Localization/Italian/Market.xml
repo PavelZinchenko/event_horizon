@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Stelle</string>
+    <string name="TokenCurrency">Gettoni</string>
+    <string name="NoItemsInCategory">Nessun oggetto trovato in questa categoria</string>
+    <string name="IapErrorText">È stato riscontrato un errore sconosciuto. Il tuo acquisto non è stato completato.</string>
+    <string name="AdItemDescription">Guarda un video e ricevi una ricompensa gratuita</string>
+    <string name="XmasBox">Pacco natalizio</string>
+    <string name="AlienTechnology">Tecnologia aliena</string>
+    <string name="Commodity_Scraps">Scarti</string>
+    <string name="Commodity_Artifacts">Artefatti Alieni</string>
+    <string name="Commodity_Minerals">Minerali</string>
+    <string name="Commodity_PreciousMetals">Metalli Preziosi</string>
+    <string name="Commodity_GemStones">Gemme</string>
+    <string name="Commodity_Alloys">Leghe Metalliche</string>
+    <string name="Commodity_Polymers">Polimeri</string>
+    <string name="Commodity_ToxicWaste">Rifiuti Tossici</string>
+</resources>

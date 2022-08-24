@@ -1,0 +1,52 @@
+{
+  "ItemType": 8,
+  "Id": 189,
+  "ShipId": 91,
+  "BuildFaction": -1,
+  "Components": [
+    {
+      "ComponentId": 145,
+      "Locked": true,
+      "X": 1,
+      "KeyBinding": -1
+    },
+    {
+      "ComponentId": 78,
+      "Locked": true,
+      "X": 2,
+      "Y": 1,
+      "BarrelId": -1,
+      "KeyBinding": -1
+    },
+    {
+      "ComponentId": 78,
+      "Locked": true,
+      "Y": 1,
+      "BarrelId": -1,
+      "KeyBinding": -1
+    },
+    {
+      "ComponentId": 60,
+      "Locked": true,
+      "X": 2,
+      "Y": 2,
+      "BarrelId": -1,
+      "KeyBinding": -1
+    },
+    {
+      "ComponentId": 60,
+      "Locked": true,
+      "Y": 2,
+      "BarrelId": -1,
+      "KeyBinding": -1
+    },
+    {
+      "ComponentId": 67,
+      "Locked": true,
+      "X": 1,
+      "Y": 2,
+      "BarrelId": -1,
+      "KeyBinding": -1
+    }
+  ]
+}

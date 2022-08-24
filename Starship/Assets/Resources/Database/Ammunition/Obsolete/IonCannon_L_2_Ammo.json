@@ -1,0 +1,19 @@
+{
+  "ItemType": 4,
+  "Id": 21,
+  "AmmunitionClass": 27,
+  "DamageType": 1,
+  "Impulse": 0.02,
+  "Recoil": 0.005,
+  "Size": 1.0,
+  "AreaOfEffect": 6.0,
+  "Damage": 40.0,
+  "Range": 40.0,
+  "Velocity": 100.0,
+  "LifeTime": 1.0,
+  "EnergyCost": 6.0,
+  "Color": "#FF0000",
+  "FireSound": "shot_11",
+  "HitSound": "hit_01",
+  "BulletPrefab": "IonBeam2"
+}

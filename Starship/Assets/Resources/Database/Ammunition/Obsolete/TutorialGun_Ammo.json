@@ -1,0 +1,14 @@
+{
+  "ItemType": 4,
+  "Id": 84,
+  "Size": 1.0,
+  "Damage": 2.0,
+  "Range": 15.0,
+  "Velocity": 15.0,
+  "LifeTime": 1.0,
+  "EnergyCost": 1.0,
+  "FireSound": "shot_03",
+  "HitSound": "hit_01",
+  "HitEffectPrefab": "FlashAdditive",
+  "BulletPrefab": "TutorialBullet"
+}

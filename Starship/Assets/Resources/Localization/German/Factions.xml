@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Faction">Fraktion:</string>
+    <string name="Level">Level:</string>
+    <string name="NeutralFaction">Freie Sterne</string>
+    <string name="Faction1">Veniri</string>
+    <string name="Faction2">Bushrak</string>
+    <string name="Faction3">Korerans</string>
+    <string name="Faction4">Taraniak</string>
+    <string name="Faction5">Sayjix</string>
+    <string name="Faction6">Jurgans</string>
+    <string name="Faction7">Zumbalari</string>
+    <string name="Faction8">Neganari</string>
+    <string name="Faction9">Daazen</string>
+    <string name="Faction10">Die Unbekannten</string>
+    <string name="Faction12">Der Schwarm</string>
+    <string name="Faction15">Plünderer</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Name">Nom:</string>
+    <string name="Gender">Genre:</string>
+    <string name="Experience">Experience:</string>
+    <string name="PlayerName">C\'est vous</string>
+    <string name="Gender_HumanMale">Mâle humain</string>
+    <string name="Gender_HumanFemale">Femelle Humaine</string>
+    <string name="Gender_Android">Android</string>
+    <string name="Gender_Alien">Alien</string>
+    <string name="Gender_Unknown">inconnu</string>
+    <string name="PerkName_Attack">Canonnier</string>
+    <string name="PerkName_Defense">Armorier</string>
+    <string name="PerkName_CommandPoint">Amiral d\'arrière</string>
+    <string name="PerkName_FavoriteShip">Spécialiste</string>
+    <string name="PerkName_QuickRecovery">Technicien</string>
+    <string name="PerkName_Scavenger">l\'éboueur</string>
+    <string name="PerkInfo_Attack">$1 % de bonus d\'attaque</string>
+    <string name="PerkInfo_Defense">$1 % de bonus de défense</string>
+    <string name="PerkInfo_CommandPoint">Donne un point de commandement supplémentaire</string>
+    <string name="PerkInfo_FavoriteShip">Très habile avec le navire à $1</string>
+    <string name="PerkInfo_QuickRecovery">Répare le vaisseau plus rapidement quand abattu</string>
+    <string name="PerkInfo_Scavenger">Fait tomber des objets de valeur s\'il est détruit.</string>
+    <string name="PerkInfo_Dev">Peut causer des bugs</string>
+    <string name="ShipLevelText">Niveau du vaisseau:</string>
+    <string name="AttackBonusText">Bonus d\'attaque:</string>
+    <string name="DefenseBonusText">Bonus de défense:</string>
+    <string name="Speciality">Spécialité:</string>
+    <string name="SpecialityFrigate">Frégate</string>
+    <string name="SpecialityDestroyer">Destructeur</string>
+    <string name="SpecialityCruiser">Croiseur</string>
+    <string name="SpecialityBattleship">Cuirassé</string>
+    <string name="SpecialityTitan">Titan</string>
+</resources>

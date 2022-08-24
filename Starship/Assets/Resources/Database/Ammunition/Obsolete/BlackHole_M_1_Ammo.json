@@ -1,0 +1,18 @@
+{
+  "ItemType": 4,
+  "Id": 6,
+  "AmmunitionClass": 3,
+  "Size": 1.2,
+  "AreaOfEffect": 5.0,
+  "Damage": 75.0,
+  "Range": 30.0,
+  "Velocity": 6.0,
+  "LifeTime": 10.0,
+  "EnergyCost": 25.0,
+  "CoupledAmmunitionId": 92,
+  "Color": "#FF00FF",
+  "FireSound": "shot_02",
+  "HitSound": "launch_04",
+  "HitEffectPrefab": "BlackHole",
+  "BulletPrefab": "Bomb"
+}

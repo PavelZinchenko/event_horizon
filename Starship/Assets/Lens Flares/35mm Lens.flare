@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!121 &12100000
+Flare:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 35mm Lens
+  m_FlareTexture: {fileID: 2800000, guid: 910ca44a625e34850a8a94510b36f146, type: 3}
+  m_TextureLayout: 1
+  m_Elements:
+  - m_ImageIndex: 0
+    m_Position: 0
+    m_Size: 40
+    m_Color: {r: .392307699, g: .392307699, b: .392307699, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 1
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 1
+    m_Position: 0
+    m_Size: 40
+    m_Color: {r: .492307663, g: .492307663, b: .492307663, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 2
+    m_Position: -.100000001
+    m_Size: 25
+    m_Color: {r: .192307711, g: .192307711, b: .192307711, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 1
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 4
+    m_Position: -.200000003
+    m_Size: 10
+    m_Color: {r: .101960786, g: .101960786, b: .505882382, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 6
+    m_Position: -.5
+    m_Size: 1
+    m_Color: {r: 0, g: .171280563, b: .485877395, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 10
+    m_Position: -.349999994
+    m_Size: 3
+    m_Color: {r: .176923096, g: .176923096, b: .176923096, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 6
+    m_Position: -.0199999996
+    m_Size: 5
+    m_Color: {r: .324429095, g: .214583322, b: .214583322, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 9
+    m_Position: .589999974
+    m_Size: 2
+    m_Color: {r: 0, g: .238715678, b: .58461535, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 9
+    m_Position: .600000024
+    m_Size: 4
+    m_Color: {r: 0, g: .160841078, b: .393900216, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 6
+    m_Position: .74000001
+    m_Size: 2
+    m_Color: {r: .0466045737, g: .0466045737, b: .0466045737, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 4
+    m_Position: .75999999
+    m_Size: 5
+    m_Color: {r: .203816116, g: .203816116, b: .203816116, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 6
+    m_Position: 1.39999998
+    m_Size: 7
+    m_Color: {r: 0, g: .0219549909, b: .0850660801, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 4
+    m_Position: 1.35000002
+    m_Size: 3
+    m_Color: {r: 0, g: .0840974897, b: .325841367, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 10
+    m_Position: 1.33000004
+    m_Size: 3
+    m_Color: {r: .0918569565, g: .326242656, b: 1, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 7
+    m_Position: 1.70000005
+    m_Size: 5
+    m_Color: {r: .200991571, g: .200991571, b: .200991571, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 5
+    m_Position: 1.70000005
+    m_Size: 5
+    m_Color: {r: .353846133, g: .353846133, b: .353846133, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 4
+    m_Position: 1
+    m_Size: 3
+    m_Color: {r: 0, g: .136690617, b: 1, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 4
+    m_Position: 1
+    m_Size: 3
+    m_Color: {r: 0, g: .136690617, b: 1, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 4
+    m_Position: 1.60000002
+    m_Size: 3
+    m_Color: {r: .184615374, g: .184615374, b: .184615374, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 10
+    m_Position: 2
+    m_Size: 3
+    m_Color: {r: .399999976, g: .399999976, b: .399999976, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  - m_ImageIndex: 6
+    m_Position: 1.95000005
+    m_Size: 5
+    m_Color: {r: .0615384579, g: .0615384579, b: .0615384579, a: 1}
+    m_UseLightColor: 0
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  m_UseFog: 1
+--- !u!1002 &12100001
+EditorExtensionImpl:
+  serializedVersion: 6

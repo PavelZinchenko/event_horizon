@@ -1,0 +1,25 @@
+{
+  "ItemType": 1,
+  "Id": 85,
+  "Name": "$ProjectileCannon_L",
+  "DisplayCategory": 1,
+  "ComponentStatsId": 1,
+  "Faction": 1,
+  "Icon": "gun6",
+  "Color": "#C0C0C0",
+  "Layout": "1110111011101110",
+  "CellType": "4",
+  "WeaponId": 64,
+  "AmmunitionId": 82,
+  "PossibleModifications": [
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Gaz</string>
+    <string name="PlanetTypeBarren">Çorak</string>
+    <string name="PlanetTypeTerran">Yaşanılabilir</string>
+    <string name="PlanetTypeAsteroids">Göktaşı kuşağı</string>
+    <string name="StarInfo">$1\nDefans: $2</string>
+    <string name="CapturedStarInfo">$1\nSeviye: $2</string>
+    <string name="ExtractionLabel">Toplanıyor...</string>
+    <string name="AddNote">Not Ekle</string>
+    <string name="PlanetTemperature">Sıcaklık</string>
+    <string name="PlanetToxicity">Toksisite</string>
+    <string name="PlanetHostility">Düşmanlık</string>
+    <string name="NotExplored">Henüz keşfedilmedi</string>
+    <string name="ObjectStarBase">Yıldız üssü</string>
+    <string name="ObjectSurvival">Sağ kalma</string>
+    <string name="ObjectBoss">Amiral gemisi</string>
+    <string name="ObjectWormhole">Solucan Deliği</string>
+    <string name="ObjectMultiplayer">Çoklu oyuncu</string>
+    <string name="ObjectArena">Arena</string>
+    <string name="ObjectChallenge">Meydan okuma</string>
+    <string name="ObjectBlackMarket">Kaçakçıların üssü</string>
+    <string name="ObjectRuins">Terk edilmiş istasyon</string>
+    <string name="ObjectMilitary">Askeri üs</string>
+    <string name="ObjectEvent">Yardım işareti</string>
+    <string name="ObjectXmas">Mutlu Noeller!</string>
+</resources>

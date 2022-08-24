@@ -1,0 +1,16 @@
+{
+  "ItemType": 1,
+  "Id": 12,
+  "Name": "$TitaniumArmor_S",
+  "DisplayCategory": 2,
+  "Availability": 1,
+  "ComponentStatsId": 12,
+  "Faction": -1,
+  "Icon": "armor11",
+  "Layout": "1",
+  "CellType": "1",
+  "PossibleModifications": [
+    1,
+    3
+  ]
+}

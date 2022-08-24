@@ -1,0 +1,19 @@
+{
+  "ItemType": 1,
+  "Id": 89,
+  "Name": "$BrakingSystem",
+  "DisplayCategory": 4,
+  "Availability": 1,
+  "ComponentStatsId": 3,
+  "Faction": 10,
+  "Level": 25,
+  "Icon": "engine3",
+  "Color": "#E179FF",
+  "Layout": "1100",
+  "CellType": "5",
+  "DeviceId": 2,
+  "PossibleModifications": [
+    2,
+    1
+  ]
+}

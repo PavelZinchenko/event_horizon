@@ -1,0 +1,18 @@
+{
+  "ItemType": 1,
+  "Id": 64,
+  "Name": "$ArmoredFuelCell_S",
+  "DisplayCategory": 3,
+  "Availability": 1,
+  "ComponentStatsId": 64,
+  "Faction": 1,
+  "Level": 55,
+  "Icon": "fueltank21",
+  "Layout": "1",
+  "CellType": "1",
+  "PossibleModifications": [
+    9,
+    3,
+    1
+  ]
+}

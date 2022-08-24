@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">星币</string>
+    <string name="TokenCurrency">代币</string>
+    <string name="Snowflakes">雪花</string>
+    <string name="NoItemsInCategory">这个类别中没有物品</string>
+    <string name="IapErrorText">出现了一个意外错误，您的购买没有完成。</string>
+    <string name="FacebookItemDescription">分享到Facebook</string>
+    <string name="AdItemDescription">看一个视频获得免费奖励</string>
+    <string name="XmasBox">圣诞盒子</string>
+    <string name="AlienTechnology">外星科技</string>
+    <string name="Commodity_Scraps">废料</string>
+    <string name="Commodity_Artifacts">外星文物</string>
+    <string name="Commodity_Minerals">矿物</string>
+    <string name="Commodity_PreciousMetals">贵金属</string>
+    <string name="Commodity_GemStones">宝石</string>
+    <string name="Commodity_Alloys">金属合金</string>
+    <string name="Commodity_Polymers">聚合物</string>
+    <string name="Commodity_ToxicWaste">有毒废料</string>
+    <string name="SellTrash">卖掉全部垃圾</string>
+    <string name="SellAllTrashConfirmation">你真的想卖掉全部低品质物品吗？</string>
+    <string name="BestDeal">超值</string>
+    <string name="MostPopular">最热门</string>
+    <string name="FalconPack">特供</string>
+    <string name="FalconPackDescription">装备精良的限定飞船以及一个老船长</string>
+    <string name="StarPack1">小星币包</string>
+    <string name="StarPackDetails1">包含50星币</string>
+    <string name="StarPack2">星币包</string>
+    <string name="StarPackDetails2">包含500星币</string>
+    <string name="StarPack3">大星币包</string>
+    <string name="StarPackDetails3">包含5000星币</string>
+</resources>

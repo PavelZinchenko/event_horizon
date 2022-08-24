@@ -1,0 +1,151 @@
+#if !TARGET_OS_TV
+
+////////////////////////////////////////////////////////////////////////////////
+//  
+// @module IOS Native Plugin
+// @author Osipov Stanislav (Stan's Assets) 
+// @support support@stansassets.com
+// @website https://stansassets.com
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#import <Foundation/Foundation.h>
+#import "ISN_NativeCore.h"
+#import "ISN_DFContinuousForceTouchGestureRecognizer.h"
+
+
+#if UNITY_VERSION < 450
+#include "iPhone_View.h"
+#endif
+
+
+NSString* const UNITY_SPLITTER = @"|";
+
+const char* UNITY_LISTNER = "SA.IOSNative.Gestures.ForceTouch";
+
+
+@interface ISN_ForceTouch: NSObject<DFContinuousForceTouchDelegate>
+
+@property (nonatomic, strong) DFContinuousForceTouchGestureRecognizer* forceTouchRecognizer;
+
++ (id)   sharedInstance;
+- (void) subscribe;
+- (void) setup:(float) forceTouchDelay baseForceTouchPressure:(float) baseForceTouchPressure triggeringForceTouchPressure:(float) triggeringForceTouchPressure;
+
+@end
+
+
+
+
+
+@implementation ISN_ForceTouch
+
+static ISN_ForceTouch * fti_sharedInstance;
+
+
++ (id)sharedInstance {
+    
+    if (fti_sharedInstance == nil)  {
+        fti_sharedInstance = [[self alloc] init];
+    }
+    
+    return fti_sharedInstance;
+}
+
+
+- (void) setup:(float)forceTouchDelay baseForceTouchPressure:(float)baseForceTouchPressure triggeringForceTouchPressure:(float)triggeringForceTouchPressure {
+    
+    [self forceTouchRecognizer].forceTouchDelay = forceTouchDelay;
+    [self forceTouchRecognizer].baseForceTouchPressure = baseForceTouchPressure;
+    [self forceTouchRecognizer].triggeringForceTouchPressure = triggeringForceTouchPressure;
+    
+    
+}
+
+- (void) subscribe {
+    UIViewController *vc =  UnityGetGLViewController();
+    
+    [self setForceTouchRecognizer:[[DFContinuousForceTouchGestureRecognizer alloc] init]];
+    
+    [self forceTouchRecognizer].forceTouchDelegate = self;
+    [[vc view] addGestureRecognizer:[self forceTouchRecognizer]];
+    
+}
+
+#pragma DFContinuousForceTouchDelegate
+
+- (void) forceTouchRecognized:(DFContinuousForceTouchGestureRecognizer*)recognizer {
+    UnitySendMessage(UNITY_LISTNER, "didStartForce", "");
+}
+
+
+- (void) forceTouchRecognizer:(DFContinuousForceTouchGestureRecognizer*)recognizer didStartWithForce:(CGFloat)force maxForce:(CGFloat)maxForce {
+    UnitySendMessage(UNITY_LISTNER, "didStartForce", "");
+}
+
+
+
+- (void) forceTouchRecognizer:(DFContinuousForceTouchGestureRecognizer*)recognizer didMoveWithForce:(CGFloat)force maxForce:(CGFloat)maxForce {
+    //do something cool
+   // NSLog(@"didMoveWithForce %f | %f", force, maxForce);
+    
+    NSMutableString * data = [[NSMutableString alloc] init];
+    
+    [data appendString: [NSString stringWithFormat:@"%f", force]];
+    [data appendString: UNITY_SPLITTER];
+    [data appendString:[NSString stringWithFormat:@"%f", maxForce]];
+
+    
+    UnitySendMessage(UNITY_LISTNER, "didForceChanged", [ISN_DataConvertor NSStringToChar:data]);
+
+}
+
+
+
+
+- (void) forceTouchRecognizer:(DFContinuousForceTouchGestureRecognizer*)recognizer didCancelWithForce:(CGFloat)force maxForce:(CGFloat)maxForce {
+    //reset cool effects
+    
+   UnitySendMessage(UNITY_LISTNER, "didForceEnded", "");
+}
+
+- (void) forceTouchRecognizer:(DFContinuousForceTouchGestureRecognizer*)recognizer didEndWithForce:(CGFloat)force maxForce:(CGFloat)maxForce {
+    //reset cool effects
+    
+     UnitySendMessage(UNITY_LISTNER, "didForceEnded", "");
+}
+
+- (void) forceTouchDidTimeout:(DFContinuousForceTouchGestureRecognizer*)recognizer {
+    //reset cool effects
+    
+    UnitySendMessage(UNITY_LISTNER, "didForceEnded", "");
+}
+
+@end
+
+
+
+
+extern "C" {
+    
+    
+    //--------------------------------------
+    //  IOS Native Plugin Section
+    //--------------------------------------
+    
+    
+    
+    void _ISN_FT_SUBSCRIBE() {
+        [[ISN_ForceTouch sharedInstance] subscribe];
+    }
+    
+    
+    void _ISN_FT_SETUP(float forceTouchDelay, float baseForceTouchPressure, float triggeringForceTouchPressure) {
+        [[ISN_ForceTouch sharedInstance] setup:forceTouchDelay baseForceTouchPressure:baseForceTouchPressure triggeringForceTouchPressure:triggeringForceTouchPressure];
+    }
+    
+}
+
+
+
+#endif

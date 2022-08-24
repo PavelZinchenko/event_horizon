@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Звезды</string>
+    <string name="TokenCurrency">Токены</string>
+    <string name="Snowflakes">Снежинки</string>
+    <string name="NoItemsInCategory">Нет товаров в этой категории</string>
+    <string name="IapErrorText">Произошла непредвиденная ошибка. Ваша покупка не завершена.</string>
+    <string name="FacebookItemDescription">Поделиться в Facebook</string>
+    <string name="AdItemDescription">Посмотрите рекламный ролик и получите звезду</string>
+    <string name="XmasBox">Новогодний подарок</string>
+    <string name="AlienTechnology">Инопланетные технологии</string>
+    <string name="Commodity_Scraps">Обломки</string>
+    <string name="Commodity_Artifacts">Инопланетные артефакты</string>
+    <string name="Commodity_Minerals">Полезные ископаемые</string>
+    <string name="Commodity_PreciousMetals">Драгоценные металлы</string>
+    <string name="Commodity_GemStones">Драгоценные камни</string>
+    <string name="Commodity_Alloys">Промышленные металлы</string>
+    <string name="Commodity_Polymers">Полимеры</string>
+    <string name="Commodity_ToxicWaste">Токсичные отходы</string>
+    <string name="SellTrash">Продать весь хлам</string>
+    <string name="SellAllTrashConfirmation">Хотите продать все предметы низкого качества?</string>
+    <string name="BestDeal">ЛУЧШАЯ ЦЕНА</string>
+    <string name="MostPopular">САМОЕ ПОПУЛЯРНОЕ</string>
+    <string name="FalconPack">Специальное предложение</string>
+    <string name="FalconPackDescription">Уникальный корабль с мощным оружием и опытным капитаном</string>
+</resources>

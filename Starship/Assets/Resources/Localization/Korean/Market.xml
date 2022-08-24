@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+<string name="NoItemsInCategory">이 종목의 아이템이 발견되지 않았습니다.</string>
+<string name="IapErrorText">예상치 못한 오류가 발생했습니다. 당신의 구매가 완료되지 못했습니다.</string>
+<string name="XmasBox">크리스마스 박스</string>
+<string name="AlienTechnology">외계인 기술</string>
+<string name="Commodity_Scraps">쓰레기들</string>
+<string name="Commodity_Artifacts">외계 유물</string>
+<string name="Commodity_Minerals">미네랄</string>
+<string name="Commodity_PreciousMetals">귀금속</string>
+<string name="Commodity_GemStones">젬스톤</string>
+<string name="Commodity_Alloys">합금 금속</string>
+<string name="Commodity_Polymers">중합체</string>
+<string name="Commodity_ToxicWaste">유독성 폐기물</string>
+
+</resources>

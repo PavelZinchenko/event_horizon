@@ -1,0 +1,111 @@
+{
+  "ItemType": 15,
+  "Id": 21,
+  "Name": "$Mission_Resources",
+  "StartCondition": 3,
+  "Weight": 1.0,
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 15,
+      "DefaultTransition": 3,
+      "Transitions": [
+        {
+          "TargetNode": 2,
+          "Requirement": {
+            "Type": 27,
+            "ItemId": 8
+          }
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 10,
+      "Message": "$Mission_Resources_Intro",
+      "Loot": 8,
+      "Character": 3,
+      "Actions": [
+        {
+          "TargetNode": 5,
+          "ButtonText": "$Actions_GiveResources"
+        },
+        {
+          "TargetNode": 9,
+          "ButtonText": "$Action_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Type": 10,
+      "Message": "$Mission_Resources_Intro",
+      "Loot": 8,
+      "Character": 3,
+      "Actions": [
+        {
+          "TargetNode": 4,
+          "ButtonText": "$Action_Accept"
+        },
+        {
+          "TargetNode": 9,
+          "ButtonText": "$Action_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "Type": 17,
+      "Transitions": [
+        {
+          "TargetNode": 5,
+          "Requirement": {
+            "Type": 2,
+            "Requirements": [
+              {
+                "Type": 27,
+                "ItemId": 8
+              },
+              {
+                "Type": 30
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "Type": 10,
+      "Message": "$Mission_Resources_Completed",
+      "Loot": 8,
+      "Character": 3,
+      "Actions": [
+        {
+          "TargetNode": 6,
+          "ButtonText": "$Continue"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "Type": 36,
+      "DefaultTransition": 7,
+      "Loot": 8
+    },
+    {
+      "Id": 7,
+      "Type": 56,
+      "DefaultTransition": 8,
+      "Value": 10
+    },
+    {
+      "Id": 8,
+      "Type": 40
+    },
+    {
+      "Id": 9,
+      "Type": 41
+    }
+  ]
+}

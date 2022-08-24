@@ -1,0 +1,26 @@
+{
+  "ItemType": 1,
+  "Id": 213,
+  "Name": "$HolyCannon",
+  "DisplayCategory": 1,
+  "Availability": 3,
+  "ComponentStatsId": 1,
+  "Faction": 3,
+  "Icon": "holy_gun",
+  "Layout": "111111111",
+  "CellType": "4",
+  "WeaponId": 90,
+  "AmmunitionId": 90,
+  "WeaponSlotType": "C",
+  "PossibleModifications": [
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

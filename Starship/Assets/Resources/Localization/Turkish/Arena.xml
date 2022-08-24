@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlayerRating">Oyuncu derecesi:</string>
+    <string name="ArenaRating">Filo derecesi:</string>
+    <string name="ArenaRegistrationRequired">Arenaya henüz kayıt olmadınız.</string>
+    <string name="ArenaSignInRequired">Başlamadan önce hesabınızla oturum açın.</string>
+    <string name="ConnectionError">Sunucuya bağlanılamıyor. Lütfen tekrar deneyiniz.</string>
+    <string name="ArenaTraining">Kendi gemilerinizle antreman yapın.</string>
+    <string name="ArenaOpponent">Rakip:</string>
+    <string name="ArenaFight">Rakibe meydan oku.</string>
+    <string name="ArenaShop">Ödülünü seç</string>
+    <string name="ArenaFindOpponent">Rakip bul.</string>
+    <string name="ArenaEmptyFleet">Hangarda hiç gemin yok</string>
+    <string name="ArenaShipNotAllowed">$1 gemisinin katılmasına izin verilmiyor.</string>
+    <string name="ArenaBattlesAvailable">$1 ${1|savaş|savaş} mevcut</string>
+    <string name="ArenaMoreBattles">10 tane savaş satın al</string>
+</resources>

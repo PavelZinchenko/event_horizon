@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlayerRating">Játékos értékelése:</string>
+    <string name="ArenaRating">Flotta értékelés:</string>
+    <string name="ArenaRegistrationRequired">Még nem vagy regisztrálva az arénában.</string>
+    <string name="ArenaSignInRequired">A harc előtt be kell jelentkezned.</string>
+    <string name="ConnectionError">Nem lehetett csatlakozni a szerverhez. Próbálkozz később.</string>
+    <string name="ArenaTraining">Gyakorlatozás a saját hajóiddal.</string>
+    <string name="ArenaOpponent">Ellenfél:</string>
+    <string name="ArenaFight">Ellenfél kihívása</string>
+    <string name="ArenaShop">Válassz nyereményt.</string>
+    <string name="ArenaFindOpponent">Ellenfél keresése</string>
+    <string name="ArenaEmptyFleet">A hangárod üres.</string>
+    <string name="ArenaShipNotAllowed">Bizonyos hajók nem vehetnek részt.</string>
+    <string name="ArenaBattlesAvailable">$1 ${1|harc|harc} elérhető</string>
+    <string name="ArenaMoreBattles">10 újabb harc vásárlása</string>
+    <string name="ArenaShipReady">Harcra kész</string>
+    <string name="ArenaShipNotReady">Nem vehet részt</string>
+    <string name="ArenaWatchAd">Hirdetés Nézése</string>
+</resources>

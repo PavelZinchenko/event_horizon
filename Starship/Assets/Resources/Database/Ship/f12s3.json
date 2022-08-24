@@ -1,0 +1,42 @@
+{
+  "ItemType": 6,
+  "Id": 69,
+  "Name": "$fn_Destroyer",
+  "Faction": 12,
+  "SizeClass": 2,
+  "IconImage": "fns4",
+  "IconScale": 1.0,
+  "ModelImage": "fns4",
+  "ModelScale": 2.0,
+  "EnginePosition": {
+    "x": -0.95
+  },
+  "EngineColor": "#80FFFFFF",
+  "EngineSize": 0.3,
+  "Regeneration": true,
+  "Layout": "0000010100000000001010000000000101000000000010100000000002020000000040242040000044224224400004422222440000442222244000000022200000000002250000000000555000000000055500000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.2,
+        "y": -0.5
+      },
+      "PlatformType": 3,
+      "WeaponClass": "S"
+    },
+    {
+      "Position": {
+        "x": 0.3
+      },
+      "PlatformType": 3
+    },
+    {
+      "Position": {
+        "x": 0.2,
+        "y": 0.5
+      },
+      "PlatformType": 3,
+      "WeaponClass": "S"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+<string name="Commodity_Scraps">Scraps</string>
+<string name="Commodity_Artifacts">Alien Artifacts</string>
+<string name="Commodity_Minerals">Minerals</string>
+<string name="Commodity_PreciousMetals">Precious Metals</string>
+<string name="Commodity_GemStones">Gemstones</string>
+<string name="Commodity_Alloys">Metall Alloys</string>
+<string name="Commodity_Polymers">Polymers</string>
+<string name="Commodity_ToxicWaste">Toxic Waste</string>
+
+</resources>

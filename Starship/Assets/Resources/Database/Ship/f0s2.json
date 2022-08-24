@@ -1,0 +1,25 @@
+{
+  "ItemType": 6,
+  "Id": 14,
+  "Name": "$f0_Destroyer",
+  "Faction": 7,
+  "SizeClass": 1,
+  "IconImage": "f0s2",
+  "IconScale": 0.9,
+  "ModelImage": "f0s2",
+  "ModelScale": 1.5,
+  "EnginePosition": {
+    "x": -0.5
+  },
+  "EngineColor": "#40A0B4A0",
+  "EngineSize": 0.3,
+  "Layout": "0000000000000000000000000000000000440000000000004400000000000022000000000000220000000000022220000001111222211110011112222111100000025520000000001555510000000005005000000000000000000000000000000000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.7
+      },
+      "WeaponClass": "M"
+    }
+  ]
+}

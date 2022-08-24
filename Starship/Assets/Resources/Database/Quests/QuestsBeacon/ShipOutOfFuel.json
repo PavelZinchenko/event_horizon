@@ -1,0 +1,110 @@
+{
+  "ItemType": 15,
+  "Id": 8,
+  "StartCondition": 1,
+  "Weight": 0.9,
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 10,
+      "Message": "$SOS_OUTOFFUEL_Message",
+      "Enemy": 5,
+      "Character": 6,
+      "Actions": [
+        {
+          "TargetNode": 4,
+          "Requirement": {
+            "Type": 26,
+            "Loot": {
+              "Type": 2,
+              "MinAmount": 5,
+              "MaxAmount": 5
+            }
+          },
+          "ButtonText": "$SOS_OUTOFFUEL_ACTION_Give"
+        },
+        {
+          "TargetNode": 7,
+          "Requirement": {
+            "Type": 26,
+            "Loot": {
+              "Type": 2,
+              "MinAmount": 10,
+              "MaxAmount": 10
+            }
+          },
+          "ButtonText": "$SOS_OUTOFFUEL_ACTION_Give"
+        },
+        {
+          "TargetNode": 2,
+          "ButtonText": "$SOS_OUTOFFUEL_ACTION_Attack"
+        },
+        {
+          "TargetNode": 3,
+          "ButtonText": "$SOS_OUTOFFUEL_ACTION_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 20,
+      "DefaultTransition": 3,
+      "FailureTransition": 3,
+      "Enemy": 5
+    },
+    {
+      "Id": 3,
+      "Type": 40
+    },
+    {
+      "Id": 4,
+      "Type": 36,
+      "DefaultTransition": 5,
+      "Loot": 4
+    },
+    {
+      "Id": 5,
+      "Type": 10,
+      "Message": "$SOS_OUTOFFUEL_Reward",
+      "Loot": 11,
+      "Character": 6,
+      "Actions": [
+        {
+          "TargetNode": 6,
+          "ButtonText": "$Continue"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "Type": 35,
+      "DefaultTransition": 3,
+      "Loot": 11
+    },
+    {
+      "Id": 7,
+      "Type": 36,
+      "DefaultTransition": 8,
+      "Loot": 9
+    },
+    {
+      "Id": 8,
+      "Type": 10,
+      "Message": "$SOS_OUTOFFUEL_Reward",
+      "Loot": 17,
+      "Character": 6,
+      "Actions": [
+        {
+          "TargetNode": 9,
+          "ButtonText": "$Continue"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "Type": 35,
+      "DefaultTransition": 3,
+      "Loot": 17
+    }
+  ]
+}

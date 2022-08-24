@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="NothingSelected">Nessuna abilità selezionata</string>
+    <string name="ResetSkills">Ripristina</string>
+    <string name="ExperienceBooster">Apprendimento Rapido</string>
+    <string name="ExperienceBoosterDesc">Aumenta l\'esperienza ottenuta del $1%</string>
+    <string name="AttackBooster">Concentratore di Danno</string>
+    <string name="AttackBoosterDesc">Aumenta il danno di tutte le navi del $1%</string>
+    <string name="DefenseBooster">Armatura Pesante</string>
+    <string name="DefenseBoosterDesc">Aumenta la difesa di tutte le navi del $1%</string>
+    <string name="FuelTankCapacity">Serbatoio migliorato</string>
+    <string name="FuelTankCapacityDesc">Capacità carburante +$1</string>
+    <string name="MainEnginePower">Motore migliorato</string>
+    <string name="MainEnginePowerDesc">Autonomia di volo +$1% Velocità +$2%</string>
+    <string name="MainRescueUnit">Unità di recupero</string>
+    <string name="MainRescueUnitDesc">Permetti alle navi di lasciare il campo di battaglia</string>
+    <string name="ConditionNode">Requisito necessario</string>
+    <string name="ShipLevelsRequirement">Porta $1 ${1|nave|navi} al livello $2</string>
+    <string name="HangarSlotNode">Nave extra nella tua flotta</string>
+    <string name="NewHangarSlotDesc">Sblocca un posto nell\'hangar</string>
+    <string name="UpgradeHangarSlotNode">Migliora un posto nell\'hangar</string>
+    <string name="UpgradeHangarSlotDesc1">Rendi il posto agibile per le arcadia</string>
+    <string name="UpgradeHangarSlotDesc2">Rendi il posto agibile per le ammiraglie</string>
+    <string name="UpgradeHangarSlotDesc3">Rendi il posto agibile per le corazzate</string>
+    <string name="UpgradeHangarSlotDesc4">Rendi il posto agibile per le navi madre</string>
+    <string name="PlanetaryScannerNode">Scanner planetari migliorati</string>
+    <string name="PlanetaryScannerDesc">Aumenta la possibilità di trovare oggetti preziosi del $1%</string>
+    <string name="HeatDefenseNode">Armatura termica</string>
+    <string name="HeatDefenseDesc">Aumenta la resistenza al calore di tutte le navi del $1%</string>
+    <string name="EnergyDefenseNode">Armatura energetica</string>
+    <string name="EnergyDefenseDesc">Aumenta la resistenza all\'energia di tutte le navi del $1%</string>
+    <string name="KineticDefenseNode">Armatura cinetica</string>
+    <string name="KineticDefenseDesc">Aumenta la resistenza cinetica di tutte le navi del $1%</string>
+    <string name="TradingNode">Commercio</string>
+    <string name="TradingDesc">I prezzi dei negozi sono migliori del $1%</string>
+    <string name="MasterTraderNode">Mastro commerciante</string>
+    <string name="MasterTraderDesc">I negozi offrono più merci in sconto</string>
+</resources>

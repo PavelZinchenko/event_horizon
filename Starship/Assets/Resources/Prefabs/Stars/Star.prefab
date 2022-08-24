@@ -1,0 +1,234 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400000}
+  - component: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: Star
+  m_TagString: Star
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400006}
+  - {fileID: 400004}
+  - {fileID: 400002}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda2e845802369b428b17ac998ef33b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HaloObject: {fileID: 100006}
+  StarObject: {fileID: 100004}
+  MiniObject: {fileID: 100002}
+  Size: 3
+  StarNamePrefab: {fileID: 100000, guid: f3ec3556cd696a541be61c58ade445dd, type: 3}
+  HomeIconPrefab: {fileID: 104178, guid: 521c9900779788b4c8b55228032dea71, type: 3}
+  QuestIconPrefab: {fileID: 188242, guid: e5d11d131cfb3db44bc72a6a0cdbed9a, type: 3}
+  DangerIconPrefab: {fileID: 100000, guid: f8d4dd7b821cc8c43a5fa66d20bfd758, type: 3}
+  FactionIconPrefab: {fileID: 100000, guid: 2beb3d9085ac783419f9364cf5136eab, type: 3}
+  WormholeIconPrefab: {fileID: 171850, guid: d28aa507747075545949eefdce15510e, type: 3}
+  MultiplayerIconPrefab: {fileID: 103250, guid: 3abf3a0ea49167f43b49d7b63cfb066d,
+    type: 3}
+  ArenaIconPrefab: {fileID: 141320, guid: 6517bc54c7b631f4e97032624bc01779, type: 3}
+  LabIconPrefab: {fileID: 138534, guid: 9ab2e830b38934441ae9faed3fc2ff69, type: 3}
+  RuinsIconPrefab: {fileID: 111628, guid: ed5f686657f4fee489cb583415afd285, type: 3}
+  XmasIconPrefab: {fileID: 1000012594009094, guid: ffd50bb8ca7d3a344aad1ce429fc3578,
+    type: 3}
+  BossIconPrefab: {fileID: 130062, guid: 69c6026e039c2a243bb35cac6a1d5823, type: 3}
+  MilitaryIconPrefab: {fileID: 189392, guid: 2331308dbba2bc64f9f36f7e9578283b, type: 3}
+  ChallengeIconPrefab: {fileID: 126218, guid: 48fcea90a400f904994619e0fb39d012, type: 3}
+  StarBorderPrefab: {fileID: 159240, guid: 7a33f7a394eee37428b5d2422d05c672, type: 3}
+  GuardianIconPrefab: {fileID: 100000, guid: 41389ec2b0626ba49b1a165c68deb9f4, type: 3}
+  PassiveGuardianIconPrefab: {fileID: 192252, guid: 667e7ff27c605d44ea1f752c83ed3364,
+    type: 3}
+  BlackMarketIconPrefab: {fileID: 157414, guid: 728f25ebe152b444f9b3dee608619a68,
+    type: 3}
+  QuestObjective: {fileID: 1983751949384124, guid: 14b8bdbfd17478641844c3c65c137c60,
+    type: 3}
+  StarInfo: {fileID: 158774, guid: bde29830f998ff6499d590a92391012c, type: 3}
+  MiniBossIcon: {fileID: 1000013651314478, guid: df7e9ab96e8d47948a5104f64c5ebf42,
+    type: 3}
+  MiniShopIcon: {fileID: 1000012415260514, guid: 68b8b7c8eb8a55c41a2c40c6ff31ed20,
+    type: 3}
+  MiniArenaIcon: {fileID: 1000010971585852, guid: af29b75dca02fae428c5087eead0fe30,
+    type: 3}
+  MiniQuestObjective: {fileID: 1209897682380394, guid: 2a7e298fe8b23ae4fbfeb73dbf701e0f,
+    type: 3}
+  MiniXmasIcon: {fileID: 1000012415260514, guid: abd35b188edef9543adddd88d119eac2,
+    type: 3}
+  PandemicIcon: {fileID: 531811753404305046, guid: 253509d63657261458cc945630c300cf,
+    type: 3}
+  UnknownStarColor: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 1}
+  SwitchToGalaxyDistance: 100
+  SwitchToMapDistance: 20
+  SwitchToStarSystemDistance: 4.5
+--- !u!1 &100002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400002}
+  - component: {fileID: 11400002}
+  m_Layer: 0
+  m_Name: Mini
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dfa391c4b1a2246af1a8e7c49d1ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: 1
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Texture: {fileID: 2800000, guid: d43dd7a1575c2cb44ba51c858b39f261, type: 3}
+  Material: {fileID: 2100000, guid: f2d90f57e5fae094fb300c219858f560, type: 2}
+--- !u!1 &100004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400004}
+  - component: {fileID: 11400004}
+  m_Layer: 0
+  m_Name: Star
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dfa391c4b1a2246af1a8e7c49d1ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: 2
+  Color: {r: 1, g: 1, b: 1, a: 0.7529412}
+  Texture: {fileID: 2800000, guid: 52b724bedf2429d439ee0b150f2eab58, type: 3}
+  Material: {fileID: 2100000, guid: f2d90f57e5fae094fb300c219858f560, type: 2}
+--- !u!1 &100006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400006}
+  - component: {fileID: 11400006}
+  m_Layer: 0
+  m_Name: Halo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dfa391c4b1a2246af1a8e7c49d1ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: 1
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Texture: {fileID: 2800000, guid: 52b724bedf2429d439ee0b150f2eab58, type: 3}
+  Material: {fileID: 2100000, guid: f2d90f57e5fae094fb300c219858f560, type: 2}

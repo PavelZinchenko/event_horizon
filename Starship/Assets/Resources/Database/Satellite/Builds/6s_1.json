@@ -1,0 +1,33 @@
+{
+  "ItemType": 9,
+  "Id": 25,
+  "SatelliteId": 18,
+  "DifficultyClass": 1,
+  "Components": [
+    {
+      "ComponentId": 147,
+      "X": 1,
+      "KeyBinding": 3
+    },
+    {
+      "ComponentId": 67,
+      "X": 1,
+      "Y": 2,
+      "BarrelId": -1,
+      "KeyBinding": -1
+    },
+    {
+      "ComponentId": 78,
+      "X": 2,
+      "Y": 2,
+      "BarrelId": -1,
+      "KeyBinding": -1
+    },
+    {
+      "ComponentId": 78,
+      "Y": 2,
+      "BarrelId": -1,
+      "KeyBinding": -1
+    }
+  ]
+}

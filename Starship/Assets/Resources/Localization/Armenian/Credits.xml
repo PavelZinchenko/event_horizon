@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Credits_Title">Event Horizon</string>
+    <string name="Credits_Title2">Frontier</string>
+    <string name="Credits_GameDesign">խաղային դիզայն</string>
+    <string name="Credits_Program">Ծրագրավորում</string>
+    <string name="Credits_Graphics">Գրաֆիկական դիզայն</string>
+    <string name="Credits_Localization">Տեղայնացում</string>
+    <string name="Credits_Music">Երաժշտություն</string>
+    <string name="Credits_Sound">ձայնային էֆեկտներ</string>
+    <string name="Credits_Thanks">հատուկ շնորհակալություն</string>
+    <string name="Credits_GameDesign_Content">Pavel Zinchenko</string>
+    <string name="Credits_Program_Content">Pavel Zinchenko</string>
+    <string name="Credits_Graphics_Content">Pavel Zinchenko</string>
+    <string name="Credits_Localization_Content">Moritz Schuh (MegumiKitaniji)\nViktor López (Anacheron)\nDaniel Jader (Agred)\nAnthony Barest (SnowedEarth)\nPedro Duque (MrD)\nDongHo Jang (BUP5013511)\nTürker Yüceer(lord24turker)\nThe Grey Cardinal (Միքայել Քանանով)\nCapitalist Commie\nDavido\nChris Dance (Crdguy)\nUnmaker Omega</string>
+    <string name="Credits_Music_Content">Matthew Le Blanc (SynthR) - www.synthr.net\nRobson Cozendey - www.cozendey.com\nVertex Studio</string>
+    <string name="Credits_Sound_Content">freesound.org</string>
+    <string name="Credits_Thanks_Content">Vitaliy Malyshev\nMikhail Lilikin\nNanane</string>
+</resources>

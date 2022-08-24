@@ -1,0 +1,23 @@
+{
+  "ItemType": 1,
+  "Id": 172,
+  "Name": "$DroneBay_S_91",
+  "DisplayCategory": 5,
+  "ComponentStatsId": 2,
+  "Faction": 11,
+  "Level": 125,
+  "Icon": "dronebay1",
+  "Color": "#FF0000",
+  "Layout": "110110110",
+  "CellType": "1",
+  "DroneBayId": 5,
+  "DroneId": 190,
+  "PossibleModifications": [
+    17,
+    18,
+    19,
+    20,
+    1,
+    2
+  ]
+}

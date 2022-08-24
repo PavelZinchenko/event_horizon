@@ -1,0 +1,23 @@
+{
+  "ItemType": 6,
+  "Id": 71,
+  "Name": "$fn_Scout",
+  "IconImage": "fns1",
+  "IconScale": 0.5,
+  "ModelImage": "fns1",
+  "ModelScale": 1.0,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40E0E0FF",
+  "EngineSize": 0.2,
+  "Layout": "0004400000144100002222000122221001222210112222111155551100155100",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      },
+      "WeaponClass": "C"
+    }
+  ]
+}

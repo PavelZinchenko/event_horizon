@@ -1,0 +1,17 @@
+{
+  "ItemType": 1,
+  "Id": 178,
+  "Name": "$ShieldGenerator_S",
+  "DisplayCategory": 2,
+  "Availability": 1,
+  "ComponentStatsId": 178,
+  "Faction": -1,
+  "Level": 25,
+  "Icon": "shield_generator1",
+  "Layout": "1",
+  "CellType": "2",
+  "PossibleModifications": [
+    1,
+    12
+  ]
+}

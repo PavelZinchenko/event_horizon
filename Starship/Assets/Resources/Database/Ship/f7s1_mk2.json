@@ -1,0 +1,25 @@
+{
+  "ItemType": 6,
+  "Id": 51,
+  "ShipCategory": 1,
+  "Name": "$f7_Scout2",
+  "Faction": 8,
+  "IconImage": "f7s1_2",
+  "IconScale": 0.5,
+  "ModelImage": "f7s1_2",
+  "ModelScale": 1.0,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#40FFF096",
+  "EngineSize": 0.2,
+  "Layout": "0000040000000000400000000004000000000141000000002220000011122211100011222110000002520000000005000000000050000000005550000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.9
+      },
+      "WeaponClass": "L"
+    }
+  ]
+}

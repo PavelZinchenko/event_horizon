@@ -1,0 +1,33 @@
+{
+  "ItemType": 6,
+  "Id": 107,
+  "Name": "$f13_Scout",
+  "Faction": 13,
+  "IconImage": "f13s3",
+  "IconScale": 0.5,
+  "ModelImage": "f13s3",
+  "ModelScale": 1.0,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#80FF8D00",
+  "EngineSize": 0.2,
+  "EnergyResistance": 1.0,
+  "Layout": "0001000001210000222004122214412221441555140055500",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.1,
+        "y": -0.95
+      },
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.1,
+        "y": 0.95
+      },
+      "WeaponClass": "M"
+    }
+  ]
+}

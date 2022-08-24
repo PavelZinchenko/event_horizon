@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Fabrik Level:</string>
+    <string name="CraftPrice">Credits:</string>
+    <string name="CraftCommonItem">einen Gegenstand mit normaler Qualität herstellen</string>
+    <string name="CraftImprovedItem">einen Gegenstand mit verbesserter Qualität herstellen</string>
+    <string name="CraftSuperiorItem">einen Gegenstand mit überragender Qualität herstellen</string>
+    <string name="CraftNotAvailable">nicht für diesen Gegenstand verfügbar</string>
+    <string name="CraftItem">Herstellen</string>
+    <string name="RareResourceLabel">Seltene Ressourcen</string>
+    <string name="RareResource">Herstellungs Materialien</string>
+    <string name="CraftQueue">Produktion</string>
+    <string name="CraftCompleted">Abgeschlossen</string>
+    <string name="CraftInQueue">Warten</string>
+    <string name="EmptyBuildQueue">Momentan wird nichts gebaut</string>
+    <string name="Blueprint">Blueprint: $1</string>
+    <string name="Shipyard">Werft</string>
+    <string name="UpgradeShipDescription">WARNUNG: Wenn du das Schiff verbesserst, verringert sich sein Level um $1.</string>
+    <string name="RequiredShipyardLevel">Die Werft muss mindestens Level $1 sein und zu $2 gehören.</string>
+    <string name="RequiredShipLevel">Dein Schiff muss mindestens Level $1 sein.</string>
+    <string name="InstallModConfirmation">Bist du dir sicher, dass du diese Modifikation installieren möchtest?</string>
+    <string name="DeleteModConfirmation">Bist du dir sicher, dass du diese Modifikation entfernen möchtest? Du wirst das Geld nicht mehr zurückbekommen.</string>
+    <string name="SelectCellType">Zelltyp aussuchen</string>
+    <string name="SelectCellPlace">Platz für die neue Zelle aussuchen</string>
+    <string name="AddShipCell">Eine Extrazelle erstellen</string>
+    <string name="RemoveShipCells">Schiffsanordnung zurücksetzen</string>
+    <string name="RemoveShipCellsWarning">Bist du dir sicher, dass du alle Extrazellen vom Schiff entfernen möchtest?</string>
+</resources>

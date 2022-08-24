@@ -1,0 +1,15 @@
+{
+  "ItemType": 4,
+  "Id": 51,
+  "AmmunitionClass": 5,
+  "DamageType": 2,
+  "Size": 2.0,
+  "Damage": 15.0,
+  "Velocity": 0.5,
+  "LifeTime": 4.0,
+  "IgnoresShipVelocity": true,
+  "EnergyCost": 1.0,
+  "Color": "#80B86A39",
+  "FireSound": "shot_07",
+  "BulletPrefab": "Flame"
+}

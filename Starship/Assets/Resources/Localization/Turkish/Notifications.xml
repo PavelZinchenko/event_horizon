@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CloudGameLoaded">Oyun başarıyla yüklendi</string>
+    <string name="CloudGameSaved">Oyun başarıyla kaydedildi</string>
+    <string name="CloudOperationFailed">Operasyon başarısız\n$1</string>
+    <string name="BadSavegameError">Kötü kaydedilmiş format</string>
+    <string name="GoogleSingInRequired">Google Play kimlik doğrulaması gerekiyor</string>
+    <string name="InternalError">Dahili hata</string>
+    <string name="CommonConfirmation">Bunu yapmak istediğinize eminmisiniz?</string>
+</resources>

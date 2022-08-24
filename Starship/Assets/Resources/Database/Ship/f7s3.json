@@ -1,0 +1,43 @@
+{
+  "ItemType": 6,
+  "Id": 53,
+  "Name": "$f7_Cruiser",
+  "Faction": 8,
+  "SizeClass": 2,
+  "IconImage": "f7s3",
+  "IconScale": 0.9,
+  "ModelImage": "f7s3",
+  "ModelScale": 2.0,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40FFF096",
+  "EngineSize": 0.4,
+  "Layout": "0000000000000000000100000000000111000000000001000000000001110000000001222404040001222240404101122224040411112222200001000022200000000000500000000000555000000000555550000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": -0.3,
+        "y": -0.4
+      },
+      "Rotation": -90.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": -0.1,
+        "y": -0.4
+      },
+      "Rotation": -90.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.1,
+        "y": -0.4
+      },
+      "Rotation": -90.0,
+      "WeaponClass": "C"
+    }
+  ]
+}

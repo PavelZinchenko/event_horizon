@@ -1,0 +1,18 @@
+{
+  "ItemType": 1,
+  "Id": 214,
+  "Name": "$Teleporter_Boss",
+  "DisplayCategory": 6,
+  "ComponentStatsId": 3,
+  "Faction": 4,
+  "Icon": "teleporter1",
+  "Layout": "010111010",
+  "CellType": "2",
+  "DeviceId": 19,
+  "PossibleModifications": [
+    2,
+    7,
+    1,
+    6
+  ]
+}

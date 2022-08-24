@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlayerRating">玩家舰队评分：</string>
+    <string name="ArenaRating">对手舰队评分：</string>
+    <string name="ArenaRegistrationRequired">你还未在竞技场中登记。</string>
+    <string name="ArenaSignInRequired">开始前请登录你的账户。</string>
+    <string name="ConnectionError">无法连接到服务器，请稍后再试。</string>
+    <string name="ArenaTraining">与你自己的船只进行练习战斗。</string>
+    <string name="ArenaOpponent">对手:</string>
+    <string name="ArenaFight">挑战这个对手。</string>
+    <string name="ArenaShop">选择你的奖励。</string>
+    <string name="ArenaFindOpponent">寻找对手。</string>
+    <string name="ArenaEmptyFleet">你的机库中没有任何船只。</string>
+    <string name="ArenaShipNotAllowed">某些船被禁用。</string>
+    <string name="ArenaBattlesAvailable">剩余 $1 ${1|次|次}可挑战</string>
+    <string name="ArenaMoreBattles">买十次挑战次数</string>
+    <string name="ArenaShipReady">准备战斗</string>
+    <string name="ArenaShipNotReady">不允许</string>
+    <string name="ArenaWatchAd">观看视频</string>
+</resources>

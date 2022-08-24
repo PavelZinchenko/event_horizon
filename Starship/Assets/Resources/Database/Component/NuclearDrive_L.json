@@ -1,0 +1,19 @@
+{
+  "ItemType": 1,
+  "Id": 58,
+  "Name": "$NuclearDrive_L",
+  "DisplayCategory": 4,
+  "Availability": 1,
+  "ComponentStatsId": 58,
+  "Faction": -1,
+  "Level": 40,
+  "Icon": "engine5",
+  "Color": "#FFDCC0",
+  "Layout": "1111",
+  "CellType": "5",
+  "PossibleModifications": [
+    2,
+    11,
+    1
+  ]
+}

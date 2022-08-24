@@ -1,0 +1,29 @@
+{
+  "ItemType": 6,
+  "Id": 92,
+  "ShipCategory": 3,
+  "Name": "Drone",
+  "Faction": 11,
+  "IconImage": "f9s3",
+  "IconScale": 0.5,
+  "ModelImage": "f9s3",
+  "ModelScale": 1.0,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#40F0D2B4",
+  "EngineSize": 0.15,
+  "Layout": "0043400004340000434000333330033333003555300055500",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      }
+    },
+    {
+      "Position": {
+        "x": 1.0
+      }
+    }
+  ]
+}

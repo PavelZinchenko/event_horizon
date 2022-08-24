@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Gender">Geschlecht:</string>
+    <string name="Experience">Erfahrung:</string>
+    <string name="PlayerName">Du bist es</string>
+    <string name="Gender_HumanMale">männlicher Mensch</string>
+    <string name="Gender_HumanFemale">weiblicher Mensch</string>
+    <string name="Gender_Android">Androide</string>
+    <string name="Gender_Alien">Alien</string>
+    <string name="PerkName_Attack">Kanonier</string>
+    <string name="PerkName_Defense">Rüstungsschmied</string>
+    <string name="PerkName_CommandPoint">Konteradmiral</string>
+    <string name="PerkName_FavoriteShip">Spezialist</string>
+    <string name="PerkName_QuickRecovery">Techniker</string>
+    <string name="PerkName_Scavenger">Plünderer</string>
+    <string name="PerkInfo_Attack">$1% Angriffsbonus</string>
+    <string name="PerkInfo_Defense">$1% Abwehrbonus</string>
+    <string name="PerkInfo_CommandPoint">Gibt einen zusätzlichen Kommandopunkt</string>
+    <string name="PerkInfo_FavoriteShip">Sehr erfahren mit dem $1 Schiff</string>
+    <string name="PerkInfo_QuickRecovery">Repariert das Schiff schneller, wenn abgeschossen</string>
+    <string name="PerkInfo_Scavenger">hinterlässt wertvolle Beute wenn zerstört</string>
+    <string name="ShipLevelText">Schiffslevel:</string>
+    <string name="AttackBonusText">Angriffsbonus:</string>
+    <string name="DefenseBonusText">Abwehrbonus:</string>
+    <string name="Speciality">Spezialität:</string>
+    <string name="SpecialityFrigate">Fregatten</string>
+    <string name="SpecialityDestroyer">Zerstörer</string>
+    <string name="SpecialityCruiser">Kreuzer</string>
+    <string name="SpecialityBattleship">Schlachtschiffe</string>
+    <string name="SpecialityTitan">Großkamfschiffe</string>
+</resources>

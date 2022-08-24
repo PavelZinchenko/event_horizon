@@ -1,0 +1,32 @@
+{
+  "ItemType": 6,
+  "Id": 12,
+  "Name": "$f0_Scout",
+  "Faction": 7,
+  "IconImage": "f0s1",
+  "IconScale": 0.7,
+  "ModelImage": "f0s1",
+  "ModelScale": 1.2,
+  "EnginePosition": {
+    "x": -0.5
+  },
+  "EngineColor": "#40A0B4A0",
+  "EngineSize": 0.2,
+  "Layout": "000000000000000000004222400114222411114222411011525110000555000000000000000000000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.5,
+        "y": 0.47
+      },
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.5,
+        "y": -0.47
+      },
+      "WeaponClass": "C"
+    }
+  ]
+}

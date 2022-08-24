@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Gazowa</string>
+    <string name="PlanetTypeBarren">Jałowa</string>
+    <string name="PlanetTypeTerran">Ziemska</string>
+    <string name="PlanetTypeAsteroids">Pas asteroid</string>
+    <string name="PlanetTypeInfected">Rój</string>
+    <string name="StarInfo">$1\nObrona: $2</string>
+    <string name="CapturedStarInfo">$1\nPoziom: $2</string>
+    <string name="ExtractionLabel">Zbieranie...</string>
+    <string name="AddNote">Dodaj notatkę</string>
+    <string name="PlanetTemperature">Temperatura</string>
+    <string name="PlanetToxicity">Toksyczność</string>
+    <string name="PlanetHostility">Wrogość</string>
+    <string name="ExplorationProgress">$1% wyeksplorowano</string>
+    <string name="NotExplored">Nie eksplorowana</string>
+    <string name="ObjectStarBase">Baza gwiezdna</string>
+    <string name="ObjectSurvival">Przetrwanie</string>
+    <string name="ObjectBoss">Okręt flagowy</string>
+    <string name="ObjectWormhole">Tunel czasoprzestrzenny</string>
+    <string name="ObjectMultiplayer">Gra wieloosobowa</string>
+    <string name="ObjectArena">Arena</string>
+    <string name="ObjectChallenge">Wyzwanie</string>
+    <string name="ObjectBlackMarket">Baza przemytników</string>
+    <string name="ObjectRuins">Opuszczona stacja</string>
+    <string name="ObjectMilitary">Baza wojskowa</string>
+    <string name="ObjectEvent">Sygnał ratunkowy</string>
+    <string name="ObjectXmas">Wesołych Świąt!</string>
+    <string name="ObjectHive">Rój</string>
+</resources>

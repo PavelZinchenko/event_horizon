@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlayerRating">Рейтинг игрока:</string>
+    <string name="ArenaRating">Рейтинг флота:</string>
+    <string name="ArenaRegistrationRequired">Вам нужно зарегистрироваться чтобы участвовать в боях.</string>
+    <string name="ArenaSignInRequired">Войдите в ваш аккаунт перед тем как начать.</string>
+    <string name="ConnectionError">Не удалось подключиться к серверу.</string>
+    <string name="ArenaTraining">Тренировочный бой со своими кораблями.</string>
+    <string name="ArenaOpponent">Противник:</string>
+    <string name="ArenaFight">Сразиться с противником.</string>
+    <string name="ArenaShop">Обменять заработанные жетоны на награду.</string>
+    <string name="ArenaFindOpponent">Поиск противника для битвы.</string>
+    <string name="ArenaEmptyFleet">У вас нет ни одного корабля в ангаре.</string>
+    <string name="ArenaShipNotAllowed">Некоторые корабли не допущены к бою.</string>
+    <string name="ArenaBattlesAvailable">$1 ${1|бой остался|боя осталось|боев осталось}</string>
+    <string name="ArenaMoreBattles">Купить еще 10 боев</string>
+    <string name="ArenaShipReady">Готов к бою</string>
+    <string name="ArenaShipNotReady">Не допущен</string>
+</resources>

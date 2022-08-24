@@ -1,0 +1,23 @@
+{
+  "ItemType": 1,
+  "Id": 97,
+  "Name": "$DroneControl_M",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 5,
+  "Level": 75,
+  "Icon": "torpedo1",
+  "Layout": "1010",
+  "CellType": "4",
+  "WeaponId": 12,
+  "AmmunitionId": 12,
+  "PossibleModifications": [
+    13,
+    8,
+    6,
+    2,
+    7,
+    1
+  ]
+}

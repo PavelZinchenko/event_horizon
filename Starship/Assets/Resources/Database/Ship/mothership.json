@@ -1,0 +1,19 @@
+{
+  "ItemType": 6,
+  "Id": 83,
+  "ShipCategory": 3,
+  "Name": "$Mothership",
+  "Faction": 1,
+  "IconImage": "mothership",
+  "IconScale": 1.0,
+  "ModelImage": "mothership",
+  "ModelScale": 5.0,
+  "EnginePosition": {
+    "x": -0.95
+  },
+  "EngineColor": "#40FFF096",
+  "EngineSize": 0.4,
+  "BuiltinDevices": [],
+  "Layout": "0000220000000222200000022220000002222000010222201001022220100102222010010222201001025520100100550010",
+  "Barrels": []
+}

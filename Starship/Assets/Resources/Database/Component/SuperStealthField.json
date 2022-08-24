@@ -1,0 +1,18 @@
+{
+  "ItemType": 1,
+  "Id": 30,
+  "Name": "$SuperStealth",
+  "DisplayCategory": 6,
+  "ComponentStatsId": 3,
+  "Faction": 10,
+  "Icon": "jammer",
+  "Color": "#C10000",
+  "Layout": "1100",
+  "CellType": "2",
+  "DeviceId": 14,
+  "PossibleModifications": [
+    2,
+    1,
+    6
+  ]
+}

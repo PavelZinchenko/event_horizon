@@ -1,0 +1,17 @@
+{
+  "ItemType": 1,
+  "Id": 8,
+  "Name": "$ThermalArmor_M",
+  "DisplayCategory": 2,
+  "Availability": 1,
+  "ComponentStatsId": 14,
+  "Faction": 7,
+  "Level": 30,
+  "Icon": "armor42",
+  "Layout": "1111",
+  "CellType": "1",
+  "PossibleModifications": [
+    1,
+    3
+  ]
+}

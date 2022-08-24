@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Faction">խմբակցություն</string>
+    <string name="Level">Մակարդակ:</string>
+    <string name="NeutralFaction">Ազատ աստղեր</string>
+    <string name="Faction1">Վենիրի</string>
+    <string name="Faction2">Բուշհռակ</string>
+    <string name="Faction3">Կորերանս</string>
+    <string name="Faction4">Տառանիակ</string>
+    <string name="Faction5">Սայջիքս</string>
+    <string name="Faction6">Ջուրգանս</string>
+    <string name="Faction7">Զումբալարի</string>
+    <string name="Faction8">Նեգանարի</string>
+    <string name="Faction9">Դաազեն</string>
+    <string name="Faction10">Անհայտներ</string>
+    <string name="Faction11">Կայսրություն</string>
+    <string name="Faction12">Հորդա</string>
+    <string name="Faction13">Սինդիկատ</string>
+    <string name="Faction15">Աղբատարներ</string>
+    <string name="Faction16">Վարակ</string>
+</resources>

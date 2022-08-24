@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+<string name="UpgradeDescription">업그레이드</string>
+<string name="ExperienceBooster">빠른 학습</string>
+<string name="ExperienceBoosterDesc">학습량을 $1% 만큼 늘려줍니다.</string>
+<string name="AttackBooster">데미지 증폭기</string>
+<string name="AttackBoosterDesc">모든 함선들의 데미지를 $1% 만큼 늘려줍니다.</string>
+<string name="DefenseBooster">두꺼운 장갑</string>
+<string name="DefenseBoosterDesc">모든 함선들의 방어력을 $1% 만큼 늘려줍니다.</string>
+<string name="FuelTankCapacity">확장된 연료통</string>
+<string name="FuelTankCapacityDesc">연료량을 +$1 만큼 늘려줍니다.</string>
+<string name="PlanetaryAttack">향상된 무기</string>
+<string name="PlanetaryAttackDesc">데미지를 $1% 만큼 늘려줍니다.</string>
+<string name="PlanetaryDefense">향상된 장갑</string>
+<string name="PlanetaryDefenseDesc">방어력을 $1% 만큼 늘려줍니다.</string>
+<string name="RadarRange">향상된 레이더</string>
+<string name="RadarRangeDesc">탐지 범위를 $1%만큼 늘려줍니다.</string>
+<string name="PlanetarySpeed">향상된 엔진</string>
+<string name="PlanetarySpeedDesc">속도를 $1% 만큼 늘려줍니다.</string>
+<string name="PlanetaryMissile">로켓 런처</string>
+<string name="PlanetaryMissileDesc">보조무기</string>
+<string name="PlanetaryEnergy">향상된 에너지 셀</string>
+<string name="PlanetaryEnergyDesc">에너지 용량을 $1% 만큼 늘려줍니다.</string>
+<string name="ShipLevelsRequirement"> $1 개의 함선의 레벨이 $2 이상이여야만 합니다.</string>
+
+</resources>

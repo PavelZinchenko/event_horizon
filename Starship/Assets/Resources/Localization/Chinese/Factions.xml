@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Faction">派系</string>
+    <string name="Level">等级：</string>
+    <string name="NeutralFaction">自由星系</string>
+    <string name="Faction1">文尼</string>
+    <string name="Faction2">布沙克</string>
+    <string name="Faction3">科瑞</string>
+    <string name="Faction4">塔尼亚克</string>
+    <string name="Faction5">萨基</string>
+    <string name="Faction6">泽尔甘</string>
+    <string name="Faction7">祖巴拉</string>
+    <string name="Faction8">涅甘纳</string>
+    <string name="Faction9">达泽</string>
+    <string name="Faction10">未知</string>
+    <string name="Faction11">帝国</string>
+    <string name="Faction12">虫群</string>
+    <string name="Faction13">辛迪加</string>
+    <string name="Faction15">拾荒者</string>
+    <string name="Faction16">传染病</string>
+</resources>

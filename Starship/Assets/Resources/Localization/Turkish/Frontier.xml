@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StoreButton">Mağaza</string>
+    <string name="MenuButton">Menü</string>
+    <string name="TryAgain">Tekrar dene</string>
+    <string name="GiveUp">Pes et</string>
+    <string name="ReturnToBase">Üsse geri dön</string>
+    <string name="Continue">Devam et</string>
+    <string name="SellAll">Hepsini sat</string>
+    <string name="Sell10Pieces">10 parça sat</string>
+    <string name="Buy10Pieces">10 parça al</string>
+    <string name="AllEnemies">Hepsi gelsin!</string>
+    <string name="Never">Yok teşekkürler</string>
+    <string name="CreateItem">Ürün</string>
+    <string name="Ok">Tamam</string>
+    <string name="Cancel">İptal</string>
+    <string name="AbortMission">Görevi iptal et</string>
+    <string name="StartGame">Oyuna başla</string>
+    <string name="GameLevel">Seviye $1</string>
+    <string name="TutorialLevel">Öğretici $1</string>
+    <string name="GalaxyMap">Glaksi haritası</string>
+    <string name="EnemyShips">Düşmanlar: $1</string>
+    <string name="FloatingJoystick">Gezici joystick</string>
+    <string name="FixedZoom">Sabit oyuncu yakınlaştırması</string>
+    <string name="LowQualityMode">Düşük kaliteli grafikler</string>
+    <string name="NewGame">Yeni Oyun</string>
+    <string name="OverwriteSavedGameConfirmation">Gerçekten bulut kaydının üzerine yazılmasına emin misin?</string>
+    <string name="LoadSavedGameConfirmation">Gerçekten bulut kaydını yükleme istediğine emin misin?</string>
+    <string name="LoadBetterSaveConfirmation">Daha fazla oynanış zamanı içeren bir bulut kaydı bulundu.Yüklemek ister misin?</string>
+    <string name="AutosaveFailed">Buluta otomatik kaydedilemiyor. Oyun ayarlarından manual açabilirsin.</string>
+    <string name="WatchAd">Video Reklamı İzle</string>
+    <string name="AdNotAvailable">Video şu an mevcut değil. Sunucuya tekrar bağlan</string>
+    <string name="NotCompatibleWithShip">Geminle uyumlu değil</string>
+    <string name="NotCompatibleWithBase">Yıldızüssüyle uyumlu değil</string>
+    <string name="RefreshStoreConfirmation">Mağaza eşyalarını yenilemek istediğine emin misin?</string>
+    <string name="DefeatedText">Kaybettin!</string>
+    <string name="ShipUnlockedMessage">Yeni gemi mevcut!</string>
+    <string name="LevelCompletedMessage">Seviye tamamlandı!</string>
+    <string name="MerchantShipInfo">Ben bir tüccarım.
+Eşya alır ve satarım.</string>
+    <string name="SmugglerShipInfo">Ben bir kaçakçıyım.
+Bu sektördeki en iyi ürünleri sunuyorum.</string>
+    <string name="MercenariesInfo">Biz paralı askeriz.
+Para için savaşırız.</string>
+    <string name="WorkshopShipInfo">Ben bir mühendisim.
+Yüksek kaliteli gemi modülleri yaparım.</string>
+    <string name="SantaShipInfo">Ho! Ho! Ho!
+Mutlu Noeller!</string>
+    <string name="ExperienceTitle">Gemi Tecrübesi</string>
+    <string name="SkillPoints">Yetenek puanı mevcut -</string>
+    <string name="SkillLevel">(seviye $1)</string>
+    <string name="SkillNotAvaialble">Bu geliştirmeyi açmak için $1 seviyesine ulaş</string>
+    <string name="CurrentLevel">Şimdiki Seviye -</string>
+    <string name="NextLevel">Sonraki Seviye -</string>
+    <string name="MaxLevel">AZAMİ</string>
+    <string name="MaxLevelReached">Seviye çok yüksek</string>
+    <string name="ResetSkillsConfirmation">Yetenekleri sıfırlamak istediğine emin misin?</string>
+    <string name="ExpPoints">$1 tecrübe ${1|puanı|puanı}</string>
+    <string name="LevelUp">$1 Seviyesine ulaşıldı</string>
+    <string name="MerchantDeclineMessage">Bu çöpü satın almak istemiyorum</string>
+    <string name="SmugglerDeclineMessage">Sadece yüksek kaliteli eşyaları alırım</string>
+    <string name="LocationCargoHold">Kargo ambarında tutuldu</string>
+    <string name="LocationShip">Gemiye yüklendi</string>
+    <string name="LocationStarbase">Yıldızüssüne yüklendi</string>
+    <string name="UpgradeLevel">Yükseltme seviyesi: $1</string>
+    <string name="AttackBonus">+$1% Saldırıya</string>
+    <string name="DefenseBonus">+$1% Savunmaya</string>
+    <string name="LowQualityWarning">Düşük kaliteli eşyaları geliştiremem</string>
+    <string name="MaxUpgradeLevel">Azami seviyeye ulaşıldı</string>
+    <string name="UpgradeText">Seviye $1\'e geliştir</string>
+    <string name="ShipAttackSkill">Gemi hasarı</string>
+    <string name="ShipAttackDescription">Kontrol ettiğin gemi $1% daha fazla hasar verir</string>
+    <string name="ShipDefenseSkill">Gemi defansı</string>
+    <string name="ShipDefenseDescription">Kontrol ettiğin geminin daha $1% fazla kalkan ve zırh puanı var</string>
+    <string name="StarbaseAttackSkill">Yıldızüstü hasarı</string>
+    <string name="StarbaseAttackDescription">Yıldızüssü daha fazla hasar verir</string>
+    <string name="StarbaseDefenseSkill">Yıldızüssü defansı</string>
+    <string name="StarbaseDefenseDescription">Yıldızüssü\'nün $1% daha fazla kalkan ve zırh puanı var</string>
+    <string name="QuickLearningSkill">Hızlı öğren</string>
+    <string name="Difficulty2">Zor</string>
+    <string name="Difficulty3">Delice</string>
+    <string name="ExplorationLevelName">Bilinmiyor</string>
+</resources>

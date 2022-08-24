@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Name">Név:</string>
+    <string name="Gender">Nem:</string>
+    <string name="Experience">Tapasztalat:</string>
+    <string name="PlayerName">Te magad</string>
+    <string name="FirstNameHM">$[James|David|Christopher|George|Ronald|John|Richard|Daniel|Kenneth|Anthony|Robert|Charles|Paul|Steven|Kevin|Michael|Joseph|Mark|Edward|Jason|William|Thomas|Donald|Brian|Jeff]</string>
+    <string name="FirstNameHF">$[Mary|Jennifer|Lisa|Sandra|Michelle|Patricia|Maria|Nancy|Donna|Laura|Linda|Susan|Karen|Carol|Sarah|Barbara|Margaret|Betty|Ruth|Kimberly|Elizabeth|Dorothy|Helen|Sharon|Deborah]</string>
+    <string name="LastNameH">$[Smith|Johnson|Williams|Jones|Brown|Davis|Miller|Wilson|Moore|Taylor|Anderson|Thomas|Jackson|White|Harris|Martin|Thompson|Garcia|Martinez|Robinson|Clark|Rodriguez|Lewis|Lee|Walker|Hall|Allen|Young|Hernandez|King|Wright|Lopez|Hill|Scott|Green|Adams|Baker|Gonzalez|Nelson|Carter|Mitchell|Perez|Roberts|Turner|Phillips|Campbell|Parker|Evans|Edwards|Collins|Stewart|Sanchez|Morris|Rogers|Reed|Cook|Morgan|Bell|Murphy|Bailey|Rivera|Cooper|Richardson|Cox|Howard|Ward|Torres|Peterson|Gray|Ramirez|James|Watson|Brooks|Kelly|Sanders|Price|Bennett|Wood|Barnes|Ross|Henderson|Coleman|Jenkins|Perry|Powell|Long|Patterson|Hughes|Flores|Washington|Butler|Simmons|Foster|Gonzales|Bryant|Alexander|ussell|Griffin|Diaz|Hayes]</string>
+    <string name="FalconCaptainName">Jan Salo</string>
+    <string name="Gender_HumanMale">Emberi Férfi</string>
+    <string name="Gender_HumanFemale">Emberi Nő</string>
+    <string name="Gender_Android">Android</string>
+    <string name="Gender_Alien">Idegen</string>
+    <string name="PerkName_Attack">Lövegkezelő</string>
+    <string name="PerkName_Defense">Fegyvergyáros</string>
+    <string name="PerkName_CommandPoint">Ellenhadnagy</string>
+    <string name="PerkName_FavoriteShip">Specialista</string>
+    <string name="PerkName_QuickRecovery">Technikus</string>
+    <string name="PerkName_Scavenger">Gyűjtögető</string>
+    <string name="PerkInfo_Attack">$1% támadásbónusz</string>
+    <string name="PerkInfo_Defense">$1% védekezésbónusz</string>
+    <string name="PerkInfo_CommandPoint">Extra parancsnoki pontot ad</string>
+    <string name="PerkInfo_FavoriteShip">$1 hajót kiválóan kezeli</string>
+    <string name="PerkInfo_QuickRecovery">Gyorsabban javítja a hajót ha lelövik</string>
+    <string name="PerkInfo_Scavenger">Elpusztításkor értékes zsákmányt hagy hátra</string>
+    <string name="ShipLevelText">Hajó Szintje:</string>
+    <string name="AttackBonusText">Támadásbónusz:</string>
+    <string name="DefenseBonusText">Védekezésbónusz:</string>
+    <string name="Speciality">Specialitás:</string>
+    <string name="SpecialityFrigate">Fregattok</string>
+    <string name="SpecialityDestroyer">Rombolók</string>
+    <string name="SpecialityCruiser">Cirkálók</string>
+    <string name="SpecialityBattleship">Csatahajók</string>
+    <string name="SpecialityTitan">Zászlóshajók</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Niveau d\'atelier :</string>
+    <string name="CraftPrice">Crédits :</string>
+    <string name="CraftCommonItem">Créer un article de qualité commun</string>
+    <string name="CraftImprovedItem">Créer un article de meilleure qualité</string>
+    <string name="CraftSuperiorItem">Créer un article de qualité supérieure</string>
+    <string name="CraftNotAvailable">Pas disponible pour cet article</string>
+    <string name="CraftItem">Construire</string>
+    <string name="RareResourceLabel">Ressources rares</string>
+    <string name="RareResource">Ingrédient de fabrication</string>
+    <string name="CraftQueue">Production</string>
+    <string name="CraftCompleted">Terminé</string>
+    <string name="CraftInQueue">En attente</string>
+    <string name="EmptyBuildQueue">La liste d\'attente est vide</string>
+    <string name="Blueprint">Plan : $1</string>
+    <string name="Shipyard">Chantier naval</string>
+    <string name="UpgradeShipDescription">AVERTISSEMENT : si vous améliorez ce navire, son niveau diminuera d\'un dollar.</string>
+    <string name="RequiredShipyardLevel">Le chantier naval doit être de niveau $1 et appartenir à $2.</string>
+    <string name="RequiredShipLevel">Votre navire doit être au niveau $1 ou supérieur.</string>
+    <string name="InstallModConfirmation">Êtes-vous sûr de vouloir installer cette modification?</string>
+    <string name="DeleteModConfirmation">Êtes-vous sûr de vouloir supprimer cette modification? Vous ne serez pas remboursé.</string>
+    <string name="SelectCellType">Sélectionnez le type de cellule</string>
+    <string name="SelectCellPlace">Sélectionnez le lieu d\'une nouvelle cellule</string>
+    <string name="AddShipCell">Créer une cellule supplémentaire</string>
+    <string name="RemoveShipCells">Rétablir la configuration des navires</string>
+    <string name="RemoveShipCellsWarning">Êtes-vous sûr de vouloir retirer toutes les cellules supplémentaires de votre navire?</string>
+</resources>

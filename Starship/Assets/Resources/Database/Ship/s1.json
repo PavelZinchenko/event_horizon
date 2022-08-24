@@ -1,0 +1,25 @@
+{
+  "ItemType": 6,
+  "Id": 118,
+  "ShipCategory": 6,
+  "Name": "Drone",
+  "Faction": -1,
+  "IconImage": "fs1",
+  "IconScale": 0.5,
+  "ModelImage": "fs1",
+  "ModelScale": 0.75,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#40FF7F00",
+  "EngineSize": 0.1,
+  "BuiltinDevices": [],
+  "Layout": "3343333433334333335533355",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.8
+      }
+    }
+  ]
+}

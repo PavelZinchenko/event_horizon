@@ -1,0 +1,23 @@
+{
+  "ItemType": 1,
+  "Id": 145,
+  "Name": "$RepairBeam_S_1",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 10,
+  "Icon": "laser1",
+  "Color": "#C2FFC0",
+  "Layout": "1010",
+  "CellType": "4",
+  "WeaponId": 72,
+  "AmmunitionId": 72,
+  "WeaponSlotType": "L",
+  "PossibleModifications": [
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

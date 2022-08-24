@@ -1,0 +1,25 @@
+{
+  "ItemType": 1,
+  "Id": 258,
+  "Name": "$GreenLightning",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 16,
+  "Level": 200,
+  "Icon": "shock1",
+  "Color": "#15FF00",
+  "Layout": "111111111",
+  "CellType": "4",
+  "WeaponId": 105,
+  "AmmunitionId": 114,
+  "WeaponSlotType": "L",
+  "PossibleModifications": [
+    6,
+    5,
+    16,
+    2,
+    7,
+    1
+  ]
+}

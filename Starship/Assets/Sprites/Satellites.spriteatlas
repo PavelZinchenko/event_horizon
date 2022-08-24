@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Satellites
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 1
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: bb45c0cbc5932174d933f9a950668654, type: 3}
+    totalSpriteSurfaceArea: 557056
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: be14a810bc7c4e440b71173306939a33, type: 3}
+  - {fileID: 21300000, guid: dc192d5031a20d449a1870272445cec9, type: 3}
+  - {fileID: 21300000, guid: 3f7da4510520a2047978d555ed779d10, type: 3}
+  - {fileID: 21300000, guid: bf95ce51c0722cd4b91d6553575b02b9, type: 3}
+  - {fileID: 21300000, guid: 4a10c9c11ca204c498f4aa67ad808bde, type: 3}
+  - {fileID: 21300000, guid: 39302543e74fdd24f92318f90be70538, type: 3}
+  - {fileID: 21300000, guid: 50a7dd44bcf9652479cd9b2b39a9c92e, type: 3}
+  - {fileID: 21300000, guid: 77e56b677f42e08448f4ba82a5ef2b32, type: 3}
+  - {fileID: 21300000, guid: 393c1028094afd54abfea0be8ad8c796, type: 3}
+  - {fileID: 21300000, guid: 558a2558915084d4eb1442550c94e775, type: 3}
+  - {fileID: 21300000, guid: 88cd21e8689c29e4abc6deeb5b04defc, type: 3}
+  - {fileID: 21300000, guid: 7502be5a1ad63f74b89655414f13becd, type: 3}
+  - {fileID: 21300000, guid: 8e55648b7a979074d9d3df38373298c7, type: 3}
+  - {fileID: 21300000, guid: 97b0d17cefeb7614390d609b9768bed9, type: 3}
+  - {fileID: 21300000, guid: f5637dac1bfc5e448a39b46c823d9fb2, type: 3}
+  - {fileID: 21300000, guid: 4f060f7d488430b4588ef5243ddb9bed, type: 3}
+  - {fileID: 21300000, guid: ae4beb5ed2528e845984b023ce93554f, type: 3}
+  - {fileID: 21300000, guid: 45ab3a8e5a440644599e3d68d7a0240d, type: 3}
+  - {fileID: 21300000, guid: 1523dfef8f5d10b4da569fd9c1286ce8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - satellite5
+  - santa_gun
+  - holy_gun
+  - worm_segment
+  - satellite1
+  - satellite3
+  - satellite2
+  - scavenger_arm
+  - satellite7
+  - hovertank
+  - turret
+  - satellite4
+  - hovertank_gun
+  - worm_joint
+  - satellite6
+  - worm_joint2
+  - worm_segment2
+  - devourer_turret
+  - repair_bot
+  m_Tag: Satellites
+  m_IsVariant: 0

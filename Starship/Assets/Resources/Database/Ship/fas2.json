@@ -1,0 +1,51 @@
+{
+  "ItemType": 6,
+  "Id": 65,
+  "Name": "$fa_Cruiser",
+  "Faction": 9,
+  "SizeClass": 2,
+  "IconImage": "fas3",
+  "IconScale": 0.9,
+  "ModelImage": "fas3",
+  "ModelScale": 1.7,
+  "EngineColor": "#40FFFFFF",
+  "Engines": [
+    {
+      "Position": {
+        "x": -0.65,
+        "y": 0.48
+      },
+      "Size": 0.2
+    },
+    {
+      "Position": {
+        "x": -0.65,
+        "y": -0.48
+      },
+      "Size": 0.2
+    }
+  ],
+  "Layout": "000004400000000014410000000014410000000022220000004422224400111222222111111222222111111222222111111222222111001155551100000055550000000005500000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      },
+      "WeaponClass": "M"
+    },
+    {
+      "Position": {
+        "x": 0.3,
+        "y": 0.5
+      },
+      "WeaponClass": "M"
+    },
+    {
+      "Position": {
+        "x": 0.3,
+        "y": -0.5
+      },
+      "WeaponClass": "M"
+    }
+  ]
+}

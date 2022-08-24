@@ -1,0 +1,25 @@
+{
+  "ItemType": 6,
+  "Id": 15,
+  "Name": "$f0_Cruiser",
+  "Faction": 7,
+  "SizeClass": 2,
+  "IconImage": "f0s3",
+  "IconScale": 1.0,
+  "ModelImage": "f0s3",
+  "ModelScale": 1.5,
+  "EnginePosition": {
+    "x": -0.75
+  },
+  "EngineColor": "#40FFFF80",
+  "EngineSize": 0.2,
+  "Layout": "000014410000000014410000000014410000000012210000000012210000000012210000001122221100001122221100001122221100001155551100001155551100000105501000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      },
+      "WeaponClass": "L"
+    }
+  ]
+}

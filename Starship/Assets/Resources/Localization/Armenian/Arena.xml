@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlayerRating">Խաղացողների վարկանիշ:</string>
+    <string name="ArenaRating">Նավատորմի վարկանիշ:</string>
+    <string name="ArenaRegistrationRequired">Դուք դեռ գրանցված չեք արենայում։</string>
+    <string name="ArenaSignInRequired">Նախքան սկսելը, մուտք գործեք ձեր ակաունտը.</string>
+    <string name="ConnectionError">Հնարավոր չէ միանալ սերվերին։ Խնդրում ենք ձեզ փորձել ավելի ուշ։</string>
+    <string name="ArenaTraining">Մարզվել ճակատամարտում սեփական նավերի դեմ։</string>
+    <string name="ArenaOpponent">Հակառակորդ:</string>
+    <string name="ArenaFight">Մարտահրավեր տալ ձեր հակառակորդին։</string>
+    <string name="ArenaShop">Ընտրեք մրցանակը։</string>
+    <string name="ArenaFindOpponent">Գտնել հակառակորդ։</string>
+    <string name="ArenaEmptyFleet">Դուք անգարում որևէ նավ չունեք։</string>
+    <string name="ArenaShipNotAllowed">$1 նավը չի թույլատրվում մասնակցությանը:</string>
+    <string name="ArenaBattlesAvailable">$1 ${1|մարտ|մարտեր} հասանելի են</string>
+    <string name="ArenaMoreBattles">Գնել եւս 10 Գնել եւս 10 մարտեր</string>
+    <string name="ArenaShipReady">Պատրաստ է ճակատամարտի</string>
+    <string name="ArenaShipNotReady">Թույլ չի տրվում</string>
+    <string name="ArenaWatchAd">Դիտել Վիդեո Գովազդ</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlayerRating">Evaluation du joueur:</string>
+    <string name="ArenaRating">Evaluation de la flotte :</string>
+    <string name="ArenaRegistrationRequired">Vous n\'êtes pas encore inscrit dans l\'arène.</string>
+    <string name="ArenaSignInRequired">Connectez-vous à votre compte avant de commencer.</string>
+    <string name="ConnectionError">Impossible de se connecter au serveur. Veuillez réessayer plus tard.</string>
+    <string name="ArenaTraining">Entraînement au combat avec vos propres navires.</string>
+    <string name="ArenaOpponent">Adversaire</string>
+    <string name="ArenaFight">Défier l\'adversaire.</string>
+    <string name="ArenaShop">Choisissez votre récompense.</string>
+    <string name="ArenaFindOpponent">Trouvez un adversaire.</string>
+    <string name="ArenaEmptyFleet">Vous n\'avez pas de navires dans le hangar.</string>
+    <string name="ArenaShipNotAllowed">Certains navires ne sont pas autorisés à participer.</string>
+    <string name="ArenaBattlesAvailable">$1 ${1|combat|combats} disponible</string>
+    <string name="ArenaMoreBattles">Acheter 10 nouveaux combats</string>
+    <string name="ArenaShipReady">Prêt à combattre</string>
+    <string name="ArenaShipNotReady">Interdit</string>
+    <string name="ArenaWatchAd">Voir l\'annonce vidéo</string>
+</resources>

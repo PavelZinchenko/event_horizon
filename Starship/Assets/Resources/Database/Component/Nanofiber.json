@@ -1,0 +1,15 @@
+{
+  "ItemType": 1,
+  "Id": 72,
+  "Name": "$NanofiberStructures",
+  "DisplayCategory": 6,
+  "Availability": 1,
+  "ComponentStatsId": 72,
+  "Faction": -1,
+  "Icon": "lightweight1",
+  "Color": "#C0FFC0",
+  "Layout": "1",
+  "PossibleModifications": [
+    4
+  ]
+}

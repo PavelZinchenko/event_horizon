@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="HitPointsMod">Hit Points $1</string>
+    <string name="DefenseMod">Defense $1</string>
+    <string name="WeightMod">Weight $1</string>
+    <string name="EnergyCostMod">Energy Cost $1</string>
+    <string name="DamageMod">Damage $1</string>
+    <string name="CooldownMod">Cooldown Time $1</string>
+    <string name="RangeMod">Range $1</string>
+    <string name="BulletVelocityMod">Projectile Speed $1</string>
+    <string name="EnergyMod">Energy Capacity $1</string>
+    <string name="RepairRateMod">Repair Rate $1</string>
+    <string name="EnginePowerMod">Engine Power $1</string>
+    <string name="EnergyRechargeMod">Energy Recharge Rate $1</string>
+    <string name="BulletVelocityMod2">Projectile Speed $1, Damage $2</string>
+    <string name="AreaOfEffectMod">Area of Effect Range $1</string>
+    <string name="ShieldPowerMod">Shield Power $1</string>
+    <string name="DamageMod2">Damage $1\nCooldown Time $2</string>
+    <string name="DroneSpeedMod">Drones speed $1</string>
+    <string name="RecoilMod">Projectile weight $1</string>
+    <string name="Ship_EmptySlot">[empty slot]</string>
+    <string name="Ship_AutoTargeting">Built-in auto targeting system</string>
+    <string name="Ship_HeatDefense">Increased heat resistance</string>
+    <string name="Ship_KineticDefense">Increased kinetic resistance</string>
+    <string name="Ship_EnergyDefense">Increased energy resistance</string>
+    <string name="Ship_ExtraBlueCells">Extra equipment slots</string>
+    <string name="Ship_Lightweight">Ship base weight reduced by $1%</string>
+    <string name="Ship_Infected">$1% less armor, regenerates $2% / sec</string>
+</resources>

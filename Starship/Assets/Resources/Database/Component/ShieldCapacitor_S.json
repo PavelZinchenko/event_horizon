@@ -1,0 +1,17 @@
+{
+  "ItemType": 1,
+  "Id": 181,
+  "Name": "$ShieldCapacitor_S",
+  "DisplayCategory": 2,
+  "Availability": 1,
+  "ComponentStatsId": 181,
+  "Faction": -1,
+  "Level": 25,
+  "Icon": "shield_capacitor1",
+  "Layout": "1",
+  "CellType": "1",
+  "PossibleModifications": [
+    1,
+    3
+  ]
+}

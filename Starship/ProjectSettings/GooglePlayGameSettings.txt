@@ -1,0 +1,9 @@
+lastUpgrade=01007
+proj.AppId=499653019410
+android.SetupDone=true
+and.BundleId=com.ZipasGames.EventHorizon
+proj.classDir=Assets
+proj.ConstantsClassName=GPGSIds
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--%0d%0aGoogle+Play+game+services+IDs.%0d%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0d%0a--%3e%0d%0a%3cresources%3e%0d%0a++%3cstring+name%3d%22app_id%22%3e499653019410%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22package_name%22%3ecom.ZipasGames.EventHorizon%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_gifted_student%22%3eCgkIko6QrcUOEAIQAg%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_raider%22%3eCgkIko6QrcUOEAIQAw%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_no_scratch%22%3eCgkIko6QrcUOEAIQBA%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_your_own_fleet%22%3eCgkIko6QrcUOEAIQBQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_secret_weapon%22%3eCgkIko6QrcUOEAIQBg%3c%2fstring%3e%0d%0a%3c%2fresources%3e%0d%0a
+and.ClientId=
+proj.pluginVersion=0.10.07

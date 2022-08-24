@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Газовая</string>
+    <string name="PlanetTypeBarren">Каменистая</string>
+    <string name="PlanetTypeTerran">Земного типа</string>
+    <string name="PlanetTypeAsteroids">Пояс астероидов</string>
+    <string name="PlanetTypeInfected">Логово</string>
+    <string name="StarInfo">$1\nЗащита: $2</string>
+    <string name="CapturedStarInfo">$1\nУровень: $2</string>
+    <string name="ExtractionLabel">Сканирование...</string>
+    <string name="AddNote">Добавить заметку</string>
+    <string name="PlanetTemperature">Температура</string>
+    <string name="PlanetToxicity">Токсичность</string>
+    <string name="PlanetHostility">Враждебность</string>
+    <string name="ExplorationProgress">исследовано на $1%</string>
+    <string name="NotExplored">Не исследована</string>
+    <string name="ObjectStarBase">Космическая станция</string>
+    <string name="ObjectSurvival">Выживание</string>
+    <string name="ObjectBoss">Флагман</string>
+    <string name="ObjectWormhole">Червоточина</string>
+    <string name="ObjectArena">Арена</string>
+    <string name="ObjectChallenge">Вызов</string>
+    <string name="ObjectBlackMarket">База контрабандистов</string>
+    <string name="ObjectRuins">Заброшенная станция</string>
+    <string name="ObjectMilitary">Военная база</string>
+    <string name="ObjectEvent">Спасательный маяк</string>
+    <string name="ObjectXmas">С новым годом!</string>
+    <string name="ObjectHive">Логово</string>
+</resources>

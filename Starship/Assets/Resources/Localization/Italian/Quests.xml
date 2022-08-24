@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PIRATES_Agressive">Siamo sotto attacco.</string>
+    <string name="PIRATES_Passive">Ci sono navi ostili nelle vicinanze.</string>
+    <string name="PIRATES_ACTION_Attack">Combatti</string>
+    <string name="PIRATES_ACTION_Retreat">Ritirati</string>
+    <string name="PIRATES_ACTION_Ignore">Ignora</string>
+    <string name="MessageCombatReward">Abbiamo ricevuto delle ricompense dopo la battaglia</string>
+    <string name="ACTION_Continue">Continua</string>
+    <string name="TUTORIAL_NAME">Tutorial</string>
+    <string name="TUTORIAL_DESCRIPTION">Se stai giocando per la prima volta, per prima cosa ti consigliamo di seguire il tutorial.</string>
+    <string name="TUTORIAL_Start">Saluti, Comandante. Sei stato assegnato a capo della spedizione spaziale. Ma prima, ti insegnerò le basi del gioco.</string>
+    <string name="TUTORIAL_Info1">La tua nave, Event Horizon, equipaggiata con un Iperdrive, che ti permette di viaggiare tra le stelle.</string>
+    <string name="TUTORIAL_Training">Può anche trasportare diverse navi da combattimento, in caso dovessi incontrare il nemico. Vuoi vederle in azione?</string>
+    <string name="TUTORIAL_End">Questo è tutto. Vai. In bocca al lupo</string>
+    <string name="TUTORIAL_ACTION_Training">Inizia addestramento</string>
+    <string name="TUTORIAL_ACTION_Skip">Salta addestramento</string>
+    <string name="MERCHANT_Message">Abbiamo trovato una piccola carovana di navi mercantili. Potrebbero avere qualcosa di utile da vendere.</string>
+    <string name="MERCHANT_ACTION_Trade">Commercia</string>
+    <string name="MERCHANT_ACTION_Attack">Attacca i mercanti</string>
+    <string name="MERCHANT_ACTION_Ignore">Ignora</string>
+    <string name="SOS_Message">Abbiamo rilevato un segnale radio.</string>
+    <string name="SOS_ACTION_Respond">Raggiungi il faro, ($1 carburante richiesto)</string>
+    <string name="SOS_ACTION_Ignore">Ignora</string>
+    <string name="SOS_DEADSHIP_Message">Abbiamo trovato una nave danneggiata gravemente. Sembra abbandonata.</string>
+    <string name="SOS_DEADSHIP_Salvaged">Abbiamo trovato qualcosa di utile.</string>
+    <string name="SOS_DEADSHIP_ACTION_Repair">Prova a ripararla\n($1 ${1|credito|crediti} richiesti)</string>
+    <string name="SOS_DEADSHIP_ACTION_Salvage">Cerca oggetti utili</string>
+    <string name="SOS_OUTOFFUEL_Message">Saluti! Siamo rimasti senza carburante e non riusciamo ad uscire da questo sistema. Potresti aiutarci?</string>
+    <string name="SOS_OUTOFFUEL_Reward">Grazie! Accetta questa ricompensa.</string>
+    <string name="SOS_OUTOFFUEL_ACTION_Give">Dai $1 ${1|unità|unità} di carburante</string>
+    <string name="SOS_OUTOFFUEL_ACTION_Attack">Attacca</string>
+    <string name="SOS_OUTOFFUEL_ACTION_Decline">Rifiuta</string>
+    <string name="SOS_TRAP_Message">Siamo arrivati a destinazione e siamo stati immediatamente attaccati. Sembra che questo segnale fosse una trappola.</string>
+    <string name="SOS_EMPTY_Message">Siamo arrivati a destinazione ma non abbiamo trovato nulla di interessante.</string>
+</resources>

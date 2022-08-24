@@ -1,0 +1,24 @@
+{
+  "ItemType": 6,
+  "Id": 55,
+  "Name": "$f8_Scout",
+  "Faction": 10,
+  "IconImage": "f8s1",
+  "IconScale": 0.5,
+  "ModelImage": "f8s1",
+  "ModelScale": 1.2,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40E0E0FF",
+  "EngineSize": 0.3,
+  "KineticResistance": 1.0,
+  "Layout": "0000444000000002220000000022200000001121100000011211000000112110000001121100000022222000000255520000000555000000005550000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      }
+    }
+  ]
+}

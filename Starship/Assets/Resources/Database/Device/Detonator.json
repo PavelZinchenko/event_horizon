@@ -1,0 +1,17 @@
+{
+  "ItemType": 2,
+  "Id": 5,
+  "DeviceClass": 8,
+  "EnergyConsumption": 1.0,
+  "PassiveEnergyConsumption": 1.0,
+  "Power": 3.0,
+  "Range": 10.0,
+  "Size": 4.0,
+  "Cooldown": 20.0,
+  "Lifetime": 1.0,
+  "ActivationType": 1,
+  "Color": "#FF8040",
+  "Sound": "launch_03",
+  "EffectPrefab": "Flash",
+  "ControlButtonIcon": "controls_selfdestruct"
+}

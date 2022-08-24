@@ -1,0 +1,29 @@
+{
+  "ItemType": 8,
+  "Id": 182,
+  "ShipId": 85,
+  "BuildFaction": -1,
+  "Components": [
+    {
+      "ComponentId": 78,
+      "Locked": true,
+      "X": 1,
+      "Y": 1,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 196,
+      "Locked": true,
+      "X": 2,
+      "Y": 1,
+      "BarrelId": -1,
+      "KeyBinding": -1
+    },
+    {
+      "ComponentId": 114,
+      "Locked": true,
+      "X": 1,
+      "KeyBinding": -1
+    }
+  ]
+}

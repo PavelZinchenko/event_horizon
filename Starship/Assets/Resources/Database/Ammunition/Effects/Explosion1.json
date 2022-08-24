@@ -1,0 +1,30 @@
+{
+  "ItemType": 26,
+  "Id": 2,
+  "Elements": [
+    {
+      "Type": 2,
+      "Image": "wave",
+      "Size": 1.2,
+      "Lifetime": 1.0
+    },
+    {
+      "Type": 1,
+      "Image": "star",
+      "Size": 2.0,
+      "Lifetime": 1.0
+    },
+    {
+      "Type": 1,
+      "Image": "star",
+      "ColorMode": 1,
+      "Size": 1.0,
+      "Lifetime": 1.0
+    },
+    {
+      "Type": 5,
+      "Size": 1.0,
+      "Lifetime": 1.0
+    }
+  ]
+}

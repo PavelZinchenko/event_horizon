@@ -1,0 +1,78 @@
+{
+  "ItemType": 15,
+  "Id": 5,
+  "QuestType": 3,
+  "StartCondition": 2,
+  "Weight": 1.0,
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 15,
+      "DefaultTransition": 10,
+      "Transitions": [
+        {
+          "TargetNode": 9,
+          "Requirement": {
+            "Type": 8
+          }
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "Type": 10,
+      "RequiredView": 1,
+      "Message": "$PIRATES_Agressive",
+      "Actions": [
+        {
+          "TargetNode": 2,
+          "ButtonText": "$PIRATES_ACTION_Attack"
+        },
+        {
+          "TargetNode": 3,
+          "ButtonText": "$PIRATES_ACTION_Retreat"
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "Type": 10,
+      "RequiredView": 1,
+      "Message": "$PIRATES_Passive",
+      "Actions": [
+        {
+          "TargetNode": 2,
+          "ButtonText": "$PIRATES_ACTION_Attack"
+        },
+        {
+          "TargetNode": 5,
+          "ButtonText": "$PIRATES_ACTION_Ignore"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 21,
+      "DefaultTransition": 6,
+      "FailureTransition": 3
+    },
+    {
+      "Id": 3,
+      "Type": 30,
+      "DefaultTransition": 5
+    },
+    {
+      "Id": 6,
+      "Type": 25,
+      "DefaultTransition": 4
+    },
+    {
+      "Id": 4,
+      "Type": 40
+    },
+    {
+      "Id": 5,
+      "Type": 41
+    }
+  ]
+}

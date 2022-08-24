@@ -1,0 +1,36 @@
+{
+  "ItemType": 6,
+  "Id": 122,
+  "Name": "$f16_Cruiser",
+  "Faction": 16,
+  "SizeClass": 2,
+  "IconImage": "slime2",
+  "IconScale": 1.0,
+  "ModelImage": "slime2",
+  "ModelScale": 2.0,
+  "EngineColor": "#40FF4D00",
+  "Engines": [
+    {
+      "Position": {
+        "x": -0.8
+      },
+      "Size": 0.5
+    }
+  ],
+  "KineticResistance": 5.0,
+  "Regeneration": true,
+  "BaseWeightModifier": -0.75,
+  "BuiltinDevices": [
+    18
+  ],
+  "Layout": "000044440000000144441000000122221000001322223100001122221100001322223100001122221100001322223100000025520000000055550000000055550000000005500000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.9
+      },
+      "PlatformType": 2,
+      "WeaponClass": "C"
+    }
+  ]
+}

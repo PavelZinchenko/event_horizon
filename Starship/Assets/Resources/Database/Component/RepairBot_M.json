@@ -1,0 +1,21 @@
+{
+  "ItemType": 1,
+  "Id": 79,
+  "Name": "$RepairBot_M",
+  "DisplayCategory": 6,
+  "Availability": 1,
+  "ComponentStatsId": 3,
+  "Faction": 2,
+  "Level": 125,
+  "Icon": "repairbot2",
+  "Color": "#A0A0A0",
+  "Layout": "1111",
+  "CellType": "2",
+  "DeviceId": 11,
+  "PossibleModifications": [
+    2,
+    7,
+    1,
+    10
+  ]
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Estrelas</string>
+    <string name="TokenCurrency">Fichas</string>
+    <string name="Snowflakes">Flocos de Neve</string>
+    <string name="NoItemsInCategory">Não foram encontrados itens nesta categoria</string>
+    <string name="IapErrorText">Ocorreu um erro inesperado. A sua compra não foi completada.</string>
+    <string name="FacebookItemDescription">Partilha no Facebook</string>
+    <string name="AdItemDescription">Veja um vídeo e ganhe uma recompensa grátis</string>
+    <string name="XmasBox">Presente de Natal</string>
+    <string name="AlienTechnology">Tecnologia Alienígena</string>
+    <string name="Commodity_Scraps">Restos</string>
+    <string name="Commodity_Artifacts">Artefactos alienígenas</string>
+    <string name="Commodity_Minerals">Minerais</string>
+    <string name="Commodity_PreciousMetals">Metais preciosos</string>
+    <string name="Commodity_GemStones">Pedras preciosas</string>
+    <string name="Commodity_Alloys">Ligas metálicas</string>
+    <string name="Commodity_Polymers">Polímeros</string>
+    <string name="Commodity_ToxicWaste">Lixo tóxico</string>
+    <string name="SellTrash">Vender o lixo todo</string>
+    <string name="SellAllTrashConfirmation">Tens a certeza que queres vender todos os itens de baixa qualidade?</string>
+    <string name="BestDeal">O melhor negócio</string>
+    <string name="MostPopular">O mais popular</string>
+    <string name="FalconPack">Oferta Especial</string>
+    <string name="FalconPackDescription">Uma nave única com uma arma poderosa e um capitão habilidoso</string>
+    <string name="StarPack1">Pacote pequeno de Estrelas</string>
+    <string name="StarPackDetails1">Contém 50 estrelas</string>
+    <string name="StarPack2">Pacote de Estrelas</string>
+    <string name="StarPackDetails2">Contém 500 Estrelas</string>
+    <string name="StarPack3">Pacote Grande de Estrelas</string>
+    <string name="StarPackDetails3">Contém 5000 Estrelas</string>
+</resources>

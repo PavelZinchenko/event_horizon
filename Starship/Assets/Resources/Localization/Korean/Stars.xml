@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+<string name="PlanetTypeGas">가스</string>
+<string name="PlanetTypeBarren">황야</string>
+<string name="PlanetTypeTerran">지구형</string>
+<string name="PlanetTypeAsteroids">소행성 띠</string>
+<string name="StarInfo">$1\n방어력: $2</string>
+<string name="CapturedStarInfo">$1\n레벨: $2</string>
+<string name="ExtractionLabel">수집중...</string>
+<string name="AddNote">메모 더하기</string>
+<string name="PlanetTemperature">온도</string>
+<string name="PlanetToxicity">독성</string>
+<string name="PlanetHostility">적대심</string>
+<string name="ExplorationProgress">탐험함: $1%</string>
+<string name="ExploredItems">탐험한 물체들:</string>
+
+</resources>

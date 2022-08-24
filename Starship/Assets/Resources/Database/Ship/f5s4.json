@@ -1,0 +1,24 @@
+{
+  "ItemType": 6,
+  "Id": 43,
+  "Name": "$f5_Battleship",
+  "Faction": 5,
+  "SizeClass": 3,
+  "IconImage": "f5s4",
+  "IconScale": 1.0,
+  "ModelImage": "f5s4",
+  "ModelScale": 2.0,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40FFCC6F",
+  "EngineSize": 0.2,
+  "Layout": "000000000000000111111000001333333100013333333310113300003311113304403311113304403311113304403311013300003310013355553310005505505500000000000000",
+  "Barrels": [
+    {
+      "Offset": 0.6,
+      "PlatformType": 1,
+      "WeaponClass": "C"
+    }
+  ]
+}

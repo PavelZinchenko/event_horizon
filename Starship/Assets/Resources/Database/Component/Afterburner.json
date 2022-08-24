@@ -1,0 +1,19 @@
+{
+  "ItemType": 1,
+  "Name": "$Afterburner",
+  "DisplayCategory": 4,
+  "Availability": 1,
+  "ComponentStatsId": 3,
+  "Faction": 7,
+  "Level": 25,
+  "Icon": "afterburner1",
+  "Color": "#FFFFC0",
+  "Layout": "100100100",
+  "CellType": "5",
+  "DeviceId": 1,
+  "PossibleModifications": [
+    2,
+    1,
+    6
+  ]
+}

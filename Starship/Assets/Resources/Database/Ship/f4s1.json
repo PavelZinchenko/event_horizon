@@ -1,0 +1,35 @@
+{
+  "ItemType": 6,
+  "Id": 34,
+  "Name": "$f4_Scout",
+  "Faction": 4,
+  "IconImage": "f4s1",
+  "IconScale": 0.5,
+  "ModelImage": "f4s1",
+  "ModelScale": 1.0,
+  "EnginePosition": {
+    "x": -0.85
+  },
+  "EngineColor": "#40B4FFB4",
+  "EngineSize": 0.1,
+  "Regeneration": true,
+  "Layout": "0400040040204000222000122210012221000323000051500",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0,
+        "y": -0.55
+      },
+      "Rotation": 5.0,
+      "WeaponClass": "L"
+    },
+    {
+      "Position": {
+        "x": 1.0,
+        "y": 0.55
+      },
+      "Rotation": -5.0,
+      "WeaponClass": "L"
+    }
+  ]
+}

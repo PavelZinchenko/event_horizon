@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Faction">Frakció:</string>
+    <string name="Level">Szint:</string>
+    <string name="NeutralFaction">Szabad Rendszerek</string>
+    <string name="Faction1">Veniri</string>
+    <string name="Faction2">Bushrak</string>
+    <string name="Faction3">Korerans</string>
+    <string name="Faction4">Taraniak</string>
+    <string name="Faction5">Sayjix</string>
+    <string name="Faction6">Jurgans</string>
+    <string name="Faction7">Zumbalari</string>
+    <string name="Faction8">Neganari</string>
+    <string name="Faction9">Daazen</string>
+    <string name="Faction10">Névtelenek</string>
+    <string name="Faction11">A Birodalom</string>
+    <string name="Faction12">A Raj</string>
+    <string name="Faction13">A Szindikátus</string>
+    <string name="Faction15">Gyűjtögetők</string>
+    <string name="Faction16">Fertőzés</string>
+</resources>

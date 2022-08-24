@@ -1,0 +1,43 @@
+{
+  "ItemType": 6,
+  "Id": 56,
+  "Name": "$f8_Destroyer",
+  "Faction": 10,
+  "SizeClass": 1,
+  "IconImage": "f8s2",
+  "IconScale": 0.7,
+  "ModelImage": "f8s2",
+  "ModelScale": 1.45,
+  "EngineColor": "#40FFE0E0",
+  "Engines": [
+    {
+      "Position": {
+        "x": -0.7,
+        "y": 0.55
+      },
+      "Size": 0.2
+    },
+    {
+      "Position": {
+        "x": -0.7,
+        "y": -0.55
+      },
+      "Size": 0.2
+    }
+  ],
+  "Layout": "000013310000000013310000000013310000000012210000000022220000000002200000004402204400004402204400004422224400005502205500005505505500000005500000",
+  "Barrels": [
+    {
+      "Position": {
+        "y": -0.5
+      },
+      "WeaponClass": "MS"
+    },
+    {
+      "Position": {
+        "y": 0.5
+      },
+      "WeaponClass": "MS"
+    }
+  ]
+}

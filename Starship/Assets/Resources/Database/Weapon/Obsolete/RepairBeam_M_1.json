@@ -1,0 +1,8 @@
+{
+  "ItemType": 3,
+  "Id": 71,
+  "WeaponClass": 2,
+  "ActivationType": 1,
+  "ShotEffectPrefab": "OrbAdditive",
+  "ControlButtonIcon": "controls_laser"
+}

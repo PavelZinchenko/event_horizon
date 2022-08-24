@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Աստղեր</string>
+    <string name="TokenCurrency">Խորհրդանիշներ</string>
+    <string name="Snowflakes">ձնագնդիկներ</string>
+    <string name="NoItemsInCategory">Այս կատեգորիայում ապրանքներ չեն գտնվել</string>
+    <string name="IapErrorText">Տեղի ունեցավ անսպասելի սխալ, այդ պատժառով ձեր գնումը չի կատարվել։</string>
+    <string name="FacebookItemDescription">Տարածել Facebook-ում</string>
+    <string name="AdItemDescription">Դիտեք տեսանյութը եւ ստացեք վարձատրություն</string>
+    <string name="XmasBox">Նոր Տարվա նվեր</string>
+    <string name="AlienTechnology">Այլմոլորակային տեխնոլոգիա</string>
+    <string name="Commodity_Scraps">Փշուրներ</string>
+    <string name="Commodity_Artifacts">Այլմոլորակային արտեֆակտներ</string>
+    <string name="Commodity_Minerals">Օգտակար հանածոներ</string>
+    <string name="Commodity_PreciousMetals">Թանկարժեք մետաղներ</string>
+    <string name="Commodity_GemStones">Թանկարժեք քարեր</string>
+    <string name="Commodity_Alloys">Մետաղական խառնուրդներ</string>
+    <string name="Commodity_Polymers">Պոլիմերներ</string>
+    <string name="Commodity_ToxicWaste">Թունավոր նյութեր</string>
+    <string name="SellTrash">Վաճառել ամբողջ աղբը</string>
+    <string name="SellAllTrashConfirmation">Դուք իսկապես ցանկանում եք վաճառել բոլոր վատ որակի ապրանքները?</string>
+    <string name="BestDeal">ԼԱՎԱԳՈՒՅՆ ԱՌԱՋԱՐԿ</string>
+    <string name="MostPopular">ԱՄԵՆԱ ՏԱՐԱԾՎԱԾ</string>
+    <string name="FalconPack">Յուրահատուկ առաջարկ</string>
+    <string name="FalconPackDescription">Յուրահատուկ նավ հզոր թնդանոթով եւ փորձառու կապիտանով</string>
+    <string name="StarPack1">Աստղերի փոքր փունջ</string>
+    <string name="StarPackDetails1">Պարունակում է 50 աստղ</string>
+    <string name="StarPack2">Աստղերի փունջ</string>
+    <string name="StarPackDetails2">Պարունակում է 500 աստղ</string>
+    <string name="StarPack3">Աստղերի մեծ փունջ</string>
+    <string name="StarPackDetails3">Պարունակում է 5000 աստղ</string>
+</resources>

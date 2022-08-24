@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+<string name="HitPointsMod">체력 $1</string>
+<string name="DefenseMod">방어력 $1</string>
+<string name="WeightMod">무게 $1</string>
+<string name="EnergyCostMod">에너지 소비량 $1</string>
+<string name="DamageMod">데미지 $1</string>
+<string name="CooldownMod">재사용 대기 시간 $1</string>
+<string name="RangeMod">거리 $1</string>
+<string name="BulletVelocityMod">발사 속도 $1</string>
+<string name="EnergyMod">에너지 용량 $1</string>
+<string name="RepairRateMod">회복률 $1</string>
+<string name="EnginePowerMod">엔진 파워 $1</string>
+<string name="EnergyRechargeMod">에너지 재충전률 $1</string>
+<string name="BulletVelocityMod2">발사 속도 $1\n데미지 $2</string>
+<string name="AreaOfEffectMod">유효반경 $1</string>
+<string name="ShieldPowerMod">보호막 파워 $1</string>
+<string name="DamageMod2">데미지 $1\n재사용 대기 시간 $2</string>
+
+</resources>

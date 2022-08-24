@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Credits_Title">Ufuk Faciası</string>
+    <string name="Credits_GameDesign">Oyun Dizaynı</string>
+    <string name="Credits_Program">Programlama</string>
+    <string name="Credits_Graphics">Grafik Dizaynı</string>
+    <string name="Credits_Localization">Yerelleştirme</string>
+    <string name="Credits_Music">Müzik</string>
+    <string name="Credits_Sound">Ses efektleri</string>
+    <string name="Credits_Thanks">Özel teşekkür</string>
+    <string name="Credits_Program_Content">Pavel Zinchenko</string>
+    <string name="Credits_Graphics_Content">Pavel Zinchenko</string>
+</resources>

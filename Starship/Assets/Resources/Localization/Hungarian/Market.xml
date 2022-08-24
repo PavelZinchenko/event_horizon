@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Csillagok</string>
+    <string name="TokenCurrency">Érmék</string>
+    <string name="Snowflakes">Hópelyhek</string>
+    <string name="NoItemsInCategory">Nem található tárgy a kategóriában</string>
+    <string name="IapErrorText">Váratlan hiba történt, a tranzakció sikertelen.</string>
+    <string name="FacebookItemDescription">Megosztás Facebookon</string>
+    <string name="AdItemDescription">Videó megnézése ingyenes jutalomért</string>
+    <string name="XmasBox">Karácsonyi Csomag</string>
+    <string name="AlienTechnology">Idegen Technológia</string>
+    <string name="Commodity_Scraps">Törmelék</string>
+    <string name="Commodity_Artifacts">Idegen Műalkotások</string>
+    <string name="Commodity_Minerals">Ásványok</string>
+    <string name="Commodity_PreciousMetals">Értékes Fémek</string>
+    <string name="Commodity_GemStones">Drágakövek</string>
+    <string name="Commodity_Alloys">Fémötvözetek</string>
+    <string name="Commodity_Polymers">Polimerek</string>
+    <string name="Commodity_ToxicWaste">Toxikus Selejt</string>
+    <string name="SellTrash">Összes szürke tárgy eladása</string>
+    <string name="SellAllTrashConfirmation">Biztosan el akarsz adni minden alacsony minőségű tárgyat?</string>
+    <string name="BestDeal">LEGJOBB AJÁNLAT</string>
+    <string name="MostPopular">LEGNÉPSZERŰBB</string>
+    <string name="FalconPack">Speciális Ajánlat</string>
+    <string name="FalconPackDescription">Egyedi hajó erős fegyverrel és tapasztalt pilótával</string>
+    <string name="StarPack1">Kis Csillag Csomag</string>
+    <string name="StarPackDetails1">50 csillagot tartalmaz</string>
+    <string name="StarPack2">Csillag Csomag</string>
+    <string name="StarPackDetails2">500 csillagot tartalmaz</string>
+    <string name="StarPack3">Nagy Csillag Csomag</string>
+    <string name="StarPackDetails3">5000 csillagot tartalmaz</string>
+</resources>

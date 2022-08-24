@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Պահանջվող մակարդակ:</string>
+    <string name="CraftPrice">Գին:</string>
+    <string name="CraftCommonItem">Ստեղծել սովորական որակի ապրանք։</string>
+    <string name="CraftImprovedItem">Ստեղծել ավելի լավ որակի ապրանք։</string>
+    <string name="CraftSuperiorItem">Ստեղծել գերազանց որակի ապրանք։</string>
+    <string name="CraftNotAvailable">Անհասանելի է այս ապրանքի համար։</string>
+    <string name="CraftItem">Ստեղծել սովորական ապրանք</string>
+    <string name="RareResourceLabel">Հազվագյուտ ռեսուրսներ</string>
+    <string name="RareResource">Պատրաստման բաղադրիչ</string>
+    <string name="CraftQueue">Արտադրություն</string>
+    <string name="CraftCompleted">Ավարտված է</string>
+    <string name="CraftInQueue">Սպասում է</string>
+    <string name="EmptyBuildQueue">Կառուցել հերթը դատարկ է։</string>
+    <string name="Blueprint">Գծանկար։ $1</string>
+    <string name="Shipyard">Նավաշինարան</string>
+    <string name="UpgradeShipDescription">Նախազգուշացում։ Եթե դուք բարելավեք այս նավը, նրա մակարդակը կնվազի $1.</string>
+    <string name="RequiredShipyardLevel">Նավաշինարանը պետք է լինի $1 մակարդակի եւ պատկանի $2.</string>
+    <string name="RequiredShipLevel">Ձեր նավը պետք է լինի $1 մակարդակի կամ ավելի բարձր։</string>
+    <string name="InstallModConfirmation">Վստահ եք, որ ցանկանում եք տեղադրել այս փոփոխությունը:</string>
+    <string name="DeleteModConfirmation">Դուք համոզված եք, որ ցանկանում եք հեռացնել այս փոփոխությունը։ Դուք հետ չեք ստանա գումար։</string>
+    <string name="SelectCellType">Ընտրեք բջջի տեսակը</string>
+    <string name="SelectCellPlace">Ընտրեք տեղը նոր բջիջի համար</string>
+    <string name="AddShipCell">Ստեղծել լրացուցիչ բջիջ</string>
+    <string name="RemoveShipCells">Վերականգնում նավի դասավորությունը։</string>
+    <string name="RemoveShipCellsWarning">Վստահ եք, որ ցանկանում եք հեռացնել բոլոր ավելորդ բջիջները ձեր նավից։</string>
+</resources>

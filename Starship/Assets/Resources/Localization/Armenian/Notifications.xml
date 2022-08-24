@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CloudGameLoaded">Խաղը հաջողությամբ բեռնված է</string>
+    <string name="CloudGameSaved">Խաղը հաջողությամբ պահպանվել է</string>
+    <string name="CloudOperationFailed">Գործողությունը ձախողվեց:\n$1</string>
+    <string name="BadSavegameError">Խաղի ոչ ճիշտ պահպանված ձեւ</string>
+    <string name="GoogleSingInRequired">Պահանջվում է Google Play-ի իսկությունը</string>
+    <string name="InternalError">Ներքին սխալ</string>
+    <string name="CommonConfirmation">Վստահ ես, որ ուզում ես սա անել ?</string>
+    <string name="LoginFailedText">Չհաջողվեց մուտք գործել սերվեր։ Խնդրում ենք կրկնել փորձը ավելի ուշ</string>
+</resources>

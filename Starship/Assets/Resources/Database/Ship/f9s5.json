@@ -1,0 +1,35 @@
+{
+  "ItemType": 6,
+  "Id": 63,
+  "Name": "$f9_Cruiser2",
+  "Faction": 11,
+  "SizeClass": 2,
+  "IconImage": "f9s5",
+  "IconScale": 0.9,
+  "ModelImage": "f9s5",
+  "ModelScale": 2.0,
+  "EnginePosition": {
+    "x": -0.75
+  },
+  "EngineColor": "#40F0D2B4",
+  "EngineSize": 0.3,
+  "Layout": "000001100000000011110000000012210000044022220440144222222441144122221441044112211440000022220000000022220000000055550000000055550000000050050000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.35,
+        "y": 0.52
+      },
+      "Rotation": 4.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.35,
+        "y": -0.52
+      },
+      "Rotation": -4.0,
+      "WeaponClass": "C"
+    }
+  ]
+}

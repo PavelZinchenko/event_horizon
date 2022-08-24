@@ -1,0 +1,24 @@
+{
+  "ItemType": 6,
+  "Id": 76,
+  "Name": "$fn_Battleship2",
+  "SizeClass": 3,
+  "IconImage": "fns8",
+  "IconScale": 0.9,
+  "ModelImage": "fns8",
+  "ModelScale": 2.0,
+  "EnginePosition": {
+    "x": -0.95
+  },
+  "EngineColor": "#40FFFFB4",
+  "EngineSize": 0.2,
+  "Layout": "0100000000010010000000001001000000000100100044400010011014441011001113444311100111324231110011132223111000113222311000011322231100000522522500000005555500000000055500000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.5
+      },
+      "WeaponClass": "L"
+    }
+  ]
+}

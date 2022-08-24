@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Plynná</string>
+    <string name="PlanetTypeBarren">Pustá</string>
+    <string name="PlanetTypeTerran">Terestrická</string>
+    <string name="PlanetTypeAsteroids">Prstenec</string>
+    <string name="StarInfo">$1\nObrana: $2</string>
+    <string name="CapturedStarInfo">$1\nLevel: $2</string>
+    <string name="ExtractionLabel">Sbírání...</string>
+    <string name="AddNote">Přidat popisek</string>
+    <string name="PlanetTemperature">Teplota</string>
+    <string name="PlanetToxicity">Toxicita</string>
+    <string name="PlanetHostility">Nepřátelství</string>
+    <string name="NotExplored">Zatím neprozkoumáno</string>
+    <string name="ObjectStarBase">Vesmírná stanice</string>
+    <string name="ObjectSurvival">Survival</string>
+    <string name="ObjectBoss">Flagship</string>
+    <string name="ObjectWormhole">Červí díra</string>
+    <string name="ObjectMultiplayer">Hra pro více hráčů</string>
+    <string name="ObjectArena">Aréna</string>
+    <string name="ObjectChallenge">Výzva</string>
+    <string name="ObjectBlackMarket">Pašerácká základna</string>
+    <string name="ObjectRuins">Opuštená stanice</string>
+    <string name="ObjectMilitary">Vojenská základna</string>
+    <string name="ObjectEvent">Nouzový signál</string>
+    <string name="ObjectXmas">Veselé Vánoce!</string>
+</resources>

@@ -1,0 +1,17 @@
+{
+  "ItemType": 4,
+  "Id": 92,
+  "AmmunitionClass": 29,
+  "Impulse": 1.0,
+  "Size": 4.0,
+  "AreaOfEffect": 4.0,
+  "Damage": 100.0,
+  "Range": 30.0,
+  "LifeTime": 10.0,
+  "IgnoresShipVelocity": true,
+  "EnergyCost": 25.0,
+  "Color": "#FF00FF",
+  "FireSound": "launch_04",
+  "HitSound": "explosion_06",
+  "BulletPrefab": "BlackHole"
+}

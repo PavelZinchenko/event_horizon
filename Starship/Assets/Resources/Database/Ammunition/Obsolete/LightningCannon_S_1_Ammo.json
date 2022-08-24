@@ -1,0 +1,15 @@
+{
+  "ItemType": 4,
+  "Id": 32,
+  "AmmunitionClass": 18,
+  "DamageType": 1,
+  "Size": 0.5,
+  "Damage": 80.0,
+  "Range": 3.0,
+  "LifeTime": 0.1,
+  "EnergyCost": 1.0,
+  "Color": "#B4B4FFB4",
+  "FireSound": "shot_11",
+  "HitEffectPrefab": "FlashAdditive",
+  "BulletPrefab": "Lightning"
+}

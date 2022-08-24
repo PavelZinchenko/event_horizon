@@ -1,0 +1,23 @@
+{
+  "ItemType": 1,
+  "Id": 126,
+  "Name": "$LightningCannon_S_1",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 4,
+  "Icon": "shock1",
+  "Color": "#40FF40",
+  "Layout": "1",
+  "CellType": "4",
+  "WeaponId": 32,
+  "AmmunitionId": 32,
+  "PossibleModifications": [
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

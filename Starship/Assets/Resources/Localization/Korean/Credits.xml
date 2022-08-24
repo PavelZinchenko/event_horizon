@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+<string name="Credits_Title">이벤트 호라이즌</string>
+<string name="Credits_GameDesign">게임 디자인</string>
+<string name="Credits_Program">프로그래밍</string>
+<string name="Credits_Graphics">그래픽 디자인</string>
+<string name="Credits_Localization">번역</string>
+<string name="Credits_Music">음악</string>
+<string name="Credits_Sound">음향 효과</string>
+<string name="Credits_Thanks">특별히 감사한분들</string>
+<string name="Credits_GameDesign_Content">Pavel Zinchenko</string>
+<string name="Credits_Program_Content">Pavel Zinchenko</string>
+<string name="Credits_Graphics_Content">Pavel Zinchenko</string>
+<string name="Credits_Localization_Content">Moritz Schuh (MegumiKitaniji)\n Viktor López (Anacheron)\n Daniel Jader (Agred)\n Anthony Barest (SnowedEarth)\n Pedro Duque (MrD)\n DongHo Jang (BUP5013511)\n </string>
+<string name="Credits_Music_Content"> Matthew Le Blanc (SynthR) - www.synthr.net\n Robson Cozendey - www.cozendey.com\n Vertex Studio\n </string>
+<string name="Credits_Sound_Content">freesound.org</string>
+<string name="Credits_Thanks_Content"> Mikhail Lilikin\n Nanane\n </string>
+
+</resources>

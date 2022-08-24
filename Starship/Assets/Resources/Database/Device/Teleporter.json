@@ -1,0 +1,16 @@
+{
+  "ItemType": 2,
+  "Id": 15,
+  "DeviceClass": 10,
+  "EnergyConsumption": 3.0,
+  "PassiveEnergyConsumption": 5.0,
+  "Power": 1.0,
+  "Range": 10.0,
+  "Size": 4.0,
+  "Cooldown": 3.0,
+  "ActivationType": 1,
+  "Color": "#B4FFB4",
+  "Sound": "hit_01",
+  "EffectPrefab": "FlashAdditive",
+  "ControlButtonIcon": "controls_gear"
+}

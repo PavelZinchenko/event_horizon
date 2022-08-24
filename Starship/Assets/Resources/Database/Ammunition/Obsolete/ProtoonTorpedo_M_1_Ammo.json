@@ -1,0 +1,19 @@
+{
+  "ItemType": 4,
+  "Id": 56,
+  "AmmunitionClass": 4,
+  "DamageType": 1,
+  "Impulse": 0.01,
+  "Recoil": 0.01,
+  "Size": 0.5,
+  "AreaOfEffect": 3.0,
+  "Damage": 7.5,
+  "Range": 20.0,
+  "Velocity": 10.0,
+  "LifeTime": 2.0,
+  "EnergyCost": 5.0,
+  "Color": "#C2FFBD",
+  "FireSound": "shot_02",
+  "HitSound": "hit_01",
+  "BulletPrefab": "Energy1"
+}

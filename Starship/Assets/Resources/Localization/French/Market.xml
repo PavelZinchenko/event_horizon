@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Étoiles</string>
+    <string name="TokenCurrency">Jetons</string>
+    <string name="Snowflakes">Flocons</string>
+    <string name="NoItemsInCategory">Pas d\'objets trouvés dans cette catégorie</string>
+    <string name="IapErrorText">Une erreur c\'est produite.Votre achat n\'a pas été complété</string>
+    <string name="FacebookItemDescription">Partager sur Facebook</string>
+    <string name="AdItemDescription">Regarder une vidéo et obtenir une étoile</string>
+    <string name="XmasBox">Cadeau de noël</string>
+    <string name="AlienTechnology">Technologie extraterrestre</string>
+    <string name="Commodity_Scraps">Résidus</string>
+    <string name="Commodity_Artifacts">Artefacts extraterrestres</string>
+    <string name="Commodity_Minerals">Minéraux</string>
+    <string name="Commodity_PreciousMetals">Métaux précieux</string>
+    <string name="Commodity_GemStones">Gemmes</string>
+    <string name="Commodity_Alloys">Alliages</string>
+    <string name="Commodity_Polymers">Polymères</string>
+    <string name="Commodity_ToxicWaste">Déchets toxiques</string>
+    <string name="SellTrash">Vendre tous les déchets</string>
+    <string name="SellAllTrashConfirmation">Voulez-vous réellement vendre tous les objets de basse qualité ?</string>
+    <string name="BestDeal">MEILLEURE OFFRE</string>
+    <string name="MostPopular">PLUS POPULAIRE</string>
+    <string name="FalconPack">Offre Spéciale</string>
+    <string name="FalconPackDescription">Vaisseau unique avec une arme puissante et un capitaine qualifié</string>
+    <string name="StarPack1">Petit paquet d\'étoiles</string>
+    <string name="StarPackDetails1">Contient 50 étoiles</string>
+    <string name="StarPack2">Paquet d\'étoiles</string>
+    <string name="StarPackDetails2">Contient 500 étoiles</string>
+    <string name="StarPack3">Grand paquet d\'étoiles</string>
+    <string name="StarPackDetails3">Contient 5000 étoiles</string>
+</resources>

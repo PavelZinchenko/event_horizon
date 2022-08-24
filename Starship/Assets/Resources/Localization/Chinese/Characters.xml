@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Name">名字：</string>
+    <string name="Gender">种族：</string>
+    <string name="Experience">经验值：</string>
+    <string name="PlayerName">这货是你</string>
+    <string name="FirstNameHM">$[詹姆斯|大卫|克里斯托弗|乔治|罗纳德|约翰|理查德|丹尼尔|肯尼思|安东尼|罗伯特|查尔斯|保罗|史蒂芬|凯文|迈克尔|约瑟夫|马克|爱德华|杰森|威廉|托马斯|唐纳德|布莱恩|杰夫]</string>
+    <string name="FirstNameHF">$[玛丽|珍妮|丽莎|桑德拉|米雪|帕特里夏|玛丽亚|南希|唐娜|劳拉|琳达|苏珊|卡伦|卡罗尔|莎拉|芭芭拉|玛格丽特|贝蒂|露丝|金伯利|伊丽莎白|多萝西|海伦|莎伦|狄波拉]</string>
+    <string name="LastNameH">$[史密斯|约翰逊|威廉姆斯|琼斯|布朗|戴维斯|米勒|威尔逊|穆尔|泰勒|安德森|托马斯|杰克逊|怀特|哈里斯|马丁|汤普森|加西亚|马丁内斯|罗宾逊|克拉克|罗德里格斯|刘易斯|李|沃克|霍尔|艾伦|杨|埃尔南德斯|金|赖特|洛佩兹|希尔|斯科特|格林|亚当斯|贝克|冈萨雷兹|尼尔森|卡特|米切尔|佩雷斯|罗伯茨|特纳|菲利普斯|坎贝尔|帕克|埃文斯|爱德华|柯林斯|斯图尔特|桑切斯|莫里斯|罗杰斯|里德|库克|摩根|贝尔|墨菲|贝利|里维拉|库珀|理查德森|考克斯|霍华德|沃德|托雷斯|彼得森|格雷|拉米雷斯|詹姆斯|沃森|布鲁克斯|凯利|桑德斯|普莱斯|贝内特|伍德|巴恩斯|罗斯|亨德森|科尔曼|詹金斯|佩里|鲍威尔|朗|帕特森|休斯|弗洛雷斯|华盛顿|巴特勒|西蒙斯|福斯特|冈萨雷斯|布莱恩特|亚历山大|罗素|格里芬|迪亚兹|海斯]</string>
+    <string name="FalconCaptainName">龙傲天</string>
+    <string name="Gender_HumanMale">男性人类</string>
+    <string name="Gender_HumanFemale">女性人类</string>
+    <string name="Gender_Android">机器人</string>
+    <string name="Gender_Alien">外星人</string>
+    <string name="PerkName_Attack">炮手</string>
+    <string name="PerkName_Defense">军械手</string>
+    <string name="PerkName_CommandPoint">少将</string>
+    <string name="PerkName_FavoriteShip">专业者</string>
+    <string name="PerkName_QuickRecovery">技师</string>
+    <string name="PerkName_Scavenger">拾荒者</string>
+    <string name="PerkInfo_Attack">$1%攻击加成</string>
+    <string name="PerkInfo_Defense">$1%防御加成</string>
+    <string name="PerkInfo_CommandPoint">命令点额外+1</string>
+    <string name="PerkInfo_FavoriteShip">非常精通于驾驶$1</string>
+    <string name="PerkInfo_QuickRecovery">被击坠后能更快地修理飞船重返战场</string>
+    <string name="PerkInfo_Scavenger">被击毁后掉落珍稀物品</string>
+    <string name="ShipLevelText">飞船等级：</string>
+    <string name="AttackBonusText">攻击加成：</string>
+    <string name="DefenseBonusText">防御加成：</string>
+    <string name="Speciality">专精：</string>
+    <string name="SpecialityFrigate">护卫舰</string>
+    <string name="SpecialityDestroyer">驱逐舰</string>
+    <string name="SpecialityCruiser">巡洋舰</string>
+    <string name="SpecialityBattleship">战舰</string>
+    <string name="SpecialityTitan">旗舰</string>
+</resources>

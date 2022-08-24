@@ -1,0 +1,18 @@
+{
+  "ItemType": 4,
+  "Id": 53,
+  "AmmunitionClass": 25,
+  "DamageType": 2,
+  "Size": 0.5,
+  "AreaOfEffect": 4.0,
+  "Damage": 8.0,
+  "Range": 25.0,
+  "Velocity": 10.0,
+  "LifeTime": 10.0,
+  "EnergyCost": 15.0,
+  "Color": "#FF3300",
+  "FireSound": "shot_02",
+  "HitSound": "launch_03",
+  "HitEffectPrefab": "Energy2",
+  "BulletPrefab": "Bomb"
+}

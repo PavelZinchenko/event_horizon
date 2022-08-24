@@ -1,0 +1,42 @@
+{
+  "ItemType": 6,
+  "Id": 44,
+  "Name": "$f6_Scout",
+  "Faction": 6,
+  "IconImage": "f6s1",
+  "IconScale": 0.7,
+  "ModelImage": "f6s1",
+  "ModelScale": 1.0,
+  "EnginePosition": {
+    "x": -0.1
+  },
+  "EngineColor": "#10A0FFA0",
+  "EngineSize": 0.5,
+  "Regeneration": true,
+  "Layout": "0022200012221001222100455540040404004040400004000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": -0.55,
+        "y": -0.95
+      },
+      "Rotation": 230.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": -0.55,
+        "y": 0.95
+      },
+      "Rotation": 130.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": -1.0
+      },
+      "Rotation": 180.0,
+      "WeaponClass": "C"
+    }
+  ]
+}

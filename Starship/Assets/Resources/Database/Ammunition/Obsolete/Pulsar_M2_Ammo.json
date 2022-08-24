@@ -1,0 +1,14 @@
+{
+  "ItemType": 4,
+  "Id": 60,
+  "AmmunitionClass": 2,
+  "DamageType": 1,
+  "Size": 1.0,
+  "AreaOfEffect": 7.0,
+  "Damage": 15.0,
+  "LifeTime": 2.0,
+  "EnergyCost": 6.0,
+  "Color": "#F0E5A5",
+  "FireSound": "*flux_03",
+  "BulletPrefab": "EnergyField2"
+}

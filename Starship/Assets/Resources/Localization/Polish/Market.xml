@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Gwiazdy</string>
+    <string name="TokenCurrency">Tokeny</string>
+    <string name="Snowflakes">Płatki śniegu</string>
+    <string name="NoItemsInCategory">Nie znaleziono przedmiotów w tej kategorii</string>
+    <string name="IapErrorText">Nastąpił niespodziewany błąd. Zakup nie został dokonany.</string>
+    <string name="FacebookItemDescription">Udostępnij na Facebooku</string>
+    <string name="AdItemDescription">Obejrzyj wideo i otrzymaj darmową nagrodę</string>
+    <string name="XmasBox">Prezent świąteczny</string>
+    <string name="AlienTechnology">Obca technologia</string>
+    <string name="Commodity_Scraps">Fragmenty</string>
+    <string name="Commodity_Artifacts">Artefakty obcych</string>
+    <string name="Commodity_Minerals">Minerały</string>
+    <string name="Commodity_PreciousMetals">Metale szlachetne</string>
+    <string name="Commodity_GemStones">Kamienie szlachetne</string>
+    <string name="Commodity_Alloys">Stopy metali</string>
+    <string name="Commodity_Polymers">Polimery</string>
+    <string name="Commodity_ToxicWaste">Toksyczne odpady</string>
+    <string name="SellTrash">Sprzedaj cały złom</string>
+    <string name="SellAllTrashConfirmation">Czy na pewno chcesz sprzedać wszystkie moduły niskiej jakości?</string>
+    <string name="BestDeal">NAJLEPSZA OFERTA</string>
+    <string name="MostPopular">NAJPOPULARNIEJSZE</string>
+    <string name="FalconPack">Oferta Specjalna</string>
+    <string name="FalconPackDescription">Unikalny statek z potężnym działem i uzdolnionym kapitanem</string>
+    <string name="StarPack1">Mała paczka gwiazd</string>
+    <string name="StarPackDetails1">Zawiera 50 gwiazd</string>
+    <string name="StarPack2">Paczka gwiazd</string>
+    <string name="StarPackDetails2">Zawiera 500 gwiazd</string>
+    <string name="StarPack3">Duża paczka gwiazd</string>
+    <string name="StarPackDetails3">Zawiera 5000 gwiazd</string>
+</resources>

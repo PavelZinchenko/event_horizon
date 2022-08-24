@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Livello richiesto:</string>
+    <string name="CraftPrice">Prezzo:</string>
+    <string name="CraftCommonItem">Crea oggetto comune</string>
+    <string name="CraftImprovedItem">Crea oggetto migliorato</string>
+    <string name="CraftSuperiorItem">Crea oggetto superiore</string>
+    <string name="CraftNotAvailable">Non disponibile per questo oggetto</string>
+    <string name="CraftItem">Crea oggetto comune</string>
+    <string name="RareResourceLabel">Risorse rare</string>
+    <string name="RareResource">Materiali per la costruzione</string>
+    <string name="CraftQueue">Produzione</string>
+    <string name="CraftCompleted">Completato</string>
+    <string name="CraftInQueue">In attesa</string>
+    <string name="EmptyBuildQueue">La coda di costruzione è vuota</string>
+    <string name="Blueprint">Schema: $1</string>
+</resources>

@@ -1,0 +1,13 @@
+{
+  "ItemType": 100,
+  "DefaultWeightPerCell": 20.0,
+  "MinimumWeightPerCell": 10.0,
+  "ArmorPointsPerCell": 0.5,
+  "ArmorRepairCooldown": 1.0,
+  "BaseEnergyPoints": 1.0,
+  "BaseEnergyRechargeRate": 0.1,
+  "EnergyRechargeCooldown": 1.0,
+  "ShieldRechargeCooldown": 4.0,
+  "MaxVelocity": 20.0,
+  "MaxTurnRate": 20.0
+}

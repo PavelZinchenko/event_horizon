@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Seviye gerekli:</string>
+    <string name="CraftPrice">Bedel:</string>
+    <string name="CraftCommonItem">Normal kalitede eşya oluştur</string>
+    <string name="CraftImprovedItem">Gelişmiş kalitede eşya oluştur</string>
+    <string name="CraftSuperiorItem">Üstün kalitede eşya oluştur</string>
+    <string name="CraftNotAvailable">Bu eşya için uygun değil</string>
+    <string name="CraftItem">Normal eşya oluştur</string>
+    <string name="RareResourceLabel">Nadir kaynaklar</string>
+    <string name="RareResource">Hazırlama malzemesi</string>
+    <string name="CraftQueue">Üretim</string>
+    <string name="CraftCompleted">Tamamlandı</string>
+    <string name="CraftInQueue">Bekliyor</string>
+    <string name="EmptyBuildQueue">Yapı sırası boş</string>
+    <string name="Blueprint">Taslak: $1</string>
+    <string name="Shipyard">Tersane</string>
+    <string name="UpgradeShipDescription">UYARI: Bu gemiyi geliştirirsen, seviyesi $1 azalacak.</string>
+    <string name="RequiredShipyardLevel">Tersane seviyesinde $1 ve $2\'e ait olmalıdır.</string>
+    <string name="RequiredShipLevel">Geminin seviyesi $1 yada daha fazla olmalı.</string>
+    <string name="InstallModConfirmation">Bu değişikliği yüklemek istediğinize eminmisiniz?</string>
+    <string name="DeleteModConfirmation">Bu değişikliği kaldırmak istediğinize eminmisiniz? Para iadesi almayacaksınız</string>
+    <string name="SelectCellType">Hücre tipini seç</string>
+    <string name="SelectCellPlace">Yeni bir hücre için yer seçin</string>
+    <string name="AddShipCell">Ekstra bir hücre yarat</string>
+    <string name="RemoveShipCells">Gemi düzenini sıfırla</string>
+    <string name="RemoveShipCellsWarning">Tüm ekstra hücreleri geminden çıkarmak istediğinden emin misin?</string>
+</resources>

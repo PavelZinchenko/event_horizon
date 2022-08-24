@@ -1,0 +1,16 @@
+{
+  "ItemType": 1,
+  "Id": 86,
+  "Name": "TutorialDrive",
+  "DisplayCategory": 4,
+  "ComponentStatsId": 1,
+  "Faction": -1,
+  "Icon": "engine1",
+  "Layout": "1",
+  "CellType": "5",
+  "PossibleModifications": [
+    2,
+    11,
+    1
+  ]
+}

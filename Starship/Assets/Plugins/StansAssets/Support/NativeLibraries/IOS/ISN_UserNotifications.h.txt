@@ -1,0 +1,15 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// @module IOS Native Plugin
+// @author Osipov Stanislav (Stan's Assets)
+// @support support@stansassets.com
+// @website https://stansassets.com
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#import <UserNotifications/UserNotifications.h>
+@interface ISN_UserNotifications : NSObject<UNUserNotificationCenterDelegate>
++ (ISN_UserNotifications*)sharedInstance;
+- (NSString *)unNotificationRequestToNSString:(UNNotificationRequest*)request;
+@property NSString *launchNotificationString;
+@end

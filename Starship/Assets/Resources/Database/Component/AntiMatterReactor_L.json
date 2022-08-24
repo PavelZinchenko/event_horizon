@@ -1,0 +1,17 @@
+{
+  "ItemType": 1,
+  "Id": 75,
+  "Name": "$AntiMatterReactor_L",
+  "DisplayCategory": 3,
+  "Availability": 1,
+  "ComponentStatsId": 75,
+  "Faction": 9,
+  "Level": 200,
+  "Icon": "reactor22",
+  "Layout": "0101011111011101111101010",
+  "CellType": "2",
+  "PossibleModifications": [
+    12,
+    1
+  ]
+}

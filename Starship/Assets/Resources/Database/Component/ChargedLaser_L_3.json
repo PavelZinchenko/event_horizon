@@ -1,0 +1,25 @@
+{
+  "ItemType": 1,
+  "Id": 119,
+  "Name": "$ChargedLaser_L_3",
+  "DisplayCategory": 1,
+  "Availability": 3,
+  "ComponentStatsId": 1,
+  "Faction": 10,
+  "Level": 300,
+  "Icon": "firework",
+  "Color": "#FF5F5F",
+  "Layout": "0111001110011100111001110",
+  "CellType": "4",
+  "WeaponId": 9,
+  "AmmunitionId": 9,
+  "WeaponSlotType": "L",
+  "PossibleModifications": [
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

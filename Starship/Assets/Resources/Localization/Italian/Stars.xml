@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Gassoso</string>
+    <string name="PlanetTypeBarren">Sterile</string>
+    <string name="PlanetTypeTerran">Terrestre</string>
+    <string name="PlanetTypeAsteroids">Fascia di asteroidi</string>
+    <string name="StarInfo">$1\nDifesa: $2</string>
+    <string name="CapturedStarInfo">$1\nLivello: $2</string>
+    <string name="ExtractionLabel">Raccolta...</string>
+    <string name="AddNote">Aggiungi nota</string>
+    <string name="PlanetTemperature">Temperatura</string>
+    <string name="PlanetToxicity">Tossicità</string>
+    <string name="PlanetHostility">Ostilità</string>
+    <string name="ExplorationCounter">Esplorato $1 ${1|volta|volte}</string>
+    <string name="NotExplored">Non esplorato</string>
+    <string name="SuccessChance">Probabilità di successo:</string>
+    <string name="ScanInProgress">Cercando oggetti utili\nAttendere prego...</string>
+    <string name="FoundNothing">Non è stato trovato niente di utile</string>
+</resources>

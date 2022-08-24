@@ -1,0 +1,1 @@
+Ionic.Zlib.CF.dll is a part of DotNetZip licensed under Microsoft Public License (Ms-PL) [https://dotnetzip.codeplex.com/license]

@@ -1,0 +1,24 @@
+{
+  "ItemType": 6,
+  "Id": 72,
+  "ShipCategory": 5,
+  "Name": "$fn_Scout2",
+  "IconImage": "fns1",
+  "IconScale": 0.5,
+  "ModelImage": "fns1_2",
+  "ModelScale": 1.1,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40E0E0FF",
+  "EngineSize": 0.2,
+  "KineticResistance": 2.0,
+  "Layout": "000040000000444000002242200002222200001222100011222110111222111011555110000555000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      }
+    }
+  ]
+}

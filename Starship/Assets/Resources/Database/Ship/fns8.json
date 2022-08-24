@@ -1,0 +1,24 @@
+{
+  "ItemType": 6,
+  "Id": 77,
+  "ShipCategory": 5,
+  "Name": "$fn_Xmas",
+  "IconImage": "fns2",
+  "IconScale": 1.0,
+  "ModelImage": "fns2",
+  "ModelScale": 1.4,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#40FF2020",
+  "EngineSize": 0.3,
+  "Layout": "0000004000000000001410000000000141000000000024200000000002220000000000222000000000022200000000002220000000000222000000000022200000000112521100000511151115000050055500500",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      },
+      "WeaponClass": "C"
+    }
+  ]
+}

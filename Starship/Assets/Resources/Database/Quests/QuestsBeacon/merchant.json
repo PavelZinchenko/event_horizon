@@ -1,0 +1,68 @@
+{
+  "ItemType": 15,
+  "Id": 6,
+  "StartCondition": 1,
+  "Weight": 0.7,
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 10,
+      "Message": "$MERCHANT_Message",
+      "Enemy": 2,
+      "Character": 1,
+      "Actions": [
+        {
+          "TargetNode": 2,
+          "ButtonText": "$MERCHANT_ACTION_Trade"
+        },
+        {
+          "TargetNode": 3,
+          "ButtonText": "$MERCHANT_ACTION_Attack"
+        },
+        {
+          "TargetNode": 6,
+          "ButtonText": "$MERCHANT_ACTION_Ignore"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 37,
+      "DefaultTransition": 6,
+      "Loot": 6
+    },
+    {
+      "Id": 3,
+      "Type": 20,
+      "DefaultTransition": 4,
+      "FailureTransition": 7,
+      "Enemy": 2
+    },
+    {
+      "Id": 4,
+      "Type": 10,
+      "Message": "$Beacon_Merchant_Loot",
+      "Loot": 5,
+      "Actions": [
+        {
+          "TargetNode": 5,
+          "ButtonText": "$ACTION_Continue"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "Type": 35,
+      "DefaultTransition": 6,
+      "Loot": 5
+    },
+    {
+      "Id": 6,
+      "Type": 40
+    },
+    {
+      "Id": 7,
+      "Type": 41
+    }
+  ]
+}

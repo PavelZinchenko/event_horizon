@@ -1,0 +1,100 @@
+{
+  "ItemType": 15,
+  "Id": 102,
+  "StartCondition": 6,
+  "Weight": 0.05,
+  "Requirement": {
+    "Type": 2,
+    "Requirements": [
+      {
+        "Type": 10,
+        "ItemId": 100
+      },
+      {
+        "Type": 27,
+        "ItemId": 10
+      }
+    ]
+  },
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 10,
+      "Message": "$JanSalo_3_Message1",
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 2,
+          "ButtonText": "$Continue"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 10,
+      "Message": "$JanSalo_3_Attack",
+      "Enemy": 3,
+      "Loot": 10,
+      "Character": 4,
+      "Actions": [
+        {
+          "TargetNode": 4,
+          "ButtonText": "$Action_GiveMoney"
+        },
+        {
+          "TargetNode": 3,
+          "ButtonText": "$Action_Attack"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Type": 20,
+      "DefaultTransition": 8,
+      "FailureTransition": 7,
+      "Enemy": 3
+    },
+    {
+      "Id": 7,
+      "Type": 10,
+      "Message": "$JanSalo_3_Failure",
+      "Loot": 10,
+      "Character": 4,
+      "Actions": [
+        {
+          "TargetNode": 4,
+          "ButtonText": "$Continue"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "Type": 10,
+      "Message": "$JanSalo_3_Message2",
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 5,
+          "ButtonText": "$Continue"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "Type": 36,
+      "DefaultTransition": 8,
+      "Loot": 10
+    },
+    {
+      "Id": 5,
+      "Type": 55,
+      "DefaultTransition": 6,
+      "Character": 2,
+      "Value": 5
+    },
+    {
+      "Id": 6,
+      "Type": 40
+    }
+  ]
+}

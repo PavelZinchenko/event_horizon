@@ -1,0 +1,23 @@
+{
+  "ItemType": 1,
+  "Id": 102,
+  "Name": "$VampiricRay_L_1",
+  "DisplayCategory": 1,
+  "Availability": 3,
+  "ComponentStatsId": 1,
+  "Faction": -1,
+  "Icon": "reactor3",
+  "Color": "#FF8000",
+  "Layout": "010111010",
+  "CellType": "4",
+  "WeaponId": 87,
+  "AmmunitionId": 87,
+  "WeaponSlotType": "L",
+  "PossibleModifications": [
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

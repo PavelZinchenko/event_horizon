@@ -1,0 +1,22 @@
+{
+  "ItemType": 6,
+  "Id": 100,
+  "ShipCategory": 3,
+  "Name": "turret1",
+  "Faction": 1,
+  "SizeClass": 2,
+  "IconImage": "turret_platform_1",
+  "IconScale": 1.0,
+  "ModelImage": "turret_platform_1",
+  "ModelScale": 2.0,
+  "EngineColor": "#407F7FFF",
+  "BuiltinDevices": [],
+  "Layout": "0000111000000111111100012111112100222444222022224442222222244422222222444222202224442220012111112100011111110000001110000",
+  "Barrels": [
+    {
+      "PlatformType": 1,
+      "Image": "turret",
+      "Size": 1.0
+    }
+  ]
+}

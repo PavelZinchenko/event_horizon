@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d5c8dadb03c4328a428367673ec4b2, type: 3}
+  m_Name: IOSNativeSettings
+  m_EditorClassIdentifier: 
+  EnableGameCenterAPI: 1
+  EnableInAppsAPI: 0
+  EnableCameraAPI: 0
+  EnableSocialSharingAPI: 0
+  EnablePickerAPI: 0
+  EnableMediaPlayerAPI: 0
+  EnableReplayKit: 0
+  EnableCloudKit: 1
+  EnableSoomla: 0
+  EnableGestureAPI: 0
+  EnableForceTouchAPI: 0
+  EnablePushNotificationsAPI: 0
+  EnableContactsAPI: 0
+  EnableAppEventsAPI: 0
+  EnableUserNotificationsAPI: 0
+  EnablePermissionAPI: 0
+  AppleId: 1336417415
+  ToolbarIndex: 0
+  ExpandMoreActionsMenu: 1
+  ExpandModulesSettings: 1
+  InAppsEditorTesting: 1
+  CheckInternetBeforeLoadRequest: 0
+  PromotedPurchaseSupport: 1
+  TransactionsHandlingMode: 0
+  DefaultStoreProductsView: []
+  InAppProducts: []
+  ShowStoreKitProducts: 1
+  Leaderboards: []
+  Achievements: []
+  UseGCRequestCaching: 0
+  UsePPForAchievements: 0
+  AutoLoadUsersSmallImages: 1
+  AutoLoadUsersBigImages: 0
+  ShowLeaderboards: 1
+  ShowAchievementsParams: 1
+  AdEditorTesting: 1
+  EditorFillRateIndex: 4
+  EditorFillRate: 100
+  MaxImageLoadSize: 512
+  JPegCompressionRate: 0.8
+  GalleryImageFormat: 1
+  RPK_iPadViewType: 0
+  CameraUsageDescription: for making pictures
+  PhotoLibraryUsageDescription: for taking pictures
+  AppleMusicUsageDescription: for playing music
+  ContactsUsageDescription: for contacts reading
+  UrlTypes: []
+  ApplicationQueriesSchemes: []
+  ForceTouchMenu: []
+  DisablePluginLogs: 0
+  SoomlaDownloadLink: http://goo.gl/7LYwuj
+  SoomlaDocsLink: https://goo.gl/JFkpNa
+  SoomlaGameKey: 
+  SoomlaEnvKey: 
+  OneSignalEnabled: 0
+  OneSignalDocsLink: https://goo.gl/Royty6

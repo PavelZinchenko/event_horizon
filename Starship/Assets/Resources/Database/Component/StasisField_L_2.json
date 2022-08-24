@@ -1,0 +1,25 @@
+{
+  "ItemType": 1,
+  "Id": 24,
+  "Name": "StasisField_L_2",
+  "DisplayCategory": 1,
+  "ComponentStatsId": 3,
+  "Faction": 4,
+  "Icon": "torpedo3",
+  "Color": "#FFA0FF",
+  "Layout": "101111111",
+  "CellType": "4",
+  "WeaponId": 79,
+  "AmmunitionId": 79,
+  "PossibleModifications": [
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

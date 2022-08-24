@@ -1,0 +1,17 @@
+{
+  "ItemType": 7,
+  "Id": 18,
+  "Name": "$Companion_6s",
+  "ModelImage": "satellite6",
+  "ModelScale": 0.4,
+  "SizeClass": -1,
+  "Layout": "040040212",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.9
+      },
+      "WeaponClass": "S"
+    }
+  ]
+}

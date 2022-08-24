@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Name">Անուն։</string>
+    <string name="Gender">Սեռ:</string>
+    <string name="Experience">Փորձ:</string>
+    <string name="PlayerName">Սա դուք եք</string>
+    <string name="FirstNameHM">$[Ջեյմս|Դավիթ|Քրիստոֆեր|Գեորգ|Ռոնալդ|Ջոն|Ռիչարդ|Դանիել|Կեննետ|Անտհոնի|Ռոբերտ|Չարլզ|Պոլ|Ստիվեն|Քեվին|Միքհայել|Ջոզեփհ|Մարկ|Եդվարդ|Ջեյսոն|Վիլիամ|Թոմաս|Դոնալդ|Բրայան|Ջեֆֆ]</string>
+    <string name="FirstNameHF">$[Մարիա|Ջենիֆեր|Լիզա|Սանդրա|Միշել|Պատրիցիա|Մարիամ|Նանսի|Դոննա|Լաւրա|Լինդա|Սուսան|Կարեն|Կառլ|Սարա|Բարբարա|Մարգարետ|Բետտի|Ռուտհ|Կիմբերլի|Ելիզավետա|Դորոտի|Հելեն|Սարո|Դեբորա]</string>
+    <string name="LastNameH">$[Սմիտ|Ջոնսն|Վիլիամ|Յոնես|Բրաուն|Դավիս|Միլլեր|Վիլսն|Մուուր|Տայլր|Անդերսն|Տոմաս|Ջէկսոն|Վայտ|Հարրիս|Մարտին|Տոմպսօն|Գարցիա|Մարտինեզ|Ռօբբինս|Կլարկ|Րոդրիգուեզ|Լյեվիս|Լիի|Վոլկեր||Ալլեն|Յանգ|Հերնանդեզ|Արքա|Վրայտ|Լոպեզ|Խիլլ|Սկոտ|Կանաչ|Ադամս|Բեյկեր|Գոնցալեզ|Նիլսոն|Կարտեր|Միշել|Պերեզ|Ռոբերտս|Տյուրներ|Ֆիլիպս|Կամպբել|Պարկեր|Եվանս|Եդվարդս|Կօլլինս|Ստյուարտ|Ծանցեզ|Մորրիս|Ռոդջերս|Ռիդ|Քուկ|Մորգան|Բել|Մյուրֆի|Բեիլի|Ռիվեռա|Կուպեր|Ռիչարդսոն|Կոքս|Հովարդ|Վարդ||Պիտերսն|Գրեյ|Ռամիրեզ|Ջեյմս|Վատսն|Բռուկ|Կելլի|Սանդերս|Պրայս|Բենետ|Վուդ|Բարնս|Ռոսս|Հենդրսոն|Կոլման|Ջենկինս|Պերի|Պովուել|Լոնգ|Պատեռսն|Հուղս|Ֆլորես|Վաշինգտոն|Բուտլեր|Սիմմոնս|Ֆոստեռ|Գոնցալես|Բրյանտ|Ալեքսանդր|ՈՒսսելի|Գրիֆֆին|Դիազ|Հայես]</string>
+    <string name="FalconCaptainName">Հան Սոլո</string>
+    <string name="Gender_HumanMale">Տղամարդ</string>
+    <string name="Gender_HumanFemale">Կին</string>
+    <string name="Gender_Android">Անդրոիդ</string>
+    <string name="Gender_Alien">Այլմոլորակային</string>
+    <string name="PerkName_Attack">Հրետանավոր</string>
+    <string name="PerkName_Defense">Զինագործ</string>
+    <string name="PerkName_CommandPoint">Դերծովակալ</string>
+    <string name="PerkName_FavoriteShip">Մասնագետ</string>
+    <string name="PerkName_QuickRecovery">Տեխնիկ</string>
+    <string name="PerkName_Scavenger">Աղբահան</string>
+    <string name="PerkInfo_Attack">$1% Հարձակման բոնուս</string>
+    <string name="PerkInfo_Defense">$1% Պաշտպանության բոնուս</string>
+    <string name="PerkInfo_CommandPoint">Տալիս է լրացուցիչ հրամանատարական կետ</string>
+    <string name="PerkInfo_FavoriteShip">Շատ փորձառու է $1 նավով</string>
+    <string name="PerkInfo_QuickRecovery">Վերականգնում է նավը ավելի արագ, երբ խփված է</string>
+    <string name="PerkInfo_Scavenger">Ոչնչացնվելով արժեքավոր ապրանք է թողնում</string>
+    <string name="ShipLevelText">Նավի Մակարդակը :</string>
+    <string name="AttackBonusText">Հարձակման բոնուս:</string>
+    <string name="DefenseBonusText">Բոնուս Պաշտպանություն:</string>
+    <string name="Speciality">Մասնագիտություն:</string>
+    <string name="SpecialityFrigate">Ֆրեգատներ</string>
+    <string name="SpecialityDestroyer">Էսմինեցներ</string>
+    <string name="SpecialityCruiser">Հածանավեր</string>
+    <string name="SpecialityBattleship">Լինկորներ</string>
+    <string name="SpecialityTitan">Կապիտալ նավեր</string>
+</resources>

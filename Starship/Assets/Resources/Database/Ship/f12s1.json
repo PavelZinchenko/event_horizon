@@ -1,0 +1,27 @@
+{
+  "ItemType": 6,
+  "Id": 104,
+  "Name": "$f12_Scout",
+  "Faction": 12,
+  "SizeClass": 1,
+  "IconImage": "f12s1",
+  "IconScale": 1.5,
+  "ModelImage": "f12s1",
+  "ModelScale": 2.0,
+  "EnginePosition": {
+    "x": -0.5
+  },
+  "EngineColor": "#80FFFF7F",
+  "EngineSize": 0.2,
+  "Regeneration": true,
+  "Layout": "0000000000000000000000000000000000000000000000044440000000002444420000001122222211001111222222111111122222222111011025555201100000055550000000000055000000000000000000000000000000000000000000000000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.5
+      },
+      "PlatformType": 2,
+      "WeaponClass": "S"
+    }
+  ]
+}

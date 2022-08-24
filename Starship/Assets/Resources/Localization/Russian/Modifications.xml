@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="HitPointsMod">Прочность $1</string>
+    <string name="DefenseMod">Защита $1</string>
+    <string name="WeightMod">Масса $1</string>
+    <string name="EnergyCostMod">Энергопотребление $1</string>
+    <string name="DamageMod">Урон $1</string>
+    <string name="CooldownMod">Время перезарядки $1</string>
+    <string name="RangeMod">Дальность $1</string>
+    <string name="BulletVelocityMod">Скорость снаряда $1</string>
+    <string name="EnergyMod">Запас энергии $1</string>
+    <string name="RepairRateMod">Скорость ремонта $1</string>
+    <string name="EnginePowerMod">Мощность двигателя $1</string>
+    <string name="EnergyRechargeMod">Восстановление энергии $1</string>
+    <string name="BulletVelocityMod2">Скорость снаряда $1
+Урон $2</string>
+    <string name="AreaOfEffectMod">Радиус поражения $1</string>
+    <string name="ShieldPowerMod">Прочность щита $1</string>
+    <string name="DamageMod2">Урон $1\nВремя перезарядки $2</string>
+    <string name="DroneSpeedMod">Скорость дронов $1</string>
+    <string name="RecoilMod">Масса снаряда $1</string>
+    <string name="Ship_EmptySlot">[пустой слот]</string>
+    <string name="Ship_AutoTargeting">Встроенная система автонаведения</string>
+    <string name="Ship_HeatDefense">Высокая тепловая защита</string>
+    <string name="Ship_KineticDefense">Высокая ударная защита</string>
+    <string name="Ship_EnergyDefense">Высокая энергетическая защита</string>
+    <string name="Ship_ExtraBlueCells">Дополнительные ячейки для модулей</string>
+    <string name="Ship_Lightweight">Базовый вес корабля снижен на $1%</string>
+    <string name="Ship_Infected">На $1% меньше брони, регенерация $2% / сек</string>
+</resources>

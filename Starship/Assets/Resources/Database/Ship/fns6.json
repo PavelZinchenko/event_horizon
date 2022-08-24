@@ -1,0 +1,22 @@
+{
+  "ItemType": 6,
+  "Id": 75,
+  "Name": "$fn_Destroyer3",
+  "SizeClass": 1,
+  "IconImage": "fns3",
+  "IconScale": 0.9,
+  "ModelImage": "fns3",
+  "ModelScale": 1.5,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#40FFC300",
+  "EngineSize": 0.3,
+  "Layout": "0011110001222210022222201124421111244211052222500522225000555500",
+  "Barrels": [
+    {
+      "Offset": 0.2,
+      "PlatformType": 1
+    }
+  ]
+}

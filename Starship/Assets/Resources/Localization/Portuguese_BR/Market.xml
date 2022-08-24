@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Estrelas</string>
+    <string name="TokenCurrency">Fichas</string>
+    <string name="Snowflakes">Flocos de neve</string>
+    <string name="NoItemsInCategory">Nenhum item foi encontrado nesta categoria</string>
+    <string name="IapErrorText">Ocorreu um erro inesperado e sua compra não foi concluída.</string>
+    <string name="FacebookItemDescription">Compartilhe no Facebook</string>
+    <string name="AdItemDescription">Assista a um vídeo e receba uma recompensa gratuita</string>
+    <string name="XmasBox">Caixa de natal</string>
+    <string name="AlienTechnology">Tecnologia alienígena</string>
+    <string name="Commodity_Scraps">Restos</string>
+    <string name="Commodity_Artifacts">Artefatos alienígenas</string>
+    <string name="Commodity_Minerals">Minerais</string>
+    <string name="Commodity_PreciousMetals">Metais preciosos</string>
+    <string name="Commodity_GemStones">Pedras preciosas</string>
+    <string name="Commodity_Alloys">Ligas metálicas</string>
+    <string name="Commodity_Polymers">Polímeros</string>
+    <string name="Commodity_ToxicWaste">Lixo tóxico</string>
+    <string name="SellTrash">Vender todo lixo</string>
+    <string name="SellAllTrashConfirmation">Você realmente quer vender todos os itens de baixa qualidade?</string>
+    <string name="BestDeal">MELHOR NEGÓCIO</string>
+    <string name="MostPopular">MAIS POPULAR</string>
+    <string name="FalconPack">Oferta especial</string>
+    <string name="FalconPackDescription">Nave única com uma arma poderosa e um capitão especializado</string>
+    <string name="StarPack1">Pacote de estrelas pequeno</string>
+    <string name="StarPackDetails1">Contém 50 estrelas</string>
+    <string name="StarPack2">Pacote de estrelas</string>
+    <string name="StarPackDetails2">Contém 500 estrelas</string>
+    <string name="StarPack3">Pacote de estrelas grande</string>
+    <string name="StarPackDetails3">Contém 5000 estrelas</string>
+</resources>

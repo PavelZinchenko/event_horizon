@@ -1,0 +1,14 @@
+{
+  "ItemType": 2,
+  "Id": 6,
+  "DeviceClass": 2,
+  "EnergyConsumption": 5.0,
+  "PassiveEnergyConsumption": 5.0,
+  "Power": 0.75,
+  "Size": 1.5,
+  "Cooldown": 1.0,
+  "ActivationType": 2,
+  "Color": "#C0C0FFFF",
+  "EffectPrefab": "Shield",
+  "ControlButtonIcon": "controls_shield"
+}

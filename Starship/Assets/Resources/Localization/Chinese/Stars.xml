@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">气态行星</string>
+    <string name="PlanetTypeBarren">荒芜行星</string>
+    <string name="PlanetTypeTerran">宜居行星</string>
+    <string name="PlanetTypeAsteroids">小行星带</string>
+    <string name="PlanetTypeInfected">巢穴</string>
+    <string name="StarInfo">$1\n兵力: $2</string>
+    <string name="CapturedStarInfo">$1\n等级: $2</string>
+    <string name="ExtractionLabel">采集中...</string>
+    <string name="AddNote">添加标记</string>
+    <string name="PlanetTemperature">温度</string>
+    <string name="PlanetToxicity">毒性</string>
+    <string name="PlanetHostility">敌对状态</string>
+    <string name="ExplorationProgress">探索进度$1%</string>
+    <string name="NotExplored">未探索</string>
+    <string name="ObjectStarBase">太空要塞</string>
+    <string name="ObjectSurvival">生存</string>
+    <string name="ObjectBoss">旗舰</string>
+    <string name="ObjectWormhole">虫洞</string>
+    <string name="ObjectMultiplayer">多人游戏</string>
+    <string name="ObjectArena">竞技场</string>
+    <string name="ObjectChallenge">挑战</string>
+    <string name="ObjectBlackMarket">黑市</string>
+    <string name="ObjectRuins">废弃的太空站</string>
+    <string name="ObjectMilitary">军事基地</string>
+    <string name="ObjectEvent">求救信标</string>
+    <string name="ObjectXmas">圣诞快乐！</string>
+    <string name="ObjectHive">巢穴</string>
+</resources>

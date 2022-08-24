@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="HitPointsMod">Punkty Wytrzymałości: $1</string>
+    <string name="DefenseMod">Obrona: $1</string>
+    <string name="WeightMod">Waga: $1</string>
+    <string name="EnergyCostMod">Zużycie energii: $1</string>
+    <string name="DamageMod">Obrażenia: $1</string>
+    <string name="CooldownMod">Czas przeładowania: $1</string>
+    <string name="RangeMod">Zasięg: $1</string>
+    <string name="BulletVelocityMod">Prędkość pocisku: $1</string>
+    <string name="EnergyMod">Pojemność energetyczna: $1</string>
+    <string name="RepairRateMod">Szybkość naprawy: $1</string>
+    <string name="EnginePowerMod">Moc silnika: $1</string>
+    <string name="EnergyRechargeMod">Odnawianie energii: $1</string>
+    <string name="BulletVelocityMod2">Prędkość pocisku $1, Obrażenia $2</string>
+    <string name="AreaOfEffectMod">Obszar działania $1</string>
+    <string name="ShieldPowerMod">Moc tarczy $1</string>
+    <string name="DamageMod2">Obrażenia $1\nPrzeładowanie $2</string>
+    <string name="DroneSpeedMod">Szybkość dronów $1</string>
+    <string name="RecoilMod">Waga pocisku $1</string>
+    <string name="Ship_EmptySlot">"[puste miejsce] "</string>
+    <string name="Ship_AutoTargeting">Wbudowane systemy celowania</string>
+    <string name="Ship_HeatDefense">Zwiększona odporność termiczna</string>
+    <string name="Ship_KineticDefense">Zwiększona odporność kinetyczna</string>
+    <string name="Ship_EnergyDefense">Zwiększona odporność energetyczna</string>
+    <string name="Ship_ExtraBlueCells">Dodatkowe miejsce w statku</string>
+    <string name="Ship_Lightweight">Zmniejszenie bazowej wagi statku o $1%</string>
+    <string name="Ship_Infected">$1% mniej opancerzenia, regeneruje $2%/s</string>
+</resources>

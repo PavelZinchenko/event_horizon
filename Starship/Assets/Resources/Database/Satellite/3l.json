@@ -1,0 +1,17 @@
+{
+  "ItemType": 7,
+  "Id": 7,
+  "Name": "$Companion_3l",
+  "ModelImage": "satellite3",
+  "ModelScale": 0.8,
+  "SizeClass": -1,
+  "Layout": "000000024420124421124421011110000000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.3
+      },
+      "WeaponClass": "L"
+    }
+  ]
+}

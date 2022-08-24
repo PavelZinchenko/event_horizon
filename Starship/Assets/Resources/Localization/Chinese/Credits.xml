@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Credits_GameDesign">游戏设计</string>
+    <string name="Credits_Program">程序设计</string>
+    <string name="Credits_Graphics">图像设计</string>
+    <string name="Credits_Localization">本地化翻译</string>
+    <string name="Credits_Music">游戏音乐</string>
+    <string name="Credits_Sound">音响效果</string>
+    <string name="Credits_Thanks">特别感谢</string>
+</resources>

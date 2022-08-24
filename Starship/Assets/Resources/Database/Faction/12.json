@@ -1,0 +1,9 @@
+{
+  "ItemType": 14,
+  "Id": 12,
+  "Name": "$Faction12",
+  "Color": "#947D43",
+  "HomeStarDistance": 250,
+  "WanderingShipsDistance": 200,
+  "Hostile": true
+}

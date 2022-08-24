@@ -1,0 +1,191 @@
+////////////////////////////////////////////////////////////////////////////////
+//  
+// @module IOS Native Plugin
+// @author Osipov Stanislav (Stan's Assets) 
+// @support support@stansassets.com
+// @website https://stansassets.com
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#if !TARGET_OS_TV
+
+#import "ISN_NativeCore.h"
+#import "AppDelegateListener.h"
+
+#import <Contacts/Contacts.h>
+#import <ContactsUI/ContactsUI.h>
+
+
+NSString * const UNITY_SPLITTER = @"|";
+NSString * const UNITY_SPLITTER2 = @"|%|";
+NSString * const UNITY_EOF = @"endofline";
+
+
+
+
+@interface ISN_Contacts : NSObject<CNContactPickerDelegate>
+
+
+- (void) pickContacts;
+
+@end;
+
+@implementation ISN_Contacts
+
+static ISN_Contacts * cn_sharedInstance;
+
+
++ (id)sharedInstance {
+    
+    if (cn_sharedInstance == nil)  {
+        cn_sharedInstance = [[self alloc] init];
+    }
+    
+    return cn_sharedInstance;
+}
+
+
+
+
+- (void) pickContacts {
+    
+    CNContactPickerViewController *contactPicker = [[CNContactPickerViewController alloc] init];
+    contactPicker.displayedPropertyKeys = @[CNContactEmailAddressesKey, CNContactPhoneNumbersKey];
+    
+    contactPicker.predicateForSelectionOfContact = [NSPredicate predicateWithValue:true];
+    contactPicker.delegate = self;
+    
+    
+    UIViewController *vc =  UnityGetGLViewController();
+    [vc presentViewController: contactPicker animated: YES completion:nil];
+    
+}
+
+
+
+//--------------------------------------
+//  CNContactPickerDelegate
+//--------------------------------------
+
+- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker {
+    UnitySendMessage("SA.IOSNative.Contacts.ContactStore", "OnContactPickerDidCancel", "");
+}
+
+
+
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContacts:(NSArray<CNContact*> *)contacts {
+    
+    if(contacts.count > 0) {
+        
+        [[ISN_NativeUtility sharedInstance] ISN_NativeLog: @"ISN_Contacts didSelectContacts %lu phone contacts", (unsigned long)contacts.count];
+        NSString*  data = [[ISN_Contacts sharedInstance] convertContactsArray:contacts];
+        
+        UnitySendMessage("SA.IOSNative.Contacts.ContactStore", "OnPickerDidSelectContacts", [ISN_DataConvertor NSStringToChar:data]);
+    } else {
+        [self contactPickerDidCancel:picker];
+    }
+}
+
+
+//--------------------------------------
+//  Private Methods
+//--------------------------------------
+
+
+- (NSString*) convertContactsArray:(NSArray<CNContact*> *)contacts {
+    
+    NSMutableString * data = [[NSMutableString alloc] init];
+    
+    for (CNContact *contact in contacts) {
+        
+        [data appendString:contact.givenName];
+        [data appendString:UNITY_SPLITTER];
+        [data appendString:contact.familyName];
+        [data appendString:UNITY_SPLITTER];
+        
+        
+        NSMutableArray * emails = [[NSMutableArray alloc] init];
+        for (CNLabeledValue* mail in  contact.emailAddresses) {
+            [emails addObject:mail.value];
+        }
+        
+        
+        [data appendString:[ISN_DataConvertor serializeNSStringsArray:emails]];
+        [data appendString:UNITY_SPLITTER];
+        
+        
+        
+        NSMutableArray * countryCodes = [[NSMutableArray alloc] init];
+        NSMutableArray * digits = [[NSMutableArray alloc] init];
+        
+        for (CNLabeledValue* phone in  contact.phoneNumbers) {
+            
+            [countryCodes addObject:[phone.value valueForKey:@"countryCode"]];
+            [digits addObject:[phone.value valueForKey:@"digits"]];
+            
+        }
+        
+        [data appendString:[ISN_DataConvertor serializeNSStringsArray:countryCodes]];
+        [data appendString:UNITY_SPLITTER];
+        
+        [data appendString:[ISN_DataConvertor serializeNSStringsArray:digits]];
+        
+        
+        
+        [data appendString:UNITY_SPLITTER2];
+        
+    }
+    
+    [data appendString: UNITY_EOF];
+    return  data;
+    
+    
+}
+
+
+
+@end
+
+
+
+
+extern "C" {
+    
+    void ISN_ShowContactsPicker() {
+        [[ISN_Contacts sharedInstance] pickContacts];
+    }
+    
+    
+    void _ISN_RetrievePhoneContacts() {
+        
+        
+        CNContactStore *store = [[CNContactStore alloc] init];
+        [store requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            if (granted == YES) {
+                
+                //keys with fetching properties
+                NSArray *keys = @[CNContactFamilyNameKey, CNContactGivenNameKey, CNContactEmailAddressesKey, CNContactPhoneNumbersKey];
+                NSString *containerId = store.defaultContainerIdentifier;
+                NSPredicate *predicate = [CNContact predicateForContactsInContainerWithIdentifier:containerId];
+                
+                
+                NSError *error;
+                NSArray *cnContacts = [store unifiedContactsMatchingPredicate:predicate keysToFetch:keys error:&error];
+                if (error) {
+                    [[ISN_NativeUtility sharedInstance] ISN_NativeLog: @"ISN_GetPhoneContacts faied %@", error.description];
+                    UnitySendMessage("SA.IOSNative.Contacts.ContactStore", "OnContactsRetrieveFailed", [ISN_DataConvertor serializeError:error]);
+                    
+                } else {
+                    [[ISN_NativeUtility sharedInstance] ISN_NativeLog: @"ISN_GetPhoneContacts Loaded %lu phone contacts", (unsigned long)cnContacts.count];
+                    NSString*  data = [[ISN_Contacts sharedInstance] convertContactsArray:cnContacts];
+                    UnitySendMessage("SA.IOSNative.Contacts.ContactStore", "OnContactsRetrieveFinished", [ISN_DataConvertor NSStringToChar:data]);
+                    
+                }
+            }
+        }];
+        
+    }
+    
+}
+
+#endif

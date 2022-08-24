@@ -1,0 +1,137 @@
+{
+  "ItemType": 15,
+  "Id": 100,
+  "Name": "$Quest_JanSalo",
+  "QuestType": 2,
+  "StartCondition": 6,
+  "Weight": 0.05,
+  "Level": 60,
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 10,
+      "Message": "$JanSalo_1_Intro",
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 6,
+          "ButtonText": "$Action_Accept"
+        },
+        {
+          "TargetNode": 5,
+          "ButtonText": "$Action_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 10,
+      "Message": "$JanSalo_1_Message1",
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 6,
+          "ButtonText": "$Action_Accept"
+        },
+        {
+          "TargetNode": 5,
+          "ButtonText": "$Action_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Type": 10,
+      "Message": "$JanSalo_1_Message2",
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 6,
+          "ButtonText": "$Action_Accept"
+        },
+        {
+          "TargetNode": 5,
+          "ButtonText": "$Action_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "Type": 10,
+      "Message": "$JanSalo_1_Message3",
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 6,
+          "ButtonText": "$Action_Accept"
+        },
+        {
+          "TargetNode": 5,
+          "ButtonText": "$Action_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "Type": 16,
+      "Transitions": [
+        {
+          "TargetNode": 2
+        },
+        {
+          "TargetNode": 3
+        },
+        {
+          "TargetNode": 4
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "Type": 17,
+      "Message": "$JanSalo_1_Description",
+      "Transitions": [
+        {
+          "TargetNode": 7,
+          "Requirement": {
+            "Type": 2,
+            "Requirements": [
+              {
+                "Type": 15,
+                "MinValue": 50,
+                "Character": 2
+              },
+              {
+                "Type": 6,
+                "MinValue": 100
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "Type": 10,
+      "Message": "$JanSalo_1_End",
+      "Loot": 15,
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 8,
+          "ButtonText": "$Continue"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "Type": 35,
+      "DefaultTransition": 9,
+      "Loot": 15
+    },
+    {
+      "Id": 9,
+      "Type": 40
+    }
+  ]
+}

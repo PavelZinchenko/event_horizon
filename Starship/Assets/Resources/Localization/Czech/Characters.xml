@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Name">Jméno:</string>
+    <string name="Gender">Pohlaví:</string>
+    <string name="Experience">Zkušenosti:</string>
+    <string name="PlayerName">Toto jsi ty</string>
+    <string name="FirstNameHM">$[James|David|Christopher|George|Ronald|John|Richard|Daniel|Kenneth|Anthony|Robert|Charles|Paul|Steven|Kevin|Michael|Joseph|Mark|Edward|Jason|William|Thomas|Donald|Brian|Jeff]</string>
+    <string name="FirstNameHF">$[Mary|Jennifer|Lisa|Sandra|Michelle|Patricia|Maria|Nancy|Donna|Laura|Linda|Susan|Karen|Carol|Sarah|Barbara|Margaret|Betty|Ruth|Kimberly|Elizabeth|Dorothy|Helen|Sharon|Deborah]</string>
+    <string name="LastNameH">$[Smith|Johnson|Williams|Jones|Brown|Davis|Miller|Wilson|Moore|Taylor|Anderson|Thomas|Jackson|White|Harris|Martin|Thompson|Garcia|Martinez|Robinson|Clark|Rodriguez|Lewis|Lee|Walker|Hall|Allen|Young|Hernandez|King|Wright|Lopez|Hill|Scott|Green|Adams|Baker|Gonzalez|Nelson|Carter|Mitchell|Perez|Roberts|Turner|Phillips|Campbell|Parker|Evans|Edwards|Collins|Stewart|Sanchez|Morris|Rogers|Reed|Cook|Morgan|Bell|Murphy|Bailey|Rivera|Cooper|Richardson|Cox|Howard|Ward|Torres|Peterson|Gray|Ramirez|James|Watson|Brooks|Kelly|Sanders|Price|Bennett|Wood|Barnes|Ross|Henderson|Coleman|Jenkins|Perry|Powell|Long|Patterson|Hughes|Flores|Washington|Butler|Simmons|Foster|Gonzales|Bryant|Alexander|ussell|Griffin|Diaz|Hayes]</string>
+    <string name="FalconCaptainName">Jan Salo</string>
+    <string name="Gender_HumanMale">Člověk Muž</string>
+    <string name="Gender_HumanFemale">Člověk Žena</string>
+    <string name="Gender_Android">Android</string>
+    <string name="Gender_Alien">Mimozemšťan</string>
+    <string name="PerkName_Attack">Střelec</string>
+    <string name="PerkName_Defense">Zbrojíř</string>
+    <string name="PerkName_CommandPoint">Kontradmirál</string>
+    <string name="PerkName_FavoriteShip">Specialista</string>
+    <string name="PerkName_QuickRecovery">Technik</string>
+    <string name="PerkName_Scavenger">Scavenger</string>
+    <string name="PerkInfo_Attack">$1% bonus útoku</string>
+    <string name="PerkInfo_Defense">$1% bonus obrany</string>
+    <string name="PerkInfo_CommandPoint">Dává velitelský bod navíc</string>
+    <string name="PerkInfo_FavoriteShip">Velmi zkušený s lodí $1</string>
+    <string name="PerkInfo_QuickRecovery">Opravuje loď rychleji po sestřelení</string>
+    <string name="PerkInfo_Scavenger">Zanechává cennou kořist po zničení</string>
+    <string name="ShipLevelText">Level Lodě:</string>
+    <string name="AttackBonusText">Bonus Útoku:</string>
+    <string name="DefenseBonusText">Bonus Obrany:</string>
+    <string name="Speciality">Specializace:</string>
+    <string name="SpecialityFrigate">Frigates</string>
+    <string name="SpecialityDestroyer">Destroyers</string>
+    <string name="SpecialityCruiser">Cruisers</string>
+    <string name="SpecialityBattleship">Battleships</string>
+    <string name="SpecialityTitan">Capital Ships</string>
+</resources>

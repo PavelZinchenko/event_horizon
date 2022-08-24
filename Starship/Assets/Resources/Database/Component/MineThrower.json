@@ -1,0 +1,26 @@
+{
+  "ItemType": 1,
+  "Id": 252,
+  "Name": "$MineThrower",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 15,
+  "Level": 220,
+  "Icon": "firework",
+  "Color": "#FF5151",
+  "Layout": "0110011001100110",
+  "CellType": "4",
+  "WeaponId": 103,
+  "AmmunitionId": 108,
+  "WeaponSlotType": "S",
+  "PossibleModifications": [
+    6,
+    5,
+    16,
+    2,
+    7,
+    1,
+    14
+  ]
+}

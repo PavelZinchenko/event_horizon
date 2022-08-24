@@ -1,0 +1,22 @@
+{
+  "ItemType": 1,
+  "Id": 101,
+  "Name": "$TractorBeam_M",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 3,
+  "Level": 95,
+  "Icon": "energybeam1",
+  "Layout": "1010",
+  "CellType": "4",
+  "WeaponId": 83,
+  "AmmunitionId": 83,
+  "PossibleModifications": [
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

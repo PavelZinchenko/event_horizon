@@ -1,0 +1,33 @@
+{
+  "ItemType": 6,
+  "Id": 13,
+  "ShipCategory": 1,
+  "Name": "$f0_Scout2",
+  "Faction": 7,
+  "IconImage": "f0s1_2",
+  "IconScale": 0.7,
+  "ModelImage": "f0s1_2",
+  "ModelScale": 1.2,
+  "EnginePosition": {
+    "x": -0.5
+  },
+  "EngineColor": "#40A0B4A0",
+  "EngineSize": 0.2,
+  "Layout": "000000000000333000004333400114222411114222411014555410000555000000000000000000000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.5,
+        "y": 0.47
+      },
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.5,
+        "y": -0.47
+      },
+      "WeaponClass": "C"
+    }
+  ]
+}

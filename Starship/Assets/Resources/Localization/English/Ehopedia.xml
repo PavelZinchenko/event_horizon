@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Encyclopedia">Ehopedia</string>
+    <string name="MenuFactions">Factions</string>
+    <string name="MenuShips">Ships</string>
+    <string name="MenuWeapons">Weapons</string>
+    <string name="MenuModules">Modules</string>
+    <string name="MenuSatellites">Satellites</string>
+    <string name="NoDescriptionText">There is no description yet.</string>
+</resources>

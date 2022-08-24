@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Gazeuse</string>
+    <string name="PlanetTypeBarren">Stérile</string>
+    <string name="PlanetTypeTerran">Tellurique</string>
+    <string name="PlanetTypeAsteroids">Ceinture d\'astéroïdes</string>
+    <string name="PlanetTypeInfected">Ruche</string>
+    <string name="StarInfo">$1\nDéfense : $2</string>
+    <string name="CapturedStarInfo">$1\nNiveau : $2</string>
+    <string name="ExtractionLabel">Collecte...</string>
+    <string name="AddNote">Ajouter une note</string>
+    <string name="PlanetTemperature">Température</string>
+    <string name="PlanetToxicity">Toxicité</string>
+    <string name="PlanetHostility">Hostilité</string>
+    <string name="ExplorationProgress">$1 % exploré</string>
+    <string name="NotExplored">Pas encore exploré</string>
+    <string name="ObjectStarBase">Base spatiale</string>
+    <string name="ObjectSurvival">Survie</string>
+    <string name="ObjectBoss">Vaisseau amiral</string>
+    <string name="ObjectWormhole">Trou de ver</string>
+    <string name="ObjectMultiplayer">Multijoueur</string>
+    <string name="ObjectArena">Arène</string>
+    <string name="ObjectChallenge">Défi</string>
+    <string name="ObjectBlackMarket">Base de contrebande</string>
+    <string name="ObjectRuins">Station abandonnée</string>
+    <string name="ObjectMilitary">Base militaire</string>
+    <string name="ObjectEvent">Balise de secours</string>
+    <string name="ObjectXmas">Joyeux Noël!</string>
+    <string name="ObjectHive">Ruche</string>
+</resources>

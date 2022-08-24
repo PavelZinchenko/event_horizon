@@ -1,0 +1,28 @@
+{
+  "ItemType": 1,
+  "Id": 109,
+  "Name": "$NeutronBlaster_M_2",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 7,
+  "Level": 30,
+  "Icon": "gun7",
+  "Color": "#C0FFC0",
+  "Layout": "0100010001000100",
+  "CellType": "4",
+  "WeaponId": 47,
+  "AmmunitionId": 47,
+  "WeaponSlotType": "C",
+  "PossibleModifications": [
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

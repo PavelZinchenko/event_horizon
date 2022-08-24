@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Գազ</string>
+    <string name="PlanetTypeBarren">Անպտուղ</string>
+    <string name="PlanetTypeTerran">Հողային մոլորակ</string>
+    <string name="PlanetTypeAsteroids">Աստերոիդների գոտի</string>
+    <string name="PlanetTypeInfected">Փեթակ</string>
+    <string name="StarInfo">$1\nՊաշտպանություն: $2</string>
+    <string name="CapturedStarInfo">$1\nՄակարդակ: $2</string>
+    <string name="ExtractionLabel">Հավաքվում է․․․․․</string>
+    <string name="AddNote">Ավելացնել Նշում</string>
+    <string name="PlanetTemperature">Ջերմաստիճանը</string>
+    <string name="PlanetToxicity">Թունավոր</string>
+    <string name="PlanetHostility">Թշնամություն</string>
+    <string name="ExplorationProgress">$1% ուսումնասիրված</string>
+    <string name="NotExplored">Դեռ հետազոտված չե</string>
+    <string name="ObjectStarBase">Աստղային բազա</string>
+    <string name="ObjectSurvival">Գոյատեւում</string>
+    <string name="ObjectBoss">Ֆլագման</string>
+    <string name="ObjectWormhole">Տիեզերական խոռոչ</string>
+    <string name="ObjectMultiplayer">Մուլթիպլեյեր</string>
+    <string name="ObjectArena">Արենա</string>
+    <string name="ObjectChallenge">Մարտահրավեր</string>
+    <string name="ObjectBlackMarket">Մաքսանենգների Բազա</string>
+    <string name="ObjectRuins">Լքված կայան</string>
+    <string name="ObjectMilitary">Ռազմական բազա</string>
+    <string name="ObjectEvent">Փրկարարական ռադիոմայակ</string>
+    <string name="ObjectXmas">Շնորհավոր Նոր Տարի!</string>
+    <string name="ObjectHive">Փեթակ</string>
+</resources>

@@ -1,0 +1,72 @@
+{
+  "ItemType": 9,
+  "Id": 13,
+  "SatelliteId": 10,
+  "DifficultyClass": 1,
+  "Components": [
+    {
+      "ComponentId": 77,
+      "X": 3,
+      "Y": 3,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 67,
+      "X": 5,
+      "Y": 4,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 67,
+      "X": 2,
+      "Y": 5,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 67,
+      "X": 3,
+      "Y": 5,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 67,
+      "X": 1,
+      "Y": 4,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 67,
+      "X": 1,
+      "Y": 3,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 67,
+      "Y": 4,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 67,
+      "X": 2,
+      "Y": 4,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 149,
+      "X": 2,
+      "KeyBinding": 3
+    },
+    {
+      "ComponentId": 154,
+      "X": 2,
+      "Y": 2,
+      "KeyBinding": 5
+    },
+    {
+      "ComponentId": 91,
+      "X": 3,
+      "Y": 2,
+      "KeyBinding": -1
+    }
+  ]
+}

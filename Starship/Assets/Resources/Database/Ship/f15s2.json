@@ -1,0 +1,37 @@
+{
+  "ItemType": 6,
+  "Id": 116,
+  "Name": "$f15_Cruiser",
+  "Faction": 15,
+  "SizeClass": 2,
+  "IconImage": "fs2",
+  "IconScale": 0.9,
+  "ModelImage": "fs2",
+  "ModelScale": 1.8,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40FF7F00",
+  "EngineSize": 0.3,
+  "Layout": "0000333444000000033334443000000433344430000044333333330000443333333300004433333333000004333333300000003333330000000003333000000000033330000000000333300000000005555000000000555555000000000555500000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.6,
+        "y": -0.4
+      },
+      "PlatformType": 2,
+      "WeaponClass": "L",
+      "Image": "scavenger_arm",
+      "Size": 1.0
+    },
+    {
+      "Position": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "Rotation": 10.0,
+      "WeaponClass": "T"
+    }
+  ]
+}

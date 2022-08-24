@@ -1,0 +1,35 @@
+{
+  "ItemType": 6,
+  "Id": 22,
+  "Name": "$f1_Destroyer2",
+  "Faction": 1,
+  "SizeClass": 1,
+  "IconImage": "f1s5",
+  "IconScale": 0.7,
+  "ModelImage": "f1s5",
+  "ModelScale": 1.3,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40FFF096",
+  "EngineSize": 0.2,
+  "Layout": "0000010000000001210000000022200000000222000000012221000000122210004001222100441122222114411255521140005555500000000500000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": -0.2,
+        "y": 0.85
+      },
+      "Rotation": -3.0,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": -0.2,
+        "y": -0.85
+      },
+      "Rotation": 3.0,
+      "WeaponClass": "C"
+    }
+  ]
+}

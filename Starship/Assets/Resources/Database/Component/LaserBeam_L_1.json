@@ -1,0 +1,21 @@
+{
+  "ItemType": 1,
+  "Id": 20,
+  "Name": "LaserBeam_L_1",
+  "DisplayCategory": 1,
+  "ComponentStatsId": 1,
+  "Faction": 7,
+  "Icon": "laser4",
+  "Color": "#FFFFC0",
+  "Layout": "111111111",
+  "CellType": "4",
+  "WeaponId": 24,
+  "AmmunitionId": 24,
+  "PossibleModifications": [
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

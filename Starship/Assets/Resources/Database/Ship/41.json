@@ -1,0 +1,28 @@
+{
+  "ItemType": 6,
+  "Id": 89,
+  "ShipCategory": 6,
+  "Name": "Drone",
+  "Faction": 4,
+  "IconImage": "drone4",
+  "IconScale": 0.5,
+  "ModelImage": "drone4",
+  "ModelScale": 0.5,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#40B4FFB4",
+  "EngineSize": 0.1,
+  "Regeneration": true,
+  "BuiltinDevices": [
+    18
+  ],
+  "Layout": "040121050",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.5
+      }
+    }
+  ]
+}

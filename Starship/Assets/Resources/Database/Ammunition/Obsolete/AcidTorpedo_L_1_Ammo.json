@@ -1,0 +1,18 @@
+{
+  "ItemType": 4,
+  "Id": 94,
+  "AmmunitionClass": 3,
+  "DamageType": 3,
+  "Impulse": 0.1,
+  "Recoil": 0.1,
+  "Size": 1.0,
+  "Damage": 150.0,
+  "Range": 60.0,
+  "Velocity": 30.0,
+  "EnergyCost": 100.0,
+  "CoupledAmmunitionId": 95,
+  "Color": "#00FF48",
+  "FireSound": "shot_02",
+  "HitSound": "explosion_08",
+  "BulletPrefab": "Bomb"
+}

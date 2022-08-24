@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Name">Nombre:</string>
+    <string name="Gender">Genero:</string>
+    <string name="Experience">Experiencia:</string>
+    <string name="PlayerName">Tú</string>
+    <string name="FirstNameHM">$[James|David|Christopher|George|Ronald|John|Richard|Daniel|Kenneth|Anthony|Robert|Charles|Paul|Steven|Kevin|Michael|Joseph|Mark|Edward|Jason|William|Thomas|Donald|Brian|Jeff]</string>
+    <string name="FirstNameHF">$[Mary|Jennifer|Lisa|Sandra|Michelle|Patricia|Maria|Nancy|Donna|Laura|Linda|Susan|Karen|Carol|Sarah|Barbara|Margaret|Betty|Ruth|Kimberly|Elizabeth|Dorothy|Helen|Sharon|Deborah]</string>
+    <string name="LastNameH">$[Smith|Johnson|Williams|Jones|Brown|Davis|Miller|Wilson|Moore|Taylor|Anderson|Thomas|Jackson|White|Harris|Martin|Thompson|Garcia|Martinez|Robinson|Clark|Rodriguez|Lewis|Lee|Walker|Hall|Allen|Young|Hernandez|King|Wright|Lopez|Hill|Scott|Green|Adams|Baker|Gonzalez|Nelson|Carter|Mitchell|Perez|Roberts|Turner|Phillips|Campbell|Parker|Evans|Edwards|Collins|Stewart|Sanchez|Morris|Rogers|Reed|Cook|Morgan|Bell|Murphy|Bailey|Rivera|Cooper|Richardson|Cox|Howard|Ward|Torres|Peterson|Gray|Ramirez|James|Watson|Brooks|Kelly|Sanders|Price|Bennett|Wood|Barnes|Ross|Henderson|Coleman|Jenkins|Perry|Powell|Long|Patterson|Hughes|Flores|Washington|Butler|Simmons|Foster|Gonzales|Bryant|Alexander|ussell|Griffin|Diaz|Hayes]</string>
+    <string name="FalconCaptainName">Jan Salo</string>
+    <string name="Gender_HumanMale">Hombre humano</string>
+    <string name="Gender_HumanFemale">Mujer humana</string>
+    <string name="Gender_Android">Androide</string>
+    <string name="Gender_Alien">Alien</string>
+    <string name="PerkName_Attack">Cañonero</string>
+    <string name="PerkName_Defense">Armoreor</string>
+    <string name="PerkName_CommandPoint">Contraalmirante</string>
+    <string name="PerkName_FavoriteShip">Especialista</string>
+    <string name="PerkName_QuickRecovery">Técnico</string>
+    <string name="PerkName_Scavenger">Carroñero</string>
+    <string name="PerkInfo_Attack">$1% daño extra</string>
+    <string name="PerkInfo_Defense">$1% defensa extra</string>
+    <string name="PerkInfo_CommandPoint">Da puntos de comando extra</string>
+    <string name="PerkInfo_FavoriteShip">Experto en la nave $1</string>
+    <string name="PerkInfo_QuickRecovery">Repara la nave más rápido cuando es destruida.</string>
+    <string name="PerkInfo_Scavenger">Suelta botín valioso al ser destruido.</string>
+    <string name="ShipLevelText">Nivel de la nave:</string>
+    <string name="AttackBonusText">Daño extra:</string>
+    <string name="DefenseBonusText">Defensa extra:</string>
+    <string name="Speciality">Especialidad:</string>
+    <string name="SpecialityFrigate">Fragatas</string>
+    <string name="SpecialityDestroyer">Destructores</string>
+    <string name="SpecialityCruiser">Cruceros</string>
+    <string name="SpecialityBattleship">Acorazados</string>
+    <string name="SpecialityTitan">Naves Capitales</string>
+</resources>

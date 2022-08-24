@@ -1,0 +1,93 @@
+{
+  "ItemType": 15,
+  "Id": 101,
+  "StartCondition": 6,
+  "Weight": 0.05,
+  "Requirement": {
+    "Type": 2,
+    "Requirements": [
+      {
+        "Type": 10,
+        "ItemId": 100
+      },
+      {
+        "Type": 26,
+        "Loot": {
+          "Type": 2,
+          "MinAmount": 30,
+          "MaxAmount": 30
+        }
+      }
+    ]
+  },
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 10,
+      "Message": "$JanSalo_2_Intro",
+      "Loot": 2,
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 4,
+          "ButtonText": "$Action_Accept"
+        },
+        {
+          "TargetNode": 2,
+          "ButtonText": "$Action_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 10,
+      "Message": "$JanSalo_2_Message1",
+      "Loot": 2,
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 4,
+          "ButtonText": "$Action_Accept"
+        },
+        {
+          "TargetNode": 3,
+          "ButtonText": "$Action_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Type": 10,
+      "Message": "$JanSalo_2_Message2",
+      "Loot": 2,
+      "Character": 2,
+      "Actions": [
+        {
+          "TargetNode": 4,
+          "ButtonText": "$Action_Accept"
+        },
+        {
+          "TargetNode": 2,
+          "ButtonText": "$Action_Decline"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "Type": 36,
+      "DefaultTransition": 5,
+      "Loot": 2
+    },
+    {
+      "Id": 5,
+      "Type": 55,
+      "DefaultTransition": 6,
+      "Character": 2,
+      "Value": 5
+    },
+    {
+      "Id": 6,
+      "Type": 40
+    }
+  ]
+}

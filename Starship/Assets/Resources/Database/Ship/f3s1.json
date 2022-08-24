@@ -1,0 +1,24 @@
+{
+  "ItemType": 6,
+  "Id": 29,
+  "Name": "$f3_Scout",
+  "Faction": 3,
+  "IconImage": "f3s1",
+  "IconScale": 0.6,
+  "ModelImage": "f3s1",
+  "ModelScale": 1.0,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#4098E5FF",
+  "EngineSize": 0.2,
+  "Layout": "0004000000400000141000012100013231011222110155510",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      },
+      "WeaponClass": "T"
+    }
+  ]
+}

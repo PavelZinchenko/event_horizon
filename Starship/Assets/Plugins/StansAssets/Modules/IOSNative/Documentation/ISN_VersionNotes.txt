@@ -1,0 +1,606 @@
+9.11/22
+New Rate Us popup: https://goo.gl/4ffHoq
+New Copy to clipboard API: https://goo.gl/k7D2RG
+
+9.8/20
+New user notifications API
+Embeded freamworks support 
+Product.PriceInMicros fixed
+MultiplayerExample scene fixed
+Replay kit mic record permissions request fixed
+Xcode compilation warnings fixed
+
+
+9.4/17
+FIXES:
+Plugin's Editor Resources now removed from a user build
+Editor toolbar stretching fixed
+SkPayment transaction server crash fixed
+ChekURL for shared app API fixed
+
+Documentation updates:
+In App Purchases.
+URL Schemes
+Universal Links 
+AdvertisingIdentifier
+
+
+9.3:
+WARNIGN:
+Stoke Kit API recfatored. And all payment classs is now under the SA.IOSNative.StoreKit namespace
+Stoke Kit native code optimised 
+Stoke Kit Manual Transactions Handling is now avaliable (https://goo.gl/BbWUNh)
+IOS Native unity editor upgraded
+IOS Deploy warnings fixed
+URL Schemes API added (https://goo.gl/ZPSebK)
+Universal Links API added (https://goo.gl/9swr5Z)
+App events now accessible with app controller, feature can be enabled / disabled (https://goo.gl/elPyHA)
+Deprecated methods removed from InApp Controller
+IOSSharedApplication chnaged to SA.IOSNative.System.SharedApplication, API is updated as well (https://goo.gl/I2H1C9)
+
+
+
+
+
+9.2:
+IOS Native menu updated
+iCloud minor fixes.
+Messages API Added
+Xcode settings menu added
+Local Storage API added
+
+
+9.0.2
+Media Player API disable by default
+non-public APIs dataFromBase64String removed
+Array Data parsing fix (GameKit, ReplayKit, CloudKit)
+
+NEW local / remote notification API 
+https://goo.gl/mNBfgG
+https://goo.gl/FNPm4b
+
+
+9.0:
+!!!Important!!! This version of the plugin is not compatible with the previous one.
+Please, remove the previous version and import the new one after that.
+If you will face any kind of issue, please, contact Support Team via support@stansassets.com for assistance
+
+Scripts directories Refactor
+IPv6 network support
+Playmaker action updated
+
+8.4:
+New Features:
+Cloud Kit Improvements / Fixes
+Apple TV API (InApps / Game Centre) https://goo.gl/cWCm1r
+Multi Image Picker API https://goo.gl/BPFk4m
+Gesture Recognition https://goo.gl/8NpoJB
+Local receipt validation tutorial
+SKCloudService API
+
+
+8.3.1:
+Minor Fixes
+
+8.3:
+New Features:
+Game Canter firnds invite: https://goo.gl/sBr9mv
+Game Canter Score context support
+ISN Date time picker, ability to set date before displaying the picker.
+Documentation update
+
+Fixes:
+ISN_CloudKit - record saving
+GameCenter Connection NULL-pointer issue
+Cloud kit records parsing fix
+
+8.2:
+New Features:
+IOS Native Settings is now under the StansAssetsConfig folder
+Ability to Dectect IS App runing  at release mode. Read more: https://goo.gl/A224K4
+Saved Games API Added. Read more: https://goo.gl/dzUvDj
+
+
+Fixes:
+IOS 9.2 iAd API bug
+Local notification callbacks bug
+Unity 4.7 compilation issue
+Camera / Gallery photo rotation bug
+iCloud Data read / write speed
+Game Center TBM match createtion date bug
+Game Center login popup bug
+
+
+8.1.1
+Fixes:
+Turn based multiplayer events fixed
+
+Updates:
+Unity 4.7.x compatibility update
+Unity 5.3.x compatibility update
+
+New Features:
+iCloud Conflict Managing updated
+
+Fixes:
+Minor Spelling Issues
+
+8.1:
+New Features
+Cloud Kit. Read more: https://goo.gl/qxMHNf
+
+
+Fixes:
+Unity 5.3 compatibility
+Apple TV compilation
+
+
+8.0.7
+New Features:
+Device Info API added: Read More: https://goo.gl/ziEsCI
+
+Fixes:
+Push Notifications Crash fixed
+
+8.0.6
+GamceCenterManager.IsPlayerUnderage property added
+
+8.0.5
+Replay Kit IsMicEnabled property added
+Replay Kit IsRecodingAvailableToShare property added
+Replay Kit DiscardRecording method added
+Game Center API minor fix
+
+Guided Access. Read more: https://goo.gl/HOf7sf
+
+8.0.4
+Replay Kit IsAvaliavble property added
+IOSProductTemplate.Price is now float
+iAd Interstitials fixed
+iAdBannerController IsInterstisialsAdReady property added
+
+8.0.3
+Improvements:
+Editor Settings Redesigned
+Replay Kit: ability to choose view mode on iPad
+
+Fixes:
+Minor Popups dismissing fix
+RTM multiplayer invitations fix
+TRB multiplayer example scene fixes
+Push notification API compilation dependencies fix
+
+Refactor:
+IOSProductTemplate class, all filed names now starting from the capital letter
+
+8.0.2
+Local notifications, ability to set custom sound.  Read more: https://goo.gl/bVQG0s
+Game Center RTM matches random disconnect issue fixed
+Replay Kit on iPad fixed
+Game Center invitation handing from the Game Center app fixed.
+
+8.0.1
+Replay Kit API improvements
+
+8.0:
+Ability to enable / disable plugin APIs. Read more: https://goo.gl/GsUcA0
+Local Receipts. Read more: https://goo.gl/k9SISo
+Device GUID. Read more: https://goo.gl/dPmPc3
+Instagram API added
+Ability to load pending local notifications list added
+iOS9 support added
+ReplayKit API. Read more: https://goo.gl/ZtE2Gx
+
+Fixes:
+Popups event fixed
+
+7.3.1:
+Perfomance improvments
+Twitter share with no account, iOS 7 NPE fixed
+
+7.3:
+Spelling Fixes
+New update system
+
+7.2
+Fixes:
+Leaderboard MaxRange bug fixed.
+IOS 6,7 compatibility fix
+In-app user info bug fixed
+Game Center errors data fixed
+
+7.1
+New Features:
+Editor Plugin Cleanup
+Media Player API. Read more: https://goo.gl/7pDs88
+Application Badges Number API. Read more: https://goo.gl/qhv8IO
+Local Notification API refactor + new features. Read more: https://goo.gl/8xHhxV
+
+Update:
+Popups API updated due to new IOS standards
+IOSStoreKitResult ApplicationUsername properties added
+
+Fixes:
+ISN Camera memory leak fixed
+IOSInAppPurchaseManager Editor Fake events fixed
+Game Center black view on popup dismiss fixed
+Game Center player score dynamic update fixed
+Game Center player signature retrieval fixed
+Game Center leaderboards range retrieve API fixed
+
+Refactor:
+Please remove following files before update:
+Assets/Plugins/IOS/IOSNativePopUpsManager.h
+Assets/Plugins/IOS/IOSNativePopUpsManager.m
+Assets/Plugins/IOS/IOSNativeUtility.h
+Assets/Plugins/IOS/IOSNativeUtility.mm
+Assets/Plugins/IOS/PopUPDelegate.h
+Assets/Plugins/IOS/PopUPDelegate.mm
+Assets/Plugins/IOS/IOSNativeUtility.h
+Assets/Plugins/IOS/IOSNativeUtility.mm
+
+Flash Like Events system dependency removed
+Most of action is now static. Check the examples.
+
+
+
+7.0:
+New Feature:
+Turn-Based multiplayer API
+Fully upgraded Real Time API
+Game Center Code refactor
+Minor fixes for Unity 5
+
+Update:
+Please remove following files and folders before update:
+Assets/Extensions/IOSNative/
+Assets/Plugins/IOS/GameCenterManager.h
+Assets/Plugins/IOS/GameCenterManager.m
+Assets/Plugins/IOS/IOSGameCenterManager.h
+Assets/Plugins/IOS/IOSGameCenterManager.mm
+
+6.1:
+New Features:
+Restore Purchases API Extended. Read more: http://goo.gl/T9KBq9
+Leaderboard max range property added: https://goo.gl/K0sDJf
+AchievementTemplate, Description added
+
+6.0:
+New Features:
+Leaderboard sets API added. Read more: http://goo.gl/gkDCbD
+Advertising Identifier. Read more: http://goo.gl/uchta1
+One Signal SDK support added. Read more: http://goo.gl/1e9phC
+
+Fixes:
+Social sharing orientation fixed
+Other platforms compilation on Unity5 fixed
+Date time fixed
+
+5.9:
+Game Center minor fixes
+
+
+5.8:
+
+New Features:
+Unity 5 ready. Read more: http://goo.gl/isMDFQ
+Local Receipts Validation. Read more:  http://goo.gl/KacbY6
+
+Fixes:
+Social sharing dialogs orientation fixed
+iAd Interstitial Ad fixes
+Camera Image picking on IOS7 fixed
+ISN_ShowInterstisialAd action fixed
+ISN_HideBanner action fixed
+
+Refactor:
+ISN_AcheivmentProgressResult -> ISN_AchievementProgressResult
+Please remove old ISN_AcheivmentProgressResult.cs file manually.
+
+NSData+Base64.h - > ISN_NSData+Base64.h
+Please remove old NSData+Base64.h  file manually.
+
+NSData+Base64.mm - > ISN_NSData+Base64.mm
+Please remove old NSData+Base64.mm file manually.
+
+
+
+
+5.7:
+New Features:
+Date Time Picker. Read more: http://goo.gl/NkM9Br
+IOSStoreKitResponse transactionIdentifier property added
+Game Center Authentication with 3-rd party server. Read more: http://goo.gl/lJcyaA
+
+
+5.6:
+iAd Crash in iPod fixed
+E-mail image attachment minor fix
+
+In-Apps API improvements. Read more here:
+https://unionassets.com/iosnative/coding-guidelines-15
+
+Disable Plugin Logs feature added
+Minor PM Action fixes
+Camera Size restrictions fixed
+
+
+5.5:
+Fixes:
+Dialog Popups button order fixed
+Getting image from camera / gallery scale fixed
+Game Center IOS7 crash fixed
+
+Refactor:
+Spelling fixed
+Method naming convention fixes
+ProductTemplate -> IOSProductTemplate (please remove old ProductTemplate.cs file manually)
+
+
+5.4:
+
+Fixes:
+GameCenterManager.OnAchievementsLoaded action result fixed
+GameCenter long-long score submission fixed
+TransactionServer error description fixed
+
+IOSStoreKitError object added as representation of transaction error, update in-app purchases guide can be found here: http://goo.gl/CkP6GU
+
+
+5.3.1:
+Game Center Exception fixed
+Playmaker actions compilation fixed
+
+5.3:
+
+Updates:
+IOSSharedApplication C# Actions support added
+Native Pop ups C# Actions support added
+IOSNativeAppEvents C# Actions support added
+GameCenterMultiplayer C# Actions support added
+
+
+Refactor:
+Flash Like event system now use own namespace: UnionAssets.FLE
+
+Fixes:
+Transaction error localizedDescription fixed
+Editor setting exception fixed
+Example scenes minor fixes
+
+
+Read more about update
+http://goo.gl/RbzIKS
+
+
+
+5.2:
+Fixes:
+Sharing on iPad with IOS8 fixed
+InApp purchases restore event fixes
+
+
+
+5.1:
+
+IOSInAppPurchaseManager:
+In App Purchase States added:
+* Purchased,
+* Failed,
+* Deferred, - IOS8 (Ask to Buy)
+* Restored
+
+<a href=“http://goo.gl/A5kFSP”>Read more </a>
+
+IOSCamera:
+Ability to choose image compression added
+
+iCloudManager:
+C# Actions added
+
+iAd:
+C# Action added
+
+GameCenter:
+New editor setting;
+<a href=“http://goo.gl/3nq260”>Read more </a>
+
+PlayMaker:
+ISN_GetBoardTopScore: action added
+ISN_GetScore action fixed
+ISN_GetAchivmentProgress action fixed
+
+Game Center  Example scene Added
+Billing Example scene Added
+<a href=“http://goo.gl/o9mXnx”>Scene Guide </a>
+
+Fixes:
+Pre-loader Size for IOS8 fixed
+Local Notification fixed and updated for IOS8
+iCloudManager Singleton implementation fixed
+
+Refactor:
+
+IOSInAppPurchaseManager.PRODUCT_BOUGHT and IOSInAppPurchaseManager.TRANSACTION_FAILED
+events remove and replaced by IOSInAppPurchaseManager.TRANSACTION_COMPLETE event
+or you can use OnTransactionComplete Action
+
+
+5.0:
+New Features:
+GameCenterManager.issueAchievementChallenge added
+GameCenterManager.issueLeaderboardChallenge added
+Game Center Requests Caching (Beta)
+
+Plugins Editor Settings:
+Enabling / Disabling Push Notification service now can be done from Editor Menu
+Registering your app Achievements can be now done using Editor Menu
+
+IOSCamera:
+OnImageSaved Action Added
+More Load Image options Added
+* <a href=“http://goo.gl/bdCLLA”>Read more</a>
+
+IOSNotificationController:
+OnDeviceTokenReceived Action Added
+OnRemoteNotificationReceived Action Added
+Ability to Cancel notification by Id added
+* <a href=“http://goo.gl/Z53QtD”>Read more</a>
+
+
+Refactor
+GameCenterManager events refactored:
+* C# Acton added for all GameCenterManager events
+* Event results unified
+* Fail events removed, now you can check is event was failed with event result
+* <a href=“http://goo.gl/HjKIx5”>Read more about events update</a>
+
+
+IOS8 Updates;
+All Plugin API checked with IOS8
+iAd API updated for IOS8
+Game Center API Updated for IOS8
+
+Fixes:
+Send mail with no acc bug fixed
+TransactionServer connection test before finishing transaction added
+
+
+4.9:
+IOSVideoManager added:
+IOSVideoManager.instance.PlaySteamingVideo(string videoUrl)
+IOSVideoManager.instance.OpenYoutubeVideo(string videoUrl)
+
+IOSInAppPurchaseManager actions added:
+Action OnTransactionComplete
+Action OnRestoreComplet
+Action OnStoreKitInitComplete
+Action IOSStoreKitVerificationResponse OnVerificationComplete
+
+Click on iAd banner now will be not treated as Unity click / touch events
+
+
+
+
+Fixes:
+Social charing null pointer when Fb not available fixed
+Duplicates on Xcode project appending
+
+
+4.8:
+Updates:
+Auto Xcode project deploy added, all frameworks will be included automatically
+
+Fixes:
+IOSCamera memory leak fixed
+
+
+4.7:
+New:
+IOSInAppPurchaseManager RESTORE_TRANSACTION_COMPLETE event addded
+IOSSocialManager
+New methods:
+public void SendMail(string subject, string body, string recipients)
+public void SendMail(string subject, string body, string recipients, Texture2D texture)
+New Events:
+MAIL_FAILED;
+MAIL_SUCCESS;
+
+New Actions:
+public Action OnFacebookPostResult;
+public Action OnTwitterPostResult;
+public Action OnMailResult;
+
+
+
+Fixes:
+ISN_RestorePurchases action fixed
+Minor Spelling fixes
+
+Refactor:
+LeaderBoardScoreData class removed
+GAME_CENTER_LEADER_BOARD_SCORE_LOADED event now contains GCScore as data
+
+New PlayMakerActions:
+ISN_SaveTextureToCameraRoll
+ISN_SaveScreenshotToCameraRoll
+ISN_LoadTextureFromGallery
+ISN_LoadTextureFromCamera
+
+
+4.6
+New Features:
+IOSNotificationController - REMOTE_NOTIFICATION_RECEIVED event added.
+
+
+PlayMaker Actions Added:
+ISN_RetriveGCPlayerId
+
+Minor Bug Fixes
+
+4.5:
+PlayMaker Actions Added:
+iCloud:
+  ISN_DataChanged
+  ISN_DataReceived
+  ISN_iCloudInit
+
+Notifications:
+  ISN_ApplicationIconBadgeNumber
+  ISN_CancelNotifications
+  ISN_RegisterForRemoteNotifications
+  ISN_ScheduleNotification
+  ISN_ShowNotificationBanner
+Game Center:
+ISN_GetAchivmentProgress
+ISN_ResetAchivments
+
+New Feature:
+GAME_CENTER_VIEW_DISSMISSED - event added
+
+
+
+4.4:
+
+New Features:
+Shared App API added
+New PlayMaker Actions
+Example Scenes Improved
+
+
+
+4.3:
+New Features:
+Save texture to camera roll API
+Save screen-shot to camera roll API
+Camera Roll PlayMaker Actions
+
+Fixes:
+Conflict with Mobile Social Plugin Fixed
+
+Refactor:
+Example Scene Removed
+
+
+4.2:
+Minor Spelling fixes:
+
+4.1:
+New Features:
+SKStoreProductViewController
+Native pre-loader
+New PlayMaker Actions
+
+Plugin Code Refactor:
+IOSNative.h -> Removed
+IOSNative.mm -> Removed
+InAppPurchaseManager.m -> Removed
+IOSNative.instance.init -> Removed
+you do no have to call it anymore on your game initialization
+
+
+Fixes:
+Billing initialization event.
+Game Center player avatar loading
+Unity 4.5 compatibility fix
+WP8 Compatibility Fix

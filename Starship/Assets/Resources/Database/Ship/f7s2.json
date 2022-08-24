@@ -1,0 +1,61 @@
+{
+  "ItemType": 6,
+  "Id": 52,
+  "Name": "$f7_Destroyer",
+  "Faction": 8,
+  "SizeClass": 1,
+  "IconImage": "f7s2",
+  "IconScale": 0.7,
+  "ModelImage": "f7s2",
+  "ModelScale": 1.5,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40FFF096",
+  "EngineSize": 0.2,
+  "Layout": "0000001000000000000100000000000010000000000001000000000001210000000401222104000000122210000004012221040000001222100000040011100400000000500000000000050000000000555550000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.1,
+        "y": -0.7
+      },
+      "Rotation": -20.0
+    },
+    {
+      "Position": {
+        "x": 0.1,
+        "y": 0.7
+      },
+      "Rotation": 20.0
+    },
+    {
+      "Position": {
+        "x": -0.2,
+        "y": -0.67
+      },
+      "Rotation": -30.0
+    },
+    {
+      "Position": {
+        "x": -0.2,
+        "y": 0.67
+      },
+      "Rotation": 30.0
+    },
+    {
+      "Position": {
+        "x": -0.45,
+        "y": -0.62
+      },
+      "Rotation": -45.0
+    },
+    {
+      "Position": {
+        "x": -0.45,
+        "y": 0.62
+      },
+      "Rotation": 45.0
+    }
+  ]
+}

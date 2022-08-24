@@ -1,0 +1,35 @@
+{
+  "ItemType": 6,
+  "Id": 60,
+  "Name": "$f9_Destroyer",
+  "Faction": 11,
+  "SizeClass": 1,
+  "IconImage": "f9s2",
+  "IconScale": 0.7,
+  "ModelImage": "f9s2",
+  "ModelScale": 1.2,
+  "EnginePosition": {
+    "x": -0.75
+  },
+  "EngineColor": "#40EFD1B3",
+  "EngineSize": 0.2,
+  "Layout": "000111000000111000000222000000222000040222040043222340043525340043555340040505040",
+  "Barrels": [
+    {
+      "Position": {
+        "x": -0.05,
+        "y": 0.7
+      },
+      "Rotation": -2.0,
+      "WeaponClass": "L"
+    },
+    {
+      "Position": {
+        "x": -0.05,
+        "y": -0.7
+      },
+      "Rotation": 2.0,
+      "WeaponClass": "L"
+    }
+  ]
+}

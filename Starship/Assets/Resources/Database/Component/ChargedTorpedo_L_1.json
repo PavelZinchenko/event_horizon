@@ -1,0 +1,29 @@
+{
+  "ItemType": 1,
+  "Id": 148,
+  "Name": "$ChargedTorpedo_L_1",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 10,
+  "Level": 165,
+  "Icon": "torpedo1",
+  "Color": "#FFA0A0",
+  "Layout": "0110011001100110",
+  "CellType": "4",
+  "WeaponId": 11,
+  "AmmunitionId": 11,
+  "WeaponSlotType": "T",
+  "PossibleModifications": [
+    14,
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

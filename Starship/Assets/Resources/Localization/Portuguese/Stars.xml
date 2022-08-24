@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Gás</string>
+    <string name="PlanetTypeBarren">Estéril</string>
+    <string name="PlanetTypeTerran">Terrano</string>
+    <string name="PlanetTypeAsteroids">Cinto de asteroides</string>
+    <string name="PlanetTypeInfected">Colmeia</string>
+    <string name="StarInfo">$1\nDefesa: $2</string>
+    <string name="CapturedStarInfo">$1\nNível: $2</string>
+    <string name="ExtractionLabel">A Coletar...</string>
+    <string name="AddNote">Adicionar nota</string>
+    <string name="PlanetTemperature">Temperatura</string>
+    <string name="PlanetToxicity">Toxicidade</string>
+    <string name="PlanetHostility">Hostilidade</string>
+    <string name="ExplorationProgress">$1% explorado</string>
+    <string name="NotExplored">Ainda não explorado</string>
+    <string name="ObjectStarBase">Base Espacial</string>
+    <string name="ObjectSurvival">Sobrevivência</string>
+    <string name="ObjectBoss">Nave Capital</string>
+    <string name="ObjectWormhole">Buraco de Minhoca</string>
+    <string name="ObjectMultiplayer">Multi Jogador</string>
+    <string name="ObjectArena">Arena</string>
+    <string name="ObjectChallenge">Desafio</string>
+    <string name="ObjectBlackMarket">Base de Contrabandistas</string>
+    <string name="ObjectRuins">Estação Abandonada</string>
+    <string name="ObjectMilitary">Base Militar</string>
+    <string name="ObjectEvent">Sinalizador de resgate</string>
+    <string name="ObjectXmas">Feliz Natal!</string>
+    <string name="ObjectHive">Colmeia</string>
+</resources>

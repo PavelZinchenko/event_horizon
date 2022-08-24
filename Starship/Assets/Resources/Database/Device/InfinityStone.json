@@ -1,0 +1,14 @@
+{
+  "ItemType": 2,
+  "Id": 23,
+  "DeviceClass": 17,
+  "PassiveEnergyConsumption": 4.0,
+  "Size": 2.0,
+  "Cooldown": 60.0,
+  "Lifetime": 2.0,
+  "ActivationType": 1,
+  "Color": "#8041CBF9",
+  "Sound": "hit_07",
+  "EffectPrefab": "Wave",
+  "ControlButtonIcon": "controls_shield"
+}

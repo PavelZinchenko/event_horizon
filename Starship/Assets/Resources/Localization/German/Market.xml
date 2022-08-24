@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Sterne</string>
+    <string name="TokenCurrency">Wertmarken</string>
+    <string name="Snowflakes">Schneeflocken</string>
+    <string name="NoItemsInCategory">Keine Gegenstände in dieser Kategorie gefunden</string>
+    <string name="IapErrorText">Ein unbekannter Fehler ist aufgetreten. Die Bezahlung wurde nicht abgeschlossen.</string>
+    <string name="FacebookItemDescription">auf Facebook teilen</string>
+    <string name="AdItemDescription">Schau ein Video und bekomme eine kostenlose Belohnung</string>
+    <string name="XmasBox">Weihnachtsbox</string>
+    <string name="AlienTechnology">Alientechnologie</string>
+    <string name="Commodity_Scraps">Schrott</string>
+    <string name="Commodity_Artifacts">Alienartefakte</string>
+    <string name="Commodity_Minerals">Mineralien</string>
+    <string name="Commodity_PreciousMetals">wertvolle Metalle</string>
+    <string name="Commodity_GemStones">Edelsteine</string>
+    <string name="Commodity_Alloys">Legierungen</string>
+    <string name="Commodity_Polymers">Polymere</string>
+    <string name="Commodity_ToxicWaste">Giftmüll</string>
+    <string name="SellTrash">verkaufe alle Gegenstände mit niedriger Qualität</string>
+    <string name="SellAllTrashConfirmation">Möchtest du wirklich alle Gegenstände mit niedriger Qualität verkaufen?</string>
+    <string name="BestDeal">BESTER HANDEL</string>
+    <string name="MostPopular">AM POPULÄRSTEN</string>
+    <string name="FalconPack">Spezialangebot</string>
+    <string name="FalconPackDescription">Einzigartiges Schiff mit einer starken Waffe und einem erfahrenen Kapitän</string>
+    <string name="StarPack1">kleines Sternpaket</string>
+    <string name="StarPackDetails1">enthält 50 Sterne</string>
+    <string name="StarPack2">Sternpaket</string>
+    <string name="StarPackDetails2">enthält 500 Sterne</string>
+    <string name="StarPack3">großes Sternpaket</string>
+    <string name="StarPackDetails3">enthält 5000 Sterne</string>
+</resources>

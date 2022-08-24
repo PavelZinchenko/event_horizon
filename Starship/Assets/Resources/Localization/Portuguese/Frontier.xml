@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="WatchAdCombat">Veja um anúncio</string>
+    <string name="WatchAdSkills">Veja um anúncio</string>
+    <string name="MoreGames">Mais Jogos</string>
+    <string name="ScavengerShipInfo">Nós oferecermos os melhores serviços para o tratamento da sua nave.</string>
+    <string name="EngineerSkill">Engenheiro</string>
+    <string name="EngineerSkillDescription">$1% de chance de não consumir um diagrama quando criar/melhorar um item</string>
+    <string name="ArenaMessage">Destrua a base inimiga!</string>
+    <string name="UpgradeItemIfHaveBp">Melhore o módulo (Diagrama Necessário)</string>
+</resources>

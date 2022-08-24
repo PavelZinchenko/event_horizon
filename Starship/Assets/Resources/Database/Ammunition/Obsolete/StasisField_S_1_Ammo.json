@@ -1,0 +1,17 @@
+{
+  "ItemType": 4,
+  "Id": 81,
+  "AmmunitionClass": 17,
+  "DamageType": 1,
+  "Size": 1.0,
+  "Damage": 1.0,
+  "Range": 10.0,
+  "Velocity": 10.0,
+  "LifeTime": 1.0,
+  "EnergyCost": 5.0,
+  "Color": "#B4FFBD5A",
+  "FireSound": "launch_05",
+  "HitSound": "launch_02",
+  "HitEffectPrefab": "OrbAdditive",
+  "BulletPrefab": "Energy2"
+}

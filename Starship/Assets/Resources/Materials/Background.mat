@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Background
+  m_Shader: {fileID: 4800000, guid: 93c0a7b409d8427449fc4ff7a6d69468, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - <noninit>:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DecalTex:
+        m_Texture: {fileID: 2800000, guid: 65ce10300e650254db955449840c9bb7, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0.9141524, y: 0.8102162}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 0c835eaf8008a6546b3f4f984385ac21, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0.2285381, y: 0.45255405}
+    - _MainTex2:
+        m_Texture: {fileID: 2800000, guid: ed4a2970daf45ce4f8cf053fe6a39f79, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - <noninit>: 0
+    - _NebulaMultiplier: 0.4
+    m_Colors:
+    - <noninit>: {r: 0, g: 2.0185626, b: 1e-45, a: -7.576944e+11}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}

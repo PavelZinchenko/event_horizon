@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Faction">Frakcja:</string>
+    <string name="Level">Poziom:</string>
+    <string name="NeutralFaction">Wolne gwiazdy</string>
+    <string name="Faction1">Veniri</string>
+    <string name="Faction2">Bushrak</string>
+    <string name="Faction3">Koreranie</string>
+    <string name="Faction4">Taraniak</string>
+    <string name="Faction5">Sayjix</string>
+    <string name="Faction6">Jurganie</string>
+    <string name="Faction7">Zumbalari</string>
+    <string name="Faction8">Neganari</string>
+    <string name="Faction9">Daazen</string>
+    <string name="Faction10">Nieznani</string>
+    <string name="Faction11">Imperium</string>
+    <string name="Faction12">Rój</string>
+    <string name="Faction13">Syndykat</string>
+    <string name="Faction15">Złomiarze</string>
+    <string name="Faction16">Zaraza</string>
+</resources>

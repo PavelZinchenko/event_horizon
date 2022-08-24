@@ -1,0 +1,30 @@
+{
+  "ItemType": 6,
+  "Id": 115,
+  "Name": "$f15_Destroyer",
+  "Faction": 15,
+  "SizeClass": 1,
+  "IconImage": "fs1",
+  "IconScale": 0.7,
+  "ModelImage": "fs1",
+  "ModelScale": 1.2,
+  "EnginePosition": {
+    "x": -0.9
+  },
+  "EngineColor": "#40FF7F00",
+  "EngineSize": 0.2,
+  "Layout": "003334400033334440033334440033333330033333330033333330033535330005555500000555000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.45,
+        "y": -0.5
+      },
+      "Rotation": -60.0,
+      "PlatformType": 2,
+      "WeaponClass": "L",
+      "Image": "scavenger_arm",
+      "Size": 1.5
+    }
+  ]
+}

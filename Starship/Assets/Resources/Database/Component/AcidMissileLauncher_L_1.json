@@ -1,0 +1,29 @@
+{
+  "ItemType": 1,
+  "Id": 174,
+  "Name": "$AcidMissile_L_1",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 6,
+  "Level": 125,
+  "Icon": "missile3",
+  "Color": "#68EFC0",
+  "Layout": "111111000",
+  "CellType": "4",
+  "WeaponId": 2,
+  "AmmunitionId": 2,
+  "WeaponSlotType": "S",
+  "PossibleModifications": [
+    14,
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

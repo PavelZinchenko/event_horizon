@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="HitPointsMod">Leben $1</string>
+    <string name="DefenseMod">Abwehr $1</string>
+    <string name="WeightMod">Gewicht $1</string>
+    <string name="EnergyCostMod">Energiekosten $1</string>
+    <string name="DamageMod">Schaden $1</string>
+    <string name="CooldownMod">Abkühlzeit $1</string>
+    <string name="RangeMod">Reichweite $1</string>
+    <string name="BulletVelocityMod">Projektilgeschwindigkeit $1</string>
+    <string name="EnergyMod">Energiekapazität $1</string>
+    <string name="RepairRateMod">Reperaturrate $1</string>
+    <string name="EnginePowerMod">Triebwerksleistung $1</string>
+    <string name="EnergyRechargeMod">Energieaufladerate $1</string>
+    <string name="BulletVelocityMod2">Projektilgeschwindigkeit $1, Schaden $2</string>
+    <string name="AreaOfEffectMod">Einflussgebietsradius $1</string>
+    <string name="ShieldPowerMod">Schildstärke $1</string>
+    <string name="DamageMod2">Schaden $1\nAbkühlzeit $2</string>
+    <string name="DroneSpeedMod">Drohnengeschwindigkeit $1</string>
+    <string name="RecoilMod">Projektilgewicht $1</string>
+    <string name="Ship_EmptySlot">[freier platz]</string>
+    <string name="Ship_AutoTargeting">eingebaute Zielhilfe</string>
+    <string name="Ship_HeatDefense">erhöhte Hitzeresistenz</string>
+    <string name="Ship_KineticDefense">erhöhte Kinetikresistenz</string>
+    <string name="Ship_EnergyDefense">erhöhte Energieresistenz</string>
+    <string name="Ship_ExtraBlueCells">zusätzlicher Ausrüstungsplatz</string>
+    <string name="Ship_Lightweight">Das Schiffs-Basisgewicht wird um $1% reduziert</string>
+    <string name="Ship_Infected">$1% weniger Rüstung, regeneriert $2% / sec</string>
+</resources>

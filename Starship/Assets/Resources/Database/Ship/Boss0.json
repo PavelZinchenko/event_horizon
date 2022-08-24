@@ -1,0 +1,83 @@
+{
+  "ItemType": 6,
+  "Id": 1,
+  "ShipCategory": 2,
+  "Name": "$f0_Flagship",
+  "Faction": 7,
+  "SizeClass": 4,
+  "IconImage": "flagship0",
+  "IconScale": 1.2,
+  "ModelImage": "flagship0",
+  "ModelScale": 5.0,
+  "EnginePosition": {
+    "x": -0.88
+  },
+  "EngineColor": "#20FFFFFF",
+  "EngineSize": 0.3,
+  "EnergyResistance": 0.5,
+  "KineticResistance": 1.0,
+  "HeatResistance": 0.5,
+  "Layout": "000000000000000000000000000041111040000000000004041111140400000000404141111140400000000414141111141400000000414133333331400000000411322222233100000001133222222223444000001332222222222444000444332222222222331444444332222222222331444011332222222222331110001132222222222331000000113222222223311000000011322222233311000000001133333331110000000000111555551100000000000015555551000000000000005555550000000000000000555000000000000000000000000000000",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 0.9,
+        "y": 0.35
+      },
+      "PlatformType": 3,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.86,
+        "y": -0.31
+      },
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.84,
+        "y": 0.46
+      },
+      "PlatformType": 3,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.72,
+        "y": -0.44
+      },
+      "PlatformType": 3,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.82,
+        "y": 0.57
+      },
+      "PlatformType": 3,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": 0.2,
+        "y": 0.93
+      },
+      "WeaponClass": "M"
+    },
+    {
+      "Position": {
+        "x": 0.2,
+        "y": -0.8
+      },
+      "WeaponClass": "M"
+    },
+    {
+      "Position": {
+        "x": 0.2,
+        "y": -0.9
+      },
+      "WeaponClass": "M"
+    }
+  ]
+}

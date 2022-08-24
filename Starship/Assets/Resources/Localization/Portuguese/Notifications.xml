@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CloudGameLoaded">Jogo carregado com sucesso</string>
+    <string name="CloudGameSaved">Jogo guardado com sucesso</string>
+    <string name="CloudOperationFailed">Operação falhada:\n$1</string>
+    <string name="BadSavegameError">Jogo guardado com formato inválido</string>
+    <string name="GoogleSingInRequired">Autenticação da Google Play é necessária</string>
+    <string name="InternalError">Erro interno</string>
+    <string name="CommonConfirmation">Tens a certeza que queres fazer isto?</string>
+    <string name="LoginFailedText">Não foi possível acessar o servidor. Por favor tente novamente mais tarde</string>
+</resources>

@@ -1,0 +1,77 @@
+{
+  "ItemType": 9,
+  "Id": 2,
+  "SatelliteId": 2,
+  "DifficultyClass": 1,
+  "Components": [
+    {
+      "ComponentId": 69,
+      "Locked": true,
+      "X": 2,
+      "Y": 1,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 72,
+      "Locked": true,
+      "X": 3,
+      "Y": 1,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 72,
+      "Locked": true,
+      "X": 4,
+      "Y": 2,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 72,
+      "Locked": true,
+      "X": 3,
+      "Y": 3,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 72,
+      "Locked": true,
+      "X": 1,
+      "Y": 3,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 72,
+      "Locked": true,
+      "X": 1,
+      "Y": 1,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 72,
+      "Locked": true,
+      "Y": 2,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 78,
+      "Locked": true,
+      "X": 2,
+      "Y": 2,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 157,
+      "Locked": true,
+      "X": 3,
+      "Y": 2,
+      "BarrelId": -1
+    },
+    {
+      "ComponentId": 157,
+      "Locked": true,
+      "X": 1,
+      "Y": 2,
+      "BarrelId": -1
+    }
+  ]
+}

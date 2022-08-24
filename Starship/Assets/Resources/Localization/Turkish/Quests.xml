@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PIRATES_Agressive">Saldırı altındayız.</string>
+    <string name="PIRATES_Passive">Yakınlarda düşman gemileri var.</string>
+    <string name="PIRATES_ACTION_Attack">Savaş</string>
+    <string name="PIRATES_ACTION_Retreat">Geri çekil</string>
+    <string name="PIRATES_ACTION_Ignore">Görmezden gel</string>
+    <string name="MessageCombatReward">Savaştan sonra bir miktar yağma aldık.</string>
+    <string name="ACTION_Continue">Devam et</string>
+    <string name="TUTORIAL_NAME">Öğretici</string>
+    <string name="TUTORIAL_DESCRIPTION">İlk defa oynuyorsan önce öğreticiye girmeni tavsiye ederiz.</string>
+    <string name="TUTORIAL_Start">Selamlar komutanım. Derin uzay seferi başkanlığına atandın. Ama önce, sana oyunun temellerini öğreteceğim.</string>
+    <string name="TUTORIAL_Info1">Geminiz, Event Horizon, yıldızlar arasında seyahat etmenizi sağlayan bir hipersürücü ile donatılmıştır.</string>
+    <string name="TUTORIAL_Training">Ayrıca, düşmanla karşılaşmanız durumunda, birkaç savaş gemisi taşıyabilirsiniz. Onları hareket halinde denemek ister misiniz?</string>
+    <string name="TUTORIAL_End">Hepsi bu kadar. Şimdi gidebilirsin. İyi şanslar</string>
+    <string name="TUTORIAL_ACTION_Training">Antremana başla</string>
+    <string name="TUTORIAL_ACTION_Skip">Antremanı geç</string>
+    <string name="MERCHANT_Message">Küçük bir ticaret kervanı bulduk. Belki de satmak için faydalı bir şeyler vardır.</string>
+    <string name="MERCHANT_ACTION_Trade">Ticaret</string>
+    <string name="MERCHANT_ACTION_Attack">Tüccarlara saldır</string>
+    <string name="MERCHANT_ACTION_Ignore">Görmezden gel</string>
+    <string name="WORM_Message">Dev bir uzay solucanı bulduk.Tehlikeli görünüyor.Ne yapmalıyız?</string>
+    <string name="WORM_ACTION_Attack">Saldır</string>
+    <string name="WORM_ACTION_Ignore">Görmezden gel</string>
+    <string name="SOS_Message">Bir yardım sinyali tespit ettik.</string>
+    <string name="SOS_ACTION_Respond">Yardım sinyaline git\n($1 yakıt gerekli)</string>
+    <string name="SOS_ACTION_Ignore">Görmezden gel</string>
+    <string name="SOS_DEADSHIP_Message">Çok fazla hasar almış bir gemi bulduk. Terkedilmiş gözüküyor</string>
+    <string name="SOS_DEADSHIP_Salvaged">İşe yarar bir şeyler bulduk.</string>
+    <string name="SOS_DEADSHIP_ACTION_Repair">Tamir etmeye çalış\n($1 ${1|kredi|kredi} gerekli)</string>
+    <string name="SOS_DEADSHIP_ACTION_Salvage">İşe yarar eşyaları ara</string>
+    <string name="SOS_OUTOFFUEL_Message">Selamlar! Yakıtımız bitti ve bu sistemden kurtulamıyoruz. Bize yardım edebilir misin?</string>
+    <string name="SOS_OUTOFFUEL_Reward">Çok teşekkürler! Bunu ödül olarak kabul edin.</string>
+    <string name="SOS_OUTOFFUEL_ACTION_Give">$1 ${1|ünite|ünite} yakıt ver</string>
+    <string name="SOS_OUTOFFUEL_ACTION_Attack">Saldır</string>
+    <string name="SOS_OUTOFFUEL_ACTION_Decline">Reddet</string>
+    <string name="SOS_TRAP_Message">Hedefe vardık ve hemen saldırıya uğradık. Bu yardım sinyali bir tuzak gibi görünüyor.</string>
+    <string name="SOS_EMPTY_Message">Hedefe vardık ama ilginç bir şeyler bulamadık.</string>
+</resources>

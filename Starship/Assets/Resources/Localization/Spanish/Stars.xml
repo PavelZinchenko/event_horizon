@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Gigante de Gas</string>
+    <string name="PlanetTypeBarren">Baldíos</string>
+    <string name="PlanetTypeTerran">Urbano</string>
+    <string name="PlanetTypeAsteroids">Cinturón de Asteroides</string>
+    <string name="StarInfo">$1\nDefensa: $2</string>
+    <string name="CapturedStarInfo">$1\nNivel: $2</string>
+    <string name="ExtractionLabel">Recolectando...</string>
+    <string name="AddNote">Agregar una nota</string>
+    <string name="PlanetTemperature">Temperatura</string>
+    <string name="PlanetToxicity">Toxicidad</string>
+    <string name="PlanetHostility">Hostilidad</string>
+    <string name="NotExplored">No explorado aun</string>
+    <string name="ObjectStarBase">Base estelar</string>
+    <string name="ObjectSurvival">Supervivencia</string>
+    <string name="ObjectBoss">Buque insignia</string>
+    <string name="ObjectWormhole">Agujero de gusano</string>
+    <string name="ObjectMultiplayer">Multijugador</string>
+    <string name="ObjectArena">Arena</string>
+    <string name="ObjectChallenge">Desafío</string>
+    <string name="ObjectBlackMarket">Base de contrabandistas</string>
+    <string name="ObjectRuins">Estación abandonada</string>
+    <string name="ObjectMilitary">Base militar</string>
+    <string name="ObjectEvent">Baliza de rescate.</string>
+    <string name="ObjectXmas">¡Feliz Navidad!</string>
+</resources>

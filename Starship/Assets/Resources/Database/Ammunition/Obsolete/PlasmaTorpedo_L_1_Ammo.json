@@ -1,0 +1,16 @@
+{
+  "ItemType": 4,
+  "Id": 52,
+  "AmmunitionClass": 5,
+  "DamageType": 2,
+  "Size": 2.0,
+  "AreaOfEffect": 1.0,
+  "Damage": 90.0,
+  "Range": 30.0,
+  "Velocity": 5.0,
+  "LifeTime": 6.0,
+  "EnergyCost": 5.0,
+  "Color": "#FFFF80",
+  "FireSound": "shot_01",
+  "BulletPrefab": "EnergyBall1"
+}

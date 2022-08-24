@@ -1,0 +1,27 @@
+{
+  "ItemType": 1,
+  "Id": 132,
+  "Name": "MissileLauncher_L_4",
+  "DisplayCategory": 1,
+  "ComponentStatsId": 1,
+  "Faction": -1,
+  "Icon": "rocket1",
+  "Color": "#FF0000",
+  "Layout": "110110110",
+  "CellType": "4",
+  "WeaponId": 39,
+  "AmmunitionId": 39,
+  "WeaponSlotType": "M",
+  "PossibleModifications": [
+    14,
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

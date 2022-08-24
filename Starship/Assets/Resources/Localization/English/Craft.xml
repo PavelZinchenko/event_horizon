@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">Required level:</string>
+    <string name="CraftPrice">Price:</string>
+    <string name="CraftCommonItem">Create common quality item</string>
+    <string name="CraftImprovedItem">Create improved quality item</string>
+    <string name="CraftSuperiorItem">Create superior quality item</string>
+    <string name="CraftNotAvailable">Not available for this item</string>
+    <string name="CraftItem">Create common item</string>
+    <string name="RareResourceLabel">Rare resources</string>
+    <string name="RareResource">Crafting ingredient</string>
+    <string name="CraftQueue">Production</string>
+    <string name="CraftCompleted">Completed</string>
+    <string name="CraftInQueue">Waiting</string>
+    <string name="EmptyBuildQueue">The build queue is empty</string>
+    <string name="Blueprint">Blueprint: $1</string>
+    <string name="Shipyard">Shipyard</string>
+    <string name="UpgradeShipDescription">WARNING: If you upgrade this ship, its level will decrease by $1.</string>
+    <string name="RequiredShipyardLevel">The shipyard must be of level $1 and belong to $2.</string>
+    <string name="RequiredShipLevel">Your ship must be at level $1 or higher.</string>
+    <string name="InstallModConfirmation">Are you sure you want to install this modification?</string>
+    <string name="DeleteModConfirmation">Are you sure you want to remove this modification? You won\'t get the money back.</string>
+    <string name="SelectCellType">Select cell type</string>
+    <string name="SelectCellPlace">Select the place for a new cell</string>
+    <string name="AddShipCell">Create an extra cell</string>
+    <string name="RemoveShipCells">Reset ship layout</string>
+    <string name="RemoveShipCellsWarning">Are you sure you want to remove all extra cells from your ship?</string>
+</resources>

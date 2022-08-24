@@ -1,0 +1,19 @@
+{
+  "ItemType": 4,
+  "Id": 61,
+  "Impulse": 0.01,
+  "Recoil": 0.005,
+  "Size": 1.0,
+  "InitialPosition": {
+    "x": 0.5
+  },
+  "Damage": 5.0,
+  "Range": 40.0,
+  "Velocity": 15.0,
+  "EnergyCost": 4.0,
+  "Color": "#FF9494",
+  "FireSound": "shot_04",
+  "HitSound": "hit_01",
+  "HitEffectPrefab": "FlashAdditive",
+  "BulletPrefab": "Plasma2"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlanetTypeGas">Gázbolygó</string>
+    <string name="PlanetTypeBarren">Kőzetbolygó</string>
+    <string name="PlanetTypeTerran">Földszerű bolygó</string>
+    <string name="PlanetTypeAsteroids">Aszteroida öv</string>
+    <string name="PlanetTypeInfected">Kaptár</string>
+    <string name="StarInfo">$1\nVédelem: $2</string>
+    <string name="CapturedStarInfo">$1\nSzint: $2</string>
+    <string name="ExtractionLabel">Begyűjtés...</string>
+    <string name="AddNote">Írj megjegyzést...</string>
+    <string name="PlanetTemperature">Hőmérséklet</string>
+    <string name="PlanetToxicity">Toxicitás</string>
+    <string name="PlanetHostility">Fenyegetés</string>
+    <string name="ExplorationProgress">$1% felfedezve</string>
+    <string name="NotExplored">Nincs átvizsgálva</string>
+    <string name="ObjectStarBase">Csillagbázis</string>
+    <string name="ObjectSurvival">Túlélés</string>
+    <string name="ObjectBoss">Zászlóshajó</string>
+    <string name="ObjectWormhole">Féreglyuk</string>
+    <string name="ObjectMultiplayer">Többjátékos</string>
+    <string name="ObjectArena">Aréna</string>
+    <string name="ObjectChallenge">Kihívás</string>
+    <string name="ObjectBlackMarket">Csempészbázis</string>
+    <string name="ObjectRuins">Elhagyatott űrállomás</string>
+    <string name="ObjectMilitary">Katonai bázis</string>
+    <string name="ObjectEvent">Jeladás</string>
+    <string name="ObjectXmas">Boldog Karácsonyt!</string>
+    <string name="ObjectHive">Kaptár</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="HitPointsMod">Životy $1</string>
+    <string name="DefenseMod">Obrana $1</string>
+    <string name="WeightMod">Váha $1</string>
+    <string name="EnergyCostMod">Spotřeba energie $1</string>
+    <string name="DamageMod">Poškození $1</string>
+    <string name="CooldownMod">Cooldown $1</string>
+    <string name="RangeMod">Rozsah</string>
+    <string name="BulletVelocityMod">Rychlost střel</string>
+    <string name="EnergyMod">Kapacita energie $1</string>
+    <string name="RepairRateMod">Rychlost oprav</string>
+    <string name="EnginePowerMod">Výkon motoru</string>
+    <string name="EnergyRechargeMod">Rychlost dobíjení energie $1</string>
+    <string name="BulletVelocityMod2">Rychlost střel $1, Poškození $2</string>
+    <string name="AreaOfEffectMod">Velikost oblasti efektu $1</string>
+    <string name="ShieldPowerMod">Síla Štítu $1</string>
+    <string name="DamageMod2">Poškození $1\nCooldown $2</string>
+    <string name="DroneSpeedMod">Rychlost dronů $1</string>
+    <string name="RecoilMod">Váha projektilu $1</string>
+    <string name="Ship_EmptySlot">[prázdný slot]</string>
+    <string name="Ship_AutoTargeting">Automatické zaměřování</string>
+    <string name="Ship_HeatDefense">Větší tepelná odolnost</string>
+    <string name="Ship_KineticDefense">Větší kinetická odolnost</string>
+    <string name="Ship_EnergyDefense">Zvýšená energetická odolnost</string>
+    <string name="Ship_ExtraBlueCells">Více slotů pro vybavení</string>
+    <string name="Ship_Lightweight">Základní váha lodě snížena o $1%</string>
+    <string name="Ship_Infected">$1% méně brnění, regeneruje $2% / sec</string>
+</resources>

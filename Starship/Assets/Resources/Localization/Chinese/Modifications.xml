@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="HitPointsMod">装甲值 $1</string>
+    <string name="DefenseMod">防御 $1</string>
+    <string name="WeightMod">重量 $1</string>
+    <string name="EnergyCostMod">能耗 $1</string>
+    <string name="DamageMod">伤害 $1</string>
+    <string name="CooldownMod">冷却时间 $1</string>
+    <string name="RangeMod">射程 $1</string>
+    <string name="BulletVelocityMod">弹药初速 $1</string>
+    <string name="EnergyMod">能量储备 $1</string>
+    <string name="RepairRateMod">修复速率 $1</string>
+    <string name="EnginePowerMod">引擎功率 $1</string>
+    <string name="EnergyRechargeMod">充能速率 $1</string>
+    <string name="BulletVelocityMod2">弹药初速 $1
+伤害 $2</string>
+    <string name="AreaOfEffectMod">作用范围 $1</string>
+    <string name="ShieldPowerMod">护盾强度 $1</string>
+    <string name="DamageMod2">伤害 $1\n冷却速度 $2</string>
+    <string name="DroneSpeedMod">无人机速度 $1</string>
+    <string name="RecoilMod">弹头重量 $1</string>
+    <string name="Ship_EmptySlot">[空槽位]</string>
+    <string name="Ship_AutoTargeting">内置自动瞄准系统</string>
+    <string name="Ship_HeatDefense">增加热能抗性</string>
+    <string name="Ship_KineticDefense">增加动能抗性</string>
+    <string name="Ship_EnergyDefense">增加能量抗性</string>
+    <string name="Ship_ExtraBlueCells">额外装备槽位</string>
+    <string name="Ship_Lightweight">船体基础重量减轻 $1%</string>
+    <string name="Ship_Infected">减少$1%装甲值，但每秒回复装甲值的$2%</string>
+</resources>

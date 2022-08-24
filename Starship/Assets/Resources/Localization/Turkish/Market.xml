@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Yıldızlar</string>
+    <string name="TokenCurrency">Jetonlar</string>
+    <string name="Snowflakes">Kar Taneleri</string>
+    <string name="NoItemsInCategory">Bu kategoride eşya bulunamadı</string>
+    <string name="IapErrorText">Beklenmeyen bir hata oluştu.Satın alman tamamlanamadı.</string>
+    <string name="FacebookItemDescription">Facebook\'ta paylaş</string>
+    <string name="AdItemDescription">Bir video izle ve bedava ödül kazan</string>
+    <string name="XmasBox">Noel Kutusu</string>
+    <string name="AlienTechnology">Uzaylı Teknolojisi</string>
+    <string name="Commodity_Scraps">Hurda</string>
+    <string name="Commodity_Artifacts">Uzaylı Eserleri</string>
+    <string name="Commodity_Minerals">Madenler</string>
+    <string name="Commodity_PreciousMetals">Değerli Metaller</string>
+    <string name="Commodity_GemStones">Değerli Taşlar</string>
+    <string name="Commodity_Alloys">Metal Alaşımları</string>
+    <string name="Commodity_Polymers">Polimerler</string>
+    <string name="Commodity_ToxicWaste">Zehirli Atık</string>
+    <string name="SellTrash">Tüm önemsiz eşyaları sat</string>
+    <string name="SellAllTrashConfirmation">Gerçekten tüm düşük kalite eşyaları satmak istediğinden emin misin?</string>
+    <string name="BestDeal">EN İYİ ANLAŞMA</string>
+    <string name="MostPopular">EN POPÜLER</string>
+    <string name="FalconPack">Özel Teklif</string>
+    <string name="FalconPackDescription">Güçlü silah ve yetenekli kaptanlı eşsiz gemi</string>
+    <string name="StarPack1">Küçüük Yıldız Paketi</string>
+    <string name="StarPackDetails1">50 yıldız içerir</string>
+    <string name="StarPack2">Yıldız Paketi</string>
+    <string name="StarPackDetails2">500 yıldız içerir</string>
+    <string name="StarPack3">Büyük Yıldız Paketi</string>
+    <string name="StarPackDetails3">5000 yıldız içerir</string>
+</resources>

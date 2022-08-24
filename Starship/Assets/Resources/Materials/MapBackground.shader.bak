@@ -1,0 +1,67 @@
+Shader "MapBackground"
+{
+    Properties
+    {
+        _BaseColor("BaseColor", Color) = (1,1,1,1)
+        _MainTex("MainTex", 2D) = "white" {}
+        _DecalTex("DecalTex", 2D) = "white" {}
+    }
+
+    SubShader
+    {
+        Tags { "RenderType" = "Opaque" "RenderPipeline" = "UniversalRenderPipeline"}
+
+        Pass
+        {
+            Tags { "LightMode" = "UniversalForward" }
+
+            HLSLPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+
+            struct Attributes
+            {
+                float4 positionOS   : POSITION;
+                float2 uv1          : TEXCOORD0;
+                float2 uv2          : TEXCOORD1;
+            };
+
+            struct Varyings
+            {
+                float2 uv1          : TEXCOORD0;
+                float2 uv2          : TEXCOORD1;
+                float4 positionHCS  : SV_POSITION;
+            };
+
+            TEXTURE2D(_MainTex);
+            TEXTURE2D(_DecalTex);
+            SAMPLER(sampler_MainTex);
+            SAMPLER(sampler_DecalTex);
+
+            CBUFFER_START(UnityPerMaterial)
+            float4 _MainTex_ST;
+            float4 _DecalTex_ST;
+            half4 _BaseColor;
+            CBUFFER_END
+
+            Varyings vert(Attributes IN)
+            {
+                Varyings OUT;
+                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
+                OUT.uv1 = TRANSFORM_TEX(IN.uv1, _MainTex);
+                OUT.uv2 = TRANSFORM_TEX(IN.uv2, _DecalTex);
+                return OUT;
+            }
+
+            half4 frag(Varyings IN) : SV_Target
+            {
+                half4 c = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv1) * _BaseColor;
+                c += SAMPLE_TEXTURE2D(_DecalTex, sampler_DecalTex, IN.uv2);
+                return c;
+            }
+            ENDHLSL
+        }
+    }
+}

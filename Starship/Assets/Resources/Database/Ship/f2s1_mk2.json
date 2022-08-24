@@ -1,0 +1,25 @@
+{
+  "ItemType": 6,
+  "Id": 24,
+  "ShipCategory": 1,
+  "Name": "$f2_Scout2",
+  "Faction": 2,
+  "IconImage": "f2s1_2",
+  "IconScale": 0.5,
+  "ModelImage": "f2s1_2",
+  "ModelScale": 1.0,
+  "EnginePosition": {
+    "x": -0.8
+  },
+  "EngineColor": "#40FFBABA",
+  "EngineSize": 0.1,
+  "Layout": "000040000000141000000343000000222000000222000000020000033020330133252331133555331",
+  "Barrels": [
+    {
+      "Position": {
+        "x": 1.0
+      },
+      "WeaponClass": "L"
+    }
+  ]
+}

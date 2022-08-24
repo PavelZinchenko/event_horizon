@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Skills
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 1
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b4783b14e655b034ca2afd58f7203f9d, type: 3}
+    totalSpriteSurfaceArea: 163840
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4b0c6930ad23df94085ed3231d7da232, type: 3}
+  - {fileID: 21300000, guid: 5866d3528b63f1f4aa5da789ca33a3e6, type: 3}
+  - {fileID: 21300000, guid: ccf8e6736201e5f4ea400d1b904ebc8d, type: 3}
+  - {fileID: 21300000, guid: 9ee05104c84fe494c81e3099a557c6a9, type: 3}
+  - {fileID: 21300000, guid: d56bda84b7da45b47aa19d35cf4319b8, type: 3}
+  - {fileID: 21300000, guid: 0a38e2789b2614147b441e84715bf4d8, type: 3}
+  - {fileID: 21300000, guid: e8c7b1f9f58a3714abea4bbcfc123c28, type: 3}
+  - {fileID: 21300000, guid: c82f081eb9e5aae4dbf8788ee480c177, type: 3}
+  - {fileID: 21300000, guid: b748a64ebbc1ae74c9b98c145c8a6fc6, type: 3}
+  - {fileID: 21300000, guid: 5bbd27ae715ed5a4383e6204d443fb4a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - hangar5
+  - icon_fueltank
+  - hangar2
+  - hangar3
+  - hangar4
+  - icon_attack
+  - icon_missile
+  - icon_battery
+  - hangar1
+  - icon_radar
+  m_Tag: Skills
+  m_IsVariant: 0

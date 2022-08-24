@@ -1,0 +1,25 @@
+{
+  "ItemType": 1,
+  "Id": 22,
+  "Name": "PulseCannon_L_1",
+  "DisplayCategory": 1,
+  "ComponentStatsId": 1,
+  "Faction": 1,
+  "Icon": "gun7",
+  "Color": "#C0C0C0",
+  "Layout": "0010000100001000010000100",
+  "CellType": "4",
+  "WeaponId": 61,
+  "AmmunitionId": 61,
+  "PossibleModifications": [
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

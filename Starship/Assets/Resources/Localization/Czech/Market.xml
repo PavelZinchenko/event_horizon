@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="StarCurrency">Hvězdy</string>
+    <string name="TokenCurrency">Žetony</string>
+    <string name="Snowflakes">Vločky</string>
+    <string name="NoItemsInCategory">V této kategorii nebylo nic nalezeno</string>
+    <string name="IapErrorText">Vyskytla se neočekávaná chyba. Váš nákup nebyl dokončen.</string>
+    <string name="FacebookItemDescription">Sdílet na Facebook</string>
+    <string name="AdItemDescription">Shlédni video a získej odměnu zdarma</string>
+    <string name="XmasBox">Vánoční bedna</string>
+    <string name="AlienTechnology">Technologie</string>
+    <string name="Commodity_Scraps">Šrot</string>
+    <string name="Commodity_Artifacts">Artefakty</string>
+    <string name="Commodity_Minerals">Minerály</string>
+    <string name="Commodity_PreciousMetals">Drahé kovy</string>
+    <string name="Commodity_GemStones">Drahokamy</string>
+    <string name="Commodity_Alloys">Kovové slitiny</string>
+    <string name="Commodity_Polymers">Polymery</string>
+    <string name="Commodity_ToxicWaste">Toxický odpad</string>
+    <string name="SellTrash">Prodat všechen odpad</string>
+    <string name="SellAllTrashConfirmation">Přejete si prodat všechny předměty nízké kvality?</string>
+    <string name="BestDeal">NEJLEPŠÍ NABÍDKA</string>
+    <string name="MostPopular">NEJPOPULÁRNĚJŠÍ</string>
+    <string name="FalconPack">Speciální nabídka</string>
+    <string name="FalconPackDescription">Unikátní loď se silnou zbraní a zkušeným kapitánem</string>
+    <string name="StarPack1">Malý balíček hvězd</string>
+    <string name="StarPackDetails1">Obsahuje 50 hvězd</string>
+    <string name="StarPack2">Balíček hvězd</string>
+    <string name="StarPackDetails2">obsahuje 500 hvězd</string>
+    <string name="StarPack3">Velký balíček hvězd</string>
+    <string name="StarPackDetails3">Obsahuje 5000 hvězd</string>
+</resources>

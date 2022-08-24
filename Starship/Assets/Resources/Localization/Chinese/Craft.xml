@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CraftLevel">等级需求:</string>
+    <string name="CraftPrice">价格:</string>
+    <string name="CraftCommonItem">制作一般品质的道具</string>
+    <string name="CraftImprovedItem">制作改良品质的道具</string>
+    <string name="CraftSuperiorItem">制作优秀品质的道具</string>
+    <string name="CraftNotAvailable">此项目不可用</string>
+    <string name="CraftItem">制作普通物品</string>
+    <string name="RareResourceLabel">稀有资源</string>
+    <string name="RareResource">合成用材料</string>
+    <string name="CraftQueue">产品列表</string>
+    <string name="CraftCompleted">已完成</string>
+    <string name="CraftInQueue">等待中</string>
+    <string name="EmptyBuildQueue">生产列表为空</string>
+    <string name="Blueprint">蓝图: $1</string>
+    <string name="Shipyard">船坞</string>
+    <string name="UpgradeShipDescription">警告：如果你升级该船，它的等级将会降低$1。</string>
+    <string name="RequiredShipyardLevel">船坞必须达到$1级并且属于$2。</string>
+    <string name="RequiredShipLevel">你的飞船需要$1级或更高等级</string>
+    <string name="InstallModConfirmation">你确定要应用这个改装吗？</string>
+    <string name="DeleteModConfirmation">你确定要移除这个改装吗？安装改装的花费不会被退回。</string>
+    <string name="SelectCellType">选择槽位类型</string>
+    <string name="SelectCellPlace">定位新槽位</string>
+    <string name="AddShipCell">添加一个额外槽位</string>
+    <string name="RemoveShipCells">重置飞船槽位</string>
+    <string name="RemoveShipCellsWarning">你确定要移除飞船上的所有额外槽位吗？</string>
+</resources>

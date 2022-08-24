@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="PlayerRating">Ocena Gracza:</string>
+    <string name="ArenaRating">Ocena Floty:</string>
+    <string name="ArenaRegistrationRequired">Nie jesteś zarejestrowany w arenie.</string>
+    <string name="ArenaSignInRequired">Zaloguj się zanim zaczniesz.</string>
+    <string name="ConnectionError">Nie można połączyć z serwerem. Spróbuj ponownie później.</string>
+    <string name="ArenaTraining">Potyczka treningowa z własną flotą</string>
+    <string name="ArenaOpponent">Przeciwnik:</string>
+    <string name="ArenaFight">Wyzwij przeciwnika.</string>
+    <string name="ArenaShop">Wybierz nagrodę.</string>
+    <string name="ArenaFindOpponent">Znajdź przeciwnika.</string>
+    <string name="ArenaEmptyFleet">Nie masz żadnych statków w hangarze.</string>
+    <string name="ArenaShipNotAllowed">Statek $1 nie jest dozwolony do uczestniczenia.</string>
+    <string name="ArenaBattlesAvailable">$1 ${1|walka|walki|walk} dostępne</string>
+    <string name="ArenaMoreBattles">Dokup 10 walk</string>
+    <string name="ArenaShipReady">Gotów do walki</string>
+    <string name="ArenaShipNotReady">Nie dozwolony</string>
+    <string name="ArenaWatchAd">Obejrzyj reklamę</string>
+</resources>

@@ -1,0 +1,82 @@
+{
+  "ItemType": 15,
+  "Id": 107,
+  "StartCondition": 6,
+  "Weight": 0.01,
+  "Requirement": {
+    "Type": 6,
+    "MinValue": 10
+  },
+  "Nodes": [
+    {
+      "Id": 1,
+      "Type": 10,
+      "Message": "$Scavengers_1_Intro",
+      "Actions": [
+        {
+          "TargetNode": 2,
+          "ButtonText": "$Continue"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": 10,
+      "Message": "$Scavengers_1_Message",
+      "Enemy": 10,
+      "Character": 5,
+      "Actions": [
+        {
+          "TargetNode": 3,
+          "ButtonText": "$Action_Attack"
+        },
+        {
+          "TargetNode": 5,
+          "Requirement": {
+            "Type": 25,
+            "ItemId": 30
+          },
+          "ButtonText": "$Action_UseArtifact"
+        },
+        {
+          "TargetNode": 4,
+          "ButtonText": "$Action_Ignore"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Type": 20,
+      "DefaultTransition": 4,
+      "FailureTransition": 4,
+      "Enemy": 10
+    },
+    {
+      "Id": 4,
+      "Type": 40
+    },
+    {
+      "Id": 5,
+      "Type": 10,
+      "Message": "$Scavengers_1_Message3",
+      "Enemy": 10,
+      "Character": 5,
+      "Actions": [
+        {
+          "TargetNode": 6,
+          "ButtonText": "$Action_Accept"
+        },
+        {
+          "TargetNode": 4,
+          "ButtonText": "$Action_Ignore"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "Type": 11,
+      "DefaultTransition": 4,
+      "Faction": 15
+    }
+  ]
+}

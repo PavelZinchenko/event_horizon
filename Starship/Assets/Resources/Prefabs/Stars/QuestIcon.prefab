@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &188242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 406938}
+  - 114: {fileID: 11489500}
+  m_Layer: 0
+  m_Name: QuestIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &406938
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11489500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6788f5720ef1ba842b5fe4b4e9d11b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: 2
+  Color: {r: .816176474, g: .825050712, b: 1, a: 1}
+  Texture: {fileID: 2800000, guid: a5bc505686685174eabe3d94408e3222, type: 3}
+  Material: {fileID: 2100000, guid: f2d90f57e5fae094fb300c219858f560, type: 2}
+  ImpulseInterval: 2
+  ScaleMin: .200000003
+  ScaleMax: 1
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: a5bc505686685174eabe3d94408e3222, type: 3}
+    - target: {fileID: 0}
+      propertyPath: RotationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Color.r
+      value: .816176474
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Color.g
+      value: .825050712
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Material
+      value: 
+      objectReference: {fileID: 2100000, guid: f2d90f57e5fae094fb300c219858f560, type: 2}
+    - target: {fileID: 0}
+      propertyPath: ImpulseInterval
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 188242}
+  m_IsPrefabParent: 1
+

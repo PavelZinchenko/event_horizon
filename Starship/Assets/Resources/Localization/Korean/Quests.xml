@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+<string name="PIRATES_Agressive">공격당하고있습니다.</string>
+<string name="PIRATES_Passive">근처에 적함들이 있습니다.</string>
+<string name="PIRATES_ACTION_Attack">전투</string>
+<string name="PIRATES_ACTION_Retreat">후퇴</string>
+<string name="PIRATES_ACTION_Ignore">무시</string>
+<string name="MessageCombatReward">전투가 끝난뒤 약간의 전리품을 얻었습니다.</string>
+<string name="ACTION_Continue">계속</string>
+<string name="OUTOFFUEL_Message">연료가 바닥나서, 더이상 여행하지 못합니다.</string>
+<string name="OUTOFFUEL_ACTION_Jump">도움 요청 (함선이 집으로 돌아갈것입니다.)</string>
+<string name="OUTOFFUEL_Filled">약간의 연료를 얻었습니다.</string>
+<string name="TUTORIAL_NAME">튜토리얼</string>
+<string name="TUTORIAL_DESCRIPTION">만약 처음 플레이하신다면, 튜토리얼을 먼저 시작해보시는걸 추천드립니다.</string>
+<string name="TUTORIAL_Start">반갑습니다, 사령관님. 당신은 심우주로의 여정 임무를 받으셨습니다. 그 전에, 제가 잠시 게임의 기본들을 알려드리겠습니다.</string>
+<string name="TUTORIAL_Info1">당신의 함선인, 이벤트 호라이즌은 별들 간의 여행을 가능하게하는 하이퍼드라이브를 장착하고있습니다.</string>
+<string name="TUTORIAL_Training">또한 이벤트 호라이즌은 당신이 적함과 마주칠 경우를 대비해, 전투함들을 싣고 다닙니다. 한번 시도해보시겠습니까?</string>
+<string name="TUTORIAL_End">그게 전부입니다. 이제 여정을 떠나세요. 행운을 빕니다.</string>
+<string name="TUTORIAL_ACTION_Training">훈련 시작</string>
+<string name="TUTORIAL_ACTION_Skip">훈련 건너뛰기</string>
+<string name="MERCHANT_Message">소규모의 상선을 발견했습니다. 쓸만한 물건을 팔지도 모릅니다.</string>
+<string name="MERCHANT_ACTION_Trade">거래</string>
+<string name="MERCHANT_ACTION_Attack">공격</string>
+<string name="MERCHANT_ACTION_Ignore">무시</string>
+<string name="SOS_Message">신호를 포착했습니다.</string>
+<string name="SOS_ACTION_Respond">신호기가 있는곳으로 가기\n($1 만큼의 연료가 필요함)</string>
+<string name="SOS_ACTION_Ignore">무시</string>
+<string name="SOS_DEADSHIP_Message">심하게 파손된 함선을 발견했습니다. 보아하니 버려진것 같습니다.</string>
+<string name="SOS_DEADSHIP_Salvaged">쓸만한걸 찾았습니다.</string>
+<string name="SOS_DEADSHIP_ACTION_Repair">수리하기\n($1 만큼의 돈이 필요합니다)</string>
+<string name="SOS_DEADSHIP_ACTION_Salvage">유용한 아이템 찾기</string>
+<string name="SOS_OUTOFFUEL_Message">환영합니다! 저희는 연료가 다 떨어져서 이 행성계를 빠져나가지 못하고 있습니다. 도와주실수 있으신가요?</string>
+<string name="SOS_OUTOFFUEL_Reward">정말 감사합니다! 답례로 이걸 받아주세요.</string>
+<string name="SOS_OUTOFFUEL_ACTION_Give"> $1 만큼의 연료를 주기</string>
+<string name="SOS_OUTOFFUEL_ACTION_Attack">공격</string>
+<string name="SOS_OUTOFFUEL_ACTION_Decline">거절</string>
+<string name="SOS_TRAP_Message">목적지에 도착한 뒤, 곧바로 공격받았습니다. 이 신호는 함정이었던것 같습니다.</string>
+<string name="SOS_EMPTY_Message">목적지에 도착했지만 흥미로운것은 찾지 못했습니다.</string>
+
+</resources>

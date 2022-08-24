@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="CloudGameLoaded">Úspěšné načtení</string>
+    <string name="CloudGameSaved">Úspěšně uloženo</string>
+    <string name="CloudOperationFailed">Proces selhal $1</string>
+    <string name="BadSavegameError">Špatný formát uložené hry</string>
+    <string name="GoogleSingInRequired">Je potřeba ověření Google Play</string>
+    <string name="InternalError">Interní chyba</string>
+    <string name="CommonConfirmation">Opravdu to chcete udělat?</string>
+</resources>

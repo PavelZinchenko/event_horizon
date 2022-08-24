@@ -1,0 +1,28 @@
+{
+  "ItemType": 1,
+  "Id": 137,
+  "Name": "$PlasmaThrower_M_2",
+  "DisplayCategory": 1,
+  "Availability": 1,
+  "ComponentStatsId": 1,
+  "Faction": 6,
+  "Level": 35,
+  "Icon": "flamethrower1",
+  "Color": "#FFFFB4",
+  "Layout": "1111",
+  "CellType": "4",
+  "WeaponId": 51,
+  "AmmunitionId": 51,
+  "WeaponSlotType": "S",
+  "PossibleModifications": [
+    13,
+    8,
+    21,
+    6,
+    16,
+    5,
+    2,
+    7,
+    1
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "ItemType": 2,
+  "Id": 4,
+  "DeviceClass": 1,
+  "EnergyConsumption": 10.0,
+  "PassiveEnergyConsumption": 1.0,
+  "Power": 4.0,
+  "Range": 4.0,
+  "Size": 0.5,
+  "Cooldown": 20.0,
+  "Lifetime": 15.0,
+  "ActivationType": 1,
+  "Color": "#C3D395",
+  "Sound": "launch_05",
+  "ObjectPrefab": "Decoy",
+  "ControlButtonIcon": "controls_gear"
+}

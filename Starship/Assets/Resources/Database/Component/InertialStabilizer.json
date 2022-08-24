@@ -1,0 +1,16 @@
+{
+  "ItemType": 1,
+  "Id": 71,
+  "Name": "$InertialStabilizer",
+  "DisplayCategory": 6,
+  "Availability": 1,
+  "ComponentStatsId": 71,
+  "Faction": 6,
+  "Level": 90,
+  "Icon": "intertial_damper2",
+  "Layout": "1111",
+  "CellType": "2",
+  "PossibleModifications": [
+    2
+  ]
+}

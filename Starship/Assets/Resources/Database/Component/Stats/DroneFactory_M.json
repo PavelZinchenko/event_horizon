@@ -1,0 +1,8 @@
+{
+  "ItemType": 11,
+  "Id": 187,
+  "Type": 1,
+  "EnergyRechargeRate": -2.0,
+  "Weight": 25.0,
+  "DronesBuiltPerSecond": 0.0625
+}
