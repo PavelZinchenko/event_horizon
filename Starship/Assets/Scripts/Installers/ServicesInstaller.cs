@@ -73,19 +73,10 @@ namespace Installers
             Container.BindAllInterfacesAndSelf<InternetTimeService>().To<InternetTimeService>().AsSingle().NonLazy();
             Container.BindSignal<ServerTimeReceivedSignal>();
             Container.BindTrigger<ServerTimeReceivedSignal.Trigger>();
-
-#if UNITY_ANDROID
-            Container.BindAllInterfacesAndSelf<Services.GooglePlayGames.GooglePlayGamesService>().To<Services.GooglePlayGames.GooglePlayGamesService>().AsSingle().NonLazy();
-#endif
+            
 
 #if UNITY_EDITOR
             Container.BindAllInterfaces<EditorModeAccount>().To<EditorModeAccount>().AsSingle();
-#elif UNITY_ANDROID
-            Container.BindAllInterfaces<GoogleAccount>().To<GoogleAccount>().AsSingle();
-#elif UNITY_IPHONE
-            Container.BindAllInterfaces<GameCenterAccount>().To<GameCenterAccount>().AsSingle();
-#elif UNITY_STANDALONE
-            Container.BindAllInterfaces<SteamAccount>().To<SteamAccount>().AsSingle();
 #else
             Container.BindAllInterfaces<EmptyAccount>().To<EmptyAccount>().AsSingle();
 #endif

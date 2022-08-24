@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f5dc41-018f-43c2-bbf8-ec66b13b6d13" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Starship/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Starship/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Starship/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Starship/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/Background.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Background.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/MapBackground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/MapBackground.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ServicesInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ServicesInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Discord/DiscordController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Discord/DiscordController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/GooglePlayGames.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/GooglePlayGames/GooglePlayGamesService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/GooglePlayGames/GooglePlayGamesService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/AppleCloudStorage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/AppleCloudStorage.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/GoogleCloudStorage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Storage/GoogleCloudStorage.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/script/Config/Generated/AppConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/script/Config/Generated/AppConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/script/Security/CertificateChecker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/script/Security/CertificateChecker.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +49,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/build\Event Horizon.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\EH\foss\Starship\build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Programs\2018.4.36f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\EH\foss\Starship -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -81,7 +98,17 @@
       <workItem from="1661323898422" duration="322000" />
       <workItem from="1661324299633" duration="2743000" />
       <workItem from="1661359192097" duration="698000" />
+      <workItem from="1661363577249" duration="942000" />
+      <workItem from="1661366506417" duration="1333000" />
     </task>
+    <task id="LOCAL-00001" summary="chore: removed platform-specific APIs">
+      <created>1661363942450</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661363942450</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,5 +130,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="chore: removed platform-specific APIs" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: removed platform-specific APIs" />
   </component>
 </project>
