@@ -51,3 +51,6 @@ ExportedObj/
 # Builds
 *.apk
 *.aab
+
+#idea stuff
+.idea/

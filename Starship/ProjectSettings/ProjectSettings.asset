@@ -924,8 +924,8 @@ PlayerSettings:
   platformArchitecture:
     iPhone: 2
   scriptingBackend:
-    Android: 1
-    Standalone: 1
+    Android: 0
+    Standalone: 0
     Windows Store Apps: 2
     iPhone: 1
   il2cppCompilerConfiguration: {}

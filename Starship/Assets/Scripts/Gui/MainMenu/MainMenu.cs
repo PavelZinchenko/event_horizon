@@ -93,6 +93,16 @@ namespace Gui.MainMenu
         {
             Application.OpenURL("https://zipagames.com/policy.html");
         }
+        
+        public void JoinDiscord()
+        {
+            Application.OpenURL("https://discordapp.com/invite/yFFvF7m");
+        }
+        
+        public void JoinVk()
+        {
+            Application.OpenURL("https://vk.com/official_event_horizon_group");
+        }
 
         public void Echopedia()
         {
