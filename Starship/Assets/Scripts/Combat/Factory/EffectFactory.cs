@@ -6,6 +6,7 @@ using GameDatabase.Enums;
 using GameDatabase.Model;
 using Services.ObjectPool;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace Combat.Factory
@@ -67,8 +68,13 @@ namespace Combat.Factory
                 damageText = ((int)damage).ToString();
             else if (damage < 1e6f)
                 damageText = (int)(damage / 1e3f) + "K";
-            else
+            else if (damage < 1e9f)
                 damageText = (int)(damage / 1e6f) + "M";
+            else if (damage < 1e12f)
+                damageText = (long)(damage / 1e9f) + "B";
+            else
+                damageText = ((double)damage).ToInGameString();
+            
 
             gameObject.Name = damageText;
             var effect = CreateEffect(gameObject, parent);
