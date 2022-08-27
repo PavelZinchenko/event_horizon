@@ -4,7 +4,6 @@ namespace GameServices.GameManager
 {
     public interface IGameDataManager
     {
-        void RestorePurchases();
         void CreateNewGame();
 
         void LoadMod(string id = null);

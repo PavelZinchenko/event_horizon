@@ -15,7 +15,6 @@ namespace Session
         EventData Events { get; }
         BossData Bosses { get; }
         RegionData Regions { get; }
-        InAppPurchasesData Purchases { get; }
         PvpData Pvp { get; }
         WormholeData Wormholes { get; }
         AchievementData Achievements { get; }
@@ -24,7 +23,6 @@ namespace Session
         StatisticsData Statistics { get; }
         ResourcesData Resources { get; }
         UpgradesData Upgrades { get; }
-        SocialData Social { get; }
         QuestData Quests { get; }
     }
 }

@@ -106,25 +106,6 @@ namespace Economy.ItemType
         {
             return _container.Instantiate<ResearchItem>(new object[] { faction });
         }
-        public IItemType CreatePurchasedStarsItem()
-        {
-            return _container.Instantiate<PurchasedStarsItem>();
-        }
-
-        public IItemType CreateSupporterPackItem()
-        {
-            return _container.Instantiate<SupporterPackItem>();
-        }
-
-        public IItemType CreateRewardedAdItem()
-        {
-            return _container.Instantiate<RewardedAdItem>();
-        }
-
-        public IItemType CreateRewardedFacebookPostItem()
-        {
-            return _container.Instantiate<RewardedFacebookPostItem>();
-        }
 
         public IItemType CreateXmasBoxItem(int seed = -1)
         {

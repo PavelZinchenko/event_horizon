@@ -4,7 +4,6 @@ using GameServices.Gui;
 using Session;
 using GameServices.LevelManager;
 using GameServices.Settings;
-using Services.IAP;
 using Services.Localization;
 using Services.Storage;
 using UnityEngine;
@@ -22,12 +21,10 @@ namespace GameServices.GameManager
             ILocalization localization,
             ILevelLoader levelLoader,
             ISessionData sessionData,
-            IInAppPurchasing iapPurchasing,
             GameSettings gameSettings,
             IDatabase database,
             ShowMessageSignal.Trigger showMessageTrigger,
             SceneLoadedSignal sceneLoadedSignal,
-            InAppPurchaseCompletedSignal inAppPurchaseCompletedSignal,
             SessionAboutToSaveSignal.Trigger sessionAboutToSaveTrigger)
         {
             _database = database;
@@ -36,25 +33,17 @@ namespace GameServices.GameManager
             _localization = localization;
             _levelLoader = levelLoader;
             _sessionData = sessionData;
-            _iapPurchasing = iapPurchasing;
             _gameSettings = gameSettings;
             _showMessageTrigger = showMessageTrigger;
             _sceneLoadedSignal = sceneLoadedSignal;
-            _inAppPurchaseCompletedSignal = inAppPurchaseCompletedSignal;
             _sessionAboutToSaveTrigger = sessionAboutToSaveTrigger;
 
             _sceneLoadedSignal.Event += OnLevelLoaded;
-            _inAppPurchaseCompletedSignal.Event += OnIapCompleted;
         }
 
         ~GameDataManager()
         {
             UnityEngine.Debug.Log("GameDataManager: destructor");
-        }
-
-        public void RestorePurchases()
-        {
-		    _iapPurchasing.RestorePurchases();
         }
 
         public void LoadMod(string id = null)
@@ -184,11 +173,6 @@ namespace GameServices.GameManager
             Cleanup();
         }
 
-        private void OnIapCompleted()
-        {
-            SaveSession();
-        }
-
         private void Cleanup()
         {
             UnityEngine.Debug.Log("Cleanup");
@@ -201,10 +185,8 @@ namespace GameServices.GameManager
         private ILocalization _localization;
         private ILevelLoader _levelLoader;
         private ISessionData _sessionData;
-        private IInAppPurchasing _iapPurchasing;
         private GameSettings _gameSettings;
         private SceneLoadedSignal _sceneLoadedSignal;
-        private InAppPurchaseCompletedSignal _inAppPurchaseCompletedSignal;
         private SessionAboutToSaveSignal.Trigger _sessionAboutToSaveTrigger;
         private ShowMessageSignal.Trigger _showMessageTrigger;
         private IDatabase _database;

@@ -57,8 +57,6 @@ public enum EventType
     PlayerGainedExperience,
     PlayerSkillsChanged,
 
-    IapItemsRefreshed,
-
     PlayerShipCountChanged, // int
     EnemyShipCountChanged, // int
 	CombatShipCreated, // IShip
@@ -67,10 +65,6 @@ public enum EventType
     PlayerShipDocked, // int
     PlayerShipUndocked, // int
     ObjectiveDestroyed, // int
-
-    AdsManagerStatusChanged,
-    RewardedVideoCompleted,
-    SocialShareCompleted,
 
     Surrender,
     KillAllEnemies,

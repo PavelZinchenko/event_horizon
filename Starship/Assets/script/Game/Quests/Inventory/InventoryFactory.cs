@@ -10,9 +10,6 @@ using GameServices.Economy;
 using GameServices.Player;
 using GameServices.Random;
 using GameServices.Research;
-using Services.Ads;
-using Services.IAP;
-using Services.Social;
 using Zenject;
 
 namespace GameModel.Quests
@@ -21,7 +18,6 @@ namespace GameModel.Quests
     {
         [Inject] private readonly StarMap _starMap;
         [Inject] private readonly ItemTypeFactory _itemTypeFactory;
-        [Inject] private readonly IInAppPurchasing _inAppPurchasing;
         [Inject] private readonly PlayerResources _playerResources;
         [Inject] private readonly GameServices.Player.PlayerInventory _playerInventory;
         [Inject] private readonly PlayerFleet _playerFleet;
@@ -30,14 +26,12 @@ namespace GameModel.Quests
         [Inject] private readonly ProductFactory _productFactory;
         [Inject] private readonly PlayerSkills _playerSkills;
         [Inject] private readonly IDatabase _database;
-        [Inject] private readonly IAdsManager _adsManager;
-        [Inject] private readonly IFacebookFacade _facebookFacade;
         [Inject] private readonly HolidayManager _holidayManager;
         [Inject] private readonly Research _research;
 
         public IInventory CreateBlackMarketInventory(int starId)
         {
-            return new BlackMarketInventory(_starMap.GetStarById(starId), _itemTypeFactory, _productFactory, _playerSkills, _random, _inAppPurchasing, _database);
+            return new BlackMarketInventory(_starMap.GetStarById(starId), _itemTypeFactory, _productFactory, _playerSkills, _random, _database);
         }
 
         public IInventory CreateBlackMarketPlayerInventory(int starId)
@@ -73,11 +67,6 @@ namespace GameModel.Quests
         public IInventory CreateArenaInventory(Galaxy.Star star)
         {
             return new ArenaInventory(star, _itemTypeFactory, _productFactory, _database, _playerSkills, _random);
-        }
-
-        public IInventory CreateIapInventory()
-        {
-            return new IapInventory(_productFactory, _inAppPurchasing, _adsManager, _facebookFacade, _itemTypeFactory, _holidayManager);
         }
 
         public IInventory CreateInventory(IEnumerable<IProduct> items = null)

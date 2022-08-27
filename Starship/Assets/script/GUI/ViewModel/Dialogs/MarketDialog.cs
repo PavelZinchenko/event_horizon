@@ -68,7 +68,6 @@ namespace ViewModel
                 _marketInventory = args.Get<IInventory>(0);
                 _playerInventory = args.Get<IInventory>(1);
 
-                _messenger.AddListener(EventType.IapItemsRefreshed, OnIapItemsChanged);
                 _messenger.AddListener<int>(EventType.MoneyValueChanged, value => UpdateStats());
                 _messenger.AddListener<int>(EventType.StarsValueChanged, value => UpdateStats());
 
@@ -321,13 +320,6 @@ namespace ViewModel
 			
 				UpdateButtons();
 				UpdateStats();
-			}
-
-			private void OnIapItemsChanged()
-			{
-                UnityEngine.Debug.Log("MarketPanel: OnIapItemsChanged");
-				_marketInventory.Refresh();
-				UpdateItems();
 			}
 			
 			private void UpdateMarketItem(Common.InventoryItem item, IProduct product)

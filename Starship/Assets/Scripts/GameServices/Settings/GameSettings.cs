@@ -25,7 +25,6 @@ namespace GameServices.Settings
             _showDamage = new BoolDataItem("showDamage", true);
             _autosave = new BoolDataItem("autosave");
             _guid = new StringDataItem("guid");
-            _lastFacebookPostDate = new IntDataItem("fpost");
             _lastDailyRewardDate = new IntDataItem("rdata");
             _editorText = new StringDataItem();
             _dontAskAgainId = new IntDataItem("dontask");
@@ -151,12 +150,6 @@ namespace GameServices.Settings
             set => _activeMod.Write(value);
         }
 
-        public int LastFacebookPostDate
-        {
-            get => _lastFacebookPostDate.Read();
-            set => _lastFacebookPostDate.Write(value);
-        }
-
         public int LastDailyRewardDate
         {
             get => _lastDailyRewardDate.Read();
@@ -218,7 +211,6 @@ namespace GameServices.Settings
         private readonly StringDataItem _editorText;
         private string _uniqueId;
         private readonly GamePausedSignal _gamePausedSignal;
-        private readonly IntDataItem _lastFacebookPostDate;
         private readonly IntDataItem _lastDailyRewardDate;
         private readonly IntDataItem _dontAskAgainId;
         private readonly StringDataItem _activeMod;

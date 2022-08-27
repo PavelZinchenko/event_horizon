@@ -41,11 +41,6 @@ namespace Session
             return new GameData(buffer);
         }
 
-        public InAppPurchasesData CreateInAppPurchasesData(byte[] buffer)
-        {
-            return new InAppPurchasesData(_starsValueChangedTrigger, buffer);
-        }
-
         public InventoryData CreateInventoryData(byte[] buffer)
         {
             return new InventoryData(buffer);
@@ -101,12 +96,7 @@ namespace Session
         {
             return new PvpData(buffer);
         }
-
-        public SocialData CreateSocialData(byte[] buffer)
-        {
-            return new SocialData(buffer);
-        }
-
+        
         public QuestData CreateQuestData(byte[] buffer)
         {
             return new QuestData(buffer);

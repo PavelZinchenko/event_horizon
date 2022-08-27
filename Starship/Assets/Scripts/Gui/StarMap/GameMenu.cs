@@ -37,7 +37,6 @@ namespace Gui.StarMap
         public AnimatedWindow BlackMarketPanel;
         public AnimatedWindow ChallengePanel;
         public AnimatedWindow OutOfFuelDialog;
-        public AnimatedWindow IapStoreWindow;
         public AnimatedWindow QuestLogWindow;
 
         [SerializeField] private Button StarViewButton;
@@ -68,7 +67,6 @@ namespace Gui.StarMap
         public void ShowBlackMarket() { BlackMarketPanel.Open(); }
         public void ShowChallenge() { ChallengePanel.Open(); }
         public void ShowOutOfFuel() { OutOfFuelDialog.Open(); }
-        public void ShowIapStore() { IapStoreWindow.Open(); }
         public void ShowQuestLog() { QuestLogWindow.Open(); }
 
         public void ExitToMainMenu()

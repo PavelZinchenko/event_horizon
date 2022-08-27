@@ -90,7 +90,7 @@ namespace Session
             UnityEngine.Debug.Log("SessionData.CreateNewGame");
 
             if (_content != null && keepPurchases)
-                _content = new DatabaseContent(_contentFactory, _content.Purchases, _content.Achievements);
+                _content = new DatabaseContent(_contentFactory, _content.Achievements);
             else
                 _content = new DatabaseContent(_contentFactory);
 
@@ -111,7 +111,6 @@ namespace Session
         public EventData Events { get { return _content.Events; } }
         public BossData Bosses { get { return _content.Bosses; } }
         public RegionData Regions { get { return _content.Regions; } }
-        public InAppPurchasesData Purchases { get { return _content.Purchases; } }
         public WormholeData Wormholes { get { return _content.Wormholes; } }
         public AchievementData Achievements { get { return _content.Achievements; } }
         public CommonObjectData CommonObjects { get { return _content.CommonObjects; } }
@@ -120,7 +119,6 @@ namespace Session
         public ResourcesData Resources { get { return _content.Resources; } }
         public UpgradesData Upgrades { get { return _content.Upgrades; } }
         public PvpData Pvp { get { return _content.Pvp; } }
-        public SocialData Social { get { return _content.Social; } }
         public QuestData Quests { get { return _content.Quests; } }
 
         private long _version;
@@ -163,7 +161,6 @@ namespace Session
         public EventData Events { get; private set; }
         public BossData Bosses { get; private set; }
         public RegionData Regions { get; private set; }
-        public InAppPurchasesData Purchases { get; private set; }
         public PvpData Pvp { get; private set; }
         public WormholeData Wormholes { get; private set; }
         public AchievementData Achievements { get; private set; }
@@ -172,7 +169,6 @@ namespace Session
         public StatisticsData Statistics { get; private set; }
         public ResourcesData Resources { get; private set; }
         public UpgradesData Upgrades { get; private set; }
-        public SocialData Social { get; private set; }
         public QuestData Quests { get; private set; }
     }
 

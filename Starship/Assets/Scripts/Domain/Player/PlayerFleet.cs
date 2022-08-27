@@ -248,12 +248,6 @@ namespace GameServices.Player
                 ActiveShipGroup.Add(ship);
             }
 
-            if (_session.Purchases.SupporterPack)
-            {
-                _ships.Add(new CommonShip(_database.GetShipBuild(LegacyShipBuildNames.GetId("fns2"))));
-                ActiveShipGroup.Add(_ships.Last());
-            }
-
             _explorationShip = _ships.FirstOrDefault(ship => ship.Model.SizeClass == SizeClass.Frigate);
 
             foreach (var ship in _ships)

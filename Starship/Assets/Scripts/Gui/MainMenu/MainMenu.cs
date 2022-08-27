@@ -12,7 +12,6 @@ using GameDatabase.Model;
 using GameServices.GameManager;
 using GameServices.Gui;
 using GameServices.Settings;
-using Services.IAP;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -21,7 +20,6 @@ namespace Gui.MainMenu
 {
     public class MainMenu : MonoBehaviour
     {
-        [Inject] private readonly IInAppPurchasing _inAppPurchasing;
         [Inject] private readonly IGameDataManager _gameDataManager;
         [Inject] private readonly GameSettings _gameSettings;
         [Inject] private readonly IDatabase _database;
@@ -112,11 +110,6 @@ namespace Gui.MainMenu
         public void Exit()
         {
             Application.Quit();
-        }
-
-        public void RestorePurchases()
-        {
-            _gameDataManager.RestorePurchases();
         }
 
         private void OnDialogClosed(WindowExitCode result)

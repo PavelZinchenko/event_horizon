@@ -129,7 +129,7 @@ namespace Economy.Products
             if (!price.TryWithdraw(_playerResources))
             	throw new System.InvalidOperationException();
 
-            if (price.Currency != Currency.Money && price.Currency != Currency.None)
+            if (price.Currency != Currency.None)
                 _purchasedCount += amount;
 
             Type.Consume(amount);
@@ -223,9 +223,6 @@ namespace Economy.Products
 
             if (!price.TryWithdraw(_playerResources))
             	throw new System.InvalidOperationException();
-
-            if (price.Currency != Currency.Money)
-                _purchasedCount += amount;
 
             _session.Shop.SetPurchase(_marketId, Type.Id, _purchasedCount);
 
