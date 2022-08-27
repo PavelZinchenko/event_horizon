@@ -51,7 +51,6 @@ namespace Gui.MainMenu
 
         [SerializeField] private Button _startGameButton;
         [SerializeField] private Button _continueGameButton;
-        [SerializeField] private Button _constructorButton;
         [SerializeField] private InputField _inputField;
 
         public void StartGame()
@@ -62,6 +61,11 @@ namespace Gui.MainMenu
         public void StartBattle()
         {
             _guiManager.OpenWindow(Common.WindowNames.SelectDifficultyDialog, OnDialogClosed);
+        }
+
+        public void ReloadMod()
+        {
+            _gameDataManager.ReloadMod();
         }
 
         public void OpenConstructor()
@@ -134,7 +138,6 @@ namespace Gui.MainMenu
 
             _startGameButton.gameObject.SetActive(!gameExists);
             _continueGameButton.gameObject.SetActive(gameExists);
-            _constructorButton.gameObject.SetActive(_database.IsEditable);
         }
 
         private StartGameSignal.Trigger _startGameTrigger;

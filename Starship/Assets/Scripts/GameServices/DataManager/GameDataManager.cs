@@ -46,9 +46,9 @@ namespace GameServices.GameManager
             UnityEngine.Debug.Log("GameDataManager: destructor");
         }
 
-        public void LoadMod(string id = null)
+        public void LoadMod(string id = null, bool force = false)
         {
-            if (_database.Id.Equals(id, StringComparison.OrdinalIgnoreCase))
+            if (_database.Id.Equals(id, StringComparison.OrdinalIgnoreCase) && !force)
                 return;
 
             string error;
@@ -77,6 +77,11 @@ namespace GameServices.GameManager
                 if (!_localStorage.TryLoad(_sessionData, string.Empty))
                     _sessionData.CreateNewGame(string.Empty);
             }
+        }
+
+        public void ReloadMod()
+        {
+            LoadMod(_database.Id, true);
         }
 
         public void CreateNewGame()

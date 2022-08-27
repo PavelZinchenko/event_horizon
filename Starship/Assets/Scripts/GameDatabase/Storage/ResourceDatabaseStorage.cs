@@ -37,11 +37,11 @@ namespace GameDatabase.Storage
         {
             get
             {
-#if UNITY_EDITOR
-                return true;
-#else
+// #if UNITY_EDITOR
+//                 return true;
+// #else
                 return false;
-#endif
+// #endif
             }
         }
 
