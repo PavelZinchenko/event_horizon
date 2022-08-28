@@ -37,8 +37,14 @@ namespace Combat.Factory
         public IUnit CreateSatellite(IShip ship, IWeaponPlatformData data, float cooldown)
         {
             var satelliteData = data.Companion;
+            var custom = false;
 
-            var prefab = _prefabCache.LoadResourcePrefab("Combat/Satellites/" + satelliteData.Satellite.ModelImage.Id);
+            var prefab = _prefabCache.LoadResourcePrefab("Combat/Satellites/" + satelliteData.Satellite.ModelImage.Id,true);
+            if (ReferenceEquals(prefab, null))
+            {
+                prefab = _prefabCache.LoadResourcePrefab("Combat/Satellites/satellite1", true);
+                custom = true;
+            }
             var gameObject = new GameObjectHolder(prefab, _objectPool);
 
             var body = gameObject.GetComponent<IBodyComponent>();
@@ -47,6 +53,12 @@ namespace Combat.Factory
             var view = gameObject.GetComponent<IView>();
             var collider = gameObject.GetComponent<ICollider>();
 
+            if (custom)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite =
+                    _resourceLocator.GetSprite(satelliteData.Satellite.ModelImage);
+            }
+            
             var satellite = new Satellite(new UnitType(UnitClass.Drone, ship.Type.Side, ship), body, view, collider);
             satellite.AddResource(gameObject);
 
