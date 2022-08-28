@@ -22,6 +22,8 @@
       "EffectType": 2,
       "Ammunition": 106,
       "Quantity": 10,
+	  "Spread": 360,
+	  "Offset": 0.5,
       "Cooldown": 0.5,
       "RandomFactor": 0.75
     }

@@ -20,6 +20,8 @@
       "AudioClip": "explosion_02",
       "Ammunition": 112,
       "Quantity": 3,
+	  "Spread": 120,
+	  "Offset": 0.5,
       "Size": 0.75,
       "RandomFactor": 1.0,
       "MaxNestingLevel": 3

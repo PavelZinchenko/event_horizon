@@ -70,14 +70,14 @@ namespace Combat.Factory
         //private float DamageMultiplier { get { return PowerLevel; } }
         //private float SizeMultiplier { get { return 0.5f + PowerLevel*0.5f; } }
 
-        public IBullet Create(IWeaponPlatform parent, float spread, float rotation, float offset)
+        public IBullet Create(IWeaponPlatform parent, float spread, float rotation, float offset, Vector2 InitialPosition)
         {
             var color = _stats.AmmunitionClass == AmmunitionClassObsolete.Fireworks ? Color.Lerp(_stats.Color, new Color(Random.value, Random.value, Random.value), 0.75f) : (UnityEngine.Color)_stats.Color;
             var velocity = GetVelocity();
 
             var bulletGameObject = new GameObjectHolder(_prefab, _objectPool);
             bulletGameObject.IsActive = true;
-            var body = ConfigureBody(bulletGameObject.GetComponent<IBodyComponent>(), parent, spread, velocity, rotation, offset);
+            var body = ConfigureBody(bulletGameObject.GetComponent<IBodyComponent>(), parent, spread, velocity, rotation, offset, InitialPosition);
             var view = ConfigureView(bulletGameObject.GetComponent<IView>(), color);
 
             var lifetime = _stats.Velocity > 0 && _bulletStats.Range > 0 ? _stats.AmmunitionClass.IsHoming() ? 1.2f*_bulletStats.Range/velocity : _bulletStats.Range/velocity : _bulletStats.Lifetime;
@@ -138,7 +138,7 @@ namespace Combat.Factory
             return view;
         }
 
-        private IBody ConfigureBody(IBodyComponent body, IWeaponPlatform parent, float spread, float bulletVelocity, float deltaAngle, float offset)
+        private IBody ConfigureBody(IBodyComponent body, IWeaponPlatform parent, float spread, float bulletVelocity, float deltaAngle, float offset, Vector2 InitialPosition)
         {
             IBody parentBody = null;
             var position = Vector2.zero;
@@ -154,7 +154,7 @@ namespace Combat.Factory
             }
             else
             {
-                position = parent.Body.WorldPosition() + RotationHelpers.Direction(parent.Body.WorldRotation())*offset;
+                position = parent.Body.WorldPosition() + RotationHelpers.Direction(parent.Body.WorldRotation())* offset + RotationHelpers.Transform(InitialPosition, parent.Body.WorldRotation());
                 rotation = parent.Body.WorldRotation() + deltaAngle + (Random.value - 0.5f)*spread;
             }
 
@@ -283,7 +283,7 @@ namespace Combat.Factory
                 stats.Damage = _bulletStats.Damage;
                 stats.DamageType = _stats.DamageType;
                 var factory = new BulletFactoryObsolete(stats, _scene, _soundPlayer, _objectPool, _prefabCache, _spaceObjectFactory, _effectFactory, _owner);
-                bullet.AddAction(new SpawnBulletsAction(factory, 1, 0, 0, bullet, _soundPlayer, AudioClipId.None, explodeCondition));
+                bullet.AddAction(new SpawnBulletsAction(factory, 1, 0, 0, 0, Vector2.zero, 0, bullet, _soundPlayer, AudioClipId.None, explodeCondition));
             }
             if (_stats.AmmunitionClass.IsClusterBomb() && _stats.CoupledAmmunition != null)
             {
@@ -293,7 +293,7 @@ namespace Combat.Factory
                 stats.Range = _bulletStats.AreaOfEffect;
                 var factory = new BulletFactoryObsolete(stats, _scene, _soundPlayer, _objectPool, _prefabCache, _spaceObjectFactory, _effectFactory, _owner);
                 factory.Stats.RandomFactor = 0.75f;
-                bullet.AddAction(new SpawnBulletsAction(factory, 20, 0.5f, 0, bullet, _soundPlayer, AudioClipId.None, explodeCondition));
+                bullet.AddAction(new SpawnBulletsAction(factory, 20, 0.5f, 0f, 360f, Vector2.zero, 0, bullet, _soundPlayer, AudioClipId.None, explodeCondition));
             }
             if (_stats.AmmunitionClass.EmpIfDetonated())
             {

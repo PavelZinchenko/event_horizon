@@ -86,7 +86,7 @@ namespace GameDatabase.DataModel
 			AudioClip = new AudioClipId(serializable.AudioClip);
 			Color = new ColorData(serializable.Color);
 			ColorMode = serializable.ColorMode;
-			Size = UnityEngine.Mathf.Clamp(serializable.Size, 0f, 100f);
+			Size = UnityEngine.Mathf.Clamp(serializable.Size, 0f, 1000f);
 			Lifetime = UnityEngine.Mathf.Clamp(serializable.Lifetime, 0f, 1000f);
 
             OnDataDeserialized(serializable, loader);
@@ -116,11 +116,15 @@ namespace GameDatabase.DataModel
 			Color = new ColorData(serializable.Color);
 			ColorMode = serializable.ColorMode;
 			Quantity = UnityEngine.Mathf.Clamp(serializable.Quantity, 0, 1000);
-			Size = UnityEngine.Mathf.Clamp(serializable.Size, 0f, 100f);
-			Cooldown = UnityEngine.Mathf.Clamp(serializable.Cooldown, 0f, 1000f);
-			RandomFactor = UnityEngine.Mathf.Clamp(serializable.RandomFactor, 0f, 1f);
+            Offset = UnityEngine.Mathf.Clamp(serializable.Offset, -1000f, 1000f);
+            Rotation = UnityEngine.Mathf.Clamp(serializable.Rotation, -360f, 360f);
+            Spread = UnityEngine.Mathf.Clamp(serializable.Spread, 0f, 360f);
+            Size = UnityEngine.Mathf.Clamp(serializable.Size, 0f, 1000f);
+            InitialPosition = serializable.InitialPosition;
+            Cooldown = UnityEngine.Mathf.Clamp(serializable.Cooldown, 0f, 1000f);
+			RandomFactor = UnityEngine.Mathf.Clamp(serializable.RandomFactor, 0f, 10f);
 			PowerMultiplier = UnityEngine.Mathf.Clamp(serializable.PowerMultiplier, 0f, 1000f);
-			MaxNestingLevel = UnityEngine.Mathf.Clamp(serializable.MaxNestingLevel, 0, 100);
+			MaxNestingLevel = UnityEngine.Mathf.Clamp(serializable.MaxNestingLevel, 0, 1000);
 
             OnDataDeserialized(serializable, loader);
         }
@@ -135,8 +139,12 @@ namespace GameDatabase.DataModel
 		public ColorData Color { get; private set; }
 		public ColorMode ColorMode { get; private set; }
 		public int Quantity { get; private set; }
-		public float Size { get; private set; }
-		public float Cooldown { get; private set; }
+        public float Offset { get; private set; }
+        public float Rotation { get; private set; }
+        public float Spread { get; private set; }
+        public float Size { get; private set; }
+        public UnityEngine.Vector2 InitialPosition { get; private set; }
+        public float Cooldown { get; private set; }
 		public float RandomFactor { get; private set; }
 		public float PowerMultiplier { get; private set; }
 		public int MaxNestingLevel { get; private set; }

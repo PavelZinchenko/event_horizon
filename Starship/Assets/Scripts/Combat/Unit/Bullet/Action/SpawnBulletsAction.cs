@@ -14,7 +14,7 @@ namespace Combat.Component.Bullet.Action
 {
     public class SpawnBulletsAction : IAction, IWeaponPlatform
     {
-        public SpawnBulletsAction(IBulletFactory factory, int magazine, float initialOffset, float rechargeTime, IUnit parent, ISoundPlayer soundPlayer, AudioClipId audioClip, ConditionType condition)
+        public SpawnBulletsAction(IBulletFactory factory, int magazine, float initialOffset, float rotation, float spread, Vector2 InitialPosition, float rechargeTime, IUnit parent, ISoundPlayer soundPlayer, AudioClipId audioClip, ConditionType condition)
         {
             Type = parent.Type;
             _body = new BodyWrapper(parent.Body);
@@ -22,6 +22,9 @@ namespace Combat.Component.Bullet.Action
             _magazine = magazine;
             _rechargeTime = rechargeTime > 0 ? rechargeTime : float.MaxValue;
             _offset = initialOffset;
+            _rotation = rotation;
+            _spread = spread;
+            _initialPosition = InitialPosition;
             _soundPlayer = soundPlayer;
             _audioClipId = audioClip;
             Condition = condition;
@@ -38,11 +41,12 @@ namespace Combat.Component.Bullet.Action
                 return CollisionEffect.None;
 
             if (_magazine <= 1)
-                _factory.Create(this, 0, 0, /*TODO: _offset*/0);
+                _factory.Create(this, _spread, _rotation, _offset, _initialPosition);
             else
             {
                 for (var i = 0; i < _magazine; ++i)
-                    _factory.Create(this, 0, Random.Range(0, 360), _offset);
+                    _factory.Create(this, _spread, _rotation, _offset, _initialPosition);
+                    // _factory.Create(this, 0, Random.Range(0, 360), _offset);
             }
 
             if (_audioClipId) _soundPlayer.Play(_audioClipId, GetHashCode());
@@ -76,6 +80,9 @@ namespace Combat.Component.Bullet.Action
         private readonly IBulletFactory _factory;
         private readonly float _rechargeTime;
         private readonly float _offset;
+        private readonly float _rotation;
+        private readonly float _spread;
+        private readonly Vector2 _initialPosition;
         private readonly int _magazine;
         private readonly BodyWrapper _body;
         private readonly ISoundPlayer _soundPlayer;

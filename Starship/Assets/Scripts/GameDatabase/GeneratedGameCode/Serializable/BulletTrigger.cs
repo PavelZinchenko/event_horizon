@@ -23,8 +23,12 @@ namespace GameDatabase.Serializable
 		public string Color;
 		public ColorMode ColorMode;
 		public int Quantity;
-		public float Size;
-		public float Lifetime;
+		public float Offset;
+        public float Rotation;
+        public float Spread;
+        public float Size;
+        public UnityEngine.Vector2 InitialPosition;
+        public float Lifetime;
 		public float Cooldown;
 		public float RandomFactor;
 		public float PowerMultiplier;

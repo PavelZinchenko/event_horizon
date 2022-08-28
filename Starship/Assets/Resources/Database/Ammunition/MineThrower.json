@@ -24,6 +24,8 @@
       "Condition": 5,
       "EffectType": 2,
       "Ammunition": 110,
+	  "Spread": 360,
+	  "Offset": 0.5,
       "Quantity": 8,
       "RandomFactor": 1.0
     }

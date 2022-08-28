@@ -54,7 +54,7 @@ namespace Combat.Factory
             get { return _stats; }
         }
 
-        public IBullet Create(IWeaponPlatform parent, float spread, float rotation, float offset)
+        public IBullet Create(IWeaponPlatform parent, float spread, float rotation, float offset, Vector2 InitialPosition)
         {
             var bulletGameObject = new GameObjectHolder(_prefab, _objectPool);
             bulletGameObject.IsActive = true;
@@ -62,7 +62,7 @@ namespace Combat.Factory
             var bulletSpeed = _stats.GetBulletSpeed();
 
             var body = ConfigureBody(bulletGameObject.GetComponent<IBodyComponent>(), parent, bulletSpeed, spread,
-                rotation, offset);
+                rotation, offset, InitialPosition);
             var view = ConfigureView(bulletGameObject.GetComponent<IView>(), _stats.Color);
 
             var bullet = CreateUnit(body, view, bulletGameObject);
@@ -138,7 +138,7 @@ namespace Combat.Factory
         }
 
         private IBody ConfigureBody(IBodyComponent body, IWeaponPlatform parent, float bulletSpeed, float spread,
-            float deltaAngle, float offset)
+            float deltaAngle, float offset, Vector2 InitialPosition)
         {
             IBody parentBody = null;
             var position = Vector2.zero;
@@ -147,6 +147,7 @@ namespace Combat.Factory
             var angularVelocity = 0f;
             var weight = _stats.Weight;
             var scale = _stats.BodySize;
+            var initialPosition = InitialPosition;
 
             if (_ammunition.Body.Type == GameDatabase.Enums.BulletType.Continuous && !parent.IsTemporary)
             {
@@ -155,8 +156,8 @@ namespace Combat.Factory
             }
             else
             {
-                rotation = parent.Body.WorldRotation() + (UnityEngine.Random.value - 0.5f) * spread + deltaAngle;
-                position = parent.Body.WorldPosition() + RotationHelpers.Direction(rotation) * offset;
+                rotation = parent.Body.WorldRotation() + (UnityEngine.Random.value - 0.5f) * spread + deltaAngle; 
+                position = parent.Body.WorldPosition() + RotationHelpers.Direction(rotation) * offset + RotationHelpers.Transform(initialPosition, parent.Body.WorldRotation());
             }
 
             if (_ammunition.Body.Type != GameDatabase.Enums.BulletType.Continuous)
@@ -350,7 +351,7 @@ namespace Combat.Factory
 
                 var factory = CreateFactory(trigger.Ammunition, trigger);
                 var magazine = Math.Max(trigger.Quantity, 1);
-                _bullet.AddAction(new SpawnBulletsAction(factory, magazine, factory._stats.BodySize / 2, trigger.Cooldown,
+                _bullet.AddAction(new SpawnBulletsAction(factory, magazine, trigger.Offset, trigger.Rotation, trigger.Spread, trigger.InitialPosition, trigger.Cooldown,
                     _bullet, factory._soundPlayer, trigger.AudioClip, _condition));
 
                 return Result.Ok;

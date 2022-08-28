@@ -18,8 +18,10 @@ namespace Combat.Component.Systems.Weapons
             _energyConsumption = bulletFactory.Stats.EnergyCost * weaponStats.Magazine;
             _spread = weaponStats.Spread;
             _magazine = weaponStats.Magazine;
+            _rotation = weaponStats.Rotation;
+            _initialPosition = weaponStats.InitialPosition;
 
-            Info = new WeaponInfo(WeaponType.Common, _spread, bulletFactory, platform);
+            Info = new WeaponInfo(WeaponType.Common, _spread, bulletFactory, platform, _rotation, _initialPosition);
         }
 
         public override float ActivationCost { get { return _energyConsumption; } }
@@ -48,14 +50,15 @@ namespace Combat.Component.Systems.Weapons
         private void Shot()
         {
             _platform.Aim(Info.BulletSpeed, Info.Range, Info.IsRelativeVelocity);
-
             for (var i = 0; i < _magazine; ++i)
-                _bulletFactory.Create(Platform, _spread, 0, 0);
+                _bulletFactory.Create(Platform, _spread, _rotation, 0, _initialPosition);
 
             _platform.OnShot();
         }
 
+        private readonly Vector2 _initialPosition;
         private readonly int _magazine;
+        private readonly float _rotation;
         private readonly float _spread;
         private readonly float _energyConsumption;
         private readonly IWeaponPlatform _platform;

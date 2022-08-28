@@ -5,7 +5,7 @@ namespace Combat.Factory
 {
     public interface IBulletFactory
     {
-        IBullet Create(IWeaponPlatform parent, float spread, float rotation, float offset);
+        IBullet Create(IWeaponPlatform parent, float spread, float rotation, float offset, UnityEngine.Vector2 InitialPosition);
         IBulletStats Stats { get; }
     }
 }

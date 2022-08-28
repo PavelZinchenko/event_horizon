@@ -28,6 +28,8 @@
       "EffectType": 2,
       "Ammunition": 100,
       "Quantity": 7,
+	  "Spread": 360,
+	  "Offset": 0.5,
       "RandomFactor": 1.0
     }
   ],
