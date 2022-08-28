@@ -83,7 +83,6 @@ namespace Combat.Factory
                 shipStats.DamageIndicator = new DamageIndicator(ship, _effectFactory, unitSide == UnitSide.Player ? 0.75f : 0.5f);
 
             ship.Engine = CreateEngine(stats);
-            ship.Controls = new CommonControls();
 
             CreateEngineEffect(ship, stats, isDrone ? "DroneTrail" : "ShipTrail");
 
@@ -162,6 +161,7 @@ namespace Combat.Factory
                 }
             }
 
+            ship.Controls = new CommonControls(ship);
             shipGameObject.IsActive = true;
 
             _scene.AddUnit(ship);

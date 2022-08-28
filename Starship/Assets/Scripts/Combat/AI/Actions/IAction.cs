@@ -1,3 +1,4 @@
+using System.Collections;
 using Combat.Component.Ship;
 
 namespace Combat.Ai
@@ -9,6 +10,8 @@ namespace Combat.Ai
 			ship.Controls.Throttle = _thrust;
 			ship.Controls.Course = _course;
 		    ship.Controls.SystemsState = _systems;
+		    _systems = new BitArray(ship.Systems.All.Count);
+		    _systemsMask = new BitArray(ship.Systems.All.Count);
 		}
 
 		public float Course
@@ -41,21 +44,16 @@ namespace Combat.Ai
 
 		public bool IsSystemLocked(int id)
 		{
-			return (_systemsMask & (1UL << id)) != 0;
+			return !_systemsMask[id];
         }
 
 	    public void ActivateSystem(int index, bool active = true)
 	    {
             if (IsSystemLocked(index)) return;
 
-	        var value = 1UL << index;
+            _systems[index] = active;
 
-	        if (active)
-	            _systems |= value;
-	        else
-	            _systems &= ~value;
-
-	        _systemsMask |= value;
+	        _systemsMask[index] = true;
 	    }
 
 		public bool RotationLocked { get { return _courseLocked; } }
@@ -65,8 +63,8 @@ namespace Combat.Ai
 		private float _thrust;
 		private bool _courseLocked;
 		private float? _course;
-	    private ulong _systemsMask;
-        private ulong _systems;
+	    private BitArray _systemsMask;
+        private BitArray _systems;
     }
 
     public struct Context

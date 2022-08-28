@@ -1,12 +1,26 @@
-﻿namespace Combat.Component.Controls
+﻿using System.Collections;
+using Combat.Component.Ship;
+
+namespace Combat.Component.Controls
 {
     public class CommonControls : IControls
     {
+        private float? _course;
+        private bool _hasCourse;
+
+        private BitArray _systems = new BitArray(0);
+        private float _throttle;
+
+        public CommonControls(IShip ship)
+        {
+            _systems = new BitArray(ship.Systems.All.Count);
+        }
+
         public bool DataChanged { get; set; }
 
         public float Throttle
         {
-            get { return _throttle; }
+            get => _throttle;
             set
             {
                 _throttle = value;
@@ -16,10 +30,7 @@
 
         public float? Course
         {
-            get
-            {
-                return _course;
-            }
+            get => _course;
             set
             {
                 _course = value;
@@ -29,39 +40,26 @@
 
         public void SetSystemState(int id, bool active)
         {
-            if (id < 0 || id >= 64) return;
-
-            var key = 1UL << id;
-            _systems |= key;
-            if (!active)
-                _systems ^= key;
+            if (id < 0) return;
+            _systems[id] = active;
 
             DataChanged = true;
         }
 
         public bool GetSystemState(int id)
         {
-            if (id < 0 || id >= 64) return false;
-
-            return (_systems & (1UL << id)) != 0;
+            if (id < 0) return false;
+            return _systems[id];
         }
 
-        public ulong SystemsState
+        public BitArray SystemsState
         {
-            get
-            {
-                return _systems;
-            }
+            get => _systems;
             set
             {
                 _systems = value;
                 DataChanged = true;
             }
         }
-
-        private ulong _systems;
-        private float _throttle;
-        private bool _hasCourse;
-        private float? _course;
     }
 }
