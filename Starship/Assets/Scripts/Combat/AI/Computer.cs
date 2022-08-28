@@ -64,7 +64,7 @@ namespace Combat.Ai
 		{
 			_ship.Controls.Throttle = 0;
 			_ship.Controls.Course = null;
-			_ship.Controls.SystemsState = 0;
+			_ship.Controls.SystemsState.SetAll(false);
 		}
 
 		private IStrategy GetStrategy()

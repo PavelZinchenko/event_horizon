@@ -9,6 +9,7 @@ using Combat.Component.Physics;
 using Combat.Component.Platform;
 using Combat.Component.Stats;
 using Combat.Component.Systems.DroneBays;
+using Combat.Component.Systems.Weapons;
 using Combat.Component.Unit.Classification;
 using Combat.Component.Triggers;
 using Combat.Component.View;
@@ -18,6 +19,7 @@ using Constructor;
 using Constructor.Model;
 using GameDatabase;
 using GameDatabase.Enums;
+using GameServices.Settings;
 using Services.Audio;
 using Services.ObjectPool;
 using Services.Reources;
@@ -42,6 +44,7 @@ namespace Combat.Factory
         [Inject] private readonly SatelliteFactory _satelliteFactory;
         [Inject] private readonly EffectFactory _effectFactory;
         [Inject] private readonly PrefabCache _prefabCache;
+        [Inject] private readonly GameSettings _gameSettings;
 
         public ShipFactory(Settings settings)
         {
@@ -76,11 +79,10 @@ namespace Combat.Factory
 
             ship.AddResource(shipGameObject);
 
-            if (!_settings.NoDamageIndicator && !isDrone)
+            if (_gameSettings.ShowDamage && !isDrone)
                 shipStats.DamageIndicator = new DamageIndicator(ship, _effectFactory, unitSide == UnitSide.Player ? 0.75f : 0.5f);
 
             ship.Engine = CreateEngine(stats);
-            ship.Controls = new CommonControls();
 
             CreateEngineEffect(ship, stats, isDrone ? "DroneTrail" : "ShipTrail");
 
@@ -106,16 +108,27 @@ namespace Combat.Factory
                 var platform = CreatePlatform(ship, item, 0.04f, spec.Stats.TurretColor);
                 ship.AddPlatform(platform);
 
+                var aimed = false;
                 foreach (var weaponSpec in item.Weapons)
                 {
                     var weapon = _weaponFactory.Create(weaponSpec, platform, spec.Stats.ArmorMultiplier.Value, ship);
                     ship.AddSystem(weapon);
+                    if (!aimed && weapon is IWeapon wep)
+                    {
+                        platform.Aim(wep.Info.BulletSpeed, wep.Info.Range, wep.Info.IsRelativeVelocity);
+                        aimed = true;
+                    }
                 }
 
                 foreach (var weaponSpec in item.WeaponsObsolete)
                 {
                     var weapon = _weaponFactory.Create(weaponSpec, platform, spec.Stats.ArmorMultiplier.Value, ship);
                     ship.AddSystem(weapon);
+                    if (!aimed && weapon is IWeapon wep)
+                    {
+                        platform.Aim(wep.Info.BulletSpeed, wep.Info.Range, wep.Info.IsRelativeVelocity);
+                        aimed = true;
+                    }
                 }
             }
 
@@ -148,6 +161,7 @@ namespace Combat.Factory
                 }
             }
 
+            ship.Controls = new CommonControls(ship);
             shipGameObject.IsActive = true;
 
             _scene.AddUnit(ship);
@@ -351,7 +365,6 @@ namespace Combat.Factory
         {
             public bool Shadows;
             public bool StaticWrecks;
-            public bool NoDamageIndicator;
         }
     }
 }
