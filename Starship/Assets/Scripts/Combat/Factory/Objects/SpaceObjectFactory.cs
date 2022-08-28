@@ -19,6 +19,7 @@ using Constructor;
 using Constructor.Model;
 using GameDatabase.Enums;
 using GameDatabase.Model;
+using GameServices.Settings;
 using Services.Audio;
 using Services.ObjectPool;
 using UnityEngine;
@@ -33,6 +34,7 @@ namespace Combat.Factory
         [Inject] private readonly ISoundPlayer _soundPlayer;
         [Inject] private readonly EffectFactory _effectFactory;
         [Inject] private readonly PrefabCache _prefabCache;
+        [Inject] private readonly GameSettings _gameSettings;
 
         public IUnit CreateExplosion(Vector2 position, float radius, DamageType damageType, float damage, UnitSide unitSide, Color color, float impulseMultiplier = 1.0f)
         {
@@ -243,12 +245,12 @@ namespace Combat.Factory
                 if (segment != null)
                 {
                     unit.Connect(segment, offset1, offset2, 30f);
-                    unit.SetDamageIndicator(damageIndicator, false);
+                    if(_gameSettings.ShowDamage) unit.SetDamageIndicator(damageIndicator, false);
                 }
                 else
                 {
                     unit.Connect(parent, offset1 + extraOffset, offset2, 60f);
-                    unit.SetDamageIndicator(damageIndicator, true);
+                    if(_gameSettings.ShowDamage) unit.SetDamageIndicator(damageIndicator, true);
                 }
 
                 segment = unit;

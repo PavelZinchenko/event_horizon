@@ -18,6 +18,7 @@ using Constructor;
 using Constructor.Model;
 using GameDatabase;
 using GameDatabase.Enums;
+using GameServices.Settings;
 using Services.Audio;
 using Services.ObjectPool;
 using Services.Reources;
@@ -42,6 +43,7 @@ namespace Combat.Factory
         [Inject] private readonly SatelliteFactory _satelliteFactory;
         [Inject] private readonly EffectFactory _effectFactory;
         [Inject] private readonly PrefabCache _prefabCache;
+        [Inject] private readonly GameSettings _gameSettings;
 
         public ShipFactory(Settings settings)
         {
@@ -76,7 +78,7 @@ namespace Combat.Factory
 
             ship.AddResource(shipGameObject);
 
-            if (!_settings.NoDamageIndicator && !isDrone)
+            if (_gameSettings.ShowDamage && !isDrone)
                 shipStats.DamageIndicator = new DamageIndicator(ship, _effectFactory, unitSide == UnitSide.Player ? 0.75f : 0.5f);
 
             ship.Engine = CreateEngine(stats);
@@ -351,7 +353,6 @@ namespace Combat.Factory
         {
             public bool Shadows;
             public bool StaticWrecks;
-            public bool NoDamageIndicator;
         }
     }
 }
