@@ -4,7 +4,6 @@ using GameServices.Multiplayer;
 using GameServices.Player;
 using Gui.Windows;
 using Services.Account;
-using Services.Ads;
 using Services.Audio;
 using UnityEngine;
 using Services.Gui;
@@ -60,7 +59,6 @@ namespace Gui.Multiplayer
         [Inject] private readonly OfflineMultiplayer _multiplayer;
         [Inject] private readonly IAccount _account;
         [Inject] private readonly ILocalization _localization;
-        [Inject] private readonly IAdsManager _adsManager;
         [Inject] private readonly PlayerResources _playerResources;
         [Inject] private readonly ISoundPlayer _soundPlayer;
         [Inject] private readonly MotherShip _motherShip;
@@ -72,8 +70,6 @@ namespace Gui.Multiplayer
             messenger.AddListener<Status>(EventType.MultiplayerStatusChanged, OnStatusChanged);
             messenger.AddListener<IPlayerInfo>(EventType.EnemyFleetLoaded, OnEnemyFleetReady);
             messenger.AddListener<IPlayerInfo>(EventType.ArenaEnemyFound, OnEnemyFound);
-            messenger.AddListener(EventType.AdsManagerStatusChanged, RefreshAdItem);
-            messenger.AddListener(EventType.RewardedVideoCompleted, OnRewardedAdCompleted);
             messenger.AddListener<int>(EventType.MoneyValueChanged, value => UpdateResources());
             messenger.AddListener<int>(EventType.StarsValueChanged, value => UpdateResources());
             messenger.AddListener<int>(EventType.TokensValueChanged, value => UpdateResources());
@@ -91,7 +87,6 @@ namespace Gui.Multiplayer
             _shipListScrollRect.RefreshContent();
 
             UpdateStatus();
-            RefreshAdItem();
             OnStatusChanged(_multiplayer.Status);
         }
 
@@ -126,16 +121,6 @@ namespace Gui.Multiplayer
             }
         }
 
-        public void ShowAd()
-        {
-            _adsManager.ShowRewardedVideo();
-        }
-
-        public void RefreshAd()
-        {
-            _adsManager.ShowRewardedVideo();
-        }
-
         public void OpenStore()
         {
             _storeWindow.Open(new WindowArgs(_inventoryFactory.CreateArenaInventory(_motherShip.CurrentStar)));
@@ -154,46 +139,6 @@ namespace Gui.Multiplayer
             _fightDialog.Initialize(enemy);
         }
 
-        private void OnRewardedAdCompleted()
-        {
-            if (!gameObject.activeSelf) return;
-            _multiplayer.BuyMoreTickets(1);
-            OnStatusChanged(_multiplayer.Status);
-        }
-
-        private void RefreshAdItem()
-        {
-            if (!gameObject.activeSelf)
-                return;
-
-            _adItem.SetActive(IsAdButtonVisible);
-
-            if (_adsManager.Status == Services.Ads.Status.NotInitialized)
-            {
-                return;
-            }
-
-            var busy = _adsManager.Status == Services.Ads.Status.Busy;
-            var canShow = _adsManager.Status == Services.Ads.Status.Ready;
-
-            _showAdButton.gameObject.SetActive(canShow);
-            _refreshAdButton.gameObject.SetActive(!busy && !canShow);
-            _adNotAvailableText.gameObject.SetActive(!busy && !canShow);
-            _watchAdText.gameObject.SetActive(busy || canShow);
-            _waiter.SetActive(busy);
-        }
-
-        private bool IsAdButtonVisible
-        {
-            get
-            {
-                if (_multiplayer.Status != Status.Ready) return false;
-                if (_multiplayer.AvailableBattles > 0) return false;
-                if (_adsManager.Status == Services.Ads.Status.NotInitialized) return false;
-                return true;
-            }
-        }
-
         private void OnStatusChanged(Status status)
         {
             var loading = status == Status.Connecting;
@@ -209,7 +154,6 @@ namespace Gui.Multiplayer
             _shopButton.SetActive(!loading);
             _findOpponentButton.SetActive(status == Status.Ready && availableBattles > 0);
             _buyButton.SetActive(Economy.CurrencyExtensions.PremiumCurrencyAllowed && status == Status.Ready && availableBattles == 0);
-            _adItem.SetActive(IsAdButtonVisible);
             _trainingButton.SetActive(ready && availableBattles > 0);
 
             UpdatePlayer();

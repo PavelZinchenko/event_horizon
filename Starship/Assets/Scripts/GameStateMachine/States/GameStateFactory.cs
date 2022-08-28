@@ -21,7 +21,6 @@ namespace GameStateMachine.States
         [Inject] private readonly TestingState.Factory _testingStateFactory;
         [Inject] private readonly EhopediaState.Factory _echopediaStateFactory;
         [Inject] private readonly CombatState.Factory _combatSceneStateFactory;
-        [Inject] private readonly DailyRewardState.Factory _dailyRewardStateFactory;
         [Inject] private readonly AnnouncementState.Factory _announcementStateFactory;
         [Inject] private readonly CombatRewardState.Factory _combatRewardStateFactory;
         [Inject] private readonly ExplorationState.Factory _explorationStateFactory;
@@ -39,11 +38,6 @@ namespace GameStateMachine.States
         public IGameState CreateAnnouncementState()
         {
             return _announcementStateFactory.Create();
-        }
-
-        public IGameState CreateDaylyRewardState()
-        {
-            return _dailyRewardStateFactory.Create();
         }
 
         public IGameState CreateTravelState(int destination)

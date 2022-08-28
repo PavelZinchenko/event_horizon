@@ -8,7 +8,6 @@ namespace Economy
         None,
         Credits,
         Stars,
-        Money,
         Tokens,
         Snowflakes,
     }

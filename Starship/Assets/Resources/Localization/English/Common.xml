@@ -156,6 +156,7 @@
     <string name="OutOfFuelDescription">We have run out of fuel and cannot continue our journey. The next supply ship from the home star will arrive in</string>
     <string name="SpeedUp">Speed up</string>
     <string name="LoadDatabase">Load external database</string>
+    <string name="ReloadMod">Reload database</string>
     <string name="RestoreDatabase">Restore database</string>
     <string name="DatabaseLoaded">Database loaded succesfully</string>
     <string name="DatabaseLoadingError">Error: $1</string>

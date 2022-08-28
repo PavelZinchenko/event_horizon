@@ -8,9 +8,7 @@ using GameServices.Quests;
 using Session;
 using Session.Content;
 using Services.Account;
-using Services.Ads;
 using Services.Gui;
-using Services.Social;
 using Services.Storage;
 using Zenject;
 
@@ -40,9 +38,6 @@ namespace Services.Messenger
             EscapeKeyPressedSignal escapeKeyPressedSignal,
             ShipCreatedSignal shipCreatedSignal,
             ShipDestroyedSignal shipDestroyedSignal,
-            AdsManagerStatusChangedSignal adsManagerStatusChangedSignal,
-            RewardedVideoCompletedSignal rewardedVideoCompletedSignal,
-            FacebookShareCompletedSignal facebookShareCompletedSignal,
             StarContentChangedSignal starContentChangedSignal,
             QuestListChangedSignal questListChangedSignal,
             BaseCapturedSignal baseCapturedSignal,
@@ -84,12 +79,6 @@ namespace Services.Messenger
             _shipCreatedSignal.Event += OnCombatShipCreated;
             _shipDestroyedSignal = shipDestroyedSignal;
             _shipDestroyedSignal.Event += OnCombatShipDestroyed;
-            _adsManagerStatusChangedSignal = adsManagerStatusChangedSignal;
-            _adsManagerStatusChangedSignal.Event += OnAdsManagerStatusChanged;
-            _rewardedVideoCompletedSignal = rewardedVideoCompletedSignal;
-            _rewardedVideoCompletedSignal.Event += OnRewardedVideoCompleted;
-            _facebookShareCompletedSignal = facebookShareCompletedSignal;
-            _facebookShareCompletedSignal.Event += OnSocialShareCompleted;
             _resourcesChangedSignal = resourcesChangedSignal;
             _resourcesChangedSignal.Event += OnResourcesChanged;
             _starContentChangedSignal = starContentChangedSignal;
@@ -134,7 +123,7 @@ namespace Services.Messenger
 
         private void OnStarsValueChanged()
         {
-            _messenger.Broadcast<int>(EventType.StarsValueChanged, _session.Resources.Stars + _session.Purchases.ExtraStarCount);
+            _messenger.Broadcast<int>(EventType.StarsValueChanged, _session.Resources.Stars);
         }
 
         private void OnTokensValueChanged(int value)
@@ -192,21 +181,6 @@ namespace Services.Messenger
             _messenger.Broadcast<Combat.Component.Ship.IShip>(EventType.CombatShipDestroyed, ship);
         }
 
-        private void OnAdsManagerStatusChanged(Ads.Status status)
-        {
-            _messenger.Broadcast(EventType.AdsManagerStatusChanged);
-        }
-
-        private void OnRewardedVideoCompleted()
-        {
-            _messenger.Broadcast(EventType.RewardedVideoCompleted);
-        }
-
-        private void OnSocialShareCompleted()
-        {
-            _messenger.Broadcast(EventType.SocialShareCompleted);
-        }
-
         private void OnStarContentChanged(int starId)
         {
             _messenger.Broadcast(EventType.StarContentChanged, starId);
@@ -246,9 +220,6 @@ namespace Services.Messenger
         private readonly EscapeKeyPressedSignal _escapeKeyPressedSignal;
         private readonly ShipCreatedSignal _shipCreatedSignal;
         private readonly ShipDestroyedSignal _shipDestroyedSignal;
-        private readonly AdsManagerStatusChangedSignal _adsManagerStatusChangedSignal;
-        private readonly RewardedVideoCompletedSignal _rewardedVideoCompletedSignal;
-        private readonly FacebookShareCompletedSignal _facebookShareCompletedSignal;
         private readonly ResourcesChangedSignal _resourcesChangedSignal;
         private readonly StarContentChangedSignal _starContentChangedSignal;
         private readonly QuestListChangedSignal _questListChangedSignal;

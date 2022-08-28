@@ -40,6 +40,8 @@ namespace Combat.Background
 
         private void InitializeGasMaterial()
         {
+            // Copy material to avoid modifying global material at runtime
+            _gasPlanetMaterial = new Material(_gasPlanetMaterial);
             gameObject.AddComponent<MeshRenderer>().sharedMaterial = _gasPlanetMaterial;
 
             //var random = new System.Random(planet.Seed);
@@ -50,6 +52,8 @@ namespace Combat.Background
 
         private void InitializeBarrenMaterial(IResourceLocator resourceLocator)
         {
+            // Copy material to avoid modifying global material at runtime
+            _barrenPlanetMaterial = new Material(_barrenPlanetMaterial);
             gameObject.AddComponent<MeshRenderer>().sharedMaterial = _barrenPlanetMaterial;
 
             var random = new System.Random(_planet.Seed);
@@ -59,6 +63,8 @@ namespace Combat.Background
 
         private void InitializeInfectedMaterial(IResourceLocator resourceLocator)
         {
+            // Copy material to avoid modifying global material at runtime
+            _infectedPlanetMaterial = new Material(_infectedPlanetMaterial);
             gameObject.AddComponent<MeshRenderer>().sharedMaterial = _infectedPlanetMaterial;
 
             var random = new System.Random(_planet.Seed);

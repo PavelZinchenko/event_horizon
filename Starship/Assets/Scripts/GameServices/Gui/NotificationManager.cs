@@ -4,7 +4,6 @@ using GameDatabase;
 using GameServices.Player;
 using GameStateMachine;
 using Services.Gui;
-using Services.IAP;
 using Services.Localization;
 using Services.Storage;
 using Utils;
@@ -20,15 +19,12 @@ namespace GameServices.Gui
 
         [Inject]
         public NotificationManager(
-            InAppPurchaseFailedSignal inAppPurchaseFailedSignal,
             ShowMessageSignal showMessageSignal,
             ShowDebugMessageSignal debugMessageSignal,
             CloudOperationFailedSignal cloudOperationFailedSignal,
             CloudSavingCompletedSignal cloudSavingCompletedSignal,
             CloudLoadingCompletedSignal cloudLoadingCompletedSignal)
         {
-            _inAppPurchaseFailedSignal = inAppPurchaseFailedSignal;
-            _inAppPurchaseFailedSignal.Event += OnInAppPurchaseFailed;
             _showMessageSignal = showMessageSignal;
             _showMessageSignal.Event += OnShowMessage;
             _cloudLoadingCompletedSignal = cloudLoadingCompletedSignal;
@@ -39,22 +35,6 @@ namespace GameServices.Gui
             _cloudOperationFailedSignal.Event += OnCloudOperationFailed;
             _debugMessageSingal = debugMessageSignal;
             _debugMessageSingal.Event += OnDebugMessage;
-        }
-
-        private void OnInAppPurchaseFailed(string reason)
-        {
-            try
-            {
-                if (_gameStateMachine.ActiveState == StateType.Initialization || _gameStateMachine.ActiveState == StateType.MainMenu)
-                    return;
-
-                UnityEngine.Debug.Log("NotificationManager.OnInAppPurchaseFailed");
-                _guiManager.OpenWindow(global::Gui.Notifications.WindowNames.IapErrorWindow, new WindowArgs(reason));
-            }
-            catch (ArgumentException)
-            {
-                UnityEngine.Debug.Log("Iap error window can't be opened");
-            }
         }
 
         private void OnCloudGameLoaded()
@@ -85,7 +65,6 @@ namespace GameServices.Gui
             _guiManager.OpenWindow(global::Gui.Notifications.WindowNames.DebugLogWindow, new WindowArgs(message));
         }
 
-        private readonly InAppPurchaseFailedSignal _inAppPurchaseFailedSignal;
         private readonly ShowMessageSignal _showMessageSignal;
         private readonly CloudOperationFailedSignal _cloudOperationFailedSignal;
         private readonly CloudSavingCompletedSignal _cloudSavingCompletedSignal;

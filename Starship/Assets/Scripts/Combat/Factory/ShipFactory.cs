@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Collider2DOptimization;
 using Combat.Ai;
 using Combat.Component.Body;
 using Combat.Component.Collider;
@@ -210,7 +211,11 @@ namespace Combat.Factory
                 if (stats.ShipCategory == ShipCategory.Drone)
                     gameObject.AddComponent<CircleCollider2D>();
                 else
+                {
                     gameObject.AddComponent<PolygonCollider2D>();
+                    // TODO: make this constant into a mod option
+                    gameObject.AddComponent<RuntimePolygonColliderOptimizer>().tolerance = 0.02f;
+                }
             }
 
             if (colorScheme.IsHsv)

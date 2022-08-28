@@ -55,12 +55,6 @@ namespace ViewModel
 				    CurrencyIcon.sprite = CommonSpriteTable.SnowflakesIcon;
 				    CurrencyIcon.color = ColorTable.SnowflakesColor;
 				    break;
-				case Currency.Money:
-					CurrencyIcon.sprite = CommonSpriteTable.ShopIcon;
-					CurrencyIcon.color = ColorTable.PremiumItemColor;
-					var iapProduct = item as Services.IAP.IIapItem;
-					PriceText.text = iapProduct != null ? iapProduct.PriceText : string.Empty;
-					break;
                 case Currency.None:
                     CurrencyIcon.gameObject.SetActive(false);
                     PriceText.gameObject.SetActive(false);

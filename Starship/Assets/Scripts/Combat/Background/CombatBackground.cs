@@ -14,6 +14,8 @@ namespace Combat.Background
         [Inject]
         void Initialize(IResourceLocator resourceLocator)
         {
+            // Copy material to avoid modifying global material at runtime
+            _material = new Material(_material);
             _width = _height = _size * Screen.width / Screen.height;
             Create(_width, _height, 5);
             _material.mainTexture = resourceLocator.GetNebulaTexture(new System.Random().Next());

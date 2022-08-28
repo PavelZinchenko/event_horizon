@@ -113,7 +113,8 @@ namespace ViewModel
 
 			if (_activeLayout == null)
 				throw new System.InvalidOperationException("layout not selected");
-			var component = _activeLayout.Ship.GetComponent(_componentId);
+			var id = _componentId;
+			var component = _activeLayout.Ship.GetComponent(id);
 			var price = component.Info.Price*2;
             _guiHelper.ShowConfirmation(_localization.GetString("$UnlockConfirmation"), price, () => 
             {
@@ -122,8 +123,8 @@ namespace ViewModel
 
 			    if (!price.TryWithdraw(_playerResources))
                     return;
-				_activeLayout.UnlockComponent(_componentId);
-				SetComponent(_activeLayout, _componentId);
+				_activeLayout.UnlockComponent(id);
+				SetComponent(_activeLayout, id);
 			});
 		}
 

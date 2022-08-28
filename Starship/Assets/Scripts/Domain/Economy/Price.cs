@@ -80,7 +80,6 @@ namespace Economy
                     return _amount > 0 ? (int)(playerResources.Tokens / _amount) : int.MaxValue;
                 case Currency.Snowflakes:
                     return _amount > 0 ? (int)(playerResources.Snowflakes / _amount) : int.MaxValue;
-                case Currency.Money:
                 case Currency.None:
                     return 1;
                 default:
@@ -124,7 +123,6 @@ namespace Economy
                         return false;
                     playerResources.Snowflakes = Clamp(snowflakes - _amount);
                     return true;
-                case Currency.Money:
                 case Currency.None:
                     return true;
                 default:
@@ -148,7 +146,6 @@ namespace Economy
                 case Currency.Snowflakes:
                     playerResources.Snowflakes = Clamp(playerResources.Snowflakes +_amount);
                     break;
-                case Currency.Money:
                 case Currency.None:
                 default:
                     throw new System.ArgumentException();

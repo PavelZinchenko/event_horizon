@@ -19,8 +19,6 @@ public class CommonSpriteTable : MonoBehaviour
 	public static Sprite FactionStarMap { get { return _instance._factionStarMap; } }
 	public static Sprite Blueprint { get { return _instance._blueprint; } }
 	public static Sprite TechIcon { get { return _instance._techIcon; } }
-    public static Sprite RewardedAd { get { return _instance._rewardedAdIcon; } }
-    public static Sprite RewardedFacebookPost { get { return _instance._rewardedFacebookPostIcon; } }
 
     public static Sprite FactionFaceIcon { get { return _instance._factionFaceIcon; } }
 	public static Sprite StarCurrencyIcon { get { return _instance._starResource; } }
@@ -62,8 +60,6 @@ public class CommonSpriteTable : MonoBehaviour
 	[SerializeField] Sprite _blueprint;
     [SerializeField] Sprite _starIcon;
     [SerializeField] Sprite _techIcon;
-    [SerializeField] Sprite _rewardedAdIcon;
-    [SerializeField] Sprite _rewardedFacebookPostIcon;
 
     [SerializeField] Sprite _factionFaceIcon;
 	[SerializeField] Sprite _starResource;

@@ -75,6 +75,8 @@ public class MapBackground : MonoBehaviour
 		};
 
 		mesh.RecalculateNormals();
+		// Copy material to avoid modifying global material at runtime
+		Material = new Material(Material);
 		gameObject.GetComponent<Renderer>().sharedMaterial = Material;
 	}
 

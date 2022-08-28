@@ -10,7 +10,6 @@ using GameServices.Database;
 using GameServices.LevelManager;
 using GameServices.Settings;
 using Services.Account;
-using Services.Ads;
 using Services.Storage;
 using Session;
 using UnityEngine;
@@ -23,7 +22,7 @@ namespace GameStateMachine.States
         [Inject]
         public InitializationState(IStateMachine stateMachine, GameStateFactory stateFactory, ILevelLoader levelLoader, 
             ISessionData sessionData, IDataStorage localStorage, GameSettings settings, IAccount account, IDatabase database, ITechnologies technologies, 
-            IAdsManager adsManager, ISessionData session, IDebugManager debugManager)
+            ISessionData session, IDebugManager debugManager)
             : base(stateMachine, stateFactory, levelLoader)
         {
             _sessionData = sessionData;
@@ -32,7 +31,6 @@ namespace GameStateMachine.States
             _localStorage = localStorage;
             _settings = settings;
             _account = account;
-            _adsManager = adsManager;
             _debugManager = debugManager;
         }
 
@@ -140,8 +138,6 @@ namespace GameStateMachine.States
 		    else
 		        _sessionData.CreateNewGame(_database.Id);
 
-            _adsManager.ShowInterstital();
-
             StateMachine.LoadState(StateFactory.CreateMainMenuState());
         }
 
@@ -163,7 +159,6 @@ namespace GameStateMachine.States
         private readonly IDataStorage _localStorage;
         private readonly GameSettings _settings;
         private readonly IAccount _account;
-        private readonly IAdsManager _adsManager;
         private readonly IDebugManager _debugManager;
 
         public class Factory : Factory<InitializationState> { }

@@ -24,12 +24,9 @@ using GameServices.Random;
 using GameServices.Research;
 using GameStateMachine;
 using GameStateMachine.States;
-using Services.Ads;
 using Services.Gui;
-using Services.IAP;
 using Services.InternetTime;
 using Services.Messenger;
-using Services.Social;
 using Session;
 using Session.Content;
 using UnityEngine;
@@ -50,7 +47,6 @@ namespace Installers
 #endif
 
             Container.BindAllInterfaces<RandomGenerator>().To<RandomGenerator>().AsSingle();
-            Container.BindAllInterfaces<InAppPurchasingsStub>().To<InAppPurchasingsStub>().AsSingle();
 
             Container.Bind<GameModel.Config>().FromInstance(_config);
 
@@ -74,9 +70,6 @@ namespace Installers
             Container.BindTrigger<ShipCreatedSignal.Trigger>();
             Container.BindSignal<ShipDestroyedSignal>();
             Container.BindTrigger<ShipDestroyedSignal.Trigger>();
-
-            Container.BindAllInterfaces<EmptyFacebookFacade>().To<EmptyFacebookFacade>().AsSingle().NonLazy();
-            Container.BindAllInterfaces<AdsManagerStub>().To<AdsManagerStub>();
 
             Container.Bind<Cheats>();
             Container.Bind<GuiHelper>();
@@ -108,7 +101,6 @@ namespace Installers
             Container.BindAllInterfacesAndSelf<MotherShip>().To<MotherShip>().AsSingle();
             Container.BindAllInterfacesAndSelf<PlayerInventory>().To<PlayerInventory>().AsSingle();
             Container.BindAllInterfacesAndSelf<SupplyShip>().To<SupplyShip>().AsSingle().NonLazy();
-            Container.BindAllInterfacesAndSelf<DailyReward>().To<DailyReward>().AsSingle().NonLazy();
             Container.BindAllInterfacesAndSelf<StarMapManager>().To<StarMapManager>().AsSingle().NonLazy();
         }
 
@@ -230,9 +222,6 @@ namespace Installers
             Container.Bind<CombatRewardState>();
             Container.BindFactory<IReward, CombatRewardState, CombatRewardState.Factory>();
 
-            Container.Bind<DailyRewardState>();
-            Container.BindFactory<DailyRewardState, DailyRewardState.Factory>();
-
             Container.Bind<AnnouncementState>();
             Container.BindFactory<AnnouncementState, AnnouncementState.Factory>();
 
@@ -276,16 +265,6 @@ namespace Installers
 
         private void BindSignals()
         {
-            Container.BindSignal<RewardedVideoCompletedSignal>();
-            Container.BindTrigger<RewardedVideoCompletedSignal.Trigger>();
-            Container.BindSignal<AdsManagerStatusChangedSignal>();
-            Container.BindTrigger<AdsManagerStatusChangedSignal.Trigger>();
-            Container.BindSignal<FacebookShareCompletedSignal>();
-            Container.BindTrigger<FacebookShareCompletedSignal.Trigger>();
-            Container.BindSignal<InAppPurchaseCompletedSignal>();
-            Container.BindTrigger<InAppPurchaseCompletedSignal.Trigger>();
-            Container.BindSignal<InAppPurchaseFailedSignal>();
-            Container.BindTrigger<InAppPurchaseFailedSignal.Trigger>();
             Container.BindSignal<SessionAboutToSaveSignal>();
             Container.BindTrigger<SessionAboutToSaveSignal.Trigger>();
             Container.BindSignal<MultiplayerStatusChangedSignal>();
@@ -294,8 +273,6 @@ namespace Installers
             Container.BindTrigger<EnemyFleetLoadedSignal.Trigger>();
             Container.BindSignal<EnemyFoundSignal>();
             Container.BindTrigger<EnemyFoundSignal.Trigger>();
-            Container.BindSignal<DailyRewardAwailableSignal>();
-            Container.BindTrigger<DailyRewardAwailableSignal.Trigger>();
             Container.BindSignal<GameModel.BaseCapturedSignal>();
             Container.BindTrigger<GameModel.BaseCapturedSignal.Trigger>();
             Container.BindSignal<GameModel.RegionFleetDefeatedSignal>();

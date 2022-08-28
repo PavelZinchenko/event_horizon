@@ -35,14 +35,9 @@ namespace GameStateMachine.States
             OpenEhopediaSignal openEhopediaSignal,
             CombatModelBuilder.Factory combatModelBuilderFactory,
             MotherShip motherShip,
-            DailyReward dailyReward,
-            DailyRewardAwailableSignal dailyRewardAwailableSignal,
             ExitSignal exitSignal)
             : base(stateMachine, stateFactory, levelLoader)
         {
-            _dailyReward = dailyReward;
-            _dailyRewardAwailableSignal = dailyRewardAwailableSignal;
-            _dailyRewardAwailableSignal.Event += CheckDailyReward;
 
             _motherShip = motherShip;
             _session = session;
@@ -69,21 +64,8 @@ namespace GameStateMachine.States
 
         protected override void OnActivate()
         {
-#if UNITY_STANDALONE
-#else
-            CheckDailyReward();
-#endif
         }
-
-        private void CheckDailyReward()
-        {
-            if (!IsActive)
-                return;
-
-            if (_dailyReward.IsRewardExists())
-                StateMachine.LoadAdditionalState(StateFactory.CreateDaylyRewardState());
-        }
-
+        
         private void OnStartGame()
         {
             if (!IsActive)
@@ -207,8 +189,6 @@ namespace GameStateMachine.States
         private readonly MotherShip _motherShip;
         private readonly IDatabase _database;
         private readonly CombatModelBuilder.Factory _combatModelBuilderFactory;
-        private readonly DailyReward _dailyReward;
-        private readonly DailyRewardAwailableSignal _dailyRewardAwailableSignal;
 
         public class Factory : Factory<MainMenuState> { }
     }

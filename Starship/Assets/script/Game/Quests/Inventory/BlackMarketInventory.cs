@@ -9,10 +9,8 @@ using GameDatabase;
 using GameDatabase.DataModel;
 using GameDatabase.Enums;
 using GameDatabase.Extensions;
-using GameDatabase.Model;
 using GameServices.Player;
 using GameServices.Random;
-using Services.IAP;
 using Market = Model.Regulations.Market;
 
 namespace GameModel
@@ -21,14 +19,13 @@ namespace GameModel
 	{
 		public class BlackMarketInventory : IInventory
 		{
-			public BlackMarketInventory(Galaxy.Star star, ItemTypeFactory itemTypeFactory, ProductFactory productFactory, PlayerSkills playerSkills, IRandom random, IInAppPurchasing iapPurchasing, IDatabase database)
+			public BlackMarketInventory(Galaxy.Star star, ItemTypeFactory itemTypeFactory, ProductFactory productFactory, PlayerSkills playerSkills, IRandom random, IDatabase database)
 			{
 				_starId = star.Id;
 				_level = star.Level;
 			    _random = random;
 			    _itemTypeFactory = itemTypeFactory;
 			    _productFactory = productFactory;
-                _inAppPurchasing = iapPurchasing;
 			    _playerSkills = playerSkills;
 			    _database = database;
 				
@@ -71,8 +68,6 @@ namespace GameModel
 
 						//if (Model.Regulations.Time.IsCristmas && random.Next(3) == 0)
 						//	_items.Add(_productFactory.CreateRenewableMarketProduct(new XmaxBoxItem(random.Next(), _starId), 1, _starId, Market.GiftBoxRenewalTime, 1));
-						
-						_items.AddRange(_inAppPurchasing.GetAvailableProducts().Select(item => _productFactory.CreateMarketProduct(item, 1, 0)));
 					}
 					
 					return _items.Where(item => item.Quantity > 0);
@@ -85,7 +80,6 @@ namespace GameModel
 			private readonly int _level;
 			private readonly IRandom _random;
 			private List<IProduct> _items;
-		    private readonly IInAppPurchasing _inAppPurchasing;
 		    private readonly ItemTypeFactory _itemTypeFactory;
 		    private readonly ProductFactory _productFactory;
 		    private readonly PlayerSkills _playerSkills;

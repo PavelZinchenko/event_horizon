@@ -4,10 +4,10 @@ namespace GameServices.GameManager
 {
     public interface IGameDataManager
     {
-        void RestorePurchases();
         void CreateNewGame();
 
-        void LoadMod(string id = null);
+        void LoadMod(string id = null, bool force = false);
+        void ReloadMod();
 
         void SaveGameToCloud(string filename);
         void SaveGameToCloud(ISavedGame game);

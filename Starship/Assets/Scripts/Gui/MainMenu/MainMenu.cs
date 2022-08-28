@@ -12,7 +12,6 @@ using GameDatabase.Model;
 using GameServices.GameManager;
 using GameServices.Gui;
 using GameServices.Settings;
-using Services.IAP;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -21,7 +20,6 @@ namespace Gui.MainMenu
 {
     public class MainMenu : MonoBehaviour
     {
-        [Inject] private readonly IInAppPurchasing _inAppPurchasing;
         [Inject] private readonly IGameDataManager _gameDataManager;
         [Inject] private readonly GameSettings _gameSettings;
         [Inject] private readonly IDatabase _database;
@@ -53,7 +51,6 @@ namespace Gui.MainMenu
 
         [SerializeField] private Button _startGameButton;
         [SerializeField] private Button _continueGameButton;
-        [SerializeField] private Button _constructorButton;
         [SerializeField] private InputField _inputField;
 
         public void StartGame()
@@ -64,6 +61,11 @@ namespace Gui.MainMenu
         public void StartBattle()
         {
             _guiManager.OpenWindow(Common.WindowNames.SelectDifficultyDialog, OnDialogClosed);
+        }
+
+        public void ReloadMod()
+        {
+            _gameDataManager.ReloadMod();
         }
 
         public void OpenConstructor()
@@ -93,6 +95,16 @@ namespace Gui.MainMenu
         {
             Application.OpenURL("https://zipagames.com/policy.html");
         }
+        
+        public void JoinDiscord()
+        {
+            Application.OpenURL("https://discordapp.com/invite/yFFvF7m");
+        }
+        
+        public void JoinVk()
+        {
+            Application.OpenURL("https://vk.com/official_event_horizon_group");
+        }
 
         public void Echopedia()
         {
@@ -102,11 +114,6 @@ namespace Gui.MainMenu
         public void Exit()
         {
             Application.Quit();
-        }
-
-        public void RestorePurchases()
-        {
-            _gameDataManager.RestorePurchases();
         }
 
         private void OnDialogClosed(WindowExitCode result)
@@ -131,7 +138,6 @@ namespace Gui.MainMenu
 
             _startGameButton.gameObject.SetActive(!gameExists);
             _continueGameButton.gameObject.SetActive(gameExists);
-            _constructorButton.gameObject.SetActive(_database.IsEditable);
         }
 
         private StartGameSignal.Trigger _startGameTrigger;
