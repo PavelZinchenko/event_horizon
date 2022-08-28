@@ -13,7 +13,7 @@ using Debug = UnityEngine.Debug;
 
 namespace Utils
 {
-    public static class Timer
+    public static class DebugTimer
     {
         public static bool IsDebugMode = true;
 

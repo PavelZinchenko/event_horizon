@@ -38,7 +38,7 @@ namespace GameDatabase.Storage
             get
             {
 // #if UNITY_EDITOR
-//                 return true;
+                return true;
 // #else
                 return false;
 // #endif
