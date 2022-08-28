@@ -54,10 +54,16 @@ namespace Combat.Component.Platform
         {
             _timeFromTargetUpdate += elapsedTime;
             _targetingTime += elapsedTime;
+            _timeFromLastAim += elapsedTime;
         }
 
         public void UpdateView(float elapsedTime)
         {
+            if (_timeFromLastAim > _targetUpdateCooldown)
+            {
+                Aim(_bulletVelocity, _weaponRange, _isRelativeVelocity);
+                _timeFromLastAim = 0;
+            }
             UpdateRotation(elapsedTime);
         }
 
@@ -161,6 +167,7 @@ namespace Combat.Component.Platform
 
         private int _updateFrameId;
         private float _timeFromTargetUpdate;
+        private float _timeFromLastAim = 999;
         private IUnit _target;
 
         private float _rotation;

@@ -9,6 +9,7 @@ using Combat.Component.Physics;
 using Combat.Component.Platform;
 using Combat.Component.Stats;
 using Combat.Component.Systems.DroneBays;
+using Combat.Component.Systems.Weapons;
 using Combat.Component.Unit.Classification;
 using Combat.Component.Triggers;
 using Combat.Component.View;
@@ -108,16 +109,27 @@ namespace Combat.Factory
                 var platform = CreatePlatform(ship, item, 0.04f, spec.Stats.TurretColor);
                 ship.AddPlatform(platform);
 
+                var aimed = false;
                 foreach (var weaponSpec in item.Weapons)
                 {
                     var weapon = _weaponFactory.Create(weaponSpec, platform, spec.Stats.ArmorMultiplier.Value, ship);
                     ship.AddSystem(weapon);
+                    if (!aimed && weapon is IWeapon wep)
+                    {
+                        platform.Aim(wep.Info.BulletSpeed, wep.Info.Range, wep.Info.IsRelativeVelocity);
+                        aimed = true;
+                    }
                 }
 
                 foreach (var weaponSpec in item.WeaponsObsolete)
                 {
                     var weapon = _weaponFactory.Create(weaponSpec, platform, spec.Stats.ArmorMultiplier.Value, ship);
                     ship.AddSystem(weapon);
+                    if (!aimed && weapon is IWeapon wep)
+                    {
+                        platform.Aim(wep.Info.BulletSpeed, wep.Info.Range, wep.Info.IsRelativeVelocity);
+                        aimed = true;
+                    }
                 }
             }
 
