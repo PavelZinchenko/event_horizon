@@ -3,15 +3,19 @@ using Combat.Component.Ship;
 
 namespace Combat.Ai
 {
-	public struct ShipControls
+	public class ShipControls
 	{
+		public ShipControls(IShip ship)
+		{
+			_systems = new BitArray(ship.Systems.All.Count);
+			_systemsMask = new BitArray(ship.Systems.All.Count);
+		}
+
 		public void Apply(IShip ship)
 		{
 			ship.Controls.Throttle = _thrust;
 			ship.Controls.Course = _course;
 		    ship.Controls.SystemsState = _systems;
-		    _systems = new BitArray(ship.Systems.All.Count);
-		    _systemsMask = new BitArray(ship.Systems.All.Count);
 		}
 
 		public float Course
@@ -44,7 +48,7 @@ namespace Combat.Ai
 
 		public bool IsSystemLocked(int id)
 		{
-			return !_systemsMask[id];
+			return _systemsMask[id];
         }
 
 	    public void ActivateSystem(int index, bool active = true)

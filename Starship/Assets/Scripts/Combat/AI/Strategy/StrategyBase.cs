@@ -10,7 +10,7 @@ namespace Combat.Ai
 
 		public void Apply(Context context)
 		{
-			var controls = new ShipControls();
+			var controls = new ShipControls(context.Ship);
 			foreach (var policy in _policyList)
 			    policy.Perform(context, ref controls);
 
