@@ -335,9 +335,8 @@ namespace Combat.Factory
 
             public Result Create(BulletTrigger_PlaySfx trigger)
             {
-                var condition = FromTriggerCondition(trigger.Condition);
-                CreateSoundEffect(_bullet, trigger.AudioClip, condition);
-                CreateVisualEffect(_bullet, _collisionBehaviour, condition, trigger);
+                CreateSoundEffect(_bullet, trigger.AudioClip, _condition);
+                CreateVisualEffect(_bullet, _collisionBehaviour, _condition, trigger);
                 return Result.Ok;
             }
 
@@ -358,8 +357,7 @@ namespace Combat.Factory
 
             public Result Create(BulletTrigger_Detonate content)
             {
-                var condition = FromTriggerCondition(content.Condition);
-                _bullet.AddAction(new DetonateAction(condition));
+                _bullet.AddAction(new DetonateAction(_condition));
                 return Result.Ok;
             }
 
