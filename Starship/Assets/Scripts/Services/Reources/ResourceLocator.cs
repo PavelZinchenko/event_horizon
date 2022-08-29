@@ -62,7 +62,8 @@ namespace Services.Reources
                     sprite = GetSprite("Textures/Effects/" + spriteId.Id);
                     break;
                 default:
-                    return GetSprite(spriteId.Id);
+                    sprite = GetSprite(spriteId.Id);
+                    break;
             }
 
             if (sprite == null && _database != null)

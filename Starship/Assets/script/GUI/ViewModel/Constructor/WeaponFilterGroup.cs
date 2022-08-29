@@ -15,14 +15,14 @@ namespace ViewModel
 		public ValueChangedEvent OnValueChanged = new ValueChangedEvent();
 		
 		[Serializable]
-		public class ValueChangedEvent : UnityEvent<WeaponSlotType> {};
+		public class ValueChangedEvent : UnityEvent<char> {};
 		
-		public WeaponSlotType Value { get { return _value; } }
+		public char Value { get { return _value; } }
 		
 		private void OnItemValueChanged(bool selected)
 		{
 			var activeItem = Group.ActiveToggles().FirstOrDefault();
-			_value = activeItem == null ? WeaponSlotType.Default : (WeaponSlotType)activeItem.name.First();
+			_value = activeItem == null ? WeaponSlotType.Default : activeItem.name.First();
 			OnValueChanged.Invoke(_value);
 		}
 		
@@ -46,6 +46,6 @@ namespace ViewModel
 			toggle.onValueChanged.AddListener(OnItemValueChanged);
 		}
 		
-		private WeaponSlotType _value = WeaponSlotType.Default;
+		private char _value = WeaponSlotType.Default;
 	}
 }

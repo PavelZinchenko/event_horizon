@@ -130,12 +130,24 @@ namespace Gui.ComponentList
         public WeaponNode(IComponentTreeNode parent)
         {
             _parent = parent;
-            _projectileNode = CreateNode("$GroupWeaponC", new SpriteId("textures/weapongroup/icon_weapon_c", SpriteId.Type.Default));
-            _beamNode = CreateNode("$GroupWeaponL", new SpriteId("textures/weapongroup/icon_weapon_l", SpriteId.Type.Default));
-            _missileNode = CreateNode("$GroupWeaponM", new SpriteId("textures/weapongroup/icon_weapon_m", SpriteId.Type.Default));
-            _torpedoNode = CreateNode("$GroupWeaponT", new SpriteId("textures/weapongroup/icon_weapon_t", SpriteId.Type.Default));
-            _specialNode = CreateNode("$GroupWeaponS", new SpriteId("textures/weapongroup/icon_weapon_s", SpriteId.Type.Default));
-            _universalNode = CreateNode("$GroupWeaponAny", new SpriteId("textures/weapongroup/icon_weapon_x", SpriteId.Type.Default));
+            _weaponTypes = new List<IComponentTreeNode>
+            {
+                CreateNode("$GroupWeaponC", new SpriteId("textures/weapongroup/icon_weapon_c", SpriteId.Type.Default)),
+                CreateNode("$GroupWeaponL", new SpriteId("textures/weapongroup/icon_weapon_l", SpriteId.Type.Default)),
+                CreateNode("$GroupWeaponM", new SpriteId("textures/weapongroup/icon_weapon_m", SpriteId.Type.Default)),
+                CreateNode("$GroupWeaponT", new SpriteId("textures/weapongroup/icon_weapon_t", SpriteId.Type.Default)),
+                CreateNode("$GroupWeaponS", new SpriteId("textures/weapongroup/icon_weapon_s", SpriteId.Type.Default)),
+                CreateNode("$GroupWeaponAny", new SpriteId("textures/weapongroup/icon_weapon_any", SpriteId.Type.Default))
+            };
+            _indices = new Dictionary<char, int>
+            {
+                { WeaponSlotType.Cannon, 0 },
+                { WeaponSlotType.Laser, 1 },
+                { WeaponSlotType.Missile, 2 },
+                { WeaponSlotType.Torpedo, 3 },
+                { WeaponSlotType.Special, 4 },
+                { WeaponSlotType.Default, 5 },
+            };
         }
 
         public IComponentTreeNode Parent { get { return _parent; } }
@@ -154,26 +166,18 @@ namespace Gui.ComponentList
                 return;
             }
 
-            switch (componentInfo.Data.WeaponSlotType)
+            var weaponTypeChar = componentInfo.Data.WeaponSlotType;
+            if (_indices.TryGetValue(weaponTypeChar, out var index))
             {
-                case WeaponSlotType.Cannon:
-                    _projectileNode.Add(componentInfo);
-                    break;
-                case WeaponSlotType.Laser:
-                    _beamNode.Add(componentInfo);
-                    break;
-                case WeaponSlotType.Missile:
-                    _missileNode.Add(componentInfo);
-                    break;
-                case WeaponSlotType.Torpedo:
-                    _torpedoNode.Add(componentInfo);
-                    break;
-                case WeaponSlotType.Special:
-                    _specialNode.Add(componentInfo);
-                    break;
-                default:
-                    _universalNode.Add(componentInfo);
-                    break;
+                _weaponTypes[index].Add(componentInfo);
+            }
+            else
+            {
+                index = _weaponTypes.Count;
+                var node = CreateNode($"$GroupWeapon{weaponTypeChar}",
+                    new SpriteId($"icon_weapon_{weaponTypeChar}.png", SpriteId.Type.Default));
+                _weaponTypes.Add(node);
+                _indices[weaponTypeChar] = index;
             }
         }
 
@@ -196,12 +200,10 @@ namespace Gui.ComponentList
         {
             get
             {
-                yield return _projectileNode;
-                yield return _beamNode;
-                yield return _missileNode;
-                yield return _torpedoNode;
-                yield return _specialNode;
-                yield return _universalNode;
+                foreach (var node in _weaponTypes)
+                {
+                    yield return node;
+                }
             }
         }
 
@@ -212,12 +214,14 @@ namespace Gui.ComponentList
 
         private int _count = -1;
         private readonly IComponentTreeNode _parent;
-        private readonly IComponentTreeNode _projectileNode;
-        private readonly IComponentTreeNode _beamNode;
-        private readonly IComponentTreeNode _missileNode;
-        private readonly IComponentTreeNode _torpedoNode;
-        private readonly IComponentTreeNode _specialNode;
-        private readonly IComponentTreeNode _universalNode;
+        private readonly IList<IComponentTreeNode> _weaponTypes;
+        private readonly IDictionary<char, int> _indices;
+        // private readonly IComponentTreeNode _projectileNode;
+        // private readonly IComponentTreeNode _beamNode;
+        // private readonly IComponentTreeNode _missileNode;
+        // private readonly IComponentTreeNode _torpedoNode;
+        // private readonly IComponentTreeNode _specialNode;
+        // private readonly IComponentTreeNode _universalNode;
     }
 
     public class ComponentNode : IComponentTreeNode

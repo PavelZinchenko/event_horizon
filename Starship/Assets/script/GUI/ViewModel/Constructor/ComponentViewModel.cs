@@ -263,9 +263,10 @@ namespace ViewModel
 
 	    private static IEnumerable<KeyValuePair<string, string>> GetWeaponDamageText(Ammunition ammunition, WeaponStatModifier statModifier, ILocalization localization)
 	    {
-            var effect = ammunition.Effects.FirstOrDefault(item => item.Type == ImpactEffectType.Damage || item.Type == ImpactEffectType.SiphonHitPoints);
-            if (effect.Power > 0)
-	        {
+		    var effect = ammunition.Effects.FirstOrDefault(item =>
+			    item.Type == ImpactEffectType.Damage || item.Type == ImpactEffectType.SiphonHitPoints);
+		    if (effect != null && effect.Power > 0)
+		    {
 	            yield return new KeyValuePair<string, string>("$DamageType", localization.GetString(effect.DamageType.Name()));
 	            var damage = effect.Power * statModifier.DamageMultiplier.Value;
                 yield return new KeyValuePair<string, string>(ammunition.ImpactType == BulletImpactType.DamageOverTime ? "$WeaponDPS" : "$WeaponDamage",  damage.ToString(_floatFormat));
