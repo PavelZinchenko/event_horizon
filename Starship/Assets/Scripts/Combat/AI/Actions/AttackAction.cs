@@ -141,7 +141,7 @@ namespace Combat.Ai
 			{
 				var weapon = ship.Systems.All.Weapon(id);
 				if (!weapon.CanBeActivated) continue;
-			    if (ship.Type.Class == UnitClass.Drone && weapon.Info.WeaponType == WeaponType.RequiredCharging) continue;
+			    // if (ship.Type.Class == UnitClass.Drone && weapon.Info.WeaponType == WeaponType.RequiredCharging) continue;
                 if (weapon.Info.BulletEffectType == BulletEffectType.ForDronesOnly && enemy.Type.Class != UnitClass.Drone) continue;
 
 				Vector2 target;
