@@ -34,7 +34,7 @@ namespace Combat.Factory
         [Inject] private readonly PrefabCache _prefabCache;
         [Inject] private readonly IResourceLocator _resourceLocator;
 
-        public IUnit CreateSatellite(IShip ship, IWeaponPlatformData data, float cooldown)
+        public Satellite CreateSatellite(IShip ship, IWeaponPlatformData data, float cooldown)
         {
             var satelliteData = data.Companion;
             var custom = false;

@@ -71,6 +71,8 @@ namespace Combat.Component.Bullet.Action
         public void UpdatePhysics(float elapsedTime) {}
         public void UpdateView(float elapsedTime) {}
 
+        public void AddAttachedChild(IBullet bullet) {}
+
         private float _lastSpawnTime;
         private readonly AudioClipId _audioClipId;
         private readonly IBulletFactory _factory;

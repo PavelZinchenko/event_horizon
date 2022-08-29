@@ -108,6 +108,11 @@ namespace Combat.Factory
             _scene.AddUnit(bullet);
             bullet.UpdateView(0);
 
+            if (_stats.AmmunitionClass.IsBoundToCannon() && !parent.IsTemporary)
+            {
+                parent.AddAttachedChild(bullet);
+            }
+
             if (!_stats.AmmunitionClass.IsBoundToCannon() && !_stats.IgnoresShipVelocity && _bulletStats.Recoil > 0)
                 parent.Body.ApplyForce(bullet.Body.WorldPosition(), -_bulletStats.Recoil*(bullet.Body.WorldVelocity() - parent.Body.WorldVelocity()));
 

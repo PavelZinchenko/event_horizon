@@ -12,6 +12,7 @@ using Combat.Component.Systems.DroneBays;
 using Combat.Component.Systems.Weapons;
 using Combat.Component.Unit.Classification;
 using Combat.Component.Triggers;
+using Combat.Component.Unit;
 using Combat.Component.View;
 using Combat.Helpers;
 using Combat.Scene;
@@ -151,7 +152,7 @@ namespace Combat.Factory
                 }
 
                 var platformBody = SimpleBody.Create(ship.Body, Vector2.zero, 0f, 1.0f, 0, 0);
-                var droneBayPlatform = new FixedPlatform(ship, platformBody, _droneBayPlatformCooldown);
+                var droneBayPlatform = new FixedPlatform(ship, platformBody, _droneBayPlatformCooldown, ship);
                 ship.AddPlatform(droneBayPlatform);
 
                 foreach (var item in spec.DroneBays)
@@ -320,7 +321,7 @@ namespace Combat.Factory
 
         private IWeaponPlatform CreatePlatform(Ship ship, IWeaponPlatformData data, float cooldown, ColorScheme color)
         {
-            var parent = data.Companion == null ? ship : _satelliteFactory.CreateSatellite(ship, data, cooldown);
+            var parent = data.Companion == null ? ship : _satelliteFactory.CreateSatellite(ship, data, cooldown) as UnitBase;
             var position = data.Position*0.5f;
             var rotation = data.Rotation;
             var offset = (data.Offset + data.Size)*0.5f;
@@ -335,7 +336,7 @@ namespace Combat.Factory
             else
             {
                 var body = SimpleBody.Create(parent.Body, position, rotation, 1f/parent.Body.Scale, 0, offset);
-                platform = new FixedPlatform(ship, body, cooldown);
+                platform = new FixedPlatform(ship, body, cooldown, ship);
             }
 
             if (isTurret)

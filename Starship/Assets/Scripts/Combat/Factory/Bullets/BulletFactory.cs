@@ -74,6 +74,10 @@ namespace Combat.Factory
             bullet.CanBeDisarmed = _ammunition.Body.CanBeDisarmed;
             BulletTriggerBuilder.Build(this, bullet, collisionBehaviour);
 
+            if (_ammunition.Body.Type == GameDatabase.Enums.BulletType.Continuous && !parent.IsTemporary)
+            {
+                parent.AddAttachedChild(bullet);
+            }
             _scene.AddUnit(bullet);
             bullet.UpdateView(0);
 
