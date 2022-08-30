@@ -28,23 +28,21 @@ namespace GameServices
 
         public void Pause()
         {
-            _gamePauseCounter++;
-
-            if (_gamePauseCounter == 1)
-                UpdateStatus();
+            if (_gamePaused) return;
+            _gamePaused = true;
+            UpdateStatus();
         }
 
         public void Resume()
         {
-            if (_gamePauseCounter == 0)
+            if (!_gamePaused)
                 return;
 
-            _gamePauseCounter--;
-            if (_gamePauseCounter == 0)
-                UpdateStatus();
+            _gamePaused = false;
+            UpdateStatus();
         }
 
-        public bool Paused => _gamePauseCounter > 0 || _applicationPaused;
+        public bool Paused => _gamePaused || _applicationPaused;
 
         public bool ApplicationPaused => _applicationPaused;
 
@@ -70,9 +68,9 @@ namespace GameServices
 
         private void OnSceneLoaded()
         {
-            if (_gamePauseCounter > 0)
+            if (_gamePaused)
             {
-                _gamePauseCounter = 0;
+                _gamePaused = false;
                 UpdateStatus();
             }
         }
@@ -88,7 +86,7 @@ namespace GameServices
         }
 
         private bool _applicationPaused;
-        private int _gamePauseCounter = 0;
+        private bool _gamePaused;
 
         private bool _runInBackground;
         private IMessenger _messenger;
