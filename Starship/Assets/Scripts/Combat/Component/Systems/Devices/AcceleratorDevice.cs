@@ -12,6 +12,8 @@ namespace Combat.Component.Systems.Devices
         {
             MaxCooldown = deviceSpec.Cooldown;
 
+            _lifetime = deviceSpec.Lifetime;
+            if (_lifetime == 0) _lifetime = float.MaxValue;
             _ship = ship;
             _energyCost = deviceSpec.EnergyConsumption;
         }
@@ -48,10 +50,16 @@ namespace Combat.Component.Systems.Devices
                 {
                     InvokeTriggers(ConditionType.OnActivate);
                     _isEnabled = true;
+                    _timeLeft = _lifetime;
+                }
+                else if (_timeLeft > 0)
+                {
+                    _timeLeft -= elapsedTime;
+                    InvokeTriggers(ConditionType.OnRemainActive);
                 }
                 else
                 {
-                    InvokeTriggers(ConditionType.OnRemainActive);
+                    Deactivate();
                 }
             }
             else if (_isEnabled)
@@ -64,7 +72,9 @@ namespace Combat.Component.Systems.Devices
 
         protected override void OnDispose() { }
 
+        private float _timeLeft;
         private bool _isEnabled;
+        private readonly float _lifetime;
         private readonly float _energyCost;
         private readonly IShip _ship;
     }
