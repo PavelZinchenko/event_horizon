@@ -12,6 +12,8 @@ namespace Combat.Component.Systems.Devices
         {
             MaxCooldown = deviceSpec.Cooldown;
 
+            _power = deviceSpec.Power / 20;
+
             _lifetime = deviceSpec.Lifetime;
             if (_lifetime == 0) _lifetime = float.MaxValue;
             _ship = ship;
@@ -25,8 +27,8 @@ namespace Combat.Component.Systems.Devices
             if (_isEnabled)
             {
                 data.Throttle = 1.0f;
-                data.Propulsion *= 4;
-                data.Velocity *= 8;
+                data.Propulsion *= 4 * _power;
+                data.Velocity *= 8 * _power;
             }
 
             return true;
@@ -72,6 +74,7 @@ namespace Combat.Component.Systems.Devices
 
         protected override void OnDispose() { }
 
+        private float _power;
         private float _timeLeft;
         private bool _isEnabled;
         private readonly float _lifetime;
