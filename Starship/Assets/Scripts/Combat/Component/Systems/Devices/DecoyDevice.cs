@@ -16,7 +16,7 @@ namespace Combat.Component.Systems.Devices
             _ship = ship;
             _energyCost = deviceSpec.EnergyConsumption;
             _lifetime = deviceSpec.Lifetime;
-            _hitPoints = decoyHitPoints;
+            _hitPoints = decoyHitPoints * deviceSpec.Size;
             _color = deviceSpec.Color;
             _factory = factory;
             _count = Mathf.RoundToInt(deviceSpec.Power);
