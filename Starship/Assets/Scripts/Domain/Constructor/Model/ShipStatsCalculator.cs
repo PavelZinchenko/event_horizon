@@ -8,6 +8,7 @@ namespace Constructor.Model
 {
     public interface IShipStats
     {
+        ShipBonuses Bonuses { get; set; }
         ColorScheme ShipColor { get; }
         ColorScheme TurretColor { get; }
 
@@ -67,6 +68,8 @@ namespace Constructor.Model
         Color EngineColor { get; }
         ShipCategory ShipCategory { get; }
         IEnumerable<Engine> Engines { get; }
+
+        IShipStats CopyWithBonuses(ShipBonuses bonuses);
     }
 
     public class ShipStatsCalculator : IShipStats
@@ -81,7 +84,7 @@ namespace Constructor.Model
 
         public ShipBaseStats BaseStats;
         public ShipEquipmentStats EquipmentStats;
-        public ShipBonuses Bonuses;
+        public ShipBonuses Bonuses { get; set; }
 
         public ColorScheme ShipColor { get; set; }
         public ColorScheme TurretColor { get; set; }
@@ -237,6 +240,17 @@ namespace Constructor.Model
         public Color EngineColor => _ship.EngineColor;
         public ShipCategory ShipCategory => _ship.ShipCategory;
         public IEnumerable<Engine> Engines => _ship.Engines;
+        public IShipStats CopyWithBonuses(ShipBonuses bonuses)
+        {
+            return new ShipStatsCalculator(_ship, ShipSettings)
+            {
+                ShipColor = ShipColor,
+                TurretColor = TurretColor,
+                BaseStats = BaseStats,
+                EquipmentStats = EquipmentStats,
+                Bonuses = bonuses
+            };
+        }
 
         private readonly Ship _ship;
     }

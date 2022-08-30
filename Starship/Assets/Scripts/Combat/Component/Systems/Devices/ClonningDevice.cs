@@ -23,7 +23,21 @@ namespace Combat.Component.Systems.Devices
 
             _shipFactory = shipFactory;
             _mothership = mothership;
-            _shipSpec = shipSpec;
+            if (stats.Power > 0)
+            {
+                var power = stats.Power;
+                var oldBonus = shipSpec.Stats.Bonuses;
+                _shipSpec = shipSpec.CopyWithStats(shipSpec.Stats.CopyWithBonuses(oldBonus.CopyWith(
+                    damageMultiplier: oldBonus.DamageMultiplier * power,
+                    armorPointsMultiplier: oldBonus.ArmorPointsMultiplier * power,
+                    shieldPointsMultiplier: oldBonus.ShieldPointsMultiplier * power,
+                    rammingDamageMultiplier: oldBonus.RammingDamageMultiplier * power
+                )));
+            }
+            else
+            {
+                _shipSpec = shipSpec;
+            }
  
             _energyCost = stats.EnergyConsumption;
         }
