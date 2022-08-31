@@ -4,7 +4,11 @@ namespace Gui.Utils
 {
     public static class WeakListExtensions
     {
-        public static void RetainAlive<T>(this IList<WeakReference<T>> list)
+        /// <summary>
+        /// Removes all garbage collected elements from the list
+        /// </summary>
+        /// <param name="list">List of weak references to clean up</param>
+        public static void Purge<T>(this IList<WeakReference<T>> list)
         {
             for (var i = 0; i < list.Count; i++)
             {

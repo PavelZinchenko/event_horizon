@@ -1,4 +1,5 @@
 ﻿using System;
+using Combat.Component.Systems.Devices;
 using UnityEngine;
 
 namespace Combat.Component.Body
@@ -105,6 +106,39 @@ namespace Combat.Component.Body
                 parent = parent.Parent;
 
             return parent;
+        }
+
+        /// <summary>
+        /// Shifts a body and all its connections
+        /// </summary>
+        /// <param name="body">Body to shift</param>
+        /// <param name="offset">OffsetShift offset</param>
+        public static void ShiftWithDependants(this IBody body, Vector2 offset)
+        {
+            body.Move(body.Position + offset);
+            if (!WormTailDevice.Dependencies.TryGetValue(body, out var connections)) return;
+            for (var i = 0; i < connections.Count; i++)
+            {
+                var element = connections[i];
+                if (!element.IsAlive)
+                {
+                    connections.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+                element.Target.Move(element.Target.Position + offset);
+            }
+        }
+
+        /// <summary>
+        /// Moves a body to the new position, and shifts all of its dependencies according to a difference between old
+        /// and new position
+        /// </summary>
+        /// <param name="body">Body to move</param>
+        /// <param name="newPosition">New position</param>
+        public static void MoveWithDependants(this IBody body, Vector2 newPosition)
+        {
+            ShiftWithDependants(body, newPosition - body.Position);
         }
     }
 }

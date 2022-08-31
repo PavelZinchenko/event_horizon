@@ -57,7 +57,7 @@ namespace Combat.Component.Platform
             _timeFromLastCleanup += elapsedTime;
             if (_timeFromLastCleanup >= CleanupInterval)
             {
-                _attachedChildren.RetainAlive();
+                _attachedChildren.Purge();
                 _timeFromLastCleanup = 0;
             }
         }
