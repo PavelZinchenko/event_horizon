@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="Credits_Title">Event Horizon:\nUnknown</string>
+    <string name="Credits_Title">Event Horizon</string>
     <string name="Credits_Title2">Frontier</string>
     <string name="Credits_GameDesign">Game Design</string>
     <string name="Credits_Program">Programming</string>

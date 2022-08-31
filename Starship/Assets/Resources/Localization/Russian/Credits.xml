@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="Credits_Title">Горизонт Событий:\nНеизведанное</string>
+    <string name="Credits_Title">Горизонт Событий</string>
     <string name="Credits_Title2">Фронтир</string>
     <string name="Credits_GameDesign">Дизайн игры</string>
     <string name="Credits_Program">Программирование</string>
