@@ -19,7 +19,7 @@
     {
       "Position": {
         "x": 0.2,
-        "y": -0.5
+        "y": 0.5
       },
       "PlatformType": 3,
       "WeaponClass": "S"
@@ -33,7 +33,7 @@
     {
       "Position": {
         "x": 0.2,
-        "y": 0.5
+        "y": -0.5
       },
       "PlatformType": 3,
       "WeaponClass": "S"

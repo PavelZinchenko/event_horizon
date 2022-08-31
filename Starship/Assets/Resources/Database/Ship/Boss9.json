@@ -38,15 +38,6 @@
     {
       "Position": {
         "x": 0.05,
-        "y": -0.5
-      },
-      "Rotation": -70.0,
-      "PlatformType": 3,
-      "WeaponClass": "C"
-    },
-    {
-      "Position": {
-        "x": 0.05,
         "y": 0.5
       },
       "Rotation": 70.0,
@@ -55,10 +46,10 @@
     },
     {
       "Position": {
-        "x": -0.05,
+        "x": 0.05,
         "y": -0.5
       },
-      "Rotation": -90.0,
+      "Rotation": -70.0,
       "PlatformType": 3,
       "WeaponClass": "C"
     },
@@ -73,10 +64,10 @@
     },
     {
       "Position": {
-        "x": -0.15,
+        "x": -0.05,
         "y": -0.5
       },
-      "Rotation": -110.0,
+      "Rotation": -90.0,
       "PlatformType": 3,
       "WeaponClass": "C"
     },
@@ -86,6 +77,15 @@
         "y": 0.5
       },
       "Rotation": 110.0,
+      "PlatformType": 3,
+      "WeaponClass": "C"
+    },
+    {
+      "Position": {
+        "x": -0.15,
+        "y": -0.5
+      },
+      "Rotation": -110.0,
       "PlatformType": 3,
       "WeaponClass": "C"
     }

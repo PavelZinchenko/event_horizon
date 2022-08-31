@@ -29,13 +29,13 @@
   "Barrels": [
     {
       "Position": {
-        "y": -0.5
+        "y": 0.5
       },
       "WeaponClass": "MS"
     },
     {
       "Position": {
-        "y": 0.5
+        "y": -0.5
       },
       "WeaponClass": "MS"
     }
