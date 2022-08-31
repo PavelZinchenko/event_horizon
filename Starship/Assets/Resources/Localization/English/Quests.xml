@@ -5,7 +5,6 @@
     <string name="TimeHours">$1 ${1|hour|hours}</string>
     <string name="TimeMinutes">$1 ${1|minute|minutes}</string>
     <string name="TimeSeconds">$1 ${1|second|seconds}</string>
-
     <string name="QuestLogEmpty">You do not have any missions.</string>
     <string name="AbandonQuestConfirmation">Do you really want to abandon the mission?</string>
     <string name="CharacterMerchant">Traveling merchant</string>
@@ -101,8 +100,7 @@
     <string name="HappyEaster_Message1">Hey captain! Long time no see! Have an egg-celent Easter! Here is your egg.</string>
     <string name="HappyEaster_Message2">Hey captain! Don\'t worry, nothing has happened. I just want to wish you happy Easter. Here is your egg.</string>
     <string name="HappyEaster_Message3">Greetings, Commander. I have a delivery for you. Have an egg-celent Easter!</string>
-
-    <string name="Quest_Covid">COVID-6019</string>
+    <string name="Quest_Covid">Invasion</string>
     <string name="Covidr_Message1">I send you an urgent appeal for help. We are faced with the unknown enemy. We won't last long...</string>
     <string name="Covidr_Message2">We are under attack.</string>
     <string name="Covidr_Message3">We are very grateful, Commander. Our nation will never forget that.</string>

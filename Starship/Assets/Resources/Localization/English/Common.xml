@@ -23,7 +23,7 @@
     <string name="SatellitePanelHeader">Weapons</string>
     <string name="MilitaryPanelHeader">Military base</string>
     <string name="MilitaryPanelDescription">You can conduct military exercises for a small fee</string>
-    <string name="WormholeDescription">Wormholes are space anomalies that are like rifts in space, connecting two separate locations. They allow the travel of ships from one system to another.</string>
+    <string name="WormholeDescription">Wormholes are space anomalies that are like rifts in space, connecting two separate locations. They allow the instant travel of ships from one system to another.</string>
     <string name="EnterWormhole">Travel</string>
     <string name="ChallengeDescription">Challenges are harder than the normal battles, as you cannot choose which ship to use.</string>
     <string name="ShipPanelHeader">Ships</string>

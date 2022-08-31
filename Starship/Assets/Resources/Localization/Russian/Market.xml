@@ -5,7 +5,7 @@
     <string name="Snowflakes">Снежинки</string>
     <string name="NoItemsInCategory">Нет товаров в этой категории</string>
     <string name="IapErrorText">Произошла непредвиденная ошибка. Ваша покупка не завершена.</string>
-    <string name="FacebookItemDescription">Поделиться в Facebook</string>
+    <string name="FacebookItemDescription">Поделиться в Meta</string>
     <string name="AdItemDescription">Посмотрите рекламный ролик и получите звезду</string>
     <string name="XmasBox">Новогодний подарок</string>
     <string name="AlienTechnology">Инопланетные технологии</string>
@@ -23,4 +23,10 @@
     <string name="MostPopular">САМОЕ ПОПУЛЯРНОЕ</string>
     <string name="FalconPack">Специальное предложение</string>
     <string name="FalconPackDescription">Уникальный корабль с мощным оружием и опытным капитаном</string>
+    <string name="StarPack1">Малый пакет звезд</string>
+    <string name="StarPackDetails1">Содержит 50 звезд</string>
+    <string name="StarPack2">Пакет звезд</string>
+    <string name="StarPackDetails2">Содержит 500 звезд</string>
+    <string name="StarPack3">Большой пакет звезд</string>
+    <string name="StarPackDetails3">Содержит 5000 звезд</string>
 </resources>

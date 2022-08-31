@@ -55,6 +55,7 @@
     <string name="MinEnergy">Включать, если энергии больше $1%</string>
     <string name="Automatic">Система автомат</string>
     <string name="KeyBinding">Кнопка действия</string>
+    <string name="DroneBehaviour">Поведение:</string>
     <string name="RequiredCell">Тип ячейки</string>
     <string name="PressToInstall">Нажмите чтобы установить</string>
     <string name="NotEnoughSpace">Недостаточно места</string>
@@ -112,6 +113,7 @@
     <string name="GroupSpecial">Специальные модули</string>
     <string name="GroupShip">Модули корабля $1</string>
     <string name="GroupShips">Корабли</string>
+    <string name="GroupSatellites">Спутники</string>
     <string name="GroupWeaponAny">Оружие для всех слотов</string>
     <string name="GroupWeaponC">Баллистическое оружие</string>
     <string name="GroupWeaponL">Лучевое оружие</string>

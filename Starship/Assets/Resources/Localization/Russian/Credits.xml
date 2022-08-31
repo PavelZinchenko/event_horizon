@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="Credits_Title">Event Horizon</string>
-    <string name="Credits_Title2">Frontier</string>
-    <string name="Credits_GameDesign">Game Design</string>
-    <string name="Credits_Program">Programming</string>
-    <string name="Credits_Graphics">Graphic Design</string>
-    <string name="Credits_Localization">Localization</string>
-    <string name="Credits_Music">Music</string>
-    <string name="Credits_Sound">Sound Effects</string>
-    <string name="Credits_Thanks">Special Thanks</string>
-    <string name="Credits_GameDesign_Content">Pavel Zinchenko</string>
-    <string name="Credits_Program_Content">Pavel Zinchenko</string>
-    <string name="Credits_Graphics_Content">Pavel Zinchenko</string>
+    <string name="Credits_Title">Горизонт Событий:\nНеизведанное</string>
+    <string name="Credits_Title2">Фронтир</string>
+    <string name="Credits_GameDesign">Дизайн игры</string>
+    <string name="Credits_Program">Программирование</string>
+    <string name="Credits_Graphics">Графический дизайн</string>
+    <string name="Credits_Localization">Локализация</string>
+    <string name="Credits_Music">Музыка</string>
+    <string name="Credits_Sound">Звуковые эффекты</string>
+    <string name="Credits_Thanks">Особые благодарности</string>
+    <string name="Credits_GameDesign_Content">Павел Зинченко</string>
+    <string name="Credits_Program_Content">Павел Зинченко\nJuh Juh</string>
+    <string name="Credits_Graphics_Content">Павел Зинченко</string>
+    <string name="Credits_Localization_Content">Мориц Шух (MegumiKitaniji)\nВиктор Лопес (Anacheron)\nДаниэль Джейдер (Agred)\nЭнтони Барест (SnowedEarth)\nПедро Дуке (MrD)\nДонхо Чан (BUP5013511)\nТюркер Юджир (lord24turker)\nМихаил Кананов (The Grey Cardinal)\nCapitalist Commie\nVivi\nКрис Дэнс (Crdguy)\nCrispyToken\nSIVLER</string>
+    <string name="Credits_Music_Content">Мэтью Ле Блан (SynthR) - www.synthr.net\nРобсон Козенди - www.cozendey.com\nVertex Studio\n</string>
+    <string name="Credits_Sound_Content">freesound.org</string>
+    <string name="Credits_Thanks_Content">Виталий Малышев\nМихаил Лиликин\nNanane</string>
 </resources>

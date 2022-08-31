@@ -2,8 +2,8 @@
 <resources>
     <string name="PlayerRating">Рейтинг игрока:</string>
     <string name="ArenaRating">Рейтинг флота:</string>
-    <string name="ArenaRegistrationRequired">Вам нужно зарегистрироваться чтобы участвовать в боях.</string>
-    <string name="ArenaSignInRequired">Войдите в ваш аккаунт перед тем как начать.</string>
+    <string name="ArenaRegistrationRequired">Вам нужно зарегистрироваться, чтобы участвовать в боях.</string>
+    <string name="ArenaSignInRequired">Войдите в ваш аккаунт перед тем, как начать.</string>
     <string name="ConnectionError">Не удалось подключиться к серверу.</string>
     <string name="ArenaTraining">Тренировочный бой со своими кораблями.</string>
     <string name="ArenaOpponent">Противник:</string>
@@ -16,4 +16,5 @@
     <string name="ArenaMoreBattles">Купить еще 10 боев</string>
     <string name="ArenaShipReady">Готов к бою</string>
     <string name="ArenaShipNotReady">Не допущен</string>
+    <string name="ArenaWatchAd">Посмотреть рекламу</string>
 </resources>

@@ -5,7 +5,7 @@
     <string name="Credits">Кредиты</string>
     <string name="ShipExperience">$1 получил $2 ${2|очко|очка|очков} опыта</string>
     <string name="PlayerExperience">Экипаж получил $1 ${1|очко|очка|очков} опыта</string>
-    <string name="FactionResearchPoints">получено $1 ${1|очко|очка|очков} исследований</string>
+    <string name="FactionResearchPoints">Получено $1 ${1|очко|очка|очков} исследований</string>
     <string name="RateApp">Оценить</string>
     <string name="RateDescriptionAndroid">Нравится игра? Оцените ее на Google Play.</string>
     <string name="RateDescriptionIos">Нравится игра? Оцените ее в App Store.</string>
@@ -16,15 +16,14 @@
     <string name="Resume">Продолжить</string>
     <string name="Surrender">Сдаться</string>
     <string name="ChangeShip">Отступить</string>
-    <string name="NextEnemy">Следующий
-противник</string>
+    <string name="NextEnemy">Следующий противник</string>
     <string name="LeaveCombatConfirmation">Если вы сейчас покинете бой, ваши корабли получат повреждения. Вы уверены что хотите это сделать?</string>
     <string name="FleetPanelHeader">Ангар</string>
     <string name="ModulePanelHeader">Модули</string>
     <string name="SatellitePanelHeader">Оружие</string>
     <string name="MilitaryPanelHeader">Военная база</string>
     <string name="MilitaryPanelDescription">За небольшую плату вы можете провести здесь тренировочный бой</string>
-    <string name="WormholeDescription">Червоточина - это космическая аномалия соединяющая две точки в пространстве. Она позволяет кораблям путешествовать из одной звездной системы в другую.</string>
+    <string name="WormholeDescription">Червоточина - это космическая аномалия соединяющая две точки в пространстве. Она позволяет кораблям мгновенно перемещаться из одной звездной системы в другую.</string>
     <string name="EnterWormhole">Войти</string>
     <string name="ChallengeDescription">Испытания сложнее обычных боев, но и награда выше</string>
     <string name="ShipPanelHeader">Корабли</string>
@@ -156,7 +155,12 @@
     <string name="PrivacyPolicy">Политика конфиденциальности</string>
     <string name="OutOfFuelDescription">Наши запасы топлива исчерпаны и мы не можем продолжать путешествие. Следующий корабль снабжения с родной планеты прилетит через</string>
     <string name="SpeedUp">Ускорить</string>
-    <string name="LoadDatabase">Загрузить дополнение</string>
+    <string name="LoadDatabase">Загрузить внешнюю датабазу</string>
+    <string name="ReloadMod">Обновить датабазу</string>
+    <string name="RestoreDatabase">Восстановить датабазу</string>
+    <string name="DatabaseLoaded">Датабаза загружена успешно</string>
+    <string name="DatabaseLoadingError">Ошибка: $1</string>
+    <string name="DailyReward">Ежедневная награда</string>
     <string name="TakeMission">Взять задание</string>
     <string name="Reputation">Ваша репутация:</string>
 </resources>

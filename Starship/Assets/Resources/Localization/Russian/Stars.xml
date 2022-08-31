@@ -18,6 +18,7 @@
     <string name="ObjectSurvival">Выживание</string>
     <string name="ObjectBoss">Флагман</string>
     <string name="ObjectWormhole">Червоточина</string>
+    <string name="ObjectMultiplayer">Мультиплеер</string>
     <string name="ObjectArena">Арена</string>
     <string name="ObjectChallenge">Вызов</string>
     <string name="ObjectBlackMarket">База контрабандистов</string>

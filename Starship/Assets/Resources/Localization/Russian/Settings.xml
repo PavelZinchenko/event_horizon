@@ -11,12 +11,12 @@
     <string name="MenuCombat">Быстрый бой</string>
     <string name="MenuSettings">Настройки</string>
     <string name="Settings">Настройки</string>
-    <string name="DeleteSavedGameText">Если вы хотите начать игру с начала, нажмите эту кнопку, и ваш прогресс будет удален.</string>
+    <string name="DeleteSavedGameText">Если вы хотите начать игру с начала, нажмите эту кнопку - ваш прогресс будет удален!</string>
     <string name="DeleteConfirmationText">Вы точно хотите начать игру сначала? (Ваши покупки сохранятся)</string>
     <string name="RefreshGames">Обновить</string>
     <string name="Configure">Настроить</string>
     <string name="PowerSavingMode">Режим экономии энергии</string>
-    <string name="RunInBackground">Продолжать работу когда окно не активно</string>
+    <string name="RunInBackground">Продолжать работу, когда окно не активно</string>
     <string name="QuickTravel">Быстрая анимация полета</string>
     <string name="CenterOnPlayer">Игрок всегда в центре</string>
     <string name="CameraZoom">Масштаб</string>
@@ -66,4 +66,13 @@
     <string name="LoadModConfirmation">Вы точно хотите продолжить? У каждой модификации свой файл сохранения</string>
     <string name="ResolutionLabel">Разрешение:</string>
     <string name="WindowedMode">в окне</string>
+    <string name="KeyTurnLeft">Поворот Налево</string>
+    <string name="KeyTurnRight">Поворот Направо</string>
+    <string name="KeyForward">Движение Вперед</string>
+    <string name="KeyAction1">Действие 1</string>
+    <string name="KeyAction2">Действие 2</string>
+    <string name="KeyAction3">Действие 3</string>
+    <string name="KeyAction4">Действие 4</string>
+    <string name="KeyAction5">Действие 5</string>
+    <string name="KeyAction6">Действие 6</string>
 </resources>
