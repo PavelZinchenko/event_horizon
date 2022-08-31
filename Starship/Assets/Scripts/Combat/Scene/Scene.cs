@@ -224,31 +224,34 @@ namespace Combat.Scene
                     var changed = false;
 
                     var position = unit.Body.Position;
+                    var offset = new Vector2();
 
-                    if (position.x - center.x > 0.5f * _settings.AreaWidth)
+                    while (position.x + offset.x - center.x > 0.5f * _settings.AreaWidth)
                     {
-                        position.x -= _settings.AreaWidth;
+                        offset.x -= _settings.AreaWidth;
                         changed = true;
                     }
-                    else if (position.x - center.x < -0.5f * _settings.AreaWidth)
+                    while (position.x + offset.x - center.x < -0.5f * _settings.AreaWidth)
                     {
-                        position.x += _settings.AreaWidth;
+                        offset.x += _settings.AreaWidth;
                         changed = true;
                     }
 
-                    if (position.y - center.y > 0.5f * _settings.AreaHeight)
+                    while (position.y + offset.y - center.y > 0.5f * _settings.AreaHeight)
                     {
-                        position.y -= _settings.AreaHeight;
+                        offset.y -= _settings.AreaHeight;
                         changed = true;
                     }
-                    else if (position.y - center.y < -0.5f * _settings.AreaHeight)
+                    while (position.y + offset.y - center.y < -0.5f * _settings.AreaHeight)
                     {
-                        position.y += _settings.AreaHeight;
+                        offset.y += _settings.AreaHeight;
                         changed = true;
                     }
 
                     if (changed)
-                        unit.Body.Move(position);
+                    {
+                        unit.Body.ShiftWithDependants(offset);
+                    }
                 }
             }
         }

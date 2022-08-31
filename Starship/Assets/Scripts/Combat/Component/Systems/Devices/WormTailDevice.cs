@@ -1,19 +1,24 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Combat.Collision;
+using Combat.Component.Body;
+using Combat.Component.Ship;
 using Combat.Component.Stats;
 using Combat.Component.Unit;
 using GameDatabase.DataModel;
 using GameDatabase.Model;
+using UnityEditor.MemoryProfiler;
 
 namespace Combat.Component.Systems.Devices
 {
     public class WormTailDevice : SystemBase, IDevice, IStatsModification
     {
-        public WormTailDevice(DeviceStats deviceSpec, IEnumerable<WormSegment> wormTail)
+        public WormTailDevice(IShip ship, DeviceStats deviceSpec, IEnumerable<WormSegment> wormTail)
             : base(-1, SpriteId.Empty)
         {
             _units = new List<WormSegment>(wormTail);
             _size = _units.Count;
+            AddDependants(ship.Body, _units);
         }
 
         public override float ActivationCost { get { return 0f; } }
@@ -49,6 +54,24 @@ namespace Combat.Component.Systems.Devices
 
         protected override void OnDispose() { }
 
+
+        private static void AddDependants(IBody parent, IEnumerable<WormSegment> segments)
+        {
+            if (!Dependencies.TryGetValue(parent, out var dependants))
+            {
+                dependants = new List<WeakReference<IBody>>();
+                Dependencies.Add(parent, dependants);
+            }
+            foreach (var wormSegment in segments)
+            {
+                dependants.Add(new WeakReference<IBody>(wormSegment.Body));
+            }
+        }
+        
+        // TODO: This is a dirty hack to avoid rework of the whole body system
+        // This should be converted in an actual parameter of the body system later on
+        public static readonly ConditionalWeakTable<IBody, IList<WeakReference<IBody>>> Dependencies =
+            new ConditionalWeakTable<IBody, IList<WeakReference<IBody>>>();
         private float _updateCooldown;
         private readonly int _size;
         private readonly List<WormSegment> _units;
