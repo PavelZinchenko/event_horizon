@@ -28,7 +28,7 @@ namespace GameServices.Quests
             QuestListChangedSignal.Trigger questListChangedTrigger,
             QuestEventSignal questEventSignal,
             StarContentChangedSignal.Trigger starContentChangedTrigger,
-            SessionDataLoadedSignal dataLoadedSignal, 
+            SessionDataLoadedSignal dataLoadedSignal,
             SessionCreatedSignal sessionCreatedSignal)
             : base(dataLoadedSignal, sessionCreatedSignal)
 	    {
@@ -136,7 +136,9 @@ namespace GameServices.Quests
 	    public void StartQuest(QuestModel questModel)
 	    {
 	        var starId = _session.StarMap.PlayerPosition;
-	        var seed = _session.Game.Seed + starId;
+
+            // TODO, make option to mod this.
+            var seed = new System.Random().Next();
 
 	        if (questModel.StartCondition != StartCondition.Manual)
 	        {
@@ -356,7 +358,7 @@ namespace GameServices.Quests
                 _quests.AddRange(quests.Select(item => new QuestInfo
                 {
 					QuestGiver = factory.CreateQuestGiver(item.Origin),
-                    Requirements = factory.CreateForQuest(item.Requirement, seed + item.Id.Value), 
+                    Requirements = factory.CreateForQuest(item.Requirement, seed + item.Id.Value),
                     Quest = item
                 }));
             }
