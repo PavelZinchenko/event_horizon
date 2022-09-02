@@ -2,15 +2,23 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
+using GameDatabase;
+using GameDatabase.DataModel;
+using GameDatabase.Model;
 using GameServices.Settings;
+using Session;
 using UnityEngine.Assertions;
 using Zenject;
+using Component = GameDatabase.DataModel.Component;
 
 namespace Services.Localization
 {
 	public class LocalizationManager : ILocalization
 	{
+		[Inject] private ISessionData _sessionData;
+		[Inject] private IDatabase _database;
         [Inject]
 	    public LocalizationManager(GameSettings gameSettings)
         {
@@ -24,7 +32,15 @@ namespace Services.Localization
 	        LoadDefault();
 	    }
 
-		public string GetString(string key, params object[] parameters)
+	    public string GetString(string key, params object[] parameters)
+	    {
+		    var data = GetRawString(key, parameters);
+		    
+		    ApplyInjections(ref data);
+		    return data;
+	    }
+		
+		private string GetRawString(string key, params object[] parameters)
 		{
 		    try
 		    {
@@ -256,6 +272,51 @@ namespace Services.Localization
 				_pluralForms.Add(PluralForm.FromString(item));
 		}
 
+
+        private void ApplyInjections(ref string text)
+        {
+	        if (_sessionData == null)
+	        {
+		        text = FormatterRegex.Replace(text, "!!!Session is not initialized!!!");
+		        return;
+	        }
+	        if (_database == null)
+	        {
+		        text = FormatterRegex.Replace(text, "!!!Database is not initialized!!!");
+		        return;
+	        }
+	        text = FormatterRegex.Replace(text, FormatOneGroup);
+        }
+
+        private string FormatOneGroup(Match match)
+        {
+	        var type = match.Groups[1].Value;
+	        var id = int.Parse(match.Groups[2].Value);
+	        switch (type)
+	        {
+		        case "rep":
+			        if (_database.GetCharacter(new ItemId<Character>(id)) == Character.DefaultValue)
+			        {
+				        return $"!!!Character with id {id} was not found!!!";
+			        }
+			        return _sessionData.Quests.GetCharacterRelations(id).ToString();
+		        case "item":
+			        if (_database.GetQuestItem(new ItemId<QuestItem>(id)) == QuestItem.DefaultValue)
+			        {
+				        return $"!!!Quest item with id {id} was not found!!!";
+			        }
+			        return _sessionData.Resources.Resources.GetQuantity(id).ToString();
+		        case "comp":
+			        if (_database.GetComponent(new ItemId<Component>(id)) == Component.DefaultValue)
+			        {
+				        return $"!!!Component with id {id} was not found!!!";
+			        }
+			        return _sessionData.Inventory.Components.GetQuantity(id).ToString();
+		        default:
+			        throw new Exception(
+				        $"Invalid request type encountered, got {type} where rep, item or comp was expected");
+	        }
+        }
 		private void Awake()
 		{
 			Reload();
@@ -322,7 +383,8 @@ namespace Services.Localization
 		private Dictionary<string, string> _keys = new Dictionary<string, string>();
 		private const char SpecialChar = '$';
 	    private GameSettings _gameSettings;
-
+	    
+	    private static readonly Regex FormatterRegex = new Regex(@"\$(rep|item|comp)\{(\d+)\}");
 	    private const string _defaultLanguage = "English";
         private readonly LocalizationManager _defaultLocalization;
 	}
