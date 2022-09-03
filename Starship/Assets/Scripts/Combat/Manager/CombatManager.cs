@@ -205,6 +205,7 @@ namespace Combat.Manager
         {
             if (!CanCallNextEnemy())
                 return;
+            _nextShipCooldown = 0;
 
             var shipInfo = _combatModel.EnemyFleet.Ships.FirstOrDefault(item => item.Status == ShipStatus.Ready);
             if (shipInfo == null)
