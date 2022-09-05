@@ -29,6 +29,10 @@ namespace Utils
             return (int)Math.Floor(Math.Log10(Math.Abs(value)) + 1);
         }
 
+        public static string ToSignedInGameString(this double val)
+        {
+            return (val > 0 ? "+" : "") + ToInGameString(val);
+        }
         public static string ToInGameString(this double val)
         {
             if (val < 1e5) return Math.Floor(val).ToString();

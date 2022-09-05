@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using Constructor;
+using Utils;
 
 namespace ViewModel
 {
@@ -50,10 +51,10 @@ namespace ViewModel
 
         public void UpdateStats(Constructor.IShipSpecification spec)
 		{
-			HitPointsSummaryText.text = RoundToInt(spec.Stats.ArmorPoints);
+			HitPointsSummaryText.text = Mathd.ToInGameString(spec.Stats.ArmorPoints);
             HitPointsSummaryText.color = spec.Stats.ArmorPoints > 0 ? NormalColor : ErrorColor;
 
-            EnergySummaryText.text = RoundToInt(spec.Stats.EnergyPoints) + " [" +  RoundToInt(spec.Stats.EnergyRechargeRate, true) + "]";
+            EnergySummaryText.text = Mathd.ToInGameString(spec.Stats.EnergyPoints) + " [" +  Mathd.ToSignedInGameString(spec.Stats.EnergyRechargeRate) + "]";
 			EnergySummaryText.color = spec.Stats.EnergyRechargeRate > 0 ? NormalColor : ErrorColor;
 			VelocitySummaryText.text = spec.Stats.EnginePower.ToString("N1") + " / " + spec.Stats.TurnRate.ToString("N1");
 			VelocitySummaryText.color = spec.Stats.EnginePower > 0 ? NormalColor : ErrorColor;
