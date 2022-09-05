@@ -88,8 +88,9 @@ namespace Combat.Manager
                     var position = _scene.FindFreePlace(20f, UnitSide.Undefined);
 
                     var weight = size * size * 5f;
-                    var hitPoints = size * size * 100 * powerMultiplier;
-                    var damageMultiplier = powerMultiplier;
+                    var powerMult = _combatModel.Rules.DisableBonusses ? 1 : powerMultiplier;
+                    var hitPoints = size * size * 100 * powerMult;
+                    var damageMultiplier = powerMult;
 
                     var velocity = Random.insideUnitCircle * 10 / size;
                     _spaceObjectFactory.CreateAsteroid(position, velocity, size, weight, hitPoints, damageMultiplier);
