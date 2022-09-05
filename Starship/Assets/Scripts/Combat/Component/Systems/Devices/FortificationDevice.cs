@@ -15,6 +15,8 @@ namespace Combat.Component.Systems.Devices
             MaxCooldown = deviceSpec.Cooldown;
 
             _activeColor = deviceSpec.Color;
+            _power = deviceSpec.Power;
+            if (_power == 0) _power = 0.5f;
         }
 
         public override IStatsModification StatsModification => this;
@@ -23,9 +25,10 @@ namespace Combat.Component.Systems.Devices
         {
             if (IsEnabled)
             {
-                data.Energy = 0.5f + data.Energy * 0.5f;
-                data.Heat = 0.5f + data.Heat * 0.5f;
-                data.Kinetic = 0.5f + data.Kinetic * 0.5f;
+                var multiplier = _power > 1 ? 0 : 1 - _power;
+                data.Energy = _power + data.Energy * multiplier;
+                data.Heat = _power + data.Heat * multiplier;
+                data.Kinetic = _power + data.Kinetic * multiplier;
             }
 
             return true;
@@ -49,5 +52,6 @@ namespace Combat.Component.Systems.Devices
 
         private Color _color = Color.white;
         private readonly Color _activeColor;
+        private readonly float _power;
     }
 }
