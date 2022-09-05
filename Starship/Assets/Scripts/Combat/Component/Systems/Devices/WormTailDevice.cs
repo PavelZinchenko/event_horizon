@@ -7,7 +7,6 @@ using Combat.Component.Stats;
 using Combat.Component.Unit;
 using GameDatabase.DataModel;
 using GameDatabase.Model;
-using UnityEditor.MemoryProfiler;
 
 namespace Combat.Component.Systems.Devices
 {
