@@ -81,6 +81,7 @@ namespace Combat.Component.Collider
         {
             Unit = null;
             _activeCollision = null;
+            _cachedColliders = null;
             _recentTrigger = null;
             Enabled = true;
             _activeCollisions.Clear();
