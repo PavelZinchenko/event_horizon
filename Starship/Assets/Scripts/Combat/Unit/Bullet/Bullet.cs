@@ -147,12 +147,9 @@ namespace Combat.Component.Bullet
         private void Disarm()
         {
             InvokeActions(ConditionType.OnDisarm);
-            var effect = InvokeActions(ConditionType.OnExpire);
-
-            if (effect == CollisionEffect.Destroy)
-                Detonate();
-            else
-                Destroy();
+            
+            if (State == UnitState.Active)
+                State = UnitState.Destroyed;
         }
 
         private void Destroy()
