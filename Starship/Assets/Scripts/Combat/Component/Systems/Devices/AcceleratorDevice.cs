@@ -11,7 +11,6 @@ namespace Combat.Component.Systems.Devices
             : base(keyBinding,
                 deviceSpec.ControlButtonIcon, ship,
                 deviceSpec.Lifetime,
-                deviceSpec.EnergyConsumption,
                 deviceSpec.EnergyConsumption)
         {
             MaxCooldown = deviceSpec.Cooldown;
