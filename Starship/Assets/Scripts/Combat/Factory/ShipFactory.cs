@@ -227,9 +227,9 @@ namespace Combat.Factory
                     gameObject.AddComponent<CircleCollider2D>();
                 else
                 {
-                    gameObject.AddComponent<PolygonCollider2D>();
+                    var collider = gameObject.AddComponent<PolygonCollider2D>();
                     // TODO: make this constant into a mod option
-                    gameObject.AddComponent<RuntimePolygonColliderOptimizer>().tolerance = 0.02f;
+                    collider.Optimize(0.02f);
                 }
             }
 

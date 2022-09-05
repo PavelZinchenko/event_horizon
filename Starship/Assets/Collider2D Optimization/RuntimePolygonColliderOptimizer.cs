@@ -48,7 +48,7 @@ namespace Collider2DOptimization{
 				coll.SetPath(i, path.ToArray());
 			}
 		}
-		
+
 		private void Start()
 		{
 			Optimize();
@@ -58,6 +58,27 @@ namespace Collider2DOptimization{
 		{
 			if (Math.Abs(tolerance - lastTolerance) < 0.001) return;
 			Optimize();
+		}
+	}
+
+	public static class Collider2dExtension
+	{
+		public static PolygonCollider2D Optimize(this PolygonCollider2D coll, float tolerance)
+		{
+			var originalPaths = new List<List<Vector2>>();
+			for(var i = 0; i < coll.pathCount; i++)
+			{
+				var path = new List<Vector2>(coll.GetPath(i));
+				originalPaths.Add(path);
+			}
+			for(var i = 0; i < originalPaths.Count; i++)
+			{
+				var path = originalPaths[i];
+				path = ShapeOptimizationHelper.DouglasPeuckerReduction(path, tolerance);
+				coll.SetPath(i, path.ToArray());
+			}
+
+			return coll;
 		}
 	}
 }
