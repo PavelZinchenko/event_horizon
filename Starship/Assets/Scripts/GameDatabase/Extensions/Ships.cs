@@ -99,6 +99,10 @@ namespace GameDatabase.Extensions
         {
             return ships.Where(item => item.Ship.SizeClass <= maxSize && item.Ship.SizeClass >= minSize);
         }
+        public static IEnumerable<ShipBuild> OfCategory(this IEnumerable<ShipBuild> ships, ShipCategory category)
+        {
+            return ships.Where(item => item.Ship.ShipCategory == category);
+        }
 
         public static IEnumerable<ShipBuild> LessOrEqualClass(this IEnumerable<ShipBuild> ships,
             DifficultyClass shipClass)
