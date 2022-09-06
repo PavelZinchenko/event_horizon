@@ -122,16 +122,24 @@ namespace Constructor
 
         public override bool Equals(object obj)
         {
-            if (obj == null || !(obj is ComponentInfo))
+            if (!(obj is ComponentInfo info))
                 return false;
-            return Equals((ComponentInfo)obj);
+            return Equals(info);
         }
 
         public override int GetHashCode()
         {
-            return Data.Id.GetHashCode() + (int)_quality + (int)_modificationType;
+            unchecked
+            {
+                var hashCode = _data?.GetHashCode() ?? 0;
+                hashCode = (hashCode * 397) ^ (int)_modificationType;
+                hashCode = (hashCode * 397) ^ (int)_quality;
+                hashCode = (hashCode * 397) ^ _level;
+                return hashCode;
+            }
         }
 
+        
         public int SerializeToInt32Obsolete() // 30 bits used
         {
             #if UNITY_EDITOR
