@@ -28,6 +28,12 @@ namespace GameModel
 			{
 				Size = RegionLayout.RegionFourthSize*2 - 1;// Game.Data.RandomInt(id, 1, RegionLayout.RegionMaxSize);
 			}
+			
+			// If session have data about faction ID stored, we clear any faction that might've been set during initialization
+			if (_session.Regions.GetRegionFactionId(Id) != Faction.Undefined.Id)
+			{
+				_faction = Faction.Undefined;
+			}
 
 			_defeatedFleetCount = _session.Regions.GetDefeatedFleetCount(Id);
 			_isCaptured = Id == PlayerHomeRegionId || _session.Regions.IsRegionCaptured(Id);
@@ -105,7 +111,7 @@ namespace GameModel
 			    if (factionId != Faction.Undefined.Id)
 			    {
 			        var faction = _database.GetFaction(factionId);
-			        if (faction != Faction.Undefined && !faction.Hidden)
+			        if (faction != Faction.Undefined)
 			            return _faction = faction;
 			    }
 
