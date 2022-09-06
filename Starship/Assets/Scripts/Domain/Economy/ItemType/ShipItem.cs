@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using GameServices.Player;
 using Services.Localization;
 using Constructor.Ships;
@@ -11,17 +14,20 @@ namespace Economy.ItemType
     public class ShipItem : IItemType
     {
         [Inject]
-        public ShipItem(PlayerFleet playerFleet, ILocalization localization, IShip ship, bool premium = false)
+        public ShipItem(PlayerFleet playerFleet, ILocalization localization, ItemTypeFactory itemTypeFactory, IShip ship, bool premium = false,
+            bool fuzzy = false)
         {
             _localization = localization;
             _playerFleet = playerFleet;
             _ship = ship;
             _premium = premium;
+            _fuzzy = fuzzy;
+            _itemTypeFactory = itemTypeFactory;
         }
 
-        public int Rank { get { return _ship.Experience.Level; } }
+        public int Rank => _ship.Experience.Level;
 
-        public string Id { get { return "sh" + _ship.Id; } }
+        public string Id => "sh" + _ship.Id;
 
         public string Name
         {
@@ -57,10 +63,19 @@ namespace Economy.ItemType
             }
         }
 
-        public Sprite GetIcon(IResourceLocator resourceLocator) { return resourceLocator.GetSprite(_ship.Model.ModelImage); }
-        public Price Price { get { return _premium ? Price.Premium(((int)_ship.Model.Category + 1) * _ship.Model.Layout.CellCount / 5) : Price.Common(_ship.Price()); } }
-        public Color Color { get { return Color.white; } }
-        public ItemQuality Quality { get { return _ship.Model.Quality(); } }
+        public Sprite GetIcon(IResourceLocator resourceLocator)
+        {
+            return resourceLocator.GetSprite(_ship.Model.ModelImage);
+        }
+
+        public Price Price =>
+            _premium
+                ? Price.Premium(((int)_ship.Model.Category + 1) * _ship.Model.Layout.CellCount / 5)
+                : Price.Common(_ship.Price());
+
+        public Color Color => Color.white;
+
+        public ItemQuality Quality => _ship.Model.Quality();
 
         public void Consume(int amount)
         {
@@ -70,18 +85,70 @@ namespace Economy.ItemType
 
         public void Withdraw(int amount)
         {
-            _playerFleet.Ships.Remove(_ship);
+            if (!_fuzzy)
+            {
+                Strip(_ship);
+                _playerFleet.Ships.Remove(_ship);
+            }
+            else
+            {
+                var ships = new List<IShip>();
+                foreach (var ship in _playerFleet.Ships)
+                {
+                    if (ship.Id == _ship.Id) ships.Add(ship);
+                }
+
+                // Removing ships with lower XP level first
+                ships.Sort((a, b) => Math.Sign(a.Experience - b.Experience));
+                for (var i = 0; i < amount && i < ships.Count; i++)
+                {
+                    Strip(ships[i]);
+                    _playerFleet.Ships.Remove(ships[i]);
+                }
+            }
         }
 
-        public int MaxItemsToConsume { get { return int.MaxValue; } }
-        public int MaxItemsToWithdraw { get { return 0; } }
+        private void Strip(IShip ship)
+        {
+            foreach (var component in ship.ComponentCounts(true))
+            {
+                _itemTypeFactory.CreateComponentItem(component.Key).Consume(component.Value);
+            }
+            
+            for (var i = 0; i < ship.Components.Count; i++)
+            {
+                var component = ship.Components[i];
+                if (!component.Locked) ship.Components.RemoveAt(i);
+                i--;
+            }
+        }
 
-        public IShip Ship { get { return _ship; } }
+        public int MaxItemsToConsume => int.MaxValue;
+
+        public int MaxItemsToWithdraw
+        {
+            get
+            {
+                if (!_fuzzy) return 0;
+                var count = 0;
+                var id = _ship.Id;
+                foreach (var ship in _playerFleet.Ships)
+                {
+                    if (ship.Id == id) count++;
+                }
+
+                return count;
+            }
+        }
+
+        public IShip Ship => _ship;
 
         private string _name;
         private string _description;
         private readonly IShip _ship;
         private readonly bool _premium;
+        private readonly bool _fuzzy;
+        private readonly ItemTypeFactory _itemTypeFactory;
         private readonly PlayerFleet _playerFleet;
         private readonly ILocalization _localization;
     }

@@ -24,9 +24,9 @@ namespace Economy.ItemType
             return _container.Instantiate<EmptyShipItem>(new object[] { ship });
         }
 
-        public IItemType CreateShipItem(IShip ship, bool premium = false)
+        public IItemType CreateShipItem(IShip ship, bool premium = false, bool fuzzy = false)
         {
-            return _container.Instantiate<ShipItem>(new object[] { ship, premium });
+            return _container.Instantiate<ShipItem>(new object[] { this, ship, premium, fuzzy });
         }
 
         public IItemType CreateDamagedShipItem(ShipBuild build, int seed)
