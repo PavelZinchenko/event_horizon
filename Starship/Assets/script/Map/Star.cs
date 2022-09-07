@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Galaxy;
@@ -5,6 +6,7 @@ using GameServices.Player;
 using Services.Localization;
 using Services.ObjectPool;
 using Zenject;
+using Random = UnityEngine.Random;
 
 public class Star : MonoBehaviour
 {
@@ -204,7 +206,7 @@ public class Star : MonoBehaviour
 
 	void Update()
 	{
-		var size = Camera.main.orthographicSize;
+		var size = _mainCamera.orthographicSize;
 
 	    State state;
 		if (size >= SwitchToGalaxyDistance)
@@ -349,10 +351,16 @@ public class Star : MonoBehaviour
 		return color;
 	}
 
-    private bool _showMiniStarOnGalaxyMap;
+	private void Start()
+	{
+		_mainCamera = Camera.main;
+	}
+
+	private bool _showMiniStarOnGalaxyMap;
     private Vector3 _miniObjectScale;
     private int _starId;
 	private float _scale;
 	private float _blinkSpeed;
 	private State _state;
+	private Camera _mainCamera;
 }
