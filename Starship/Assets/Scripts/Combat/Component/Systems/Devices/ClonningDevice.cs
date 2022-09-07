@@ -23,7 +23,22 @@ namespace Combat.Component.Systems.Devices
 
             _shipFactory = shipFactory;
             _mothership = mothership;
-            _shipSpec = shipSpec;
+            _offset = stats.Offset; 
+            if (stats.Power > 0)
+            {
+                var power = stats.Power;
+                var oldBonus = shipSpec.Stats.Bonuses;
+                _shipSpec = shipSpec.CopyWithStats(shipSpec.Stats.CopyWithBonuses(oldBonus.CopyWith(
+                    damageMultiplier: oldBonus.DamageMultiplier * power,
+                    armorPointsMultiplier: oldBonus.ArmorPointsMultiplier * power,
+                    shieldPointsMultiplier: oldBonus.ShieldPointsMultiplier * power,
+                    rammingDamageMultiplier: oldBonus.RammingDamageMultiplier * power
+                )));
+            }
+            else
+            {
+                _shipSpec = shipSpec;
+            }
  
             _energyCost = stats.EnergyConsumption;
         }
@@ -64,6 +79,7 @@ namespace Combat.Component.Systems.Devices
             var position = _mothership.Body.WorldPosition() + _mothership.Body.Scale*direction;
             _clone = _shipFactory.CreateClone(_shipSpec, position, rotation, _mothership);
             _clone.Body.ApplyAcceleration(_mothership.Body.Velocity);
+            _clone.Body.ShiftWithDependants(RotationHelpers.Transform(_offset * _mothership.Body.Scale, _mothership.Body.Rotation));
 
             _effectFactory.CreateEffect(_effectPrefab, _clone.Body)?.Run(0.5f, Vector2.zero, 0);
         }
@@ -77,5 +93,6 @@ namespace Combat.Component.Systems.Devices
         private readonly ShipFactory _shipFactory;
         private readonly IShip _mothership;
         private readonly float _energyCost;
+        private readonly Vector2 _offset;
     }
 }

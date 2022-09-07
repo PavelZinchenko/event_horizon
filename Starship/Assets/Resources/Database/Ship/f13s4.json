@@ -19,16 +19,16 @@
     {
       "Position": {
         "x": 0.5,
-        "y": -0.35
+        "y": 0.35
       },
-      "WeaponClass": "C"
+      "WeaponClass": "M"
     },
     {
       "Position": {
         "x": 0.5,
-        "y": 0.35
+        "y": -0.35
       },
-      "WeaponClass": "M"
+      "WeaponClass": "C"
     }
   ]
 }

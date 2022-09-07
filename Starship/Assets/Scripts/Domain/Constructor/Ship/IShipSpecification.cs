@@ -13,6 +13,8 @@ namespace Constructor
 		IEnumerable<IWeaponPlatformData> Platforms { get; }
 		IEnumerable<IDeviceData> Devices { get; }
 		IEnumerable<IDroneBayData> DroneBays { get; }
+
+		IShipSpecification CopyWithStats(Model.IShipStats stats);
 	}
 
     public struct ShipType

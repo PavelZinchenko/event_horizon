@@ -28,9 +28,39 @@ namespace Model
 				var random = new Random(seed);
 				var count = Maths.Distance.FleetSize(distance, random) - 1;
 				var bossClass = distance > 50 ? DifficultyClass.Class2 : DifficultyClass.Class1;
+
+				// First try to get flagship of requested faction
+				var boss = database.ShipBuildList.Available().Flagships().OfFaction(faction, distance)
+					.OfClass(DifficultyClass.Class1, bossClass).RandomElement(random);
+				// Then flagship of any faction
+				boss = boss ?? database.ShipBuildList.Available().Flagships().OfClass(DifficultyClass.Class1, bossClass).RandomElement(random);
+				// Then just a random flagship
+				boss = boss ?? database.ShipBuildList.Available().Flagships().RandomElement(random);
 				
-				var boss = database.ShipBuildList.Available().Flagships().OfFaction(faction,distance).OfClass(DifficultyClass.Class1, bossClass).RandomElement(random) ??
-                   database.ShipBuildList.Available().Flagships().OfClass(DifficultyClass.Class1, bossClass).RandomElement(random);
+				// Try starbases next
+				boss = boss ?? database.ShipBuildList.Available().OfFaction(faction).OfCategory(ShipCategory.Starbase)
+					.RandomElement(random);
+				boss = boss ?? database.ShipBuildList.Available().OfCategory(ShipCategory.Starbase)
+					.RandomElement(random);
+				
+				// Then try all ship sizes until one of them work
+				if (boss == null)
+				{
+					foreach (SizeClass sizeClass in Enum.GetValues(typeof(SizeClass)))
+					{
+						boss = database.ShipBuildList.Available().OfFaction(faction, distance)
+							.OfSize(sizeClass, sizeClass).NormalShips().RandomElement(random);
+						boss = boss ?? database.ShipBuildList.Available().OfSize(sizeClass, sizeClass).NormalShips()
+							.RandomElement(random);
+						if (boss != null) break;
+					}
+				}
+
+				// And then error is thrown
+				if (boss == null)
+				{
+					throw new Exception("No boss found");
+				}
 
 				var ships = database.ShipBuildList.Available().NormalShips().OfFaction(faction,distance).LimitLevelAndClass(distance).RandomElements(count, random).OrderBy(item => random.Next());
 				return new CommonFleet(database, ships.Prepend(boss), distance, random.Next());

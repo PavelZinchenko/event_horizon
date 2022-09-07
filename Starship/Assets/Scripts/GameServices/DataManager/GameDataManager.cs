@@ -14,6 +14,8 @@ namespace GameServices.GameManager
 {
     public class GameDataManager : MonoBehaviour, IGameDataManager
     {
+        [Inject] private readonly GuiHelper _guiHelper;
+        
         [Inject]
         private void Initialize(
             IDataStorage localStorage,
@@ -23,7 +25,6 @@ namespace GameServices.GameManager
             ISessionData sessionData,
             GameSettings gameSettings,
             IDatabase database,
-            ShowMessageSignal.Trigger showMessageTrigger,
             SceneLoadedSignal sceneLoadedSignal,
             SessionAboutToSaveSignal.Trigger sessionAboutToSaveTrigger)
         {
@@ -34,7 +35,6 @@ namespace GameServices.GameManager
             _levelLoader = levelLoader;
             _sessionData = sessionData;
             _gameSettings = gameSettings;
-            _showMessageTrigger = showMessageTrigger;
             _sceneLoadedSignal = sceneLoadedSignal;
             _sessionAboutToSaveTrigger = sessionAboutToSaveTrigger;
 
@@ -68,11 +68,11 @@ namespace GameServices.GameManager
                     _sessionData.CreateNewGame(_database.Id);
 
                 _gameSettings.ActiveMod = _database.Id;
-                _showMessageTrigger.Fire(_localization.GetString("$DatabaseLoaded"));
+                _guiHelper.ShowMessage(_localization.GetString("$DatabaseLoaded"));
             }
             catch (Exception e)
             {
-                _showMessageTrigger.Fire(_localization.GetString("$DatabaseLoadingError", e.Message));
+                _guiHelper.ShowConfirmation(_localization.GetString("$DatabaseLoadingError", e.Message), () => { });
                 _database.LoadDefault();
                 if (!_localStorage.TryLoad(_sessionData, string.Empty))
                     _sessionData.CreateNewGame(string.Empty);
@@ -193,7 +193,6 @@ namespace GameServices.GameManager
         private GameSettings _gameSettings;
         private SceneLoadedSignal _sceneLoadedSignal;
         private SessionAboutToSaveSignal.Trigger _sessionAboutToSaveTrigger;
-        private ShowMessageSignal.Trigger _showMessageTrigger;
         private IDatabase _database;
 
         private float _autoSaveTime;

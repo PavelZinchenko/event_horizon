@@ -26,9 +26,13 @@ namespace Utils
         private static int DigitsInDouble(double value)
         {
             if (value == 0 || value == 1) return 1;
-            return (int) Math.Floor(Math.Log10(Math.Abs(value)) + 1);
+            return (int)Math.Floor(Math.Log10(Math.Abs(value)) + 1);
         }
 
+        public static string ToSignedInGameString(this double val)
+        {
+            return (val > 0 ? "+" : "") + ToInGameString(val);
+        }
         public static string ToInGameString(this double val)
         {
             if (val < 1e5) return Math.Floor(val).ToString();
@@ -56,6 +60,30 @@ namespace Utils
             }
 
             return Math.Round(val) + ending;
+        }
+
+        /// <summary>
+        /// Rounds provided value to int, or returns <c>fallback</c> if out of bounds
+        /// </summary>
+        /// <param name="value">value to round</param>
+        /// <param name="fallback">fallback value</param>
+        /// <returns>rounded int or fallback value</returns>
+        public static int RoundToIntChecked(this double value, int fallback)
+        {
+            if (value > int.MaxValue || value < int.MinValue) return fallback;
+            return (int)Math.Round(value);
+        }
+
+        /// <summary>
+        /// Rounds provided value to int, respecting int boundaries
+        /// </summary>
+        /// <param name="value">value to round</param>
+        /// <returns>rounded int or fallback value</returns>
+        public static int RoundToIntChecked(this double value)
+        {
+            if (value >= int.MaxValue) return int.MaxValue;
+            if (value <= int.MinValue) return int.MinValue;
+            return (int)Math.Round(value);
         }
     }
 }

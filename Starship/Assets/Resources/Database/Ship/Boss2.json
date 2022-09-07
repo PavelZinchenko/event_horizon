@@ -24,31 +24,10 @@
     },
     {
       "Position": {
-        "x": -0.3,
-        "y": -0.86
+        "x": 0.54,
+        "y": 0.38
       },
       "WeaponClass": "M"
-    },
-    {
-      "Position": {
-        "x": -0.3,
-        "y": 0.86
-      },
-      "WeaponClass": "M"
-    },
-    {
-      "Position": {
-        "x": 0.16,
-        "y": -0.64
-      },
-      "WeaponClass": "MT"
-    },
-    {
-      "Position": {
-        "x": 0.16,
-        "y": 0.64
-      },
-      "WeaponClass": "MT"
     },
     {
       "Position": {
@@ -59,8 +38,29 @@
     },
     {
       "Position": {
-        "x": 0.54,
-        "y": 0.38
+        "x": 0.16,
+        "y": 0.64
+      },
+      "WeaponClass": "MT"
+    },
+    {
+      "Position": {
+        "x": 0.16,
+        "y": -0.64
+      },
+      "WeaponClass": "MT"
+    },
+    {
+      "Position": {
+        "x": -0.3,
+        "y": 0.86
+      },
+      "WeaponClass": "M"
+    },
+    {
+      "Position": {
+        "x": -0.3,
+        "y": -0.86
       },
       "WeaponClass": "M"
     }

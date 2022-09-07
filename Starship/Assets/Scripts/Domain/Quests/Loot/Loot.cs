@@ -201,12 +201,13 @@ namespace Domain.Quests
 
         public IEnumerable<LootItem> Create(LootContent_Ship content)
         {
-            yield return new LootItem(_itemTypeFactory.CreateShipItem(new CommonShip(content.ShipBuild)));
+            yield return new LootItem(_itemTypeFactory.CreateShipItem(new CommonShip(content.ShipBuild), fuzzy: true));
         }
 
         public IEnumerable<LootItem> Create(LootContent_EmptyShip content)
         {
-            yield return new LootItem(_itemTypeFactory.CreateShipItem(new CommonShip(content.Ship, Enumerable.Empty<IntegratedComponent>())));
+            yield return new LootItem(_itemTypeFactory.CreateShipItem(
+                new CommonShip(content.Ship, Enumerable.Empty<IntegratedComponent>()), fuzzy: true));
         }
 
         public IEnumerable<LootItem> Create(LootContent_Component content)

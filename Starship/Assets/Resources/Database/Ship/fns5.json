@@ -22,21 +22,14 @@
     {
       "Position": {
         "x": 0.6,
-        "y": -0.22
-      },
-      "WeaponClass": "T"
-    },
-    {
-      "Position": {
-        "x": 0.6,
         "y": 0.22
       },
       "WeaponClass": "T"
     },
     {
       "Position": {
-        "x": 0.3,
-        "y": -0.45
+        "x": 0.6,
+        "y": -0.22
       },
       "WeaponClass": "T"
     },
@@ -44,6 +37,13 @@
       "Position": {
         "x": 0.3,
         "y": 0.45
+      },
+      "WeaponClass": "T"
+    },
+    {
+      "Position": {
+        "x": 0.3,
+        "y": -0.45
       },
       "WeaponClass": "T"
     }

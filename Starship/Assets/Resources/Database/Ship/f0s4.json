@@ -18,17 +18,17 @@
     {
       "Position": {
         "x": 1.0,
-        "y": -0.5
+        "y": 0.5
       },
-      "Rotation": -3.0,
+      "Rotation": 3.0,
       "WeaponClass": "L"
     },
     {
       "Position": {
         "x": 1.0,
-        "y": 0.5
+        "y": -0.5
       },
-      "Rotation": 3.0,
+      "Rotation": -3.0,
       "WeaponClass": "L"
     },
     {

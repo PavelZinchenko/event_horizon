@@ -161,6 +161,25 @@ namespace Constructor.Ships
             return ItemQuality.Common;
         }
 
+        public static IDictionary<ComponentInfo, int> ComponentCounts(this IShip ship, bool unlockedOnly = false)
+        {
+            var dict = new Dictionary<ComponentInfo, int>();
+            foreach (var component in ship.Components)
+            {
+                if (unlockedOnly && component.Locked) continue;
+                if (dict.TryGetValue(component.Info, out var count))
+                {
+                    dict[component.Info] = count + 1;
+                }
+                else
+                {
+                    dict[component.Info] = 1;
+                }
+            }
+
+            return dict;
+        }
+
         public static IShip Unlocked(this IShip ship)
         {
             foreach (var item in ship.Components)

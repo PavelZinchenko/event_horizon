@@ -76,13 +76,25 @@ namespace Combat.Scene
             _lastUpdateTime = Time.fixedTime;
         }
 
+        private Vector2 RandomPoint(Vector2 center)
+        {
+            return new Vector2(center.x + _random.Next(-_settings.AreaWidth / 2, _settings.AreaWidth / 2),
+                center.y + _random.Next(-_settings.AreaHeight / 2, _settings.AreaHeight / 2));
+        }
+
         public Vector2 FindFreePlace(float minDistance, UnitSide unitSide)
         {
+            var squaredDistance = minDistance * minDistance;
             var center = _activePlayerShip?.Body.WorldPosition() ?? Vector2.zero;
+            var maxRadius =
+                Math.Sqrt(_settings.AreaWidth * _settings.AreaWidth + _settings.AreaHeight * _settings.AreaHeight) / 2;
+            // If required free area is larger than a field, just return a random point on a map 
+            if (minDistance >= maxRadius)
+                return RandomPoint(center);
 
             for (var i = 0; i < 100; ++i)
             {
-                var position = new Vector2(center.x + _random.Next(-_settings.AreaWidth/2, _settings.AreaWidth / 2), center.y + _random.Next(-_settings.AreaHeight / 2, _settings.AreaHeight / 2));
+                var position = RandomPoint(center);
 
                 var isFree = true;
 
@@ -92,7 +104,7 @@ namespace Combat.Scene
                     {
                         if (ship.Type.Side.IsAlly(unitSide))
                             continue;
-                        if (ship.Body.WorldPosition().Distance(position) >= minDistance)
+                        if (ship.Body.WorldPosition().SqrDistance(position) >= squaredDistance)
                             continue;
 
                         isFree = false;
@@ -104,6 +116,13 @@ namespace Combat.Scene
                     return position;
             }
 
+            // Free space was not found, so spawn ship away from player/center
+            Vector2 targetPos;
+            var tries = 1000;
+            do
+            {
+                targetPos = RandomPoint(center);
+            } while (center.SqrDistance(targetPos) < squaredDistance && tries-- > 0);
             return center;
         }
 
@@ -224,31 +243,34 @@ namespace Combat.Scene
                     var changed = false;
 
                     var position = unit.Body.Position;
+                    var offset = new Vector2();
 
-                    if (position.x - center.x > 0.5f * _settings.AreaWidth)
+                    while (position.x + offset.x - center.x > 0.5f * _settings.AreaWidth)
                     {
-                        position.x -= _settings.AreaWidth;
+                        offset.x -= _settings.AreaWidth;
                         changed = true;
                     }
-                    else if (position.x - center.x < -0.5f * _settings.AreaWidth)
+                    while (position.x + offset.x - center.x < -0.5f * _settings.AreaWidth)
                     {
-                        position.x += _settings.AreaWidth;
+                        offset.x += _settings.AreaWidth;
                         changed = true;
                     }
 
-                    if (position.y - center.y > 0.5f * _settings.AreaHeight)
+                    while (position.y + offset.y - center.y > 0.5f * _settings.AreaHeight)
                     {
-                        position.y -= _settings.AreaHeight;
+                        offset.y -= _settings.AreaHeight;
                         changed = true;
                     }
-                    else if (position.y - center.y < -0.5f * _settings.AreaHeight)
+                    while (position.y + offset.y - center.y < -0.5f * _settings.AreaHeight)
                     {
-                        position.y += _settings.AreaHeight;
+                        offset.y += _settings.AreaHeight;
                         changed = true;
                     }
 
                     if (changed)
-                        unit.Body.Move(position);
+                    {
+                        unit.Body.ShiftWithDependants(offset);
+                    }
                 }
             }
         }

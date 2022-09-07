@@ -125,7 +125,7 @@ namespace Combat.Factory
                     device = new ToxicWaste(ship, stats, _spaceObjectFactory, shipSpec.Stats.DamageMultiplier.Value);
                     break;
                 case DeviceClass.WormTail:
-                    device = new WormTailDevice(stats, _spaceObjectFactory.CreateWormTail(ship, Mathf.FloorToInt(stats.Size), 0.1f,
+                    device = new WormTailDevice(ship, stats, _spaceObjectFactory.CreateWormTail(ship, Mathf.FloorToInt(stats.Size), 0.1f,
                         ship.Stats.Armor.MaxValue * stats.Power, stats.ObjectPrefab, stats.Offset.x, stats.Offset.y, 0.15f, shipSpec.Stats.ShipColor));
                     break;
                 default:
