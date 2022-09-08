@@ -19,7 +19,6 @@ namespace Gui.Combat
             _unit = unit;
 
             Initialize();
-            Update();
             gameObject.SetActive(true);
         }
 
