@@ -275,7 +275,10 @@ namespace Services.Localization
 
         private void ApplyInjections(ref string text)
         {
-	        if (_sessionData == null)
+            if (string.IsNullOrEmpty(text))
+                return;
+
+            if (_sessionData == null)
 	        {
 		        text = FormatterRegex.Replace(text, "!!!Session is not initialized!!!");
 		        return;
