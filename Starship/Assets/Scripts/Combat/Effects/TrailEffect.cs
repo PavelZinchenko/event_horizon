@@ -1,4 +1,5 @@
-﻿using Combat.Services;
+﻿using System;
+using Combat.Services;
 using UnityEngine;
 using Zenject;
 
@@ -14,7 +15,7 @@ namespace Combat.Effects
 
         protected override void OnDispose()
         {
-            if (_trailRenderer != null)
+            if ((object) _trailRenderer != null)
                 _trailRendererPool.ReleaseTrailRenderer(_trailRenderer);
 
             _trailRenderer = null;
@@ -24,7 +25,7 @@ namespace Combat.Effects
 
         protected override void SetColor(Color color)
         {
-            if (_trailRenderer != null)
+            if ((object) _trailRenderer != null)
                 _trailRenderer.material.color = color;
         }
 
@@ -34,14 +35,14 @@ namespace Combat.Effects
             {
                 _lastActivationTime = Time.time;
 
-                if (_trailRenderer == null)
+                if ((object) _trailRenderer == null)
                 {
                     _trailRenderer = _trailRendererPool.CreateTrailRenderer(transform, Size, Size*2, Color, _duration);
                 }
             }
             else if (Time.time - _lastActivationTime > 0.1f)
             {
-                if (_trailRenderer != null)
+                if ((object) _trailRenderer != null)
                 {
                     _trailRendererPool.ReleaseTrailRenderer(_trailRenderer);
                     _trailRenderer = null;
@@ -51,7 +52,7 @@ namespace Combat.Effects
 
         protected override void OnAfterUpdate()
         {
-            if (_trailRenderer == null)
+            if ((object) _trailRenderer == null)
                 return;
 
             var position = (Vector2)transform.position;
@@ -59,6 +60,11 @@ namespace Combat.Effects
                 _trailRenderer.Clear();
 
             _lastPosition = position;
+        }
+
+        private void Start()
+        {
+            if (_trailRenderer == null) _trailRenderer = null;
         }
 
         private Vector2 _lastPosition;

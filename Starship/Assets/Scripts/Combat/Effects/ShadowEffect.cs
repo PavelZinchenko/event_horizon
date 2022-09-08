@@ -7,19 +7,24 @@ namespace Combat.Effects
     {
         [SerializeField] private float _effectSize;
         [SerializeField] private Vector2 _offset;
+        private static readonly int Size1 = Shader.PropertyToID("_Size");
 
         protected override void OnInitialize()
         {
             Scale = _effectSize;
-            GetComponent<SpriteRenderer>().sprite = transform.parent.GetComponent<SpriteRenderer>().sprite; // TODO: temporary fix
+            Renderer.sprite = transform.parent.GetComponent<SpriteRenderer>().sprite; // TODO: temporary fix
         }
 
-        protected override void OnDispose() { }
+        protected override void OnDispose()
+        {
+            _renderer = null;
+        }
         protected override void OnGameObjectDestroyed() { }
 
         protected override void OnAfterUpdate()
         {
-            transform.localPosition = Position + RotationHelpers.Transform(_offset, -transform.parent.localEulerAngles.z) / transform.parent.localScale.z;
+            var parent = Transform.parent;
+            Transform.localPosition = Position + RotationHelpers.Transform(_offset, -parent.localEulerAngles.z) / parent.localScale.z;
         }
 
         protected override void UpdateLife()
@@ -31,7 +36,15 @@ namespace Combat.Effects
             base.UpdateSize();
 
             var size = transform.lossyScale.z;
-            GetComponent<SpriteRenderer>().material.SetFloat("_Size", 0.1f / size);
+            Renderer.material.SetFloat(Size1, 0.1f / size);
         }
+        
+        private SpriteRenderer _renderer;
+        // ReSharper disable once Unity.NoNullCoalescing
+        private SpriteRenderer Renderer => _renderer ?? (_renderer = GetComponent<SpriteRenderer>());
+        
+        private Transform _transform;
+        // ReSharper disable once Unity.NoNullCoalescing
+        private Transform Transform => _transform ?? (_transform = GetComponent<Transform>());
     }
 }

@@ -57,7 +57,7 @@ namespace Combat.Background
             gameObject.AddComponent<MeshRenderer>().sharedMaterial = _barrenPlanetMaterial;
 
             var random = new System.Random(_planet.Seed);
-            _barrenPlanetMaterial.SetTexture("_CloudsTex", resourceLocator.GetNebulaTexture(random.Next()));
+            _barrenPlanetMaterial.SetTexture(CloudsTex, resourceLocator.GetNebulaTexture(random.Next()));
             _barrenPlanetMaterial.color = Color.Lerp(_planet.Color, Color.black, 0.3f);
         }
 
@@ -68,7 +68,7 @@ namespace Combat.Background
             gameObject.AddComponent<MeshRenderer>().sharedMaterial = _infectedPlanetMaterial;
 
             var random = new System.Random(_planet.Seed);
-            _infectedPlanetMaterial.SetTexture("_CloudsTex", resourceLocator.GetNebulaTexture(random.Next()));
+            _infectedPlanetMaterial.SetTexture(CloudsTex, resourceLocator.GetNebulaTexture(random.Next()));
             _infectedPlanetMaterial.color = Color.Lerp(_planet.Color, Color.black, 0.3f);
         }
 
@@ -124,16 +124,18 @@ namespace Combat.Background
             var decalOffset = offset * 2;
             decalOffset.x -= Mathf.FloorToInt(offset.x);
             decalOffset.y -= Mathf.FloorToInt(offset.y);
-            _gasPlanetMaterial.SetTextureOffset("_DecalTex", decalOffset);
+            _gasPlanetMaterial.SetTextureOffset(DecalTex, decalOffset);
 
             var cloudOffset = offset * 3;
             cloudOffset.x -= Mathf.FloorToInt(offset.x);
             cloudOffset.y -= Mathf.FloorToInt(offset.y);
-            _gasPlanetMaterial.SetTextureOffset("_CloudsTex", cloudOffset);
+            _gasPlanetMaterial.SetTextureOffset(CloudsTex, cloudOffset);
         }
 
         private Planet _planet;
         private float _width;
         private float _height;
+        private static readonly int CloudsTex = Shader.PropertyToID("_CloudsTex");
+        private static readonly int DecalTex = Shader.PropertyToID("_DecalTex");
     }
 }

@@ -26,7 +26,6 @@ namespace Gui.Combat
             _ship = ship;
 
             Initialize(resourceLocator);
-            Update();
             gameObject.SetActive(true);
         }
 

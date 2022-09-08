@@ -84,7 +84,7 @@ namespace Combat.Effects
             //if (spriteRenderer != null)
             //    spriteRenderer.color = color;
             //else
-                GetComponent<Renderer>().material.color = color;
+                Renderer.material.color = color;
         }
 
         protected abstract void OnInitialize();
@@ -93,9 +93,8 @@ namespace Combat.Effects
 
         private void OnDestroy()
         {
-            var renderer = gameObject.GetComponent<Renderer>();
-            if (renderer)
-                foreach (var item in renderer.materials)
+            if (Renderer)
+                foreach (var item in Renderer.materials)
                     GameObject.DestroyImmediate(item);
 
             OnGameObjectDestroyed();
@@ -105,8 +104,9 @@ namespace Combat.Effects
 
         protected virtual void UpdatePosition()
         {
-            gameObject.Move(Position);
-            gameObject.transform.localEulerAngles = new Vector3(0, 0, Rotation);
+            var o = gameObject;
+            o.Move(Position);
+            o.transform.localEulerAngles = new Vector3(0, 0, Rotation);
         }
 
         protected virtual void UpdateSize()
@@ -191,5 +191,9 @@ namespace Combat.Effects
         private bool _lifeChanged;
 
         private GameObjectHolder _gameObjectHolder;
+        
+        private Renderer _renderer;
+        // ReSharper disable once Unity.NoNullCoalescing
+        private Renderer Renderer => _renderer ?? (_renderer = GetComponent<Renderer>());
     }
 }

@@ -15,7 +15,7 @@ namespace Combat.Background
         void Initialize(IResourceLocator resourceLocator)
         {
             // Copy material to avoid modifying global material at runtime
-            _material = new Material(_material);
+            _material = _material != null ? new Material(_material) : null;
             _width = _height = _size * Screen.width / Screen.height;
             Create(_width, _height, 5);
             _material.mainTexture = resourceLocator.GetNebulaTexture(new System.Random().Next());
@@ -25,26 +25,21 @@ namespace Combat.Background
 
         private void Update()
         {
-            if (_material != null)
-            {
-                var offset = transform.position;
+            if ((object) _material == null) return;
+            var offset = transform.position;
 
-                offset.x /= _width;
-                offset.y /= _height;
-                offset.x -= Mathf.FloorToInt(offset.x);
-                offset.y -= Mathf.FloorToInt(offset.y);
-                _material.mainTextureOffset = offset;
+            offset.x /= _width;
+            offset.y /= _height;
+            offset.x -= Mathf.FloorToInt(offset.x);
+            offset.y -= Mathf.FloorToInt(offset.y);
+            _material.mainTextureOffset = offset;
 
-                offset *= 4;
-                offset.x -= Mathf.FloorToInt(offset.x);
-                offset.y -= Mathf.FloorToInt(offset.y);
-                _material.SetTextureOffset("_DecalTex", offset);
+            offset *= 4;
+            offset.x -= Mathf.FloorToInt(offset.x);
+            offset.y -= Mathf.FloorToInt(offset.y);
+            _material.SetTextureOffset(DecalTex, offset);
 
-                if (OutOfTimeMode)
-                    _material.color = Color.Lerp(_material.color, OutOfTimeColor, Time.deltaTime);
-                else
-                    _material.color = Color.Lerp(_material.color, Color.white, Time.deltaTime);
-            }
+            _material.color = Color.Lerp(_material.color, OutOfTimeMode ? OutOfTimeColor : Color.white, Time.deltaTime);
         }
 
         private void Create(float width, float height, int textureScale)
@@ -104,5 +99,6 @@ namespace Combat.Background
 
         private float _width;
         private float _height;
+        private static readonly int DecalTex = Shader.PropertyToID("_DecalTex");
     }
 }
