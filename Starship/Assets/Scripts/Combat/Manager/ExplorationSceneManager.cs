@@ -29,7 +29,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using Zenject;
 using IShip = Combat.Component.Ship.IShip;
-
+using Constructor.Ships;
 
 namespace Combat.Manager
 {
@@ -190,7 +190,7 @@ namespace Combat.Manager
 
         private void CreatePlayerShip()
         {
-            var spec = _playerFleet.ExplorationShip.CreateBuilder().Build(_database.ShipSettings);
+            var spec = _playerSkills != null ? _playerFleet.ExplorationShip.BuildSpecAndApplySkills(_playerSkills, _database.ShipSettings) : _playerFleet.ExplorationShip.CreateBuilder().Build(_database.ShipSettings);
             var controllerFactory = new KeyboardController.Factory(_keyboard);
             var ship = _shipFactory.CreateShip(spec, controllerFactory, UnitSide.Player, Vector2.zero, new System.Random().Next(360));
 
