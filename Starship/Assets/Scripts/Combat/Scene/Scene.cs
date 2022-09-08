@@ -227,10 +227,19 @@ namespace Combat.Scene
             }
             _cooldown = 0.5f;
 
-            var center = _activePlayerShip.Body.Position;
-
             lock (_unitList.LockObject)
             {
+                const float maxDistancePlayerDistance = 1e5f;
+                var center = _activePlayerShip.Body.Position;
+                var extraOffset = Vector2.zero;
+                if (center.sqrMagnitude > maxDistancePlayerDistance * maxDistancePlayerDistance)
+                {
+                    extraOffset = -center;
+                    center = Vector2.zero;
+                    _activePlayerShip.Body.ShiftWithDependants(extraOffset);
+                    MainCamera.transform.Translate(extraOffset);
+                }
+
                 foreach (var unit in _unitList.Items)
                 {
                     if (unit == _activePlayerShip)
@@ -240,7 +249,7 @@ namespace Combat.Scene
                     if (unit.Type.Class == UnitClass.Limb)
                         continue;
 
-                    var changed = false;
+                    var changed = extraOffset != Vector2.zero;
 
                     var position = unit.Body.Position;
                     var offset = new Vector2();
@@ -269,7 +278,7 @@ namespace Combat.Scene
 
                     if (changed)
                     {
-                        unit.Body.ShiftWithDependants(offset);
+                        unit.Body.ShiftWithDependants(offset + extraOffset);
                     }
                 }
             }
@@ -282,6 +291,9 @@ namespace Combat.Scene
         private bool _playerInCenter;
         private IShip _activePlayerShip;
         private IShip _nearestEnemyShip;
+        private UnityEngine.Camera _mainCamera;
+        // ReSharper disable once Unity.NoNullCoalescing
+        private UnityEngine.Camera MainCamera => _mainCamera ?? (_mainCamera = UnityEngine.Camera.main);
 
         private readonly UnitList<IUnit> _unitList = new UnitList<IUnit>();
         private readonly ShipList _shipList = new ShipList();
