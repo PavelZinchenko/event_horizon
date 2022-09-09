@@ -60,7 +60,7 @@ namespace Services.Storage
 
         public void CreateNewGame(string modId, bool keepPurchases = true)
         {
-            throw new System.NotImplementedException();
+            throw new NotSupportedException();
         }
 
         private static byte[] GetSubArray(byte[] data, ref int index)

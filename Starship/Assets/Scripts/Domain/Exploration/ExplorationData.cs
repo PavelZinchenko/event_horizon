@@ -392,7 +392,6 @@ namespace Game.Exploration
         Minerals,
         MineralsRare,
         Hive,
-        // TODO: XmasBox,
     }
 
     public struct ObjectiveInfo

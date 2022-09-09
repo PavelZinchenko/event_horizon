@@ -8,7 +8,7 @@ namespace Session
 {
     class DatabaseContent
     {
-        public DatabaseContent(ContentFactory factory, AchievementData achievements = null)
+        public DatabaseContent(ContentFactory factory)
         {
             Game = factory.CreateGameData(null);
             Starmap = factory.CreateStarMapData(null);
@@ -19,7 +19,6 @@ namespace Session
             Bosses = factory.CreateBossData(null);
             Regions = factory.CreateRegionData(null, 0);
             Wormholes = factory.CreateWormholeData(null);
-            Achievements = achievements ?? factory.CreateAchievementData(null);
             CommonObjects = factory.CreateCommonObjectData(null);
             Research = factory.CreateResearchData(null);
             Statistics = factory.CreateStatisticsData(null);
@@ -119,9 +118,6 @@ namespace Session
                     case ResourcesData.Name:
                         content.Resources = factory.CreateResourcesData(GetSubArray(data, ref index));
                         break;
-                    case AchievementData.Name:
-                        content.Achievements = factory.CreateAchievementData(GetSubArray(data, ref index));
-                        break;
                     case UpgradesData.Name:
                         content.Upgrades = factory.CreateUpgradesData(GetSubArray(data, ref index));
                         break;
@@ -161,7 +157,6 @@ namespace Session
             }
         }
 
-        public AchievementData Achievements { get; private set; }
         public GameData Game { get; private set; }
         public StarMapData Starmap { get; private set; }
         public InventoryData Inventory { get; private set; }
@@ -192,7 +187,6 @@ namespace Session
                 yield return Bosses;
                 yield return Regions;
                 yield return Wormholes;
-                yield return Achievements;
                 yield return CommonObjects;
                 yield return Research;
                 yield return Statistics;

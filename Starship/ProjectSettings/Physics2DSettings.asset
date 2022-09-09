@@ -21,8 +21,8 @@ Physics2DSettings:
   m_DefaultContactOffset: 0.01
   m_JobOptions:
     serializedVersion: 2
-    useMultithreading: 0
-    useConsistencySorting: 0
+    useMultithreading: 1
+    useConsistencySorting: 1
     m_InterpolationPosesPerJob: 100
     m_NewContactsPerJob: 30
     m_CollideContactsPerJob: 100
