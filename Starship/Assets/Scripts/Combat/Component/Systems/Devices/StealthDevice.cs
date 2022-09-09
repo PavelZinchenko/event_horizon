@@ -54,7 +54,10 @@ namespace Combat.Component.Systems.Devices
                 || system is IDroneBay;
 
             if (!remainActive)
+            {
                 Deactivate();
+                TimeFromLastUse = 0;
+            }
         }
 
 
