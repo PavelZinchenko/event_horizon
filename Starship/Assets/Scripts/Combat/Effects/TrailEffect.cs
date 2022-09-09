@@ -15,7 +15,7 @@ namespace Combat.Effects
 
         protected override void OnDispose()
         {
-            if ((object) _trailRenderer != null)
+            if (_trailRenderer != null)
                 _trailRendererPool.ReleaseTrailRenderer(_trailRenderer);
 
             _trailRenderer = null;
@@ -42,7 +42,7 @@ namespace Combat.Effects
             }
             else if (Time.time - _lastActivationTime > 0.1f)
             {
-                if ((object) _trailRenderer != null)
+                if (_trailRenderer != null)
                 {
                     _trailRendererPool.ReleaseTrailRenderer(_trailRenderer);
                     _trailRenderer = null;
