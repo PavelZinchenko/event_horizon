@@ -4,7 +4,8 @@ namespace Combat.Component.Body
 {
     public class GameObjectBody : MonoBehaviour, IBodyComponent
     {
-        public void Initialize(IBody parent, Vector2 position, float rotation, float scale, Vector2 velocity, float angularVelocity, float weight)
+        public void Initialize(IBody parent, Vector2 position, float rotation, float scale, Vector2 velocity,
+            float angularVelocity, float weight)
         {
             if (parent != null)
                 parent.AddChild(transform);
@@ -56,10 +57,7 @@ namespace Combat.Component.Body
 
         public float Rotation
         {
-            get
-            {
-                return _rotation;
-            }
+            get { return _rotation; }
             set
             {
                 _rotation = value;
@@ -84,9 +82,9 @@ namespace Combat.Component.Body
             }
         }
 
-        public void ApplyAcceleration(Vector2 acceleration) {}
+        public void ApplyAcceleration(Vector2 acceleration) { }
 
-        public void ApplyAngularAcceleration(float acceleration) {}
+        public void ApplyAngularAcceleration(float acceleration) { }
 
         public void ApplyForce(Vector2 position, Vector2 force)
         {
@@ -94,7 +92,8 @@ namespace Combat.Component.Body
                 Parent.ApplyForce(position, force);
         }
 
-        public void SetVelocityLimit(float value) {}
+        public void SetVelocityLimit(float value) { }
+        public void SetAngularVelocityLimit(float value) { }
 
         public void Move(Vector2 position)
         {
@@ -122,7 +121,7 @@ namespace Combat.Component.Body
             Rotation += AngularVelocity * elapsedTime * Mathf.Rad2Deg;
         }
 
-        public void UpdateView(float elapsedTime) {}
+        public void UpdateView(float elapsedTime) { }
 
         public void AddChild(Transform child)
         {

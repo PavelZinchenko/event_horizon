@@ -1,4 +1,5 @@
-﻿using Combat.Collision;
+﻿using System;
+using Combat.Collision;
 using Combat.Collision.Behaviour;
 using Combat.Collision.Manager;
 using Combat.Component.Features;
@@ -17,6 +18,7 @@ using Combat.Component.Unit.Classification;
 using Combat.Component.Triggers;
 using Combat.Unit;
 using Constructor;
+using UnityEngine;
 
 namespace Combat.Component.Ship
 {
@@ -35,7 +37,10 @@ namespace Combat.Component.Ship
         protected Ship(IShipSpecification spec, UnitType type, IBody body, IView view, IStats stats, ICollider collider, PhysicsManager physics)
             : base(type, body, view, collider, physics)
         {
-            body.SetVelocityLimit(50f); // TODO
+            // TODO: make them moddable? or constants?
+            body.SetVelocityLimit(50f);
+            // 7 rotations per second
+            body.SetAngularVelocityLimit(360 * 7);
             AddResource(_systems = new ShipSystems(this));
             AddResource(_effects = new ShipEffects(this));
             AddResource(_collisionBehaviour = new DefaultCollisionBehaviour(spec.Stats.RammingDamageMultiplier));
