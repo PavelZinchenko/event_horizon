@@ -159,7 +159,18 @@ namespace Combat.Unit.HitPoints
 		
 		public bool TryGet(float how)
 		{
-			throw new System.NotImplementedException();
+			if (how == 0) return true;
+			ThreadSafe.Function<float> func = (ref float value) =>
+			{
+				if (value > 0 && value*MaxValue >= how && MaxValue > 0)
+				{
+					value -= how/MaxValue;
+					return true;
+				}
+				return false;
+			};
+
+			return ThreadSafe.ChangeValue(ref _value, func);
 		}
 
 		//public IEnumerable<byte> Serialize() { return Helpers.Serialize(_value); }
