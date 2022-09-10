@@ -47,7 +47,7 @@ namespace Game.Exploration
             Icon = GetPlanetImage(Type, random);
             Size = GetPlanetSize(Type, random);
             Level = star.Level;
-            Faction = Type == PlanetType.Infected ? database.GetFaction(new ItemId<Faction>(16)) : star.Region.Faction;
+            Faction = Type == PlanetType.Infected ? database.ExplorationSettings.InfectedPlanetFaction : star.Region.Faction;
             TotalObjectives = random.Range(8,16);
             Color = Type == PlanetType.Infected ? GetInfectedPlanetColor(random) : GetPlanetColor(random);
         }
