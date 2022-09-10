@@ -227,8 +227,8 @@ namespace Combat.Manager
             Assert.IsTrue(objectives.Count < mapSize * mapSize);
 
             var random = new System.Random(seed);
-            var positions = EnumerableExtension.RandomUniqueNumbers(1, mapSize * mapSize, objectives.Count, random).ToArray();
-            for (var i = 0; i < positions.Length; ++i)
+            var positions = EnumerableExtension.RandomUniqueNumbers(1, mapSize * mapSize, objectives.Count, random).Shuffle(random);
+            for (var i = 0; i < positions.Count; ++i)
             {
                 var objective = objectives[i];
                 if (_exploration.IsCompleted(objective)) continue;

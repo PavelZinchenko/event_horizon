@@ -50,12 +50,12 @@ namespace Combat.Manager
             switch (ship.Type.Side)
             {
                 case UnitSide.Enemy:
-                    _activeEnemyShipCount = _combatModel.EnemyFleet.Ships.Count(item => item.Status == ShipStatus.Active);
+                    _hasActiveEnemyShip = _combatModel.EnemyFleet.Ships.Any(item => item.Status == ShipStatus.Active);
                     ResetTimer();
                     break;
                 case UnitSide.Player:
                     _activePlayerShip = ship;
-                    _activePlayerShipCount = _combatModel.PlayerFleet.Ships.Count(item => item.Status == ShipStatus.Active);
+                    _hasActivePlayerShip = _combatModel.PlayerFleet.Ships.Any(item => item.Status == ShipStatus.Active);
                     break;
             }
         }
@@ -71,13 +71,13 @@ namespace Combat.Manager
                     if (_combatModel.Rules.TimeoutBehaviour == TimeoutBehaviour.Decay || ship.Type.Side == UnitSide.Enemy)
                         ResetTimer();
 
-                    _activePlayerShipCount = _combatModel.PlayerFleet.Ships.Count(item => item.Status == ShipStatus.Active);
+                    _hasActivePlayerShip = _combatModel.PlayerFleet.Ships.Any(item => item.Status == ShipStatus.Active);
                     break;
                 case UnitSide.Enemy:
                     if (_combatModel.Rules.TimeoutBehaviour != TimeoutBehaviour.AllEnemiesThenDraw || _combatModel.EnemyFleet.IsAnyShipLeft())
                         ResetTimer();
 
-                    _activeEnemyShipCount = _combatModel.EnemyFleet.Ships.Count(item => item.Status == ShipStatus.Active);
+                    _hasActiveEnemyShip = _combatModel.EnemyFleet.Ships.Any(item => item.Status == ShipStatus.Active);
                     break;
             }
         }
@@ -90,7 +90,7 @@ namespace Combat.Manager
             _elapsedTime += Time.deltaTime;
             _background.OutOfTimeMode = false;
 
-            if (_activeEnemyShipCount == 0 || _activePlayerShipCount == 0)
+            if (!_hasActiveEnemyShip || !_hasActivePlayerShip)
             {
                 _timerPanel.Enabled = false;
             }
@@ -179,8 +179,8 @@ namespace Combat.Manager
         }
 
         private IShip _activePlayerShip;
-        private int _activeEnemyShipCount;
-        private int _activePlayerShipCount;
+        private bool _hasActiveEnemyShip;
+        private bool _hasActivePlayerShip;
 
         private bool _isAlarmEnabled;
         private float _elapsedTime;

@@ -1,6 +1,7 @@
 ﻿using Services.Messenger;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 using Zenject;
 
 namespace Gui.Combat
@@ -24,7 +25,7 @@ namespace Gui.Combat
 
         private void OnShipCountChanged(int count)
         {
-            _countText.text = count.ToString();
+            _countText.text = Mathd.ToInGameString(count);
         }
     }
 }

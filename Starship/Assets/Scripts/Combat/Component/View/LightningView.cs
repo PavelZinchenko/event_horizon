@@ -32,7 +32,7 @@ namespace Combat.Component.View
         public override void Dispose()
         {
             _lineLength = 0;
-            _lineRenderer.enabled = false;
+            if (_lineRenderer != null) _lineRenderer.enabled = false;
         }
 
         public override void UpdateView(float elapsedTime)

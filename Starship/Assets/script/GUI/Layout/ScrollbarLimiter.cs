@@ -5,10 +5,11 @@ using UnityEngine.UI;
 namespace script.GUI.Layout
 {
     [RequireComponent(typeof(ScrollRect))]
-    public class VerticalScrollbarLimiter : MonoBehaviour
+    public class ScrollbarLimiter : MonoBehaviour
     {
         private ScrollRect _scrollRect;
         [SerializeField] public float minScrollbarSize = 0.1f;
+        [SerializeField] public bool isHorizontal = false;
 
         private void Start()
         {
@@ -19,7 +20,7 @@ namespace script.GUI.Layout
 
         private void UpdateValue()
         {
-            var bar = _scrollRect.verticalScrollbar;
+            var bar = isHorizontal ? _scrollRect.horizontalScrollbar : _scrollRect.verticalScrollbar;
             if (bar.size < minScrollbarSize) bar.size = minScrollbarSize; 
         }
 

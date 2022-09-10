@@ -156,8 +156,11 @@ namespace Domain.Quests
                 totalWeight += content.Items[i].Weight;
 
             if (totalWeight < 0.0001f)
-                foreach (var item in content.Items.RandomUniqueElements(amount, itemCount, _random).SelectMany(item => item.Loot.Create(this)))
-                    yield return item;
+                foreach (var item in content.Items.RandomUniqueElements(amount, _random))
+                foreach (var lootItem in item.Loot.Create(this))
+                {
+                    yield return lootItem;
+                }
 
             var itemsLeft = amount;
             foreach (var item in content.Items)

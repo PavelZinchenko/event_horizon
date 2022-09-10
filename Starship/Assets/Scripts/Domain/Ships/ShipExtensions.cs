@@ -203,7 +203,8 @@ namespace Constructor.Ships
 
         public static IEnumerable<IShip> Create(this IEnumerable<ShipBuild> ships, int requiredLevel, Random random, IDatabase database)
         {
-            return ships.Select(item => global::Model.Factories.Ship.Create(item, requiredLevel, random, database));
+            return ships.Select((item, id) =>
+                global::Model.Factories.Ship.Create(item, requiredLevel, random, database, id > 12));
         }
     }
 }

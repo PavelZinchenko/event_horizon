@@ -25,7 +25,7 @@ namespace Combat.Services
             objectPool.PreloadObjects(prefabCache.LoadResourcePrefab("Combat/Effects/WaveThin"), 5);
             objectPool.PreloadObjects(prefabCache.LoadResourcePrefab("Combat/Effects/Wreck"), 5);
 
-            foreach (var ship in combatModel.PlayerFleet.Ships.Concat(combatModel.EnemyFleet.Ships))
+            foreach (var ship in combatModel.PlayerFleet.Ships.Take(12).Concat(combatModel.EnemyFleet.Ships.Take(12)))
             {
                 foreach (var weapon in ship.ShipData.Components.Where(component => component.Info.Data.Weapon != null))
                 {
@@ -49,6 +49,8 @@ namespace Combat.Services
                     }
                 }
             }
+            
+            // Debug.Break();
         }
     }
 }
