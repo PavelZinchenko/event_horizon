@@ -41,11 +41,11 @@ namespace Combat.Services
                         if (spec.Value.BulletPrefab)
                             objectPool.PreloadObjects(prefabCache.LoadPrefab(spec.Value.BulletPrefab), 3);
                         if (spec.Value.FireSound)
-                            resourceLocator.GetAudioClip(spec.Value.FireSound).LoadAudioData();
+                            resourceLocator.GetAudioClip(spec.Value.FireSound)?.LoadAudioData();
                         if (spec.Value.HitSound)
-                            resourceLocator.GetAudioClip(spec.Value.HitSound).LoadAudioData();
+                            resourceLocator.GetAudioClip(spec.Value.HitSound)?.LoadAudioData();
                         if (spec.Key.ChargeSound)
-                            resourceLocator.GetAudioClip(spec.Key.ChargeSound).LoadAudioData();
+                            resourceLocator.GetAudioClip(spec.Key.ChargeSound)?.LoadAudioData();
                     }
                 }
             }
