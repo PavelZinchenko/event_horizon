@@ -29,8 +29,8 @@ namespace Combat.Effects
             var size = transform.lossyScale.z;
             Renderer.material.SetFloat(Thickness, Mathf.Min(5*(size + 10)/10, 10));
         }
-        private SpriteRenderer _renderer;
+        private SpriteRenderer _spriteRenderer;
         // ReSharper disable once Unity.NoNullCoalescing
-        private SpriteRenderer Renderer => _renderer ?? (_renderer = GetComponent<SpriteRenderer>());
+        private SpriteRenderer Renderer => _spriteRenderer ?? (_spriteRenderer = GetComponent<SpriteRenderer>());
     }
 }
