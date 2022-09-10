@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Constructor.Satellites;
 using Constructor.Ships.Modification;
@@ -12,6 +11,8 @@ using GameDatabase.Model;
 using GameServices.Player;
 using Maths;
 using Session.Content;
+using UnityEngine;
+using Random = System.Random;
 
 namespace Constructor.Ships
 {
@@ -78,7 +79,10 @@ namespace Constructor.Ships
         {
             var shipWrapper = database.GetShip(new ItemId<Ship>(shipData.Id));
             if (shipWrapper == null)
+            {
+                Debug.LogError($"Ship with id {shipData.Id} is not found");
                 return null;
+            }
 
             var shipModel = new ShipModel(shipWrapper);
             var factory = new ModificationFactory(database);

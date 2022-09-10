@@ -111,6 +111,14 @@ public class Cheats
         }
         #endif
 
+		if (command.StartsWith("000"))
+		{
+			var shipId = command.Substring(3);
+			var ship = this._database.GetShip(new ItemId<Ship>(int.Parse(shipId)));
+			_playerFleet.Ships.Add(new CommonShip(ship, Enumerable.Empty<IntegratedComponent>()));
+			return true;
+		}
+
         if (command == "000")
         {
             if (_account.Status != Status.Connected)

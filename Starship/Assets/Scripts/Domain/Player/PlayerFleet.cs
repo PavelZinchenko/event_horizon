@@ -115,6 +115,12 @@ namespace GameServices.Player
                     ship.SecondSatellite.Components.Assign(components);
                 }
             }
+            
+            foreach (var data in _strippedComponents)
+            {
+                _inventory.Components.Add(data.Key, data.Value);
+            }
+            _strippedComponents.Clear();
 
             _activeShips.CheckIfValid(_playerSkills, true);
         }
@@ -157,15 +163,31 @@ namespace GameServices.Player
             var ships = new List<IShip>();
             foreach (var item in _session.Fleet.Ships)
             {
+                bool added = false;
                 try
                 {
-                    ships.Add(ShipExtensions.FromShipData(_database, item));
+                    var ship = ShipExtensions.FromShipData(_database, item);
+                    added = ship != null;
+                    ships.Add(ship);
                 }
                 catch (System.Exception e)
                 {
                     UnityEngine.Debug.LogException(e);
                     ships.Add(null);
+                    added = false;
                     UnityEngine.Debug.Log("Unknown ship: " + item.Id);
+                }
+
+                if (!added)
+                {
+                    foreach (var component in item.Components.FromShipComponentsData(_database))
+                    {
+                        // Locked components are not stripped
+                        if (component.Locked) continue;
+                        var info = component.Info;
+                        if (!_strippedComponents.TryGetValue(info, out var amount)) _strippedComponents[info] = 1;
+                        else _strippedComponents[info] = amount + 1;
+                    }
                 }
             }
 
@@ -267,6 +289,7 @@ namespace GameServices.Player
         {
             _ships.Clear();
             _activeShips.Clear();
+            _strippedComponents.Clear();
         }
 
         private bool DataChanged
@@ -293,6 +316,7 @@ namespace GameServices.Player
         private readonly ShipSquad _activeShips = new ShipSquad();
         private readonly ObservableCollection<IShip> _ships = new ObservableCollection<IShip>();
 
+        private readonly Dictionary<ComponentInfo, int> _strippedComponents = new Dictionary<ComponentInfo, int>();
         private readonly ISessionData _session;
         private readonly IDebugManager _debugManager;
         private readonly SessionAboutToSaveSignal _sessionAboutToSaveSignal;
