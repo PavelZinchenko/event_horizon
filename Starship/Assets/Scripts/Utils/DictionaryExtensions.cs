@@ -9,5 +9,10 @@ namespace Utils
             if (!dict.TryGetValue(item, out var result)) dict[item] = amount;
             else dict[item] = result + amount;
         }
+
+        public static V Get<K,V>(this IDictionary<K,V> dict, K key, V fallback)
+        {
+            return dict.TryGetValue(key, out var result) ? result : fallback;
+        }
     }
 }
