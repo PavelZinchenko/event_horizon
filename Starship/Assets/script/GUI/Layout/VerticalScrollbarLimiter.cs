@@ -17,10 +17,22 @@ namespace script.GUI.Layout
             OnScroll(Vector2.zero);
         }
 
-        private void OnScroll(Vector2 value)
+        private void UpdateValue()
         {
             var bar = _scrollRect.verticalScrollbar;
-            if (bar.size < minScrollbarSize) bar.size = minScrollbarSize;
+            if (bar.size < minScrollbarSize) bar.size = minScrollbarSize; 
+        }
+
+        // Scrollbars like to randomly update their scrollbar size, so checking this each tick is required for good visuals
+        // This should be pretty cheap too
+        private void Update()
+        {
+            UpdateValue();
+        }
+
+        private void OnScroll(Vector2 value)
+        {
+            UpdateValue();
         }
     }
 }
