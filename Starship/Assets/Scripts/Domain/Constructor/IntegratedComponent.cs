@@ -40,7 +40,13 @@ namespace Constructor
     {
         public static IEnumerable<IntegratedComponent> FromShipComponentsData(this ShipComponentsData data, IDatabase database)
         {
-            foreach (var item in data.Components)
+            return FromComponentsData(data.Components, database);
+        }
+
+        public static IEnumerable<IntegratedComponent> FromComponentsData(
+            this IEnumerable<ShipComponentsData.Component> data, IDatabase database)
+        {
+            foreach (var item in data)
             {
                 var component = database.GetComponent(new ItemId<GameDatabase.DataModel.Component>(item.Id));
                 if (component == null)

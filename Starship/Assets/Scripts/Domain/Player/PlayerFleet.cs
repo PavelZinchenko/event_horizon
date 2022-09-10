@@ -116,11 +116,22 @@ namespace GameServices.Player
                 }
             }
             
-            foreach (var data in _strippedComponents)
+            foreach (var component in _strippedComponents.FromComponentsData(_database))
             {
-                _inventory.Components.Add(data.Key, data.Value);
+                // Locked components are not stripped
+                if (component.Locked) continue;
+                _inventory.Components.Add(component.Info,1);
             }
+            
+            foreach (var data in _strippedSatellites)
+            {
+                var satellite = _database.GetSatellite(new ItemId<Satellite>(data.Key));
+                if (satellite == null) continue;
+                _inventory.Satellites.Add(satellite, data.Value);
+            }
+            
             _strippedComponents.Clear();
+            _strippedSatellites.Clear();
 
             _activeShips.CheckIfValid(_playerSkills, true);
         }
@@ -166,7 +177,7 @@ namespace GameServices.Player
                 bool added = false;
                 try
                 {
-                    var ship = ShipExtensions.FromShipData(_database, item);
+                    var ship = ShipExtensions.FromShipData(_database, item, _strippedComponents);
                     added = ship != null;
                     ships.Add(ship);
                 }
@@ -174,20 +185,13 @@ namespace GameServices.Player
                 {
                     UnityEngine.Debug.LogException(e);
                     ships.Add(null);
-                    added = false;
                     UnityEngine.Debug.Log("Unknown ship: " + item.Id);
                 }
 
                 if (!added)
                 {
-                    foreach (var component in item.Components.FromShipComponentsData(_database))
-                    {
-                        // Locked components are not stripped
-                        if (component.Locked) continue;
-                        var info = component.Info;
-                        if (!_strippedComponents.TryGetValue(info, out var amount)) _strippedComponents[info] = 1;
-                        else _strippedComponents[info] = amount + 1;
-                    }
+                    _strippedSatellites.Increment(item.Satellite1.Id);
+                    _strippedSatellites.Increment(item.Satellite2.Id);
                 }
             }
 
@@ -290,6 +294,7 @@ namespace GameServices.Player
             _ships.Clear();
             _activeShips.Clear();
             _strippedComponents.Clear();
+            _strippedSatellites.Clear();
         }
 
         private bool DataChanged
@@ -316,7 +321,8 @@ namespace GameServices.Player
         private readonly ShipSquad _activeShips = new ShipSquad();
         private readonly ObservableCollection<IShip> _ships = new ObservableCollection<IShip>();
 
-        private readonly Dictionary<ComponentInfo, int> _strippedComponents = new Dictionary<ComponentInfo, int>();
+        private readonly List<ShipComponentsData.Component> _strippedComponents = new List<ShipComponentsData.Component>();
+        private readonly Dictionary<int, int> _strippedSatellites = new Dictionary<int, int>();
         private readonly ISessionData _session;
         private readonly IDebugManager _debugManager;
         private readonly SessionAboutToSaveSignal _sessionAboutToSaveSignal;
