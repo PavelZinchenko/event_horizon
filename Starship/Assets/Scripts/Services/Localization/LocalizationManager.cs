@@ -10,6 +10,7 @@ using GameDatabase.Model;
 using GameServices.Settings;
 using Session;
 using UnityEngine.Assertions;
+using Utils;
 using Zenject;
 using Component = GameDatabase.DataModel.Component;
 
@@ -52,7 +53,7 @@ namespace Services.Localization
 		            if (_defaultLocalization != null)
 		                return _defaultLocalization.GetString(key, parameters);
 
-                    UnityEngine.Debug.Log("key not found: '" + key + "'");
+		            OptimizedDebug.Log("key not found: '" + key + "'");
 	                return key;
 		        }
 
@@ -61,7 +62,7 @@ namespace Services.Localization
             }
             catch (Exception e)
 		    {
-		        UnityEngine.Debug.LogException(e);
+			    OptimizedDebug.LogException(e);
                 return key;
 		    }
 		}
