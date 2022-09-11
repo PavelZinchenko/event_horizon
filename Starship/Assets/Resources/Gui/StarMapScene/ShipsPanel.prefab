@@ -12145,6 +12145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minScrollbarSize: 0.1
+  isHorizontal: 0
 --- !u!1 &1708635182490862
 GameObject:
   m_ObjectHideFlags: 0
