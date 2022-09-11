@@ -17,11 +17,14 @@ namespace GameDatabase.Model
 
             Data = data;
         }
-        private Layout(char[] data)
+        public Layout(char[] data):this(new string(data))
+        {
+        }
+        private Layout(char[] data, int cellsCount)
         {
             _data = data;
-            CellCount = 0;
-            _size = 0;
+            CellCount = cellsCount;
+            _size = (int) Math.Sqrt(data.Length);
             _stringCache = null;
         }
 
@@ -30,9 +33,9 @@ namespace GameDatabase.Model
         /// </summary>
         /// <param name="data">Raw layout data</param>
         /// <returns>Constructed Layout</returns>
-        public static Layout FromRawDataUnchecked(char[] data)
+        public static Layout FromRawDataUnchecked(char[] data, int cellsCount)
         {
-            return new Layout(data);
+            return new Layout(data, cellsCount);
         }
 
         public string Data

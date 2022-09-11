@@ -18,17 +18,12 @@ namespace Constructor.Ships.Modification
             _size = ship.Layout.Size;
             _layout = new char[_size * _size];
             _ready = false;
-            _clean = true;
         }
 
         public Layout BuildLayout()
         {
-            if (_clean)
-            {
-                return _ship.Layout;
-            }
             EnsureReady();
-            return GameDatabase.Model.Layout.FromRawDataUnchecked(_layout);
+            return new Layout(_layout);
         }
 
         public bool TryAddCell(int x, int y, CellType cellType)
@@ -36,7 +31,6 @@ namespace Constructor.Ships.Modification
             if (!IsCellValid(x, y, cellType))
                 return false;
 
-            _clean = false;
             Layout[x + y * _size] = (char)cellType;
             DataChangedEvent.Invoke();
 
@@ -72,7 +66,6 @@ namespace Constructor.Ships.Modification
         public void Reset()
         {
             Initialize();
-            _clean = true;
             DataChangedEvent.Invoke();
         }
 
@@ -85,7 +78,6 @@ namespace Constructor.Ships.Modification
             }
 
             Initialize();
-            _clean = false;
 
             var index = 0;
             var dataIndex = 0;
@@ -162,7 +154,7 @@ namespace Constructor.Ships.Modification
             
             const int px = 1;
             const int nx = -1;
-            var py = -size;
+            var py = size;
             var ny = -size;
 
             Assert.AreEqual(size * size, _layout.Length);
@@ -176,20 +168,27 @@ namespace Constructor.Ships.Modification
 
                     var index = x + y * size;
                     var cellType = layout[index];
-                    if (cellType != (char)CellType.Empty)
+                    try
                     {
-                        _layout[i * size + j] = cellType;
+                        if (cellType != (char)CellType.Empty)
+                        {
+                            _layout[i * size + j] = cellType;
+                        }
+                        else if ((y != 0 && layout[index + ny] != (char)CellType.Empty) ||
+                                 (x != 0 && layout[index + nx] != (char)CellType.Empty) ||
+                                 (x != _size - 1 && layout[index + px] != (char)CellType.Empty) ||
+                                 (y != _size - 1 && layout[index + py] != (char)CellType.Empty))
+                        {
+                            _layout[i * size + j] = (char)CellType.Custom;
+                        }
+                        else
+                        {
+                            _layout[i * size + j] = (char)CellType.Empty;
+                        }
                     }
-                    else if ((y != 0 && layout[index + ny] != (char)CellType.Empty) ||
-                             (x != 0 && layout[index + nx] != (char)CellType.Empty) ||
-                             (x != _size - 1 && layout[index + px] != (char)CellType.Empty) ||
-                             (y != _size - 1 && layout[index + py] != (char)CellType.Empty))
+                    catch (IndexOutOfRangeException e)
                     {
-                        _layout[i * size + j] = (char)CellType.Custom;
-                    }
-                    else
-                    {
-                        _layout[i * size + j] = (char)CellType.Empty;
+                        throw e;
                     }
                 }
             }
@@ -256,8 +255,6 @@ namespace Constructor.Ships.Modification
         }
 
         private bool _ready;
-        // Clean means that this layout modification is unchanged
-        private bool _clean;
         private readonly int _size;
         private readonly char[] _layout;
 
