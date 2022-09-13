@@ -15,8 +15,6 @@ namespace Utils
 {
     public static class DebugTimer
     {
-        public static bool IsDebugMode = true;
-
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
         private static readonly long StartTime = DateTime.UtcNow.Ticks;
 

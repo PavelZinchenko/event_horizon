@@ -70,7 +70,7 @@ namespace ViewModel.Craft
             _modification.text = string.Join("\n", ship.Model.Modifications.Select(item => item.GetDescription(_localization)).ToArray());
 
             _stats.gameObject.SetActive(true);
-            _stats.InitializeElements<TextFieldViewModel, KeyValuePair<string, string>>(GetShipDescription(ship), UpdateTextField);
+            _stats.InitializeElements<TextFieldViewModel, (string,string)>(GetShipDescription(ship), UpdateTextField);
             _weaponSlots.gameObject.SetActive(true);
             _weaponSlots.InitializeElements<BlockViewModel, Barrel>(ship.Model.Barrels, UpdateWeaponSlot);
         }
@@ -86,7 +86,7 @@ namespace ViewModel.Craft
             _modification.gameObject.SetActive(false);
 
             _stats.gameObject.SetActive(true);
-            _stats.InitializeElements<TextFieldViewModel, KeyValuePair<string, string>>(GetSatelliteDescription(satellite), UpdateTextField);
+            _stats.InitializeElements<TextFieldViewModel, (string,string)>(GetSatelliteDescription(satellite), UpdateTextField);
             _weaponSlots.gameObject.SetActive(satellite.Barrels.Any());
             _weaponSlots.InitializeElements<BlockViewModel, Barrel>(satellite.Barrels, UpdateWeaponSlot);
         }
@@ -106,7 +106,7 @@ namespace ViewModel.Craft
             _modification.color = ColorTable.QualityColor(info.ItemQuality);
 
             _stats.gameObject.SetActive(true);
-            _stats.InitializeElements<TextFieldViewModel, KeyValuePair<string, string>>(ComponentViewModel.GetDescription(component, _localization), UpdateTextField, _factory);
+            _stats.InitializeElements<TextFieldViewModel, (string,string)>(ComponentViewModel.GetDescription(component, _localization), UpdateTextField, _factory);
             _weaponSlots.gameObject.SetActive(false);
         }
 
@@ -137,10 +137,10 @@ namespace ViewModel.Craft
             _modification.gameObject.SetActive(false);
         }
 
-        private void UpdateTextField(TextFieldViewModel viewModel, KeyValuePair<string, string> data)
+        private void UpdateTextField(TextFieldViewModel viewModel, (string,string) data)
         {
-            viewModel.Label.text = _localization.GetString(data.Key);
-            viewModel.Value.text = data.Value;
+            viewModel.Label.text = _localization.GetString(data.Item1);
+            viewModel.Value.text = data.Item2;
         }
 
         private static void UpdateWeaponSlot(BlockViewModel viewModel, Barrel data)
@@ -153,21 +153,21 @@ namespace ViewModel.Craft
             viewModel.Label.text = string.IsNullOrEmpty(data.WeaponClass) ? "•" : data.WeaponClass;
         }
 
-        private static IEnumerable<KeyValuePair<string, string>> GetShipDescription(IShip ship)
+        private static IEnumerable<(string,string)> GetShipDescription(IShip ship)
         {
             var size = ship.Model.Layout.CellCount;
-            yield return new KeyValuePair<string, string>("$CellCount", size.ToString());
-            yield return new KeyValuePair<string, string>("$EngineSize", ship.Model.Layout.Data.Count(value => value == (char)CellType.Engine).ToString());
+            yield return ("$CellCount", size.ToString());
+            yield return ("$EngineSize", ship.Model.Layout.Data.Count(value => value == (char)CellType.Engine).ToString());
         }
 
-        private static IEnumerable<KeyValuePair<string, string>> GetSatelliteDescription(Satellite satellite)
+        private static IEnumerable<(string,string)> GetSatelliteDescription(Satellite satellite)
         {
             var size = satellite.Layout.CellCount;
-            yield return new KeyValuePair<string, string>("$CellCount", size.ToString());
+            yield return ("$CellCount", size.ToString());
 
             var engineSize = satellite.Layout.Data.Count(value => value == (char)CellType.Engine);
             if (engineSize > 0)
-                yield return new KeyValuePair<string, string>("$EngineSize", satellite.Layout.Data.Count(value => value == (char)CellType.Engine).ToString());
+                yield return ("$EngineSize", satellite.Layout.Data.Count(value => value == (char)CellType.Engine).ToString());
         }
     }
 }

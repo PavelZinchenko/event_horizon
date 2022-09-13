@@ -87,75 +87,84 @@ namespace ViewModel
 		    }
 
             if (DescriptionLayout)
-		        DescriptionLayout.InitializeElements<TextFieldViewModel, KeyValuePair<string,string>>(
+		        DescriptionLayout.InitializeElements<TextFieldViewModel, (string,string)>(
 				    GetDescription(component, _localization), UpdateTextField);
 		}
 
-		private void UpdateTextField(TextFieldViewModel viewModel, KeyValuePair<string, string> data)
+		private void UpdateTextField(TextFieldViewModel viewModel, (string,string) data)
 		{
-			viewModel.Label.text = _localization.GetString(data.Key);
-			viewModel.Value.text = data.Value;
+			viewModel.Label.text = _localization.GetString(data.Item1);
+			viewModel.Value.text = data.Item2;
 		}
 
-		public static IEnumerable<KeyValuePair<string, string>> GetDescription(Constructor.Component.IComponent component, ILocalization localization)
+		public static IEnumerable<(string,string)> GetDescription(Constructor.Component.IComponent component, ILocalization localization)
 		{
 			var stats = new ShipEquipmentStats();
 			component.UpdateStats(ref stats);
 
 			if (stats.ArmorPoints != 0)
-				yield return new KeyValuePair<string, string>("$HitPoints", FormatFloat(stats.ArmorPoints));
-
+				yield return ("$HitPoints", FormatFloat(stats.ArmorPoints));
+			if (!Mathf.Approximately(stats.ArmorRepairRate, 0))
+				yield return ("$RepairRate", FormatFloat(stats.ArmorRepairRate));
+			if (!Mathf.Approximately(stats.ArmorRepairCooldownMultiplier.Bonus, 0))
+				yield return ("$RepairRateCooldown", FormatPercent(stats.ArmorRepairCooldownMultiplier.Bonus));
+			
             if (!Mathf.Approximately(stats.EnergyPoints, 0))
-				yield return new KeyValuePair<string, string>("$Energy", FormatFloat(stats.EnergyPoints));
+				yield return ("$Energy", FormatFloat(stats.EnergyPoints));
 
 			if (stats.EnergyRechargeRate < 0)
-				yield return new KeyValuePair<string, string>("$EnergyConsumption", FormatFloat(-stats.EnergyRechargeRate));
+				yield return ("$EnergyConsumption", FormatFloat(-stats.EnergyRechargeRate));
 			if (stats.EnergyRechargeRate > 0)
-				yield return new KeyValuePair<string, string>("$RechargeRate", FormatFloat(stats.EnergyRechargeRate));
+				yield return ("$RechargeRate", FormatFloat(stats.EnergyRechargeRate));
+			
+			if (!Mathf.Approximately(stats.EnergyRechargeCooldownMultiplier.Bonus, 0))
+				yield return ("$RechargeRateCooldown", FormatPercent(stats.EnergyRechargeCooldownMultiplier.Bonus));
 
-		    if (!Mathf.Approximately(stats.ShieldPoints, 0))
-		        yield return new KeyValuePair<string, string>("$ShieldPoints", FormatFloat(stats.ShieldPoints));
+			if (!Mathf.Approximately(stats.ShieldPoints, 0))
+		        yield return ("$ShieldPoints", FormatFloat(stats.ShieldPoints));
             if (!Mathf.Approximately(stats.ShieldRechargeRate, 0))
-		        yield return new KeyValuePair<string, string>("$ShieldRechargeRate", FormatFloat(stats.ShieldRechargeRate));
-
+		        yield return ("$ShieldRechargeRate", FormatFloat(stats.ShieldRechargeRate));
+            if (!Mathf.Approximately(stats.ShieldRechargeCooldownMultiplier.Bonus, 0))
+	            yield return ("$ShieldRechargeRateCooldown", FormatPercent(stats.ShieldRechargeCooldownMultiplier.Bonus));
+            
 		    if (stats.EnginePower != 0)
-				yield return new KeyValuePair<string, string>("$Velocity", FormatFloat(stats.EnginePower));
+				yield return ("$Velocity", FormatFloat(stats.EnginePower));
 			if (stats.TurnRate != 0)
-				yield return new KeyValuePair<string, string>("$TurnRate", FormatFloat(stats.TurnRate));
+				yield return ("$TurnRate", FormatFloat(stats.TurnRate));
 
 			if (stats.WeaponDamageMultiplier.HasValue)
-				yield return new KeyValuePair<string, string>("$DamageModifier", stats.WeaponDamageMultiplier.ToString());
+				yield return ("$DamageModifier", stats.WeaponDamageMultiplier.ToString());
 			if (stats.WeaponFireRateMultiplier.HasValue)
-				yield return new KeyValuePair<string, string>("$FireRateModifier", stats.WeaponFireRateMultiplier.ToString());
+				yield return ("$FireRateModifier", stats.WeaponFireRateMultiplier.ToString());
 			if (stats.WeaponRangeMultiplier.HasValue)
-				yield return new KeyValuePair<string, string>("$RangeModifier", stats.WeaponRangeMultiplier.ToString());
+				yield return ("$RangeModifier", stats.WeaponRangeMultiplier.ToString());
 			if (stats.WeaponEnergyCostMultiplier.HasValue)
-				yield return new KeyValuePair<string, string>("$EnergyModifier", stats.WeaponEnergyCostMultiplier.ToString());
+				yield return ("$EnergyModifier", stats.WeaponEnergyCostMultiplier.ToString());
 
 			if (stats.RammingDamage != 0)
-				yield return new KeyValuePair<string, string>("$RamDamage", FormatFloat(stats.RammingDamage));
+				yield return ("$RamDamage", FormatFloat(stats.RammingDamage));
 			if (stats.EnergyAbsorption != 0)
-				yield return new KeyValuePair<string, string>("$DamageAbsorption", FormatFloat(stats.EnergyAbsorption));
+				yield return ("$DamageAbsorption", FormatFloat(stats.EnergyAbsorption));
 
 			if (stats.KineticResistance != 0)
-				yield return new KeyValuePair<string, string>("$KineticDamageResistance", FormatFloat(stats.KineticResistance));
+				yield return ("$KineticDamageResistance", FormatFloat(stats.KineticResistance));
 			if (stats.ThermalResistance != 0)
-				yield return new KeyValuePair<string, string>("$ThermalDamageResistance", FormatFloat(stats.ThermalResistance));
+				yield return ("$ThermalDamageResistance", FormatFloat(stats.ThermalResistance));
 			if (stats.EnergyResistance != 0)
-				yield return new KeyValuePair<string, string>("$EnergyDamageResistance", FormatFloat(stats.EnergyResistance));
+				yield return ("$EnergyDamageResistance", FormatFloat(stats.EnergyResistance));
 
 			if (stats.DroneDamageMultiplier.HasValue)
-				yield return new KeyValuePair<string, string>("$DroneDamageModifier", stats.DroneDamageMultiplier.ToString());
+				yield return ("$DroneDamageModifier", stats.DroneDamageMultiplier.ToString());
             if (stats.DroneDefenseMultiplier.HasValue)
-                yield return new KeyValuePair<string, string>("$DroneDefenseModifier", stats.DroneDefenseMultiplier.ToString());
+                yield return ("$DroneDefenseModifier", stats.DroneDefenseMultiplier.ToString());
             if (stats.DroneRangeMultiplier.HasValue)
-				yield return new KeyValuePair<string, string>("$DroneRangeModifier", stats.DroneRangeMultiplier.ToString());
+				yield return ("$DroneRangeModifier", stats.DroneRangeMultiplier.ToString());
 			if (stats.DroneSpeedMultiplier.HasValue)
-				yield return new KeyValuePair<string, string>("$DroneSpeedModifier", stats.DroneSpeedMultiplier.ToString());
+				yield return ("$DroneSpeedModifier", stats.DroneSpeedMultiplier.ToString());
 			if (stats.DroneReconstructionSpeed > 0)
-				yield return new KeyValuePair<string, string>("$DroneReconstructionTime", (1f/stats.DroneReconstructionSpeed).ToString("N1"));
+				yield return ("$DroneReconstructionTime", (1f/stats.DroneReconstructionSpeed).ToString("N1"));
             if (stats.DroneReconstructionTimeMultiplier.HasValue)
-                yield return new KeyValuePair<string, string>("$DroneReconstructionTime", stats.DroneReconstructionTimeMultiplier.ToString());
+                yield return ("$DroneReconstructionTime", stats.DroneReconstructionTimeMultiplier.ToString());
 
             // TODO: display component type
             //DeviceInfo.SetActive(component.Devices.Any());
@@ -174,102 +183,102 @@ namespace ViewModel
                     yield return item;
 
             if (!Mathf.Approximately(stats.Weight, 0))
-				yield return new KeyValuePair<string, string>("$Weight", Mathf.RoundToInt(stats.Weight).ToString());
+				yield return ("$Weight", Mathf.RoundToInt(stats.Weight).ToString());
 		}
 
         public override bool Selected { get; set; }
 
-		private static IEnumerable<KeyValuePair<string, string>> GetWeaponDescription(KeyValuePair<WeaponStats,AmmunitionObsoleteStats> weapon, ILocalization localization)
+		private static IEnumerable<(string,string)> GetWeaponDescription(KeyValuePair<WeaponStats,AmmunitionObsoleteStats> weapon, ILocalization localization)
 		{
-			yield return new KeyValuePair<string, string>("$DamageType", localization.GetString(weapon.Value.DamageType.Name()));
+			yield return ("$DamageType", localization.GetString(weapon.Value.DamageType.Name()));
 
 			var damageSuffix = weapon.Key.Magazine <= 1 ? string.Empty : "х" + weapon.Key.Magazine;
 			if (weapon.Key.FireRate > 0)
 			{
-				yield return new KeyValuePair<string, string>("$WeaponDamage", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
-				yield return new KeyValuePair<string, string>("$WeaponEnergy", weapon.Value.EnergyCost.ToString(_floatFormat));
-				yield return new KeyValuePair<string, string>("$WeaponCooldown", (1.0f/weapon.Key.FireRate).ToString(_floatFormat));
+				yield return ("$WeaponDamage", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
+				yield return ("$WeaponEnergy", weapon.Value.EnergyCost.ToString(_floatFormat));
+				yield return ("$WeaponCooldown", (1.0f/weapon.Key.FireRate).ToString(_floatFormat));
 			}
 			else
 			{
-				yield return new KeyValuePair<string, string>("$WeaponDPS", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
-				yield return new KeyValuePair<string, string>("$WeaponEPS", weapon.Value.EnergyCost.ToString(_floatFormat));
+				yield return ("$WeaponDPS", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
+				yield return ("$WeaponEPS", weapon.Value.EnergyCost.ToString(_floatFormat));
 			}
 
 			if (weapon.Value.Range > 0)
-				yield return new KeyValuePair<string, string>("$WeaponRange", weapon.Value.Range.ToString(_floatFormat));
+				yield return ("$WeaponRange", weapon.Value.Range.ToString(_floatFormat));
 			if (weapon.Value.Velocity > 0)
-				yield return new KeyValuePair<string, string>("$WeaponVelocity", weapon.Value.Velocity.ToString(_floatFormat));
+				yield return ("$WeaponVelocity", weapon.Value.Velocity.ToString(_floatFormat));
 			if (weapon.Value.Impulse > 0)
-				yield return new KeyValuePair<string, string>("$WeaponImpulse", (weapon.Value.Impulse*1000).ToString(_floatFormat));
+				yield return ("$WeaponImpulse", (weapon.Value.Impulse*1000).ToString(_floatFormat));
 			if (weapon.Value.AreaOfEffect > 0)
-				yield return new KeyValuePair<string, string>("$WeaponArea", weapon.Value.AreaOfEffect.ToString(_floatFormat));
+				yield return ("$WeaponArea", weapon.Value.AreaOfEffect.ToString(_floatFormat));
 		}
 
-	    private static IEnumerable<KeyValuePair<string, string>> GetWeaponDescription(Constructor.Component.WeaponData data, ILocalization localization)
+	    private static IEnumerable<(string,string)> GetWeaponDescription(Constructor.Component.WeaponData data, ILocalization localization)
 	    {
             //var damageSuffix = weapon.Key.Magazine <= 1 ? string.Empty : "х" + weapon.Key.Magazine;
             //if (data.Weapon.Stats.WeaponClass == )
             //{
-            //    yield return new KeyValuePair<string, string>("$WeaponDamage", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
-            //    yield return new KeyValuePair<string, string>("$WeaponEnergy", weapon.Value.EnergyCost.ToString(_floatFormat));
-            //    yield return new KeyValuePair<string, string>("$WeaponCooldown", (1.0f / weapon.Key.FireRate).ToString(_floatFormat));
+            //    yield return ("$WeaponDamage", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
+            //    yield return ("$WeaponEnergy", weapon.Value.EnergyCost.ToString(_floatFormat));
+            //    yield return ("$WeaponCooldown", (1.0f / weapon.Key.FireRate).ToString(_floatFormat));
             //}
             //else
             //{
-            //    yield return new KeyValuePair<string, string>("$WeaponDPS", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
-            //    yield return new KeyValuePair<string, string>("$WeaponEPS", weapon.Value.EnergyCost.ToString(_floatFormat));
+            //    yield return ("$WeaponDPS", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
+            //    yield return ("$WeaponEPS", weapon.Value.EnergyCost.ToString(_floatFormat));
             //}
 
 	        if (data.Weapon.Stats.WeaponClass == WeaponClass.Continuous)
 	        {
-	            yield return new KeyValuePair<string, string>("$WeaponEPS", data.Ammunition.Body.EnergyCost.ToString(_floatFormat));
+	            yield return ("$WeaponEPS", data.Ammunition.Body.EnergyCost.ToString(_floatFormat));
 	        }
 	        else
 	        {
-	            yield return new KeyValuePair<string, string>("$WeaponEnergy", data.Ammunition.Body.EnergyCost.ToString(_floatFormat));
-	            yield return new KeyValuePair<string, string>("$WeaponCooldown", (1.0f / (data.Weapon.Stats.FireRate * data.StatModifier.FireRateMultiplier.Value)).ToString(_floatFormat));
+	            yield return ("$WeaponEnergy", data.Ammunition.Body.EnergyCost.ToString(_floatFormat));
+	            yield return ("$WeaponCooldown", (1.0f / (data.Weapon.Stats.FireRate * data.StatModifier.FireRateMultiplier.Value)).ToString(_floatFormat));
             }
 
 	        foreach (var item in GetWeaponDamageText(data.Ammunition, data.StatModifier, localization))
 	            yield return item;
 
-            //yield return new KeyValuePair<string, string>("$DamageType", localization.GetString(weapon.Value.DamageType.Name()));
+            //yield return ("$DamageType", localization.GetString(weapon.Value.DamageType.Name()));
 
             //var damageSuffix = weapon.Key.Magazine <= 1 ? string.Empty : "х" + weapon.Key.Magazine;
             //if (weapon.Key.FireRate > 0)
             //{
-            //    yield return new KeyValuePair<string, string>("$WeaponDamage", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
-            //    yield return new KeyValuePair<string, string>("$WeaponEnergy", weapon.Value.EnergyCost.ToString(_floatFormat));
-            //    yield return new KeyValuePair<string, string>("$WeaponCooldown", (1.0f / weapon.Key.FireRate).ToString(_floatFormat));
+            //    yield return ("$WeaponDamage", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
+            //    yield return ("$WeaponEnergy", weapon.Value.EnergyCost.ToString(_floatFormat));
+            //    yield return ("$WeaponCooldown", (1.0f / weapon.Key.FireRate).ToString(_floatFormat));
             //}
             //else
             //{
-            //    yield return new KeyValuePair<string, string>("$WeaponDPS", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
-            //    yield return new KeyValuePair<string, string>("$WeaponEPS", weapon.Value.EnergyCost.ToString(_floatFormat));
+            //    yield return ("$WeaponDPS", weapon.Value.Damage.ToString(_floatFormat) + damageSuffix);
+            //    yield return ("$WeaponEPS", weapon.Value.EnergyCost.ToString(_floatFormat));
             //}
 
 	        //if (data.Ammunition.Body.Range > 0)
-	        //    yield return new KeyValuePair<string, string>("$WeaponRange", data.Ammunition.Body.Range.ToString(_floatFormat));
+	        //    yield return ("$WeaponRange", data.Ammunition.Body.Range.ToString(_floatFormat));
 	        //if (data.Ammunition.Body.Velocity > 0)
-	        //    yield return new KeyValuePair<string, string>("$WeaponRange", data.Ammunition.Body.Velocity.ToString(_floatFormat));
+	        //    yield return ("$WeaponRange", data.Ammunition.Body.Velocity.ToString(_floatFormat));
 	        //if (weapon.Value.Velocity > 0)
-	        //    yield return new KeyValuePair<string, string>("$WeaponVelocity", weapon.Value.Velocity.ToString(_floatFormat));
+	        //    yield return ("$WeaponVelocity", weapon.Value.Velocity.ToString(_floatFormat));
 	        //if (weapon.Value.Impulse > 0)
-	        //    yield return new KeyValuePair<string, string>("$WeaponImpulse", (weapon.Value.Impulse * 1000).ToString(_floatFormat));
+	        //    yield return ("$WeaponImpulse", (weapon.Value.Impulse * 1000).ToString(_floatFormat));
 	        //if (weapon.Value.AreaOfEffect > 0)
-	        //    yield return new KeyValuePair<string, string>("$WeaponArea", weapon.Value.AreaOfEffect.ToString(_floatFormat));
+	        //    yield return ("$WeaponArea", weapon.Value.AreaOfEffect.ToString(_floatFormat));
 	    }
 
-	    private static IEnumerable<KeyValuePair<string, string>> GetWeaponDamageText(Ammunition ammunition, WeaponStatModifier statModifier, ILocalization localization)
+	    private static IEnumerable<(string,string)> GetWeaponDamageText(Ammunition ammunition, WeaponStatModifier statModifier, ILocalization localization)
 	    {
 		    var effect = ammunition.Effects.FirstOrDefault(item =>
 			    item.Type == ImpactEffectType.Damage || item.Type == ImpactEffectType.SiphonHitPoints);
 		    if (effect != null && effect.Power > 0)
 		    {
-	            yield return new KeyValuePair<string, string>("$DamageType", localization.GetString(effect.DamageType.Name()));
+	            yield return ("$DamageType", localization.GetString(effect.DamageType.Name()));
 	            var damage = effect.Power * statModifier.DamageMultiplier.Value;
-                yield return new KeyValuePair<string, string>(ammunition.ImpactType == BulletImpactType.DamageOverTime ? "$WeaponDPS" : "$WeaponDamage",  damage.ToString(_floatFormat));
+                yield return (ammunition.ImpactType == BulletImpactType.DamageOverTime ? "$WeaponDPS" : "$WeaponDamage",  damage.ToString(_floatFormat));
 	            yield break;
 	        }
 
@@ -279,21 +288,21 @@ namespace ViewModel
                     yield return item;
 	    }
 
-        private static IEnumerable<KeyValuePair<string, string>> GetDroneBayDescription(KeyValuePair<DroneBayStats,ShipBuild> droneBay, ILocalization localization)
+        private static IEnumerable<(string,string)> GetDroneBayDescription(KeyValuePair<DroneBayStats,ShipBuild> droneBay, ILocalization localization)
         {
-            yield return new KeyValuePair<string, string>("$DroneBayCapacity", droneBay.Key.Capacity.ToString());
+            yield return ("$DroneBayCapacity", droneBay.Key.Capacity.ToString());
             if (!Mathf.Approximately(droneBay.Key.DamageMultiplier, 1f))
-                yield return new KeyValuePair<string, string>("$DroneDamageModifier", FormatPercent(droneBay.Key.DamageMultiplier - 1f));
+                yield return ("$DroneDamageModifier", FormatPercent(droneBay.Key.DamageMultiplier - 1f));
             if (!Mathf.Approximately(droneBay.Key.DefenseMultiplier, 1f))
-                yield return new KeyValuePair<string, string>("$DroneDefenseModifier", FormatPercent(droneBay.Key.DefenseMultiplier - 1f));
+                yield return ("$DroneDefenseModifier", FormatPercent(droneBay.Key.DefenseMultiplier - 1f));
             if (!Mathf.Approximately(droneBay.Key.SpeedMultiplier, 1f))
-                yield return new KeyValuePair<string, string>("$DroneSpeedModifier", FormatPercent(droneBay.Key.SpeedMultiplier - 1f));
+                yield return ("$DroneSpeedModifier", FormatPercent(droneBay.Key.SpeedMultiplier - 1f));
 
-            yield return new KeyValuePair<string, string>("$DroneRangeModifier", droneBay.Key.Range.ToString("N"));
+            yield return ("$DroneRangeModifier", droneBay.Key.Range.ToString("N"));
 
             var weapon = droneBay.Value.Components.Select<InstalledComponent,IntegratedComponent>(ComponentExtensions.FromDatabase).FirstOrDefault(item => item.Info.Data.Weapon != null);
             if (weapon != null)
-                yield return new KeyValuePair<string, string>("$WeaponType", localization.GetString(weapon.Info.Data.Name));
+                yield return ("$WeaponType", localization.GetString(weapon.Info.Data.Name));
         }
 
         private static string FormatInt(int value)
