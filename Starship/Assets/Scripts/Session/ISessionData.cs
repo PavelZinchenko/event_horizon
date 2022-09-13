@@ -17,7 +17,6 @@ namespace Session
         RegionData Regions { get; }
         PvpData Pvp { get; }
         WormholeData Wormholes { get; }
-        AchievementData Achievements { get; }
         CommonObjectData CommonObjects { get; }
         ResearchData Research { get; }
         StatisticsData Statistics { get; }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Constructor.Satellites;
 using Constructor.Ships.Modification;
@@ -12,6 +11,8 @@ using GameDatabase.Model;
 using GameServices.Player;
 using Maths;
 using Session.Content;
+using UnityEngine;
+using Random = System.Random;
 
 namespace Constructor.Ships
 {
@@ -74,11 +75,17 @@ namespace Constructor.Ships
             return builder.Build(settings);
         }
 
-        public static IShip FromShipData(IDatabase database, ShipData shipData)
+        public static IShip FromShipData(IDatabase database, ShipData shipData, List<ShipComponentsData.Component> orphanedComponents = null)
         {
             var shipWrapper = database.GetShip(new ItemId<Ship>(shipData.Id));
             if (shipWrapper == null)
+            {
+                Debug.LogError($"Ship with id {shipData.Id} is not found");
+                orphanedComponents?.AddRange(shipData.Components.Components);
+                orphanedComponents?.AddRange(shipData.Satellite1.Components.Components);
+                orphanedComponents?.AddRange(shipData.Satellite2.Components.Components);
                 return null;
+            }
 
             var shipModel = new ShipModel(shipWrapper);
             var factory = new ModificationFactory(database);
@@ -87,8 +94,8 @@ namespace Constructor.Ships
             var components = shipData.Components.FromShipComponentsData(database);
             var ship = new CommonShip(shipModel, components);
 
-            ship.FirstSatellite = SatelliteExtensions.FromSatelliteData(database, shipData.Satellite1);
-            ship.SecondSatellite = SatelliteExtensions.FromSatelliteData(database, shipData.Satellite2);
+            ship.FirstSatellite = SatelliteExtensions.FromSatelliteData(database, shipData.Satellite1, orphanedComponents);
+            ship.SecondSatellite = SatelliteExtensions.FromSatelliteData(database, shipData.Satellite2, orphanedComponents);
             ship.Name = shipData.Name;
             ship.ColorScheme.Value = shipData.ColorScheme;
             ship.Experience = (long)shipData.Experience;
@@ -196,7 +203,8 @@ namespace Constructor.Ships
 
         public static IEnumerable<IShip> Create(this IEnumerable<ShipBuild> ships, int requiredLevel, Random random, IDatabase database)
         {
-            return ships.Select(item => global::Model.Factories.Ship.Create(item, requiredLevel, random, database));
+            return ships.Select((item, id) =>
+                global::Model.Factories.Ship.Create(item, requiredLevel, random, database, id > 12));
         }
     }
 }

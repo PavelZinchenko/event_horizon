@@ -26,27 +26,31 @@ namespace Combat
 		    }
 
             private void Start()
-			{
-                _zoom = ZoomOverride >= 0 ? ZoomOverride : _gameSettings.CameraZoom;
-			}
+            {
+	            if (Background == null) Background = null;
+	            _camera = gameObject.GetComponent<UnityEngine.Camera>();
+	            _zoom = ZoomOverride >= 0 ? ZoomOverride : _gameSettings.CameraZoom;
+            }
 			
 			private void LateUpdate()
 			{
-				var camera = gameObject.GetComponent<UnityEngine.Camera>();
 				var viewRect = _scene.ViewRect;
-				var orthographicSize = Mathf.Clamp(0.5f*Mathf.Max(viewRect.width/camera.aspect, viewRect.height), MinSize + _zoom*(MaxSize - MinSize), MaxSize);
+				var orthographicSize = Mathf.Clamp(0.5f*Mathf.Max(viewRect.width/_camera.aspect, viewRect.height), MinSize + _zoom*(MaxSize - MinSize), MaxSize);
 				var delta = Mathf.Min(ZoomSpeed*Time.unscaledDeltaTime, 1);
-				camera.orthographicSize += (orthographicSize - camera.orthographicSize)*delta;
+				var size = _camera.orthographicSize;
+				size += (orthographicSize - size) * delta;
+				_camera.orthographicSize = size;
 				var position = Vector2.Lerp(transform.position, viewRect.center, LinearSpeed*Time.unscaledDeltaTime);
 				gameObject.Move(position);
 
-				if (Background != null)
-					Background.Move(position);
+				// ReSharper disable once Unity.NoNullPropagation
+				Background?.Move(position);
 			}
 
 			private float _zoom;
             private IScene _scene;
 		    private GameSettings _gameSettings;
+		    private UnityEngine.Camera _camera;
 		}
     }
 }

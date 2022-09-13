@@ -61,16 +61,33 @@ namespace Domain.Player
 
         private void OnPlayerPositionChanged(int starId)
         {
-            if (_starData.GetOccupant(starId).IsAggressive) return;
+            if (_starData.GetOccupant(starId).IsAggressive)
+            {
+                // A lot of things can happen between arriving at node with encounter and when "OnNewStarExplored"
+                // triggers, but we assume that player was NOT moved to a different start in a meanwhile, so we store
+                // star ID in a variable, and if by the time NewStarExplore is triggered this variable is the same,
+                // we trigger the logic that should've originally happened here.
+                // All of this work just to avoid double quest trigger
+                _shouldTriggerMoveOnExplorationAt = starId;
+                return;
+            }
 
-            ExploreAdjacentStars(starId);
-            _questEventTrigger.Fire(new StarEventData(QuestEventType.ArrivedAtStarSystem, starId));
+            UpdatePosition(starId);
         }
 
         private void OnNewStarExplored(int starId)
         {
-            ExploreAdjacentStars(starId);
+            if (_shouldTriggerMoveOnExplorationAt == starId)
+            {
+                UpdatePosition(starId);   
+            }
             _questEventTrigger.Fire(new StarEventData(QuestEventType.NewStarSystemExplored, starId));
+        }
+
+        private void UpdatePosition(int starId)
+        {
+            _shouldTriggerMoveOnExplorationAt = -1;
+            ExploreAdjacentStars(starId);
             _questEventTrigger.Fire(new StarEventData(QuestEventType.ArrivedAtStarSystem, starId));
         }
 
@@ -87,6 +104,7 @@ namespace Domain.Player
             _messenger.Broadcast(EventType.StarMapChanged);
         }
 
+        private int _shouldTriggerMoveOnExplorationAt = -1;
         private readonly ISessionData _session;
         private readonly RegionFleetDefeatedSignal _regionFleetDefeatedSignal;
         private readonly PlayerPositionChangedSignal _playerPositionChangedSignal;

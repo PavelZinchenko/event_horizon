@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Combat.Component.Unit.Classification;
 using Combat.Unit;
+using Constructor;
 using Constructor.Ships;
 using GameDatabase;
 using GameServices.Player;
@@ -14,9 +15,22 @@ namespace Combat.Domain
             var settings = database.ShipSettings;
             Level = level;
 
+            var maxNonLazy = 12;
             foreach (var ship in ships)
             {
-                var shipSpec = playerSkills != null ? ship.BuildSpecAndApplySkills(playerSkills, settings) : ship.CreateBuilder().Build(settings);
+                IShipSpecification shipSpec;
+                if (maxNonLazy-- > 0)
+                {
+                    shipSpec = playerSkills != null
+                        ? ship.BuildSpecAndApplySkills(playerSkills, settings)
+                        : ship.CreateBuilder().Build(settings);
+                }
+                else
+                {
+                    shipSpec = playerSkills != null
+                        ? new LazyShipSpecification(() => ship.BuildSpecAndApplySkills(playerSkills, settings))
+                        : new LazyShipSpecification(() => ship.CreateBuilder().Build(settings));
+                }
                 var shipInfo = new ShipInfo(ship, shipSpec, unitSide);
                 _ships.Add(shipInfo);
             }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Combat.Component.Body
 {
@@ -125,6 +126,11 @@ namespace Combat.Component.Body
             _maxVelocity = value;
         }
 
+        public void SetAngularVelocityLimit(float value)
+        {
+            _maxAngularVelocity = value;
+        }
+
         public void Move(Vector2 position)
         {
             Position = position;
@@ -145,10 +151,16 @@ namespace Combat.Component.Body
         public void UpdatePhysics(float elapsedTime)
         {
             var velocity = _rigidbody.velocity;
-            if (_maxVelocity > 0 && velocity.magnitude > _maxVelocity)
+            if (_maxVelocity > 0 && velocity.sqrMagnitude > _maxVelocity * _maxVelocity)
             {
                 velocity = velocity.normalized * _maxVelocity;
                 _rigidbody.velocity = velocity;
+            }
+
+            var angularVelocity = _rigidbody.angularVelocity;
+            if (_maxAngularVelocity > 0 && Math.Abs(angularVelocity) > _maxAngularVelocity)
+            {
+                _rigidbody.angularVelocity = _maxAngularVelocity * Mathf.Sign(angularVelocity);
             }
 
             _cachedVelocity = velocity;
@@ -186,5 +198,6 @@ namespace Combat.Component.Body
         private float _scale;
         private IBody _parent;
         private float _maxVelocity;
+        private float _maxAngularVelocity;
     }
 }

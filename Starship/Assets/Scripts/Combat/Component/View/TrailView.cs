@@ -1,4 +1,5 @@
-﻿using Combat.Services;
+﻿using System;
+using Combat.Services;
 using GameDatabase.Enums;
 using GameDatabase.Extensions;
 using UnityEngine;
@@ -34,7 +35,7 @@ namespace Combat.Component.View
         {
             base.UpdateView(elapsedTime);
 
-            if (_trailRenderer == null)
+            if ((object)_trailRenderer == null)
                 return;
 
             var position = (Vector2)transform.position;
@@ -53,14 +54,15 @@ namespace Combat.Component.View
             {
                 _lastActivationTime = Time.time;
 
-                if (_trailRenderer == null)
+                if ((object)_trailRenderer == null)
                 {
-                    _trailRenderer = _trailRendererPool.CreateTrailRenderer(transform, TrailSize, TrailSize*0.5f, _trailColor, _duration);
+                    _trailRenderer = _trailRendererPool.CreateTrailRenderer(transform, TrailSize, TrailSize * 0.5f,
+                        _trailColor, _duration);
                 }
             }
             else if (Time.time - _lastActivationTime > 0.1f)
             {
-                if (_trailRenderer != null)
+                if ((object)_trailRenderer != null)
                 {
                     _trailRendererPool.ReleaseTrailRenderer(_trailRenderer);
                     _trailRenderer = null;
@@ -68,16 +70,16 @@ namespace Combat.Component.View
             }
         }
 
-        protected override void UpdatePosition(Vector2 position) {}
-        protected override void UpdateRotation(float rotation) {}
+        protected override void UpdatePosition(Vector2 position) { }
+        protected override void UpdateRotation(float rotation) { }
 
         protected override void UpdateSize(float size)
         {
             _trailSize = size;
-            if (_trailRenderer != null)
+            if ((object)_trailRenderer != null)
             {
                 _trailRenderer.startWidth = TrailSize;
-                _trailRenderer.endWidth = TrailSize*0.5f;
+                _trailRenderer.endWidth = TrailSize * 0.5f;
             }
         }
 
@@ -85,11 +87,16 @@ namespace Combat.Component.View
         {
             _trailColor = _colorMode.Apply(_baseColor, color);
             _trailColor.a *= _alpha;
-            if (_trailRenderer != null)
+            if ((object)_trailRenderer != null)
                 _trailRenderer.material.color = _trailColor;
         }
 
-        private float TrailSize { get { return _useObjectScale ? _trailSize * transform.lossyScale.z : _trailSize; } }
+        private void Start()
+        {
+            if (_trailRenderer == null) _trailRenderer = null;
+        }
+
+        private float TrailSize => _useObjectScale ? _trailSize * transform.lossyScale.z : _trailSize;
 
         private Color _trailColor = Color.white;
         private float _trailSize = 1.0f;

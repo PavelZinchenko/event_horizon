@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Combat.Component.Ship;
 using Combat.Component.Unit.Classification;
 using Combat.Scene;
@@ -25,7 +26,6 @@ namespace Gui.Combat
             _ship = ship;
 
             Initialize(resourceLocator);
-            Update();
             gameObject.SetActive(true);
         }
 
@@ -39,8 +39,8 @@ namespace Gui.Combat
 
             var itemPosition = _ship.Body.Position;
             var position = _scene.ViewPoint.Direction(itemPosition);
-            var cameraHeight = Camera.main.orthographicSize;
-            var cameraWidth = cameraHeight*Camera.main.aspect;
+            var cameraHeight = MainCamera.orthographicSize;
+            var cameraWidth = cameraHeight*MainCamera.aspect;
 
             var x = position.x/cameraWidth;
             var y = position.y/cameraHeight;
@@ -122,5 +122,9 @@ namespace Gui.Combat
         private RectTransform _rectTransform;
         private IShip _ship;
         private IScene _scene;
+        private Camera _mainCamera;
+
+        // ReSharper disable once Unity.NoNullCoalescing
+        private Camera MainCamera => _mainCamera ?? (_mainCamera = Camera.main);
     }
 }

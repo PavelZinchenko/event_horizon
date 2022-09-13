@@ -41,9 +41,8 @@ public class GalaxyMap : MonoBehaviour
 
 	public void Refresh()
 	{
-		var camera = Camera.main;
-		_center = new Vector2(ScreenCenter.x*camera.aspect, ScreenCenter.y);
-		gameObject.Move(_center*camera.orthographicSize - FocusedPosition*Scale);
+		_center = new Vector2(ScreenCenter.x*_mainCamera.aspect, ScreenCenter.y);
+		gameObject.Move(_center*_mainCamera.orthographicSize - FocusedPosition*Scale);
 		UpdateVisibleStars();
 	}
 
@@ -147,15 +146,14 @@ public class GalaxyMap : MonoBehaviour
 
     private void UpdateZoom()
 	{
-		var camera = Camera.main;
-		var current = camera.orthographicSize;
+		var current = _mainCamera.orthographicSize;
 		if (Mathf.Abs(current - Zoom) < 0.005f)
 			return;
 
 		var size = Mathf.Lerp(current, Zoom, 5*UpdateCooldown);
 		var scale = size / current;
         gameObject.Move((Vector2)transform.localPosition + _center*current * (scale - 1f));
-        camera.orthographicSize = size;
+        _mainCamera.orthographicSize = size;
 		UpdateVisibleStars();
 	}
 
@@ -174,7 +172,7 @@ public class GalaxyMap : MonoBehaviour
 
 	private void Start()
 	{
-		var camera = Camera.main;
+		_mainCamera = Camera.main;
         _mapZoom = Mathf.Clamp(_session.StarMap.MapScaleFactor, 5f, 25f);
 		_starZoom = Mathf.Clamp(_session.StarMap.StarScaleFactor, 1f, 2.5f);
 		_galaxyZoom = 100f;
@@ -189,7 +187,7 @@ public class GalaxyMap : MonoBehaviour
 		OnPlayerPositionChanged(_motherShip.Position);
 		OnMapStateChanged(_motherShip.ViewMode);
 
-        camera.orthographicSize = Zoom;
+        _mainCamera.orthographicSize = Zoom;
 		Refresh();
 	}
 
@@ -205,7 +203,7 @@ public class GalaxyMap : MonoBehaviour
 		}
 		else
 		{
-			var position = _center*Camera.main.orthographicSize -  FocusedPosition*Scale;
+			var position = _center*_mainCamera.orthographicSize -  FocusedPosition*Scale;
 
 		    if (_mapState == ViewMode.StarSystem)
 		    {
@@ -297,17 +295,14 @@ public class GalaxyMap : MonoBehaviour
 
 	private void UpdateVisibleStars(bool forceUpdate = false)
 	{
-		var camera = Camera.main;
-		var screenSize = new Vector2(camera.orthographicSize*camera.aspect, camera.orthographicSize);
+		var screenSize = new Vector2(_mainCamera.orthographicSize*_mainCamera.aspect, _mainCamera.orthographicSize);
 		var topLeft = -(Vector2)transform.localPosition - screenSize;
 		var bottomRight = -(Vector2)transform.localPosition + screenSize;
 
-		var temp = _starsOld;
-		_starsOld = _stars;
-		_stars = temp;
+		(_starsOld, _stars) = (_stars, _starsOld);
 		_stars.Clear();
 
-        var allStars = camera.orthographicSize > 30f ? _starMap.GetGalaxyViewVisibleStars(topLeft/Scale, bottomRight/Scale)
+        var allStars = _mainCamera.orthographicSize > 30f ? _starMap.GetGalaxyViewVisibleStars(topLeft/Scale, bottomRight/Scale)
 			: _starMap.GetVisibleStars(topLeft/Scale, bottomRight/Scale);
 
 		foreach (var item in allStars)
@@ -330,13 +325,13 @@ public class GalaxyMap : MonoBehaviour
 				_stars.Add(item.Id, CreateStar(item));
 			}
 		};
-
+		
 		foreach (var item in _starsOld)
-			DestroyStar(item.Value.GetComponent<Star>());
+			DestroyStar(item.Value);
 
 		var position = _starData.GetPosition(0)*Scale;
 		var homeStarVisible = topLeft.x > position.x != bottomRight.x > position.x && topLeft.y > position.y != bottomRight.y > position.y;
-		var direction = _center*Camera.main.orthographicSize - position - (Vector2)transform.localPosition;
+		var direction = _center*_mainCamera.orthographicSize - position - (Vector2)transform.localPosition;
 		HomeStarPanel.SetDistance(direction/Scale);
 		HomeStarPanel.Visible = !homeStarVisible && _mapState != ViewMode.StarSystem;
 	}
@@ -383,6 +378,8 @@ public class GalaxyMap : MonoBehaviour
 		}
 	}
 
+	
+	
     private float _timeLeft;
 	private float _mapZoom;
 	private float _starZoom;
@@ -394,4 +391,5 @@ public class GalaxyMap : MonoBehaviour
 	private Dictionary<int, Star> _starsOld = new Dictionary<int, Star>();
 	//private static WeakReference<GalaxyMap> _self;
     private const float UpdateCooldown = 0.01f;
+    private Camera _mainCamera;
 }

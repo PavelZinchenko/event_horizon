@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Database.Legacy;
 using GameDatabase;
 using GameDatabase.DataModel;
@@ -17,11 +18,15 @@ namespace Constructor.Satellites
             return new CommonSatellite(satellite.Information, satellite.Components);
         }
 
-        public static ISatellite FromSatelliteData(IDatabase database, SatelliteData data)
+        public static ISatellite FromSatelliteData(IDatabase database, SatelliteData data,
+            List<ShipComponentsData.Component> orphanedComponents = null)
         {
             var satellite = database.GetSatellite(new ItemId<Satellite>(data.Id));
             if (satellite == null)
+            {
+                orphanedComponents?.AddRange(data.Components.Components);
                 return null;
+            }
 
             return new CommonSatellite(satellite, data.Components.FromShipComponentsData(database));
         }

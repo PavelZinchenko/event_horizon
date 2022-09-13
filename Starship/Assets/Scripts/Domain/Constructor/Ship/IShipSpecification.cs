@@ -17,7 +17,7 @@ namespace Constructor
 		IShipSpecification CopyWithStats(Model.IShipStats stats);
 	}
 
-    public struct ShipType
+	public struct ShipType
     {
         public ShipType(ItemId<Ship> id, DifficultyClass shipClass, int level, int size)
         {

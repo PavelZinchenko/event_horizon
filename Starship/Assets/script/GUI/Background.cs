@@ -16,8 +16,10 @@ public class Background : MonoBehaviour
 		_scaleCorrection = Mathf.Sqrt(Screen.width*Screen.width + Screen.height*Screen.height) *
 			Mathf.Cos( Mathf.Atan2(Screen.height, Screen.width) - RotationMax*Mathf.Deg2Rad) / Screen.width;
 	
-		var renderer = GetComponent<SpriteRenderer>();
-		var sprite = renderer.sprite;
+		_mainCamera = Camera.main;
+		_transform = transform;
+		_renderer = GetComponent<SpriteRenderer>();
+		var sprite = _renderer.sprite;
 		var pixelsPerUnit = sprite.pixelsPerUnit;
 		var width = sprite.texture.width;
 		var height = sprite.texture.height;
@@ -26,19 +28,22 @@ public class Background : MonoBehaviour
 
 	void LateUpdate()
 	{
-		var scale = _scaleCorrection + ScaleMax*(1 + Mathf.Sin(Time.time/13));
+		var scale = _scaleCorrection + ScaleMax * (1 + Mathf.Sin(Time.time / 13));
 
-		var alpha = 0.75f + ColorBurst*(1+Mathf.Pow(Mathf.Sin(Time.time/5), 5));
-		var flarePower = 0.75f + ColorBurst*(1+Mathf.Pow(Mathf.Sin(Time.time/5), 5));
+		var alpha = 0.75f + ColorBurst * (1 + Mathf.Pow(Mathf.Sin(Time.time / 5), 5));
+		var flarePower = 0.75f + ColorBurst * (1 + Mathf.Pow(Mathf.Sin(Time.time / 5), 5));
 
-		var angle = RotationMax*Mathf.Sin(Time.time/17);
+		var angle = RotationMax * Mathf.Sin(Time.time / 17);
 
-		transform.localScale = _scaleVector * 2*Camera.main.orthographicSize*Camera.main.aspect * scale;
-		transform.localEulerAngles = new Vector3(0,0,angle);
-		GetComponent<SpriteRenderer>().material.color = new Color(alpha,alpha,alpha,1);
+		_transform.localScale = _scaleVector * (2 * _mainCamera.orthographicSize * _mainCamera.aspect * scale);
+		_transform.localEulerAngles = new Vector3(0, 0, angle);
+		_renderer.material.color = new Color(alpha, alpha, alpha, 1);
 		LensFlare.brightness = flarePower;
 	}
 
 	private Vector2 _scaleVector;
 	private float _scaleCorrection;
+	private Camera _mainCamera;
+	private Transform _transform;
+	private SpriteRenderer _renderer;
 }

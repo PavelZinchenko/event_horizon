@@ -224,6 +224,8 @@ namespace Economy.Products
             if (!price.TryWithdraw(_playerResources))
             	throw new System.InvalidOperationException();
 
+            _purchasedCount += amount;
+
             _session.Shop.SetPurchase(_marketId, Type.Id, _purchasedCount);
 
             Type.Consume(amount);

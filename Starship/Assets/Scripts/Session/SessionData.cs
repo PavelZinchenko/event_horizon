@@ -89,10 +89,7 @@ namespace Session
         {
             UnityEngine.Debug.Log("SessionData.CreateNewGame");
 
-            if (_content != null && keepPurchases)
-                _content = new DatabaseContent(_contentFactory, _content.Achievements);
-            else
-                _content = new DatabaseContent(_contentFactory);
+            _content = new DatabaseContent(_contentFactory);
 
             GameId = System.DateTime.UtcNow.Ticks;
             TimePlayed = 0;
@@ -112,7 +109,6 @@ namespace Session
         public BossData Bosses { get { return _content.Bosses; } }
         public RegionData Regions { get { return _content.Regions; } }
         public WormholeData Wormholes { get { return _content.Wormholes; } }
-        public AchievementData Achievements { get { return _content.Achievements; } }
         public CommonObjectData CommonObjects { get { return _content.CommonObjects; } }
         public ResearchData Research { get { return _content.Research; } }
         public StatisticsData Statistics { get { return _content.Statistics; } }
@@ -139,17 +135,17 @@ namespace Session
 
         public IEnumerable<byte> Serialize()
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public bool TryDeserialize(long gameId, long timePlayed, long dataVersion, string modId, byte[] data, int startIndex)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public void CreateNewGame(string modId, bool keepPurchases = true)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public bool IsGameStarted { get; private set; }
@@ -163,7 +159,6 @@ namespace Session
         public RegionData Regions { get; private set; }
         public PvpData Pvp { get; private set; }
         public WormholeData Wormholes { get; private set; }
-        public AchievementData Achievements { get; private set; }
         public CommonObjectData CommonObjects { get; private set; }
         public ResearchData Research { get; private set; }
         public StatisticsData Statistics { get; private set; }

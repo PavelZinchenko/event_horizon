@@ -26,11 +26,11 @@ Material:
     - _DecalTex:
         m_Texture: {fileID: 2800000, guid: 65ce10300e650254db955449840c9bb7, type: 3}
         m_Scale: {x: 5, y: 5}
-        m_Offset: {x: 0.9141524, y: 0.8102162}
+        m_Offset: {x: NaN, y: NaN}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 0c835eaf8008a6546b3f4f984385ac21, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0.2285381, y: 0.45255405}
+        m_Offset: {x: NaN, y: NaN}
     - _MainTex2:
         m_Texture: {fileID: 2800000, guid: ed4a2970daf45ce4f8cf053fe6a39f79, type: 3}
         m_Scale: {x: 1, y: 1}

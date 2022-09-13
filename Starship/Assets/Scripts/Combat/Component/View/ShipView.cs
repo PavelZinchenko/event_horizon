@@ -16,10 +16,9 @@ namespace Combat.Component.View
             if (!_hsvMaterialInstance)
                 _hsvMaterialInstance = Instantiate(HsvMaterial);
 
-            _hsvMaterialInstance.SetColor("_HSVAAdjust", new Color(hue, saturation, 0));
+            _hsvMaterialInstance.SetColor(HsvaAdjust, new Color(hue, saturation, 0));
 
-            var renderer = GetComponent<SpriteRenderer>();
-            renderer.sharedMaterial = _hsvMaterialInstance;
+            Renderer.sharedMaterial = _hsvMaterialInstance;
 
             if (_extraRenderers != null && _extraRenderers.Length > 0)
                 foreach (var item in _extraRenderers)
@@ -30,7 +29,8 @@ namespace Combat.Component.View
         {
             if (this && DefaultMaterial)
             {
-                GetComponent<SpriteRenderer>().sharedMaterial = DefaultMaterial;
+                Renderer.sharedMaterial = DefaultMaterial;
+                _renderer = null;
 
                 if (_extraRenderers != null && _extraRenderers.Length > 0)
                     foreach (var item in _extraRenderers)
@@ -53,9 +53,13 @@ namespace Combat.Component.View
 
         protected override void UpdateColor(Color color)
         {
-            GetComponent<SpriteRenderer>().color = color;
+            Renderer.color = color;
         }
 
         protected Material _hsvMaterialInstance;
+        private static readonly int HsvaAdjust = Shader.PropertyToID("_HSVAAdjust");
+        private SpriteRenderer _renderer;
+        // ReSharper disable once Unity.NoNullCoalescing
+        private SpriteRenderer Renderer => _renderer ?? (_renderer = GetComponent<SpriteRenderer>());
     }
 }

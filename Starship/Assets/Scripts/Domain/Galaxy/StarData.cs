@@ -148,11 +148,6 @@ namespace Galaxy
             _customStarObjects.Add(stars.Dequeue(), StarObjects.Create(StarObjectType.Event));
             _customStarObjects.Add(stars.Dequeue(), StarObjects.Create(StarObjectType.Survival));
             _customStarObjects.Add(stars.Dequeue(), StarObjects.Create(StarObjectType.Wormhole));
-            if (_holidayManager.IsChristmas)
-                _customStarObjects.Add(stars.Dequeue(), StarObjects.Create(StarObjectType.Xmas));
-#if UNITY_ANDROID
-            // TODO: _customStarObjects.Add(stars.Dequeue(), StarObjects.Create(StarObjectType.Multiplayer));
-#endif
 
             while (stars.Count > 0)
                 _customStarObjects.Add(stars.Dequeue(), new StarObjects());

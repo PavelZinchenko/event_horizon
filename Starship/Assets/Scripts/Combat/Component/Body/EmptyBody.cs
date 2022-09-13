@@ -15,14 +15,17 @@ namespace Combat.Component.Body
             SetSize(scale);
         }
 
-        public void Dispose() {}
+        public void Dispose() { }
 
         public IBody Parent { get; private set; }
         public Vector2 Position { get; private set; }
         public float Rotation { get; private set; }
         public float Offset { get; private set; }
-        public Vector2 Velocity { get { return Vector2.zero; } }
-        public float AngularVelocity { get { return 0f; } }
+
+        public Vector2 Velocity => Vector2.zero;
+
+        public float AngularVelocity => 0f;
+
         public float Weight { get; private set; }
         public float Scale { get; private set; }
 
@@ -41,22 +44,18 @@ namespace Combat.Component.Body
             Scale = size;
         }
 
-        public void ApplyAcceleration(Vector2 acceleration)
-        {
-        }
+        public void ApplyAcceleration(Vector2 acceleration) { }
 
-        public void ApplyAngularAcceleration(float acceleration)
-        {
-        }
+        public void ApplyAngularAcceleration(float acceleration) { }
 
         public void ApplyForce(Vector2 position, Vector2 force)
         {
             Parent?.ApplyForce(position, force);
         }
 
-        public void SetVelocityLimit(float value)
-        {
-        }
+        public void SetVelocityLimit(float value) { }
+
+        public void SetAngularVelocityLimit(float value) { }
 
         public void UpdatePhysics(float elapsedTime) { }
         public void UpdateView(float elapsedTime) { }

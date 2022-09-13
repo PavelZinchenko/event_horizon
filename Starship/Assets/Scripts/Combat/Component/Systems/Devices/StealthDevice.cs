@@ -54,9 +54,16 @@ namespace Combat.Component.Systems.Devices
                 || system is IDroneBay;
 
             if (!remainActive)
+            {
                 Deactivate();
+            }
         }
 
+        public override void Deactivate()
+        {
+            TimeFromLastUse = 0;
+            base.Deactivate();
+        }
 
         public override IUnitAction UnitAction => this;
         public ConditionType TriggerCondition => ConditionType.OnHit;

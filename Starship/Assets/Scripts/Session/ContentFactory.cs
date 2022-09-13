@@ -16,11 +16,6 @@ namespace Session
         [Inject] private readonly PlayerSkillsResetSignal.Trigger _playerSkillResetTrigger;
         [Inject] private readonly ResourcesChangedSignal.Trigger _specialResourcesChangedTrigger;
 
-        public AchievementData CreateAchievementData(byte[] buffer)
-        {
-            return new AchievementData(buffer);
-        }
-
         public BossData CreateBossData(byte[] buffer)
         {
             return new BossData(buffer);

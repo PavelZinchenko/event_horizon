@@ -26,7 +26,7 @@ namespace Combat.Component.View
             if (!_hsvMaterialInstance)
                 _hsvMaterialInstance = Instantiate(HsvMaterial);
 
-            _hsvMaterialInstance.SetColor("_HSVAAdjust", new Color(hue, saturation, 0));
+            _hsvMaterialInstance.SetColor(HsvaAdjust, new Color(hue, saturation, 0));
 
             if (_renderers != null && _renderers.Length > 0)
                 foreach (var item in _renderers)
@@ -70,5 +70,6 @@ namespace Combat.Component.View
 
         private GameObject _activeView;
         private Material _hsvMaterialInstance;
+        private static readonly int HsvaAdjust = Shader.PropertyToID("_HSVAAdjust");
     }
 }

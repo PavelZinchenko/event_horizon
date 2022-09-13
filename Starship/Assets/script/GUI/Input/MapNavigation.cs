@@ -32,7 +32,7 @@ namespace ViewModel
 
 		protected override void OnPointerClick(int pointerId, Vector2 position)
 		{
-			OnClickEvent.Invoke(Camera.main.ScreenToWorldPoint(position));
+			OnClickEvent.Invoke(_mainCamera.ScreenToWorldPoint(position));
 		}
 
 		protected override bool IsAllowedPointerPosition(int pointerId, Vector2 position)
@@ -55,7 +55,7 @@ namespace ViewModel
 			{
 				var lastPosition = _currentPosition;
 				_currentPosition = AveragePosition;
-				var delta = (Vector2)Camera.main.ScreenToWorldPoint(_currentPosition) - (Vector2)Camera.main.ScreenToWorldPoint(lastPosition);
+				var delta = (Vector2)_mainCamera.ScreenToWorldPoint(_currentPosition) - (Vector2)_mainCamera.ScreenToWorldPoint(lastPosition);
 				OnMoveEvent.Invoke(delta);
 				_speed = _speed*0.9f + 0.2f*delta/Time.deltaTime;
 				
@@ -80,10 +80,16 @@ namespace ViewModel
 			}
 		}
 
+		private void Start()
+		{
+			_mainCamera = Camera.main;
+		}
+
 		private float _zoom;
 		private float _touchZoomDistance;
 		private Vector2 _speed;
 		private Vector2 _currentPosition;
+		private Camera _mainCamera;
 
 		[Serializable]
 		public class MoveEvent : UnityEvent<Vector2>

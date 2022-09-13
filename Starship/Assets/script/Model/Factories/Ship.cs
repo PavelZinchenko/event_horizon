@@ -13,6 +13,15 @@ namespace Model
 	{
 		public static class Ship
 		{
+			public static IShip CreateLazy(ShipBuild data, int distance, Random random, IDatabase database)
+			{
+				return new LazyShip(() => Create(data, distance, random, database));
+			}
+
+			public static IShip Create(ShipBuild data, int distance, Random random, IDatabase database, bool lazy)
+			{
+				return lazy ? CreateLazy(data, distance, random, database) : Create(data, distance, random, database);
+			}
 			public static IShip Create(ShipBuild data, int distance, Random random, IDatabase database)
 			{
 				var shipLevel = Maths.Distance.ToShipLevel(distance);
@@ -25,9 +34,8 @@ namespace Model
 				
 				var companionClass = Maths.Distance.CompanionClass(distance);
 				
-				var companions = database.SatelliteBuildList.LimitClass(companionClass).SuitableFor(data.Ship);
-
-			    if (companions.Any())
+				var companions = database.SatelliteBuildList.LimitClass(companionClass).SuitableFor(data.Ship).ToList();
+				if (companions.Count > 0)
 			    {
 			        if (random.Next(3) != 0)
 			            ship.FirstSatellite = new CommonSatellite(companions.RandomElement(random));

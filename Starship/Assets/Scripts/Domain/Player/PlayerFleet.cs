@@ -115,6 +115,23 @@ namespace GameServices.Player
                     ship.SecondSatellite.Components.Assign(components);
                 }
             }
+            
+            foreach (var component in _strippedComponents.FromComponentsData(_database))
+            {
+                // Locked components are not stripped
+                if (component.Locked) continue;
+                _inventory.Components.Add(component.Info,1);
+            }
+            
+            foreach (var data in _strippedSatellites)
+            {
+                var satellite = _database.GetSatellite(new ItemId<Satellite>(data.Key));
+                if (satellite == null) continue;
+                _inventory.Satellites.Add(satellite, data.Value);
+            }
+            
+            _strippedComponents.Clear();
+            _strippedSatellites.Clear();
 
             _activeShips.CheckIfValid(_playerSkills, true);
         }
@@ -157,15 +174,24 @@ namespace GameServices.Player
             var ships = new List<IShip>();
             foreach (var item in _session.Fleet.Ships)
             {
+                bool added = false;
                 try
                 {
-                    ships.Add(ShipExtensions.FromShipData(_database, item));
+                    var ship = ShipExtensions.FromShipData(_database, item, _strippedComponents);
+                    added = ship != null;
+                    ships.Add(ship);
                 }
                 catch (System.Exception e)
                 {
                     UnityEngine.Debug.LogException(e);
                     ships.Add(null);
                     UnityEngine.Debug.Log("Unknown ship: " + item.Id);
+                }
+
+                if (!added)
+                {
+                    _strippedSatellites.Increment(item.Satellite1.Id);
+                    _strippedSatellites.Increment(item.Satellite2.Id);
                 }
             }
 
@@ -267,6 +293,8 @@ namespace GameServices.Player
         {
             _ships.Clear();
             _activeShips.Clear();
+            _strippedComponents.Clear();
+            _strippedSatellites.Clear();
         }
 
         private bool DataChanged
@@ -293,6 +321,8 @@ namespace GameServices.Player
         private readonly ShipSquad _activeShips = new ShipSquad();
         private readonly ObservableCollection<IShip> _ships = new ObservableCollection<IShip>();
 
+        private readonly List<ShipComponentsData.Component> _strippedComponents = new List<ShipComponentsData.Component>();
+        private readonly Dictionary<int, int> _strippedSatellites = new Dictionary<int, int>();
         private readonly ISessionData _session;
         private readonly IDebugManager _debugManager;
         private readonly SessionAboutToSaveSignal _sessionAboutToSaveSignal;
