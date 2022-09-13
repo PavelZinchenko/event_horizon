@@ -20,10 +20,7 @@ namespace Constructor.Ships
     {
         public static bool IsSuitableSatelliteSize(this IShip ship, Satellite satellite)
         {
-            if (satellite.SizeClass != SizeClass.Undefined)
-                return ship.Model.SizeClass >= satellite.SizeClass;
-
-            return ship.Model.ModelScale >= satellite.ModelScale * 2;
+            return satellite.IsSuitable(ship.Model.SizeClass, ship.Model.ModelScale);
         }
 
         public static int Price(this IShip ship)
