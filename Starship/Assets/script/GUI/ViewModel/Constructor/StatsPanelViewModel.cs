@@ -20,7 +20,16 @@ namespace ViewModel
         public CanvasGroup CanvasGroup;
         public LayoutGroup TargetLayout;
 
-        private IList<Action<IShipSpecification>> _updaters = null;
+        public int DownscaleLimit = 19;
+        public int LabelFontSize = 22;
+        public int ValueFontSize = 24;
+        public int DownscaledLabelFontSize = 18;
+        public int DownscaledValueFontSize = 20;
+
+        private IList<Func<IShipSpecification, int>> _updaters = null;
+        private IList<Text> _labels = new List<Text>();
+        private IList<Text> _values = new List<Text>();
+        private int _oldCount = -1;
 
         private static readonly Func<float, IShipSpecification, bool> IsPositive = (f, _) => f > 0;
         private static readonly Func<float, IShipSpecification, bool> IsNonNegative = (f, _) => f >= 0;
@@ -155,13 +164,32 @@ namespace ViewModel
 
             if (_updaters == null)
             {
-                _updaters = new List<Action<IShipSpecification>>();
+                _updaters = new List<Func<IShipSpecification, int>>();
+                _labels.Clear();
+                _values.Clear();
                 TargetLayout.InitializeElements<StatsBlockViewModel, BlockData>(GetStats(), InitializeBlock);
             }
 
+            var count = 0;
             foreach (var updater in _updaters)
             {
-                updater(spec);
+                count += updater(spec);
+            }
+
+            if (count != _oldCount)
+            {
+                _oldCount = count;
+                var labelSize = count > DownscaleLimit ? DownscaledLabelFontSize : LabelFontSize;
+                var valueSize = count > DownscaleLimit ? DownscaledValueFontSize : ValueFontSize;
+                foreach (var label in _labels)
+                {
+                    label.fontSize = labelSize;
+                }
+
+                foreach (var value in _values)
+                {
+                    value.fontSize = valueSize;
+                }
             }
         }
 
@@ -173,6 +201,8 @@ namespace ViewModel
                 {
                     var bound = new BoundLineData(line, text);
                     lines.Add(bound);
+                    _labels.Add(text.Label);
+                    _values.Add(text.Value);
                 });
 
             view.SeparatorHeight = data.SeparatorVisible ? 10 : 0;
@@ -182,16 +212,17 @@ namespace ViewModel
                 if (!data.Visible(specs))
                 {
                     view.gameObject.SetActive(false);
-                    return;
+                    return 0;
                 }
 
-                var visible = false;
+                var visible = 0;
                 foreach (var line in lines)
                 {
-                    if (line.Update(specs)) visible = true;
+                    if (line.Update(specs)) visible++;
                 }
 
-                view.gameObject.SetActive(visible);
+                view.gameObject.SetActive(visible > 0);
+                return visible;
             });
         }
 
@@ -296,7 +327,8 @@ namespace ViewModel
 
         private readonly struct BlockData
         {
-            public BlockData(IEnumerable<ILineData> content, Func<IShipSpecification, bool> visible, bool separatorVisible)
+            public BlockData(IEnumerable<ILineData> content, Func<IShipSpecification, bool> visible,
+                bool separatorVisible)
             {
                 Content = content;
                 Visible = visible;
