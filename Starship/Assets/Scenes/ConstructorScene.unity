@@ -1431,10 +1431,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0331ea93716811747acff9f890a054ac, type: 3}
-    m_FontSize: 22
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 23
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -2200,7 +2200,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011293143, y: -0.00000599057}
+  m_AnchoredPosition: {x: 0.000058459897, y: -0.0000059754616}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &129432091
@@ -8548,8 +8548,8 @@ MonoBehaviour:
   m_Padding:
     m_Left: 32
     m_Right: 32
-    m_Top: 32
-    m_Bottom: 32
+    m_Top: 18
+    m_Bottom: 18
   m_ChildAlignment: 2
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
@@ -9451,8 +9451,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 321200961}
   m_HandleRect: {fileID: 321200960}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14681,10 +14681,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1f7c2b15b1c46c2438125d280e866dde, type: 3}
-    m_FontSize: 24
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 24
     m_Alignment: 2
     m_AlignByGeometry: 0
