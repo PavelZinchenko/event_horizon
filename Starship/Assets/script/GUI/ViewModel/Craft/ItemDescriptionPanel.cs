@@ -28,6 +28,8 @@ namespace ViewModel.Craft
         [SerializeField] Image _icon;
         [SerializeField] Text _name;
         [SerializeField] Text _description;
+        [SerializeField] Text _componentDescription;
+        [SerializeField] GameObject _componentDescriptionHolder;
         [SerializeField] Text _modification;
         [SerializeField] LayoutGroup _stats;
         [SerializeField] LayoutGroup _weaponSlots;
@@ -105,8 +107,14 @@ namespace ViewModel.Craft
             _modification.gameObject.SetActive(!string.IsNullOrEmpty(_modification.text = modification.GetDescription(_localization)));
             _modification.color = ColorTable.QualityColor(info.ItemQuality);
 
+            var description = info.Data.Description ?? "";
+            ComponentViewModel.CalculateStats(component, _localization, out var items, ref description);
+            
+            _componentDescriptionHolder.SetActive(!string.IsNullOrEmpty(description));
+            _componentDescription.text = description;
+            
             _stats.gameObject.SetActive(true);
-            _stats.InitializeElements<TextFieldViewModel, (string,string)>(ComponentViewModel.GetDescription(component, _localization), UpdateTextField, _factory);
+            _stats.InitializeElements<TextFieldViewModel, (string,string)>(items, UpdateTextField, _factory);
             _weaponSlots.gameObject.SetActive(false);
         }
 

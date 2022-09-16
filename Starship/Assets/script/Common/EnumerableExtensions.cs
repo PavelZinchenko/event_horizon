@@ -120,7 +120,29 @@ public static class EnumerableExtension
 
         return data;
     }
+    
+    public static IEnumerable<(T,T)> Pairs<T>(this IEnumerable<T> list)
+    {
+        T first = default;
+        var isFirst = true;
+        foreach (var t in list)
+        {
+            if (isFirst)
+            {
+                first = t;
+                isFirst = false;
+            }
+            else
+            {
+                yield return (first, t);
+                isFirst = true;
+            }
+        }
 
+        if (isFirst) yield break;
+        yield return (first, default);
+    }
+    
     /// <summary>
     /// Fetches random unique elements from a collection.
     /// <br/>
