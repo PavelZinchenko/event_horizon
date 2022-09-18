@@ -121,6 +121,10 @@ namespace ViewModel
             var stats = GetDescription(component, localization).ToList();
             var statsDict = stats.ToDictionary(e => e.Item1, e => e.Item2);
             AddExtraFields(component, localization, statsDict);
+            if (description.EndsWith("|"))
+            {
+                description = description.Substring(0, description.Length - 1);
+            }
             if (description.Contains('|'))
             {
                 // Original stats values
