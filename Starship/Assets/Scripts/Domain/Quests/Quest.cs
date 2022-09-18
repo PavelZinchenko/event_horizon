@@ -39,6 +39,7 @@ namespace Domain.Quests
         {
             get
             {
+                if (_activeNode == null) return QuestStatus.Error;
                 switch (_activeNode.Type)
                 {
                     case NodeType.CompleteQuest:
