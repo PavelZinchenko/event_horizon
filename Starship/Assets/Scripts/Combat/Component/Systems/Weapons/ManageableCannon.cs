@@ -67,7 +67,7 @@ namespace Combat.Component.Systems.Weapons
             if (HasActiveBullet)
                 _activeBullet.Detonate();
 
-            _platform.Aim(Info.BulletSpeed, Info.Range, Info.IsRelativeVelocity);
+            _platform.Aim(Info);
             _activeBullet = _bulletFactory.Create(_platform, _spread, 0, 0);
         }
 

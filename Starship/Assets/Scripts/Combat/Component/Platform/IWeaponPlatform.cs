@@ -1,6 +1,7 @@
 ﻿using System;
 using Combat.Component.Body;
 using Combat.Component.Bullet;
+using Combat.Component.Systems.Weapons;
 using Combat.Component.Unit.Classification;
 using Combat.Component.View;
 using Combat.Unit.HitPoints;
@@ -29,5 +30,17 @@ namespace Combat.Component.Platform
         void UpdateView(float elapsedTime);
 
         void AddAttachedChild(IBullet bullet);
+    }
+
+    public static class WeaponPlatformExtensions
+    {
+        public static void Aim(this IWeaponPlatform platform, WeaponInfo info)
+        {
+            platform.Aim(
+                info.WeaponType == WeaponType.Continuous ? 0 : info.BulletSpeed,
+                info.Range,
+                info.IsRelativeVelocity
+            );
+        }
     }
 }

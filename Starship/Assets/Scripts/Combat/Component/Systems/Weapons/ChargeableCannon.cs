@@ -35,7 +35,7 @@ namespace Combat.Component.Systems.Weapons
         {
             if (Active && CanBeActivated && _chargeTime > 0 && (_chargeTime > _chargeTotalTime || _platform.EnergyPoints.TryGet(_energyConsumption*elapsedTime / _chargeTotalTime)))
             {
-                _platform.Aim(Info.BulletSpeed, Info.Range, Info.IsRelativeVelocity);
+                _platform.Aim(Info);
                 _chargeTime += elapsedTime;
                 UpdatePower();
             }
@@ -53,7 +53,7 @@ namespace Combat.Component.Systems.Weapons
             }
             else if (HasActiveBullet && Info.BulletType == BulletType.Direct)
             {
-                _platform.Aim(Info.BulletSpeed, Info.Range, Info.IsRelativeVelocity);
+                _platform.Aim(Info);
             }
         }
 
@@ -61,7 +61,7 @@ namespace Combat.Component.Systems.Weapons
 
         private void Shot()
         {
-            _platform.Aim(Info.BulletSpeed, Info.Range, Info.IsRelativeVelocity);
+            _platform.Aim(Info);
             _platform.OnShot();
             _activeBullet = _bulletFactory.Create(_platform, _spread, 0, 0);
 
