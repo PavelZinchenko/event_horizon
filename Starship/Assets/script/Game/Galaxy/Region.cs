@@ -9,7 +9,7 @@ namespace GameModel
 {
 	public class Region
 	{
-		public Region(int id, bool isPirateBase, ISessionData session, IDatabase database, BaseCapturedSignal.Trigger baseCapturedTrigger, RegionFleetDefeatedSignal.Trigger regionFleetDefeatedTrigger)
+		private Region(int id, bool isPirateBase, ISessionData session, IDatabase database, BaseCapturedSignal.Trigger baseCapturedTrigger, RegionFleetDefeatedSignal.Trigger regionFleetDefeatedTrigger)
         {
             _session = session;
             _database = database;
@@ -37,6 +37,15 @@ namespace GameModel
 
 			_defeatedFleetCount = _session.Regions.GetDefeatedFleetCount(Id);
 			_isCaptured = Id == PlayerHomeRegionId || _session.Regions.IsRegionCaptured(Id);
+		}
+
+		public static Region TryCreate(int id, bool isPirateBase, ISessionData session, IDatabase database,
+			BaseCapturedSignal.Trigger baseCapturedTrigger,
+			RegionFleetDefeatedSignal.Trigger regionFleetDefeatedTrigger)
+		{
+			var region = new Region(id, isPirateBase, session, database, baseCapturedTrigger,
+				regionFleetDefeatedTrigger);
+			return region.Faction == Faction.Undefined ? Empty : region;
 		}
 
 		public void OnFleetDefeated()
@@ -115,8 +124,8 @@ namespace GameModel
 			            return _faction = faction;
 			    }
 
-			    _faction = _database.FactionList.Visible().AtDistance(MilitaryPower).Where(item => item != Faction.Neutral).RandomElement(new System.Random(HomeStar + _session.Game.Seed));
-			    _session.Regions.SetRegionFactionId(Id, _faction.Id);
+			    _faction = _database.FactionList.Visible().AtDistance(MilitaryPower).Where(item => item != Faction.Neutral).RandomElement(new System.Random(HomeStar + _session.Game.Seed)) ?? Faction.Undefined;
+				_session.Regions.SetRegionFactionId(Id, _faction.Id);
 
                 return _faction;
 			}
