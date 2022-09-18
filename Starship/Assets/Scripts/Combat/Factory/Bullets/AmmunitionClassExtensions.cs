@@ -111,17 +111,8 @@ namespace Combat.Factory
 
         public static bool HasDirectImpulse(this AmmunitionClassObsolete ammunition)
         {
-            switch (ammunition)
-            {
-                case AmmunitionClassObsolete.Common:
-                case AmmunitionClassObsolete.Fragment:
-                case AmmunitionClassObsolete.Singularity:
-                case AmmunitionClassObsolete.AcidRocket:
-                case AmmunitionClassObsolete.EmpMissile:
-                    return true;
-                default:
-                    return false;
-            }
+            var type = GetBulletType(ammunition);
+            return type != BulletType.Direct && type != BulletType.AreaOfEffect && !IsDot(ammunition);
         }
 
         public static bool HasDirectDamage(this AmmunitionClassObsolete ammunition, AmmunitionObsoleteStats stats)
