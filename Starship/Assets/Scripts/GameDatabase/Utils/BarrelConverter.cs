@@ -18,7 +18,7 @@ namespace GameDatabase.Utils
             var count = serializableBarrels?.Length ?? 0;
 
             if (indices.Count != count)
-                Debug.LogException(new ArgumentOutOfRangeException("serializableBarrels", "barrels do not fit layout"));
+                Debug.LogException(new ArgumentOutOfRangeException("serializableBarrels", $"barrels do not fit layout"));
 
             for (var i = 0; i < count && i < indices.Count; ++i)
                 barrels.Add(new Barrel(serializableBarrels[i], null, indices[i]));

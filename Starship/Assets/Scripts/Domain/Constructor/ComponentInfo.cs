@@ -53,6 +53,7 @@ namespace Constructor
             var components = allowRare ? database.ComponentList.CommonAndRare() : database.ComponentList.Common();
             var component = components.OfFaction(faction).LevelLessOrEqual(maxLevel).RandomElement(random);
 
+            if (component == null) throw new ValueNotFoundException("There was no components matching given filters");
             var componentLevel = Mathf.Max(10, component.Level);
             var requiredLevel = Mathf.Max(10, level);
             var componentQuality = ComponentQualityExtensions.FromLevel(requiredLevel, componentLevel).Randomize(random);

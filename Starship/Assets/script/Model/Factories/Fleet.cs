@@ -95,7 +95,9 @@ namespace Model
 				var bossClass = numberOfBosses >= 2 ? DifficultyClass.Class2 : DifficultyClass.Class1;
 				var bosses = database.ShipBuildList.Available().Where(item => item.Ship.ShipCategory != ShipCategory.Starbase && item.Ship.SizeClass == SizeClass.Titan).
                     OfFactionExplicit(region.Faction).OfClass(DifficultyClass.Class1, bossClass).RandomElements(numberOfBosses, random);
-                var ships = database.ShipBuildList.Available().NormalShips().OfFactionExplicit(region.Faction).LimitLevelAndClass(distance).RandomElements(numberOfShips, random);
+				var allShips = database.ShipBuildList.Available().NormalShips().OfFactionExplicit(region.Faction)
+					.LimitLevelAndClass(distance);
+                var ships = allShips.RandomElements(numberOfShips, random);
 
                 var starbaseClass = region.MilitaryPower < 40 ? DifficultyClass.Default : DifficultyClass.Class1;
 			    var starbase = database.ShipBuildList.Available().Where(item => item.Ship.ShipCategory == ShipCategory.Starbase && item.BuildFaction == region.Faction).BestAvailableClass(starbaseClass).FirstOrDefault();
