@@ -37,7 +37,9 @@ namespace Combat.Component.Platform
         public static void Aim(this IWeaponPlatform platform, WeaponInfo info)
         {
             platform.Aim(
-                info.WeaponType == WeaponType.Continuous ? 0 : info.BulletSpeed,
+                info.BulletType == BulletType.Direct || info.BulletType == BulletType.AreaOfEffect
+                    ? 0
+                    : info.BulletSpeed,
                 info.Range,
                 info.IsRelativeVelocity
             );
