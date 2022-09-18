@@ -46,7 +46,7 @@ namespace Combat.Component.Systems.Weapons
 
         private void Shot()
         {
-            _platform.Aim(Info.BulletSpeed, Info.Range, Info.IsRelativeVelocity);
+            _platform.Aim(Info);
             _platform.OnShot();
             _bulletFactory.Create(_platform, _spread, 0, 0);
         }

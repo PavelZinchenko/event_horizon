@@ -116,7 +116,7 @@ namespace Combat.Factory
                     ship.AddSystem(weapon);
                     if (!aimed && weapon is IWeapon wep)
                     {
-                        platform.Aim(wep.Info.BulletSpeed, wep.Info.Range, wep.Info.IsRelativeVelocity);
+                        platform.Aim(wep.Info);
                         aimed = true;
                     }
                 }
@@ -127,7 +127,7 @@ namespace Combat.Factory
                     ship.AddSystem(weapon);
                     if (!aimed && weapon is IWeapon wep)
                     {
-                        platform.Aim(wep.Info.BulletSpeed, wep.Info.Range, wep.Info.IsRelativeVelocity);
+                        platform.Aim(wep.Info);
                         aimed = true;
                     }
                 }
