@@ -229,6 +229,13 @@ namespace Combat.Scene
             }
         }
 
+        /// <summary>
+        /// Returns list of all objects WITHOUT PARENTS within a specified radius around the center point
+        /// </summary>
+        /// <param name="unitList">list to fetch units from</param>
+        /// <param name="targetList">list to write targets to</param>
+        /// <param name="center">center point</param>
+        /// <param name="radius">max radius around the center point</param>
         public static void GetObjectsInRange(this IUnitList<IUnit> unitList, IList<IUnit> targetList, Vector2 center, float radius)
         {
             lock (unitList.LockObject)
@@ -243,6 +250,41 @@ namespace Combat.Scene
                     var unit = units[i];
                     if (unit.Body.Parent != null)
                         continue;
+                    if (unit.Body.Position.SqrDistance(center) < sqrRadius)
+                        targetList.Add(unit);
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Functionally identical to GetObjectsInRange, but also returns objects with parents as a separate list and
+        /// with its separate max tracking range
+        /// </summary>
+        /// <param name="unitList">list to fetch units from</param>
+        /// <param name="targetList">list to write targets without parents to</param>
+        /// <param name="parentedTargetsList">list to write targets with parents to</param>
+        /// <param name="center">center point</param>
+        /// <param name="radius">max radius around the center point</param>
+        /// <param name="parentedRadius">max radius around the center point for objects with parents</param>
+        public static void GetObjectsInRange(this IUnitList<IUnit> unitList, IList<IUnit> targetList, IList<IUnit> parentedTargetsList, Vector2 center, float radius, float parentedRadius)
+        {
+            lock (unitList.LockObject)
+            {
+                var units = unitList.Items;
+                var count = units.Count;
+                targetList.Clear();
+                var sqrRadius = radius*radius;
+                var sqrParRadius = parentedRadius*parentedRadius;
+
+                for (var i = 0; i < count; ++i)
+                {
+                    var unit = units[i];
+                    if (unit.Body.Parent != null)
+                    {
+                        if (unit.Body.Position.SqrDistance(center) < sqrParRadius)
+                            parentedTargetsList?.Add(unit);
+                        continue;
+                    }
                     if (unit.Body.Position.SqrDistance(center) < sqrRadius)
                         targetList.Add(unit);
                 }
