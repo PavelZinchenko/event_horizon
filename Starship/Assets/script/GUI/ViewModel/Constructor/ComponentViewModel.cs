@@ -355,13 +355,14 @@ namespace ViewModel
             //    yield return ("$WeaponEPS", weapon.Value.EnergyCost.ToString(_floatFormat));
             //}
 
+            var ecMult = data.StatModifier.EnergyCostMultiplier.Value;
             if (data.Weapon.Stats.WeaponClass == WeaponClass.Continuous)
             {
-                yield return ("$WeaponEPS", data.Ammunition.Body.EnergyCost.ToString(_floatFormat));
+                yield return ("$WeaponEPS", (ecMult * data.Ammunition.Body.EnergyCost).ToString(_floatFormat));
             }
             else
             {
-                yield return ("$WeaponEnergy", data.Ammunition.Body.EnergyCost.ToString(_floatFormat));
+                yield return ("$WeaponEnergy", (ecMult * data.Ammunition.Body.EnergyCost).ToString(_floatFormat));
                 yield return ("$WeaponCooldown",
                     (1.0f / (data.Weapon.Stats.FireRate * data.StatModifier.FireRateMultiplier.Value)).ToString(
                         _floatFormat));
