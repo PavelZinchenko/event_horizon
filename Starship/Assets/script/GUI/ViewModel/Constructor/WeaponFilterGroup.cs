@@ -22,7 +22,7 @@ namespace ViewModel
 		private void OnItemValueChanged(bool selected)
 		{
 			var activeItem = Group.ActiveToggles().FirstOrDefault();
-			_value = activeItem == null ? WeaponSlotType.Default : activeItem.name.First();
+			_value = activeItem == null ? (char) WeaponSlotType.Default : activeItem.name.First();
 			OnValueChanged.Invoke(_value);
 		}
 		
@@ -46,6 +46,6 @@ namespace ViewModel
 			toggle.onValueChanged.AddListener(OnItemValueChanged);
 		}
 		
-		private char _value = WeaponSlotType.Default;
+		private char _value = (char) WeaponSlotType.Default;
 	}
 }
