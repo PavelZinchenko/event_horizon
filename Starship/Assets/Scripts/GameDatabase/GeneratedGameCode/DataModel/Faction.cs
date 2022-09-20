@@ -29,8 +29,8 @@ namespace GameDatabase.DataModel
 
 			Name = serializable.Name;
 			Color = new ColorData(serializable.Color);
-			HomeStarDistance = UnityEngine.Mathf.Clamp(serializable.HomeStarDistance, 0, 1000);
-			WanderingShipsDistance = UnityEngine.Mathf.Clamp(serializable.WanderingShipsDistance, 0, 1000);
+			HomeStarDistance = UnityEngine.Mathf.Clamp(serializable.HomeStarDistance, 0, 2147483647);
+			WanderingShipsDistance = UnityEngine.Mathf.Clamp(serializable.WanderingShipsDistance, 0, 2147483647);
 			Hidden = serializable.Hidden;
 			Hostile = serializable.Hostile;
 

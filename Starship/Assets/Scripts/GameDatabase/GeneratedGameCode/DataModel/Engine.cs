@@ -25,7 +25,7 @@ namespace GameDatabase.DataModel
 		private Engine(EngineSerializable serializable, Database.Loader loader)
 		{
 			Position = serializable.Position;
-			Size = UnityEngine.Mathf.Clamp(serializable.Size, 0f, 1f);
+			Size = UnityEngine.Mathf.Clamp(serializable.Size, 0f, 3.402823E+38f);
 
 			OnDataDeserialized(serializable, loader);
 		}

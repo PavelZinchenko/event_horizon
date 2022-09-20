@@ -26,8 +26,8 @@ namespace GameDatabase.DataModel
 		{
 			Type = serializable.Type;
 			DamageType = serializable.DamageType;
-			Power = UnityEngine.Mathf.Clamp(serializable.Power, 0f, 1E+09f);
-			Factor = UnityEngine.Mathf.Clamp(serializable.Factor, 0f, 1f);
+			Power = UnityEngine.Mathf.Clamp(serializable.Power, 0f, 3.402823E+38f);
+			Factor = UnityEngine.Mathf.Clamp(serializable.Factor, 0f, 3.402823E+38f);
 
 			OnDataDeserialized(serializable, loader);
 		}

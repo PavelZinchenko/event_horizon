@@ -40,9 +40,9 @@ namespace GameDatabase.DataModel
 		public DeviceStats(DeviceSerializable serializable, Database.Loader loader)
 		{
 			DeviceClass = serializable.DeviceClass;
-			EnergyConsumption = UnityEngine.Mathf.Clamp(serializable.EnergyConsumption, 0f, 1E+09f);
-			PassiveEnergyConsumption = UnityEngine.Mathf.Clamp(serializable.PassiveEnergyConsumption, 0f, 1E+09f);
-			Power = UnityEngine.Mathf.Clamp(serializable.Power, 0f, 1000f);
+			EnergyConsumption = UnityEngine.Mathf.Clamp(serializable.EnergyConsumption, 0f, 3.402823E+38f);
+			PassiveEnergyConsumption = UnityEngine.Mathf.Clamp(serializable.PassiveEnergyConsumption, 0f, 3.402823E+38f);
+			Power = UnityEngine.Mathf.Clamp(serializable.Power, 0f, 3.402823E+38f);
 			Range = UnityEngine.Mathf.Clamp(serializable.Range, 0f, 1000f);
 			Size = UnityEngine.Mathf.Clamp(serializable.Size, 0f, 1000f);
 			Cooldown = UnityEngine.Mathf.Clamp(serializable.Cooldown, 0f, 1000f);

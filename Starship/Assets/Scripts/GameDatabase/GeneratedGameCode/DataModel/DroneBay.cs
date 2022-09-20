@@ -39,11 +39,11 @@ namespace GameDatabase.DataModel
 
 		public DroneBayStats(DroneBaySerializable serializable, Database.Loader loader)
 		{
-			EnergyConsumption = UnityEngine.Mathf.Clamp(serializable.EnergyConsumption, 0f, 1E+09f);
-			PassiveEnergyConsumption = UnityEngine.Mathf.Clamp(serializable.PassiveEnergyConsumption, 0f, 1E+09f);
+			EnergyConsumption = UnityEngine.Mathf.Clamp(serializable.EnergyConsumption, 0f, 3.402823E+38f);
+			PassiveEnergyConsumption = UnityEngine.Mathf.Clamp(serializable.PassiveEnergyConsumption, 0f, 3.402823E+38f);
 			Range = UnityEngine.Mathf.Clamp(serializable.Range, 1f, 1000f);
-			DamageMultiplier = UnityEngine.Mathf.Clamp(serializable.DamageMultiplier, 0.01f, 1000f);
-			DefenseMultiplier = UnityEngine.Mathf.Clamp(serializable.DefenseMultiplier, 0.01f, 1000f);
+			DamageMultiplier = UnityEngine.Mathf.Clamp(serializable.DamageMultiplier, 0.01f, 3.402823E+38f);
+			DefenseMultiplier = UnityEngine.Mathf.Clamp(serializable.DefenseMultiplier, 0.01f, 3.402823E+38f);
 			SpeedMultiplier = UnityEngine.Mathf.Clamp(serializable.SpeedMultiplier, 0.01f, 1000f);
 			ImprovedAi = serializable.ImprovedAi;
 			Capacity = UnityEngine.Mathf.Clamp(serializable.Capacity, 1, 1000);

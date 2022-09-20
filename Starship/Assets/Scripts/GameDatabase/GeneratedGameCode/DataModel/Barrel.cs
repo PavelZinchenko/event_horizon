@@ -26,7 +26,7 @@ namespace GameDatabase.DataModel
 		{
 			Position = serializable.Position;
 			Rotation = UnityEngine.Mathf.Clamp(serializable.Rotation, -360f, 360f);
-			Offset = UnityEngine.Mathf.Clamp(serializable.Offset, 0f, 1f);
+			Offset = UnityEngine.Mathf.Clamp(serializable.Offset, 0f, 3.402823E+38f);
 			PlatformType = serializable.PlatformType;
 			AutoAimingArc = UnityEngine.Mathf.Clamp(serializable.AutoAimingArc, 0f, 360f);
 			RotationSpeed = UnityEngine.Mathf.Clamp(serializable.RotationSpeed, 0f, 1000f);

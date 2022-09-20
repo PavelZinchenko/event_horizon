@@ -8,13 +8,13 @@
 
 namespace GameDatabase.Enums
 {
-	public static class WeaponSlotType
+	public enum WeaponSlotType
 	{
-		public const char Default = '\u0000';
-		public const char Cannon = 'C';
-		public const char Torpedo = 'T';
-		public const char Missile = 'M';
-		public const char Laser = 'L';
-		public const char Special = 'S';
+		Default,
+		Cannon = 'C',
+		Torpedo = 'T',
+		Missile = 'M',
+		Laser = 'L',
+		Special = 'S',
 	}
 }

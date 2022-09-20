@@ -28,5 +28,6 @@ namespace GameDatabase.Enums
 		WormTail,
 		ClonningCenter,
 		TimeMachine,
+		Jammer,
 	}
 }

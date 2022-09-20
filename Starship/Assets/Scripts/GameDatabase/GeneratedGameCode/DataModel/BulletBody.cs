@@ -27,13 +27,13 @@ namespace GameDatabase.DataModel
 			Type = serializable.Type;
 			Size = UnityEngine.Mathf.Clamp(serializable.Size, 0f, 1000f);
 			Velocity = UnityEngine.Mathf.Clamp(serializable.Velocity, 0f, 1000f);
-			Range = UnityEngine.Mathf.Clamp(serializable.Range, 0f, 1E+09f);
-			Lifetime = UnityEngine.Mathf.Clamp(serializable.Lifetime, 0f, 1E+09f);
-			Weight = UnityEngine.Mathf.Clamp(serializable.Weight, 0f, 1E+09f);
-			HitPoints = UnityEngine.Mathf.Clamp(serializable.HitPoints, 0, 999999999);
+			Range = UnityEngine.Mathf.Clamp(serializable.Range, 0f, 3.402823E+38f);
+			Lifetime = UnityEngine.Mathf.Clamp(serializable.Lifetime, 0f, 3.402823E+38f);
+			Weight = UnityEngine.Mathf.Clamp(serializable.Weight, 0f, 3.402823E+38f);
+			HitPoints = UnityEngine.Mathf.Clamp(serializable.HitPoints, 0, 2147483647);
 			Color = new ColorData(serializable.Color);
 			BulletPrefab = loader.GetBulletPrefab(new ItemId<BulletPrefab>(serializable.BulletPrefab));
-			EnergyCost = UnityEngine.Mathf.Clamp(serializable.EnergyCost, 0f, 1E+09f);
+			EnergyCost = UnityEngine.Mathf.Clamp(serializable.EnergyCost, 0f, 3.402823E+38f);
 			CanBeDisarmed = serializable.CanBeDisarmed;
 			FriendlyFire = serializable.FriendlyFire;
 

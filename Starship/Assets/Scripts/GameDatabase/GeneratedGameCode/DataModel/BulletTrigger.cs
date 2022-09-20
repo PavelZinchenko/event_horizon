@@ -118,8 +118,8 @@ namespace GameDatabase.DataModel
 			Quantity = UnityEngine.Mathf.Clamp(serializable.Quantity, 0, 1000);
 			Size = UnityEngine.Mathf.Clamp(serializable.Size, 0f, 100f);
 			Cooldown = UnityEngine.Mathf.Clamp(serializable.Cooldown, 0f, 1000f);
-			RandomFactor = UnityEngine.Mathf.Clamp(serializable.RandomFactor, 0f, 1f);
-			PowerMultiplier = UnityEngine.Mathf.Clamp(serializable.PowerMultiplier, 0f, 1000f);
+			RandomFactor = UnityEngine.Mathf.Clamp(serializable.RandomFactor, 0f, 3.402823E+38f);
+			PowerMultiplier = UnityEngine.Mathf.Clamp(serializable.PowerMultiplier, 0f, 3.402823E+38f);
 			MaxNestingLevel = UnityEngine.Mathf.Clamp(serializable.MaxNestingLevel, 0, 100);
 
             OnDataDeserialized(serializable, loader);

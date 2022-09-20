@@ -32,7 +32,7 @@ namespace GameDatabase.DataModel
 			Faction = loader.GetFaction(new ItemId<Faction>(serializable.Faction));
 			Inventory = loader.GetLoot(new ItemId<LootModel>(serializable.Inventory));
 			Fleet = loader.GetFleet(new ItemId<Fleet>(serializable.Fleet));
-			Relations = UnityEngine.Mathf.Clamp(serializable.Relations, -100, 100);
+			Relations = UnityEngine.Mathf.Clamp(serializable.Relations, -2147483648, 2147483647);
 			IsUnique = serializable.IsUnique;
 
 			OnDataDeserialized(serializable, loader);

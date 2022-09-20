@@ -11,13 +11,15 @@ namespace GameDatabase.Enums
 	public enum SkillType
 	{
 		Undefined = 0,
-		Blueprint = 1,
-		Ship = 2,
-		ShipAttack = 4,
-		ShipDefense = 5,
-		StarbaseAttack = 6,
-		StarbaseDefense = 7,
-		BetterPrices = 10,
-		BetterLoot = 12,
+		ShipAttack = 1,
+		ShipDefense = 2,
+		StarbaseAttack = 3,
+		StarbaseDefense = 4,
+		QuickLearning = 5,
+		BetterPrices = 6,
+		BetterLoot = 7,
+		CommandPoints = 8,
+		SalvageDrones = 9,
+		Engineer = 10,
 	}
 }
