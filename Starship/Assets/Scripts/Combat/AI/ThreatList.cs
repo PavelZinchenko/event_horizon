@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Combat.Component.Body;
 using Combat.Component.Collider;
@@ -85,6 +86,12 @@ namespace Combat.Ai
                 }
             }
 
+            if (parentedObjects.Count > 0)
+            {
+                var requestedCount = parentedObjects.Count + index;
+                if(requestedCount > _threats.Capacity)
+                    _threats.Capacity = requestedCount;
+            }
             // For objects with parent, we don't consider them moving, so only check for overlap
             for (var i = 0; i < parentedObjects.Count; i++)
             {
