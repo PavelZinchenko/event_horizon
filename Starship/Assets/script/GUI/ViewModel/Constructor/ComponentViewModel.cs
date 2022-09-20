@@ -14,6 +14,7 @@ using Gui.ComponentList;
 using Model;
 using Services.Localization;
 using Services.Reources;
+using Utils;
 using Zenject;
 
 namespace ViewModel
@@ -445,12 +446,15 @@ namespace ViewModel
 
         private static string FormatFloat(float value)
         {
-            return (value >= 0 ? "+" : "") + value.ToString(_floatFormat);
+            var formatted = value < 1e6 ? value.ToString(_floatFormat) : Mathd.ToInGameString(value);
+            return (value >= 0 ? "+" : "") + formatted;
         }
 
         private static string FormatPercent(float value)
         {
-            return (value >= 0 ? "+" : "") + Mathf.RoundToInt(100 * value) + "%";
+            var percents = 100 * value;
+            var formatted = percents < 1e6 ? Mathf.RoundToInt(percents).ToString() : Mathd.ToInGameString(percents);
+            return (value >= 0 ? "+" : "") + formatted + "%";
         }
 
         private ComponentInfo _component;
