@@ -18,11 +18,14 @@
     <string name="EngineSize">Engine Size</string>
     <string name="Damage">Attack</string>
     <string name="HitPoints">Hit Points</string>
+    <string name="RepairRateCooldown">Repair cooldown</string>
     <string name="Energy">Energy</string>
     <string name="ShieldPoints">Shield Points</string>
     <string name="ShieldRechargeRate">Recharge rate</string>
+    <string name="ShieldRechargeRateCooldown">Shield recharge cooldown</string>
     <string name="RepairRate">Repair rate</string>
     <string name="RechargeRate">Recharge rate</string>
+    <string name="RechargeRateCooldown">Recharge cooldown</string>
     <string name="Weight">Weight</string>
     <string name="RamDamage">Ramming damage</string>
     <string name="DamageAbsorption">Energy absorption</string>
@@ -83,6 +86,8 @@
     <string name="WeaponArea">Area of effect</string>
     <string name="WeaponImpulse">Impulse</string>
     <string name="DamageType">Damage type</string>
+    <string name="WeaponLifetime">Lifetime</string>
+    <string name="WeaponHP">Durability</string>
     <string name="ImpactDamage">Kinetic</string>
     <string name="EnergyDamage">Energy</string>
     <string name="HeatDamage">Heat</string>

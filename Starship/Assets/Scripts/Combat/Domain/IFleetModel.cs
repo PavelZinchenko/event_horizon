@@ -16,6 +16,17 @@ namespace Combat.Domain
             return info != null;
         }
 
+        public static int CountStatus(this IFleetModel fleet, ShipStatus status)
+        {
+            var count = 0;
+            foreach (var fleetShip in fleet.Ships)
+            {
+                if (fleetShip.Status == status) count++;
+            }
+
+            return count;
+        }
+
         public static IShipInfo GetInfo(this IFleetModel fleet, Combat.Component.Ship.IShip unit)
         {
             var count = fleet.Ships.Count;

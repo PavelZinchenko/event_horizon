@@ -31,7 +31,7 @@ namespace GameDatabase.DataModel
 			Description = serializable.Description;
 			Icon = new SpriteId(serializable.Icon, SpriteId.Type.ArtifactIcon);
 			Color = new ColorData(serializable.Color);
-			Price = UnityEngine.Mathf.Clamp(serializable.Price, 0, 999999999);
+			Price = UnityEngine.Mathf.Clamp(serializable.Price, 0, 2147483647);
 
 			OnDataDeserialized(serializable, loader);
 		}

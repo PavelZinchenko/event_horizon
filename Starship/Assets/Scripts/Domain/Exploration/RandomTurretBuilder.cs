@@ -65,7 +65,7 @@ namespace Game.Exploration
         private static bool IsSuitableWeapon(Component component, int level)
         {
             if (component.Ammunition == null && component.AmmunitionObsolete == null) return false;
-            if (component.WeaponSlotType != WeaponSlotType.Cannon) return false;
+            if (component.WeaponSlotType != (char) WeaponSlotType.Cannon) return false;
             if (component.Level > level) return false;
             if (component.Layout.CellCount < 3) return false;
 

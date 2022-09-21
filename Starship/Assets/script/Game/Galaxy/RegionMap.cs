@@ -232,7 +232,7 @@ namespace GameModel
                 var region = _regionList[index];
                 if (region == null)
                 {
-					region = new Region(id, unoccupied, _session, _database, _baseCapturedTrigger, _regionFleetDefeatedTrigger);
+					region = Region.TryCreate(id, unoccupied, _session, _database, _baseCapturedTrigger, _regionFleetDefeatedTrigger);
                     _regionList[index] = region;
                 }
 

@@ -141,12 +141,12 @@ namespace Gui.ComponentList
             };
             _indices = new Dictionary<char, int>
             {
-                { WeaponSlotType.Cannon, 0 },
-                { WeaponSlotType.Laser, 1 },
-                { WeaponSlotType.Missile, 2 },
-                { WeaponSlotType.Torpedo, 3 },
-                { WeaponSlotType.Special, 4 },
-                { WeaponSlotType.Default, 5 },
+                { (char) WeaponSlotType.Cannon, 0 },
+                { (char) WeaponSlotType.Laser, 1 },
+                { (char) WeaponSlotType.Missile, 2 },
+                { (char) WeaponSlotType.Torpedo, 3 },
+                { (char) WeaponSlotType.Special, 4 },
+                { (char) WeaponSlotType.Default, 5 },
             };
         }
 

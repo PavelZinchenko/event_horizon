@@ -35,8 +35,14 @@ namespace Services.Localization
 
 	    public string GetString(string key, params object[] parameters)
 	    {
-		    var data = GetRawString(key, parameters);
+		    if (string.IsNullOrEmpty(key))
+			    return key;
 		    
+		    var data = GetRawString(key, parameters);
+
+		    data = ApplyParameters(data, parameters);
+
+		    ApplySpecialChars(ref data);
 		    ApplyInjections(ref data);
 		    return data;
 	    }
@@ -45,21 +51,17 @@ namespace Services.Localization
 		{
 		    try
 		    {
-		        if (string.IsNullOrEmpty(key) || key[0] != SpecialChar)
+		        if (key[0] != SpecialChar)
 		            return key;
 
-		        if (!_keys.TryGetValue(key.Substring(1), out var value))
-		        {
-		            if (_defaultLocalization != null)
-		                return _defaultLocalization.GetString(key, parameters);
+		        if (_keys.TryGetValue(key.Substring(1), out var value)) return value;
+		        if (_defaultLocalization != null)
+			        return _defaultLocalization.GetString(key, parameters);
 
-		            OptimizedDebug.Log("key not found: '" + key + "'");
-	                return key;
-		        }
+		        OptimizedDebug.Log("key not found: '" + key + "'");
+		        return key;
 
-		        value = value.Replace("\\n", "\n").Replace("\\", string.Empty);
-                return ApplyParameters(value, parameters);
-            }
+		    }
             catch (Exception e)
 		    {
 			    OptimizedDebug.LogException(e);
@@ -192,13 +194,12 @@ namespace Services.Localization
 				else if (char.IsLetter(ch))
 				{
                     var start = index;
-                    while (index < value.Length && char.IsLetterOrDigit(value[index]))
+                    while (index < value.Length && !char.IsWhiteSpace(value[index]))
                         ++index;
 
 				    var key = value.Substring(start, index - start);
-				    string parameter;
-				    if (_keys.TryGetValue(key, out parameter))
-				        builder.Append(parameter);
+				    if (_keys.ContainsKey(key))
+				        builder.Append(GetString(SpecialChar + key));
 				    else
 				        AddInvalidParameter(builder, key);
 				}
@@ -273,13 +274,14 @@ namespace Services.Localization
 				_pluralForms.Add(PluralForm.FromString(item));
 		}
 
-
+        private void ApplySpecialChars(ref string text)
+        {
+	        text = text.Replace("\\n", "\n").Replace("\\", "");
+        }
+        
         private void ApplyInjections(ref string text)
         {
-            if (string.IsNullOrEmpty(text))
-                return;
-
-            if (_sessionData == null)
+	        if (_sessionData == null)
 	        {
 		        text = FormatterRegex.Replace(text, "!!!Session is not initialized!!!");
 		        return;
@@ -385,10 +387,10 @@ namespace Services.Localization
 
 		private List<PluralForm> _pluralForms = new List<PluralForm>();
 		private Dictionary<string, string> _keys = new Dictionary<string, string>();
-		private const char SpecialChar = '$';
+		public const char SpecialChar = '$';
 	    private GameSettings _gameSettings;
 	    
-	    private static readonly Regex FormatterRegex = new Regex(@"\$(rep|item|comp)\{(\d+)\}");
+	    private static readonly Regex FormatterRegex = new Regex(@"@(rep|item|comp)\{(\d+)\}");
 	    private const string _defaultLanguage = "English";
         private readonly LocalizationManager _defaultLocalization;
 	}

@@ -152,8 +152,12 @@ namespace Combat.Ai
 			    var shouldTrackTarget = weapon.Info.BulletType != BulletType.AreaOfEffect;
                 
                 var course = Helpers.TargetCourse(ship, target, weapon.Platform);
-			    var spread = weapon.Info.Spread/2 + Mathf.Asin(0.3f * enemy.Body.Scale / Vector2.Distance(enemy.Body.Position, ship.Body.Position))*Mathf.Rad2Deg;
-				var delta = Mathf.Abs(Mathf.DeltaAngle(course, ship.Body.Rotation)) - weapon.Platform.AutoAimingAngle;
+                var weaponSpread = weapon.Info.Spread;
+                var autoAimingAngle = weapon.Platform.AutoAimingAngle;
+                if (weaponSpread < autoAimingAngle) weaponSpread = 0;
+                else autoAimingAngle = 0;
+                var spread = weaponSpread / 2 + Mathf.Asin(0.3f * enemy.Body.Scale / Vector2.Distance(enemy.Body.Position, ship.Body.Position))*Mathf.Rad2Deg;
+				var delta = Mathf.Abs(Mathf.DeltaAngle(course, ship.Body.Rotation)) - autoAimingAngle;
 
 				if (delta < spread + 1 || shotImmediately)
 					controls.ActivateSystem(id, weapon.Info.WeaponType != WeaponType.RequiredCharging);

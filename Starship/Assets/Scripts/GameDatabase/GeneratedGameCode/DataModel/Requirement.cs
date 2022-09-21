@@ -279,8 +279,8 @@ namespace GameDatabase.DataModel
   		public Requirement_CharacterRelations(RequirementSerializable serializable, Database.Loader loader)
             : base(serializable, loader)
         {
-			MinValue = UnityEngine.Mathf.Clamp(serializable.MinValue, -100, 100);
-			MaxValue = UnityEngine.Mathf.Clamp(serializable.MaxValue, -100, 100);
+			MinValue = UnityEngine.Mathf.Clamp(serializable.MinValue, -2147483648, 2147483647);
+			MaxValue = UnityEngine.Mathf.Clamp(serializable.MaxValue, -2147483648, 2147483647);
 			Character = loader.GetCharacter(new ItemId<Character>(serializable.Character));
 
             OnDataDeserialized(serializable, loader);
@@ -302,8 +302,8 @@ namespace GameDatabase.DataModel
   		public Requirement_FactionRelations(RequirementSerializable serializable, Database.Loader loader)
             : base(serializable, loader)
         {
-			MinValue = UnityEngine.Mathf.Clamp(serializable.MinValue, -100, 100);
-			MaxValue = UnityEngine.Mathf.Clamp(serializable.MaxValue, -100, 100);
+			MinValue = UnityEngine.Mathf.Clamp(serializable.MinValue, -2147483648, 2147483647);
+			MaxValue = UnityEngine.Mathf.Clamp(serializable.MaxValue, -2147483648, 2147483647);
 
             OnDataDeserialized(serializable, loader);
         }

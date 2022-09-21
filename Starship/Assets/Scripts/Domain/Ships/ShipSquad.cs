@@ -174,6 +174,7 @@ namespace Constructor.Ships
             public bool TryTakeBestSlot(SizeClass sizeClass)
             {
                 var size = sizeClass;
+                if (size == SizeClass.Undefined) size = SizeClass.Frigate;
 
                 int count;
                 while (_slots.TryGetValue(size, out count))

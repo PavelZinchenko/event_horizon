@@ -28,8 +28,8 @@ namespace GameDatabase.DataModel
 			Factions = RequiredFactions.Create(serializable.Factions, loader);
 			MinDistance = UnityEngine.Mathf.Clamp(serializable.MinDistance, 0, 9999);
 			MaxDistance = UnityEngine.Mathf.Clamp(serializable.MaxDistance, 0, 9999);
-			MinRelations = UnityEngine.Mathf.Clamp(serializable.MinRelations, -100, 100);
-			MaxRelations = UnityEngine.Mathf.Clamp(serializable.MaxRelations, -100, 100);
+			MinRelations = UnityEngine.Mathf.Clamp(serializable.MinRelations, -2147483648, 2147483647);
+			MaxRelations = UnityEngine.Mathf.Clamp(serializable.MaxRelations, -2147483648, 2147483647);
 
 			OnDataDeserialized(serializable, loader);
 		}

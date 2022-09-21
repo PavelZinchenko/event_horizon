@@ -24,7 +24,7 @@ namespace GameDatabase.DataModel
 
 		private NodeAction(NodeActionSerializable serializable, Database.Loader loader)
 		{
-			TargetNode = UnityEngine.Mathf.Clamp(serializable.TargetNode, 1, 1000);
+			TargetNode = UnityEngine.Mathf.Clamp(serializable.TargetNode, 1, 2147483647);
 			Requirement = Requirement.Create(serializable.Requirement, loader);
 			ButtonText = serializable.ButtonText;
 

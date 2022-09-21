@@ -24,19 +24,19 @@ namespace GameDatabase.DataModel
 
 		private ShipSettings(ShipSettingsSerializable serializable, Database.Loader loader)
 		{
-			DefaultWeightPerCell = UnityEngine.Mathf.Clamp(serializable.DefaultWeightPerCell, 1f, 1000000f);
-			MinimumWeightPerCell = UnityEngine.Mathf.Clamp(serializable.MinimumWeightPerCell, 1f, 1000000f);
-			BaseArmorPoints = UnityEngine.Mathf.Clamp(serializable.BaseArmorPoints, 0f, 1000000f);
-			ArmorPointsPerCell = UnityEngine.Mathf.Clamp(serializable.ArmorPointsPerCell, 0f, 1000000f);
-			ArmorRepairCooldown = UnityEngine.Mathf.Clamp(serializable.ArmorRepairCooldown, 0f, 60f);
-			BaseEnergyPoints = UnityEngine.Mathf.Clamp(serializable.BaseEnergyPoints, 0f, 1000000f);
-			BaseEnergyRechargeRate = UnityEngine.Mathf.Clamp(serializable.BaseEnergyRechargeRate, 0f, 1000000f);
-			EnergyRechargeCooldown = UnityEngine.Mathf.Clamp(serializable.EnergyRechargeCooldown, 0f, 60f);
-			BaseShieldRechargeRate = UnityEngine.Mathf.Clamp(serializable.BaseShieldRechargeRate, 0f, 1000000f);
-			ShieldRechargeCooldown = UnityEngine.Mathf.Clamp(serializable.ShieldRechargeCooldown, 0f, 60f);
-			BaseDroneReconstructionSpeed = UnityEngine.Mathf.Clamp(serializable.BaseDroneReconstructionSpeed, 0f, 100f);
-			MaxVelocity = UnityEngine.Mathf.Clamp(serializable.MaxVelocity, 5f, 30f);
-			MaxTurnRate = UnityEngine.Mathf.Clamp(serializable.MaxTurnRate, 5f, 30f);
+			DefaultWeightPerCell = UnityEngine.Mathf.Clamp(serializable.DefaultWeightPerCell, 0.01f, 3.402823E+38f);
+			MinimumWeightPerCell = UnityEngine.Mathf.Clamp(serializable.MinimumWeightPerCell, 0.01f, 3.402823E+38f);
+			BaseArmorPoints = UnityEngine.Mathf.Clamp(serializable.BaseArmorPoints, -3.402823E+38f, 3.402823E+38f);
+			ArmorPointsPerCell = UnityEngine.Mathf.Clamp(serializable.ArmorPointsPerCell, -3.402823E+38f, 3.402823E+38f);
+			ArmorRepairCooldown = UnityEngine.Mathf.Clamp(serializable.ArmorRepairCooldown, 0f, 3.402823E+38f);
+			BaseEnergyPoints = UnityEngine.Mathf.Clamp(serializable.BaseEnergyPoints, -3.402823E+38f, 3.402823E+38f);
+			BaseEnergyRechargeRate = UnityEngine.Mathf.Clamp(serializable.BaseEnergyRechargeRate, -3.402823E+38f, 3.402823E+38f);
+			EnergyRechargeCooldown = UnityEngine.Mathf.Clamp(serializable.EnergyRechargeCooldown, 0f, 3.402823E+38f);
+			BaseShieldRechargeRate = UnityEngine.Mathf.Clamp(serializable.BaseShieldRechargeRate, -3.402823E+38f, 3.402823E+38f);
+			ShieldRechargeCooldown = UnityEngine.Mathf.Clamp(serializable.ShieldRechargeCooldown, 0f, 3.402823E+38f);
+			BaseDroneReconstructionSpeed = UnityEngine.Mathf.Clamp(serializable.BaseDroneReconstructionSpeed, 0f, 3.402823E+38f);
+			MaxVelocity = UnityEngine.Mathf.Clamp(serializable.MaxVelocity, 5f, 50f);
+			MaxTurnRate = UnityEngine.Mathf.Clamp(serializable.MaxTurnRate, 5f, 50f);
 
 			OnDataDeserialized(serializable, loader);
 		}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Constructor;
@@ -58,10 +59,15 @@ namespace GameModel
 
 						var componentCount = random.Next(4, 7);
 						for (var i = 0; i < componentCount; ++i)
-							_items.Add(_productFactory.CreateRandomComponentProduct(_starId, i, _level+75, ComponentQuality.P3, Faction.Undefined, true, Market.RareComponentRenewalTime, true, 2f * pricescale));
+						{
+							var index = i;
+							TryCreateProduct(() => _productFactory.CreateRandomComponentProduct(_starId, index, _level + 75,
+								ComponentQuality.P3, Faction.Undefined, true, Market.RareComponentRenewalTime, true,
+								2f * pricescale));
+						}
 
                         if (extraGoods > 0)
-                            _items.Add(_productFactory.CreateRandomComponentProduct(_starId, componentCount, _level + 75, ComponentQuality.P3, Faction.Undefined, true, Market.RareComponentRenewalTime, false, 5f*pricescale));
+	                        TryCreateProduct(() => _productFactory.CreateRandomComponentProduct(_starId, componentCount, _level + 75, ComponentQuality.P3, Faction.Undefined, true, Market.RareComponentRenewalTime, false, 5f*pricescale));
 
                         foreach (var item in _database.SatelliteList.Where(item => item.SizeClass != SizeClass.Titan).RandomUniqueElements(random.Next(extraGoods + 3), random))
 							_items.Add(_productFactory.CreateRenewableMarketProduct(_itemTypeFactory.CreateSatelliteItem(item, true), 1, _starId, Market.SatelliteRenewalTime, pricescale));
@@ -72,6 +78,19 @@ namespace GameModel
 					
 					return _items.Where(item => item.Quantity > 0);
 				}
+			}
+			
+			/// <summary>
+			/// Tries creating a product, and ignores any ValueNotFound errors
+			/// </summary>
+			/// <param name="provider"></param>
+			private void TryCreateProduct(Func<IProduct> provider)
+			{
+				try
+				{
+					_items.Add(provider());
+				}
+				catch (ValueNotFoundException) { }
 			}
 			
 			public int Money { get; private set; }

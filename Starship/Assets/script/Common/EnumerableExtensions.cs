@@ -110,6 +110,7 @@ public static class EnumerableExtension
     /// <param name="random">random numbers generator to be used</param>
     public static IList<T> RandomElements<T>(this IList<T> list, int count, Random random)
     {
+        if (list.Count == 0) return Array.Empty<T>();
         var data = new T[count];
         var size = list.Count;
 
@@ -120,7 +121,29 @@ public static class EnumerableExtension
 
         return data;
     }
+    
+    public static IEnumerable<(T,T)> Pairs<T>(this IEnumerable<T> list)
+    {
+        T first = default;
+        var isFirst = true;
+        foreach (var t in list)
+        {
+            if (isFirst)
+            {
+                first = t;
+                isFirst = false;
+            }
+            else
+            {
+                yield return (first, t);
+                isFirst = true;
+            }
+        }
 
+        if (isFirst) yield break;
+        yield return (first, default);
+    }
+    
     /// <summary>
     /// Fetches random unique elements from a collection.
     /// <br/>
@@ -312,4 +335,10 @@ public static class EnumerableExtension
             list.Add(default(T));
         list[index] = value;
     }
+}
+
+public class ValueNotFoundException : Exception
+{
+    public ValueNotFoundException(string message) : base(message) { }
+    public ValueNotFoundException(string message, Exception innerException) : base(message, innerException) { }
 }

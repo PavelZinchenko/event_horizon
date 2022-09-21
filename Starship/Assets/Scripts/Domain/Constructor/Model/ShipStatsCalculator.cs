@@ -203,7 +203,7 @@ namespace Constructor.Model
         public StatMultiplier DroneSpeedMultiplier => EquipmentStats.DroneSpeedMultiplier;
         public StatMultiplier DroneRangeMultiplier => EquipmentStats.DroneRangeMultiplier;
 
-        public float RammingDamage => EquipmentStats.RammingDamage;
+        public float RammingDamage => EquipmentStats.RammingDamage * Bonuses.ArmorPointsMultiplier.Value;
         public float EnergyAbsorption => EquipmentStats.EnergyAbsorption * Bonuses.ArmorPointsMultiplier.Value;
 
         public float RammingDamageMultiplier
@@ -211,8 +211,8 @@ namespace Constructor.Model
             get
             {
                 var armorPoints = ArmorPoints;
-                var rammingDamage = EquipmentStats.RammingDamage;
-                return EquipmentStats.RammingDamageMultiplier.Value * Bonuses.RammingDamageMultiplier.Value * (1.0f + rammingDamage / (rammingDamage + armorPoints));
+                var rammingDamage = RammingDamage;
+                return EquipmentStats.RammingDamageMultiplier.Value * Bonuses.ArmorPointsMultiplier.Value * (1.0f + rammingDamage / (rammingDamage + armorPoints));
             }
         }
 

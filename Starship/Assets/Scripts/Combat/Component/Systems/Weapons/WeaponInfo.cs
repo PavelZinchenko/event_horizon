@@ -42,14 +42,14 @@ namespace Combat.Component.Systems.Weapons
                 Recoil = _bulletFactory.Stats.Recoil / platform.Body.TotalWeight();
         }
 
-        public WeaponType WeaponType { get { return _weaponType; } }
-        public BulletType BulletType { get { return _bulletFactory.Stats.Type; } }
-        public BulletEffectType BulletEffectType { get { return _bulletFactory.Stats.EffectType; } }
-        public float Range { get { return _bulletFactory.Stats.BulletHitRange; } }
-        public float Spread { get { return _spread; } }
-        public bool IsRelativeVelocity { get { return !_bulletFactory.Stats.IgnoresShipSpeed; } }
-        public float BulletSpeed { get { return _bulletFactory.Stats.BulletSpeed; } }
-        public float EnergyCost { get { return _bulletFactory.Stats.EnergyCost; } }
+        public WeaponType WeaponType => _weaponType;
+        public BulletType BulletType => _bulletFactory.Stats.Type;
+        public BulletEffectType BulletEffectType => _bulletFactory.Stats.EffectType;
+        public float Range => _bulletFactory.Stats.BulletHitRange;
+        public float Spread => _spread;
+        public bool IsRelativeVelocity => !_bulletFactory.Stats.IgnoresShipSpeed;
+        public float BulletSpeed => _bulletFactory.Stats.BulletSpeed;
+        public float EnergyCost => _bulletFactory.Stats.EnergyCost;
         public float Recoil { get; private set; }
 
         private readonly float _spread;

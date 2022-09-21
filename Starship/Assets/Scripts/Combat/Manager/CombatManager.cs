@@ -114,8 +114,6 @@ namespace Combat.Manager
                 foreach (var ship in _combatModel.EnemyFleet.Ships.Where(item => item.Status == ShipStatus.Ready)
                              .Skip(1).Take(_combatModel.Rules.InitialEnemies - 1))
                     CreateShip(ship);
-
-            _readyEnemyCount = _combatModel.EnemyFleet.Ships.Count(item => item.Status == ShipStatus.Ready);
         }
 
         public void OnShipCreated(IShip ship)
@@ -130,12 +128,12 @@ namespace Combat.Manager
                 case UnitSide.Player:
                     _shipControlsPanel.Load(ship);
                     _messenger.Broadcast(EventType.PlayerShipCountChanged,
-                        _combatModel.PlayerFleet.Ships.Count(item => item.Status == ShipStatus.Ready));
+                        _combatModel.PlayerFleet.CountStatus(ShipStatus.Ready));
                     break;
                 case UnitSide.Enemy:
                     _radarPanel.Add(ship);
-                    _readyEnemyCount--;
-                    _messenger.Broadcast(EventType.EnemyShipCountChanged, _readyEnemyCount);
+                    _messenger.Broadcast(EventType.EnemyShipCountChanged,
+                        _combatModel.EnemyFleet.CountStatus(ShipStatus.Ready));
                     break;
             }
         }
@@ -313,7 +311,6 @@ namespace Combat.Manager
         }
 
         private bool _canCallNextEnemy;
-        private int _readyEnemyCount;
 
         private float _nextShipCooldown = NextShipMaxCooldown;
         private float _nextPlayerShipCooldown = NextShipMaxCooldown;

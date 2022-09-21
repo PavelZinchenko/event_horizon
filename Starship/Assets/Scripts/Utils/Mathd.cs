@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace Utils
 {
@@ -33,12 +34,23 @@ namespace Utils
         {
             return (val > 0 ? "+" : "") + ToInGameString(val);
         }
+
         public static string ToInGameString(this double val)
         {
-            if (val < 1e5) return Math.Floor(val).ToString();
-            var digs = DigitsInDouble(val) / 3 * 3 - 3;
-            val /= Math.Pow(10, digs);
+            // We don't format very small values for now
+            if (Math.Abs(val) < 1) return Math.Truncate(val).ToString(CultureInfo.InvariantCulture);
+            // Get amount of digits in steps of 3
+            var digs = (DigitsInDouble(val) - 1) / 3 * 3;
+            // Rounding might lead to getting stuff like 1000K if input is 999999, which is not ideal, so
+            // we handle this separately
+            var display = (int) Math.Round(val / Math.Pow(10, digs));
+            if (display == 1000)
+            {
+                display = 1;
+                digs += 3;
+            }
 
+            // Currently hardcoded endings
             string ending;
             switch (digs)
             {
@@ -59,7 +71,7 @@ namespace Utils
                     break;
             }
 
-            return Math.Round(val) + ending;
+            return display + ending;
         }
 
         /// <summary>
