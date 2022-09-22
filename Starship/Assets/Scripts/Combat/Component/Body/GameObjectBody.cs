@@ -5,7 +5,7 @@ namespace Combat.Component.Body
     public class GameObjectBody : MonoBehaviour, IBodyComponent
     {
         public void Initialize(IBody parent, Vector2 position, float rotation, float scale, Vector2 velocity,
-            float angularVelocity, float weight)
+            float angularVelocity, float weight, bool frozen=false)
         {
             if (parent != null)
                 parent.AddChild(transform);
@@ -19,6 +19,7 @@ namespace Combat.Component.Body
             Velocity = velocity;
             AngularVelocity = angularVelocity;
             Weight = weight;
+            _frozen = frozen;
         }
 
         public IBody Parent
@@ -50,8 +51,11 @@ namespace Combat.Component.Body
             set
             {
                 _position = value;
-                if (this && transform)
-                    gameObject.Move(Parent == null ? value : Parent.ChildPosition(value));
+                var transformCache = transform;
+                if (!this || !transformCache) return;
+                var targetPos = _parent?.ChildPosition(value) ?? value;
+                if (transformCache.localPosition.x != targetPos.x || transformCache.localPosition.y != targetPos.y)
+                    gameObject.Move(targetPos);
             }
         }
 
@@ -61,8 +65,11 @@ namespace Combat.Component.Body
             set
             {
                 _rotation = value;
-                if (this && transform)
-                    transform.localEulerAngles = new Vector3(0, 0, Mathf.Repeat(value, 360));
+                var transformCache = transform;
+                if (!this || !transformCache) return;
+                var targetAngle = Mathf.Repeat(value, 360);
+                if (transformCache.localRotation.z != targetAngle)
+                    transform.localEulerAngles = new Vector3(0, 0, targetAngle);
             }
         }
 
@@ -114,6 +121,11 @@ namespace Combat.Component.Body
 
         public void UpdatePhysics(float elapsedTime)
         {
+            if (_frozen)
+            {
+                Position = _position;
+                Rotation = _rotation;
+            }
             if (Parent != null)
                 return;
 
@@ -148,5 +160,6 @@ namespace Combat.Component.Body
         private float _rotation;
         private float _scale;
         private IBody _parent;
+        private bool _frozen;
     }
 }

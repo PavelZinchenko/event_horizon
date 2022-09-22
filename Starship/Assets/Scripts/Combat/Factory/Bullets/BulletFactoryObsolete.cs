@@ -152,10 +152,12 @@ namespace Combat.Factory
             var angularVelocity = 0f;
             var weight = _bulletStats.Impulse;
             var scale = _bulletStats.Size;
+            var frozen = false;
 
             if (_stats.AmmunitionClass.IsBoundToCannon() && !parent.IsTemporary)
             {
                 parentBody = parent.Body;
+                frozen = true;
             }
             else
             {
@@ -175,7 +177,7 @@ namespace Combat.Factory
                     velocity += parent.Body.WorldVelocity();
             }
 
-            body.Initialize(parentBody, position, rotation, scale, velocity, angularVelocity, weight);
+            body.Initialize(parentBody, position, rotation, scale, velocity, angularVelocity, weight, frozen);
             return body;
         }
 

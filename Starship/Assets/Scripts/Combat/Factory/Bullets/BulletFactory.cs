@@ -151,11 +151,13 @@ namespace Combat.Factory
             var angularVelocity = 0f;
             var weight = _stats.Weight;
             var scale = _stats.BodySize;
+            var frozen = false;
 
             if (_ammunition.Body.Type == GameDatabase.Enums.BulletType.Continuous && !parent.IsTemporary)
             {
                 parentBody = parent.Body;
                 position = new Vector2(offset, 0);
+                frozen = true;
             }
             else
             {
@@ -174,7 +176,7 @@ namespace Combat.Factory
                     velocity += parent.Body.WorldVelocity();
             }
 
-            body.Initialize(parentBody, position, rotation, scale, velocity, angularVelocity, weight);
+            body.Initialize(parentBody, position, rotation, scale, velocity, angularVelocity, weight, frozen);
             return body;
         }
 
