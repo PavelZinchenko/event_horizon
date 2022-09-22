@@ -117,13 +117,20 @@ namespace Combat.Scene
             }
 
             // Free space was not found, so spawn ship away from player/center
-            Vector2 targetPos;
+            var targetPos = center;
+            // In case of very large radius, aka so we can't find a suitable
+            // center, we just pick the farthest point we've got so far
+            var maxSquaredDist = 0f;
             var tries = 1000;
             do
             {
-                targetPos = RandomPoint(center);
-            } while (center.SqrDistance(targetPos) < squaredDistance && tries-- > 0);
-            return center;
+                var newPos = RandomPoint(center);
+                var sqrDist = center.SqrDistance(newPos);
+                if (sqrDist < maxSquaredDist) continue;
+                targetPos = newPos;
+                maxSquaredDist = sqrDist;
+            } while (maxSquaredDist < squaredDistance && tries-- > 0);
+            return targetPos;
         }
 
         public void Shake(float amplitude)
