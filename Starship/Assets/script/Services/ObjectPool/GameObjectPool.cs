@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
 using GameServices.LevelManager;
+using Utils;
 using Zenject;
 using Object = UnityEngine.Object;
 
@@ -137,7 +138,7 @@ namespace Services.ObjectPool
             }
             catch (Exception e)
             {
-                UnityEngine.Debug.LogException(e);
+                OptimizedDebug.LogException(e);
             }
         }
 

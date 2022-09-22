@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Utils;
 
 /*
  * This static class is developped to convert a wav file (from a byte array) into a
@@ -85,7 +86,7 @@ public static class OpenWavParser
         }
         else
         {
-            Debug.LogError("[OpenWavParser.ByteArrayToAudioClip] Compressed wav format not supported.");
+            OptimizedDebug.LogError("[OpenWavParser.ByteArrayToAudioClip] Compressed wav format not supported.");
             return null;
         }
     }

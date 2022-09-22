@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Utils;
 
 [ExecuteInEditMode]
 public class ListScrollRect : UnityEngine.UI.ScrollRect
@@ -322,7 +323,7 @@ public class ListScrollRect : UnityEngine.UI.ScrollRect
 	    {
 		    if (contentFillerInterface == null)
 		    {
-			    Debug.LogError("ListScrollRect does not have an Content Filler Interface object attached to it.");
+			    OptimizedDebug.LogError("ListScrollRect does not have an Content Filler Interface object attached to it.");
 			    return false;
 		    }
 
@@ -331,7 +332,7 @@ public class ListScrollRect : UnityEngine.UI.ScrollRect
 
 		    if (contentFiller == null)
 		    {
-			    Debug.LogError("ListScrollRect could not find a component on the Content Filler Interface object that implements the IContentFiller.");
+			    OptimizedDebug.LogError("ListScrollRect could not find a component on the Content Filler Interface object that implements the IContentFiller.");
 			    return false;
 		    }
 	    }
@@ -496,7 +497,7 @@ public class ListScrollRect : UnityEngine.UI.ScrollRect
 		}
 		else if (contentFiller == null)
 		{
-			Debug.LogError("ListScrollRect does not have an IContentFiller script attached to it.");
+			OptimizedDebug.LogError("ListScrollRect does not have an IContentFiller script attached to it.");
 		}
 		else
 		{
@@ -686,7 +687,7 @@ public class ListScrollRect : UnityEngine.UI.ScrollRect
 		// a fail safe.
 		if (visibleObjs.Count == 0 && itemCount > 0)
 		{
-			Debug.LogWarning("Something bad happened and now there are no visible items in the list. Since we have no idea what items need to be generate we are going to rebuild the list from the beginning.");
+			OptimizedDebug.LogWarning("Something bad happened and now there are no visible items in the list. Since we have no idea what items need to be generate we are going to rebuild the list from the beginning.");
 			RebuildContent();
 			return;
 		}
@@ -853,7 +854,7 @@ public class ListScrollRect : UnityEngine.UI.ScrollRect
 
 		if (listItemInfo.obj == null)
 		{
-			Debug.LogErrorFormat("GetListItem returned a null object for item at index {0}", index);
+			OptimizedDebug.LogErrorFormat("GetListItem returned a null object for item at index {0}", index);
 			return;
 		}
 
@@ -881,7 +882,7 @@ public class ListScrollRect : UnityEngine.UI.ScrollRect
 	{
         if (++_recursionCounter > 50)
         {
-			Debug.LogException(new InvalidOperationException("UpdateListItems - infinite recursion"));
+			OptimizedDebug.LogException(new InvalidOperationException("UpdateListItems - infinite recursion"));
             _recursionCounter = 0;
             return false;
         }
@@ -1285,28 +1286,17 @@ public class ListScrollRect : UnityEngine.UI.ScrollRect
 		LayoutGroup lg = content.GetComponent<LayoutGroup>();
 		if (lg != null)
 		{
-			Debug.LogWarning("ListScrollRect: Found a LayoutGroup component on the ScrollRect content. ListScrollRect controls the layout of the content. Disabling LayoutGroup.");
+			OptimizedDebug.LogWarning("ListScrollRect: Found a LayoutGroup component on the ScrollRect content. ListScrollRect controls the layout of the content. Disabling LayoutGroup.");
 			lg.enabled = false;
 		}
 		
 		ContentSizeFitter csf = content.GetComponent<ContentSizeFitter>();
 		if (csf != null)
 		{
-			Debug.LogWarning("ListScrollRect: Found a ContentSizeFitter component on the ScrollRect content. ListScrollRect controls the size of the content. Disabling ContentSizeFitter.");
+			OptimizedDebug.LogWarning("ListScrollRect: Found a ContentSizeFitter component on the ScrollRect content. ListScrollRect controls the size of the content. Disabling ContentSizeFitter.");
 			csf.enabled = false;
 		}
 	}
 
 	#endregion
 }
-
-
-
-
-
-
-
-
-
-
-

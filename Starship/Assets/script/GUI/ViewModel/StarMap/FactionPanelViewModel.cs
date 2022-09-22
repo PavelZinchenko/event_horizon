@@ -13,6 +13,7 @@ using GameStateMachine.States;
 using Services.Localization;
 using Services.Messenger;
 using Session;
+using Utils;
 using Zenject;
 
 namespace ViewModel
@@ -49,7 +50,7 @@ namespace ViewModel
 
 		public void CaptureBase()
 		{
-			UnityEngine.Debug.Log("FactionPanelViewModel.CaptureBase");
+			OptimizedDebug.Log("FactionPanelViewModel.CaptureBase");
 
 			_motherShip.CurrentStar.CaptureBase();
 		}

@@ -96,7 +96,7 @@ namespace Combat.Factory
             var prefab = _prefabCache.LoadResourcePrefab("Combat/Effects/" + name);
             if (prefab == null)
             {
-                UnityEngine.Debug.Log("Effect not found: Combat/Effects/" + name);
+                OptimizedDebug.Log("Effect not found: Combat/Effects/" + name);
                 return null;
             }
 
@@ -108,7 +108,7 @@ namespace Combat.Factory
             var prefab = _prefabCache.LoadPrefab(prefabId);
             if (prefab == null)
             {
-                UnityEngine.Debug.Log("Effect not found: " + prefabId);
+                OptimizedDebug.Log("Effect not found: " + prefabId);
                 return null;
             }
 

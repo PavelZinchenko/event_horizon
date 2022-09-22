@@ -30,6 +30,7 @@ using UnityEngine.Assertions;
 using Zenject;
 using IShip = Combat.Component.Ship.IShip;
 using Constructor.Ships;
+using Utils;
 
 namespace Combat.Manager
 {
@@ -103,7 +104,7 @@ namespace Combat.Manager
 
         private void OnPlayerDocked(int stationId)
         {
-            Debug.Log("OnPlayerDocked - " + stationId);
+            OptimizedDebug.Log("OnPlayerDocked - " + stationId);
 
             if (!_objectives.ContainsKey(stationId)) return;
             _guiManager.OpenWindow(Gui.Exploration.WindowNames.ScanningPanel, code => { if (code == WindowExitCode.Ok) OnScanCompleted(stationId); });
@@ -111,18 +112,18 @@ namespace Combat.Manager
 
         private void OnObjectiveDestroyed(int id)
         {
-            Debug.Log("OnObjectiveDestroyed - " + id);
+            OptimizedDebug.Log("OnObjectiveDestroyed - " + id);
             OnScanCompleted(id);
         }
 
         private void OnPlayerUndocked(int stationId)
         {
-            Debug.Log("OnPlayerUndocked - " + stationId);
+            OptimizedDebug.Log("OnPlayerUndocked - " + stationId);
         }
 
         private void OnScanCompleted(int stationId)
         {
-            Debug.Log("OnScanCompleted- " + stationId);
+            OptimizedDebug.Log("OnScanCompleted- " + stationId);
 
             if (!_objectives.TryGetValue(stationId, out var unit))
                 return;

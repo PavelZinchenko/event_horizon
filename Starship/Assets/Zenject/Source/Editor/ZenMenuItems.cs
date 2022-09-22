@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using ModestTree;
 using UnityEditor.SceneManagement;
+using Utils;
 
 namespace Zenject
 {
@@ -200,7 +201,7 @@ namespace Zenject
                 GameObject.DestroyImmediate(gameObject);
             }
 
-            Debug.Log("Created new ProjectContext at '{0}'".Fmt(prefabPath));
+            OptimizedDebug.Log("Created new ProjectContext at '{0}'".Fmt(prefabPath));
         }
 
         static void AddCSharpClassTemplate(

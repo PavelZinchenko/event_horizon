@@ -5,6 +5,7 @@ using Diagnostics;
 using GameDatabase.DataModel;
 using GameDatabase.Enums;
 using GameDatabase.Model;
+using Utils;
 
 namespace Constructor
 {
@@ -45,7 +46,7 @@ namespace Constructor
 				}
 				catch (Exception e)
 				{
-				    UnityEngine.Debug.LogException(e);
+					OptimizedDebug.LogException(e);
                 }
 			}
 		}

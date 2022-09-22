@@ -5,6 +5,7 @@ using Session;
 using GameServices.Database;
 using Services.Messenger;
 using GameModel.Skills;
+using Utils;
 using Zenject;
 
 namespace GameServices.Player
@@ -71,7 +72,7 @@ namespace GameServices.Player
                 return false;
 
             var level = GetSkillLevels()[info.Type];
-            UnityEngine.Debug.Log(info.Type + ": " + level + " -> " + (level + info.Multilpler));
+            OptimizedDebug.Log(info.Type + ": " + level + " -> " + (level + info.Multilpler));
             GetSkillLevels()[info.Type] = level + info.Multilpler;
 
             _session.Upgrades.AddSkill(id);

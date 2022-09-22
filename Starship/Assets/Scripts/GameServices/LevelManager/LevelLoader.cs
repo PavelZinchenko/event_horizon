@@ -27,7 +27,7 @@ namespace GameServices.LevelManager
             {
                 Observable.EveryUpdate().First().Subscribe(_ =>
                 {
-                    UnityEngine.Debug.Log("Level already loaded: " + level.ToSceneId());
+                    OptimizedDebug.Log("Level already loaded: " + level.ToSceneId());
                     onCompleted?.Invoke();
                 });
                 return;
@@ -43,7 +43,7 @@ namespace GameServices.LevelManager
             SceneManager.LoadSceneAsync(level.ToSceneId()).AsObservable().Subscribe(_ =>
             {
                 IsLoading = false;
-                UnityEngine.Debug.Log("Level loaded: " + Current);
+                OptimizedDebug.Log("Level loaded: " + Current);
                 _sceneLoadedTrigger.Fire();
                 onCompleted?.Invoke();
             });

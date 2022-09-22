@@ -252,7 +252,7 @@ namespace GameStateMachine.States
 
 		    if (guardian.IsAggressive)
 		    {
-		        UnityEngine.Debug.Log("Attacked by occupants");
+		        OptimizedDebug.Log("Attacked by occupants");
 		        guardian.Attack();
                 return true;
             }

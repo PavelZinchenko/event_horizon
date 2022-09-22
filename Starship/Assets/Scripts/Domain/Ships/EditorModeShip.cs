@@ -38,7 +38,7 @@ namespace Constructor.Ships
 
         private void SaveComponents()
         {
-            UnityEngine.Debug.Log("EditorModeShip.SaveComponents");
+            OptimizedDebug.Log("EditorModeShip.SaveComponents");
             _shipBuild.SetComponents(_components.Select(item => new InstalledComponent(item)));
             _database.SaveShipBuild(_shipBuild.Id);
         }

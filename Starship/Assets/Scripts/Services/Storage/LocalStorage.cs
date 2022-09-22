@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using GameModel.Serialization;
 using UnityEngine;
+using Utils;
 
 namespace Services.Storage
 {
@@ -55,11 +56,11 @@ namespace Services.Storage
             {
                 if (_currentGameId == gameData.GameId && _currentVersion == gameData.DataVersion)
                 {
-                    UnityEngine.Debug.Log("LocalStorageBase.Save: Game data not changed: " + gameData.GameId + "/" + gameData.DataVersion);
+                    OptimizedDebug.Log("LocalStorageBase.Save: Game data not changed: " + gameData.GameId + "/" + gameData.DataVersion);
                     return;
                 }
 
-                UnityEngine.Debug.Log("LocalStorageBase.Save: writing data " + gameData.GameId + "/" + gameData.DataVersion);
+                OptimizedDebug.Log("LocalStorageBase.Save: writing data " + gameData.GameId + "/" + gameData.DataVersion);
 
                 if (_mainFileLoaded)
                     TryBackupMainFile();
@@ -89,7 +90,7 @@ namespace Services.Storage
 
                 if (!TrySaveMainFile(data.ToArray()))
                 {
-                    UnityEngine.Debug.Log("LocalStorageBase.Save: failed");
+                    OptimizedDebug.Log("LocalStorageBase.Save: failed");
                     return;
                 }
 
@@ -98,7 +99,7 @@ namespace Services.Storage
             }
             catch (Exception e)
             {
-                UnityEngine.Debug.Log(e.Message);
+                OptimizedDebug.Log(e.Message);
             }
         }
 
@@ -149,7 +150,7 @@ namespace Services.Storage
             }
             catch (Exception e)
             {
-                Debug.LogException(e);
+                OptimizedDebug.LogException(e);
                 data = null;
                 return false;
             }
@@ -164,7 +165,7 @@ namespace Services.Storage
             }
             catch (Exception e)
             {
-                Debug.LogException(e);
+                OptimizedDebug.LogException(e);
                 return false;
             }
         }
@@ -181,7 +182,7 @@ namespace Services.Storage
             }
             catch (Exception e)
             {
-                Debug.LogException(e);
+                OptimizedDebug.LogException(e);
                 return false;
             }
         }
@@ -195,7 +196,7 @@ namespace Services.Storage
             }
             catch (Exception e)
             {
-                Debug.LogException(e);
+                OptimizedDebug.LogException(e);
                 return false;
             }
         }
@@ -221,7 +222,7 @@ namespace Services.Storage
 
                 if (checksumm != serializedData[serializedData.Length - 1])
                 {
-                    Debug.LogException(new Exception("LocalStorageBase.TryDeserializeData: CheckSumm error - " + checksumm + " " + serializedData[serializedData.Length - 1]));
+                    OptimizedDebug.LogException(new Exception("LocalStorageBase.TryDeserializeData: CheckSumm error - " + checksumm + " " + serializedData[serializedData.Length - 1]));
                     return false;
                 }
 
@@ -235,7 +236,7 @@ namespace Services.Storage
 
                 if (!IsModsEqual(mod, _currentMod))
                 {
-                    Debug.LogException(new Exception("LocalStorageBase.TryDeserializeData: Invalid mod id"));
+                    OptimizedDebug.LogException(new Exception("LocalStorageBase.TryDeserializeData: Invalid mod id"));
                     return false;
                 }
 
@@ -247,20 +248,20 @@ namespace Services.Storage
 
                 if (!gameData.TryDeserialize(gameId, time, version, mod, serializedData, index))
                 {
-                    Debug.LogException(new Exception("LocalStorageBase.TryDeserializeData: Data deserialization failed"));
+                    OptimizedDebug.LogException(new Exception("LocalStorageBase.TryDeserializeData: Data deserialization failed"));
                     return false;
                 }
 
                 _currentGameId = gameId;
                 _currentVersion = version;
 
-                UnityEngine.Debug.Log("LocalStorageBase.TryDeserializeData: done - " + gameData.GameId);
+                OptimizedDebug.Log("LocalStorageBase.TryDeserializeData: done - " + gameData.GameId);
 
                 return true;
             }
             catch (Exception e)
             {
-                UnityEngine.Debug.Log(e.Message);
+                OptimizedDebug.Log(e.Message);
                 return false;
             }
         }

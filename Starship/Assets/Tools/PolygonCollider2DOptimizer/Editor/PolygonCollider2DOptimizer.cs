@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Utils;
 
 namespace unitycodercom_PolygonCollider2DOptimizer
 {
@@ -204,7 +205,7 @@ namespace unitycodercom_PolygonCollider2DOptimizer
 						{
 							go.AddComponent<PolygonCollider2D>();
 						}else{ // missing collider and not adding
-							//Debug.LogWarning(appName+"> \""+go.name+"\" is missing PolygonCollider2D - skipping!");
+							//OptimizedDebug.LogWarning(appName+"> \""+go.name+"\" is missing PolygonCollider2D - skipping!");
 						}*/
 						continue; // no polygon2D collider
 					}
@@ -265,7 +266,7 @@ namespace unitycodercom_PolygonCollider2DOptimizer
 //						angle2 = Vector2.Angle(path[sCurrent]-path[j],Vector2.up);
 						//angle3 = Vector2.Angle(path[sPrev]-path[sNext],Vector2.up);
 
-						//Debug.Log ("sPrev:" +sPrev+" current:"+j+" sNext:"+sNext+ " a1:"+angle1+" a2:"+angle2+" | angleDif:"+Mathf.Abs(angle2-angle1));
+						//OptimizedDebug.Log ("sPrev:" +sPrev+" current:"+j+" sNext:"+sNext+ " a1:"+angle1+" a2:"+angle2+" | angleDif:"+Mathf.Abs(angle2-angle1));
 
 						// if bigger than threshold, add point
 //						if (Mathf.Abs(angle2-angle1)>angleThreshold)
@@ -379,7 +380,7 @@ namespace unitycodercom_PolygonCollider2DOptimizer
 							}
 							break;
 						default:
-							Debug.LogWarning(appName+"> " + "Unknown scaling mode:"+scalingMode);
+							OptimizedDebug.LogWarning(appName+"> " + "Unknown scaling mode:"+scalingMode);
 							break;
 						}
 
@@ -635,11 +636,11 @@ namespace unitycodercom_PolygonCollider2DOptimizer
 								biggestSize = area;
 								biggestPath = i;
 							}
-							//Debug.Log ("i:"+i+" : "+area);
+							//OptimizedDebug.Log ("i:"+i+" : "+area);
 						}
 
 
-						//Debug.Log ("keep: "+biggestPath);
+						//OptimizedDebug.Log ("keep: "+biggestPath);
 
 						// assign it
 						pc.SetPath (0, pc.GetPath(biggestPath));
@@ -783,7 +784,7 @@ namespace unitycodercom_PolygonCollider2DOptimizer
 										// then add to keep paths list
 										if (!keep.Contains(j))
 										{
-											//Debug.Log ("addkeep:"+j+" (inside:"+i);
+											//OptimizedDebug.Log ("addkeep:"+j+" (inside:"+i);
 											keep.Add (j);
 										}
 									}
@@ -798,7 +799,7 @@ namespace unitycodercom_PolygonCollider2DOptimizer
 						keepPaths.Clear();
 						for (int i=0;i<keep.Count;i++)
 						{
-							//Debug.Log ("i:"+i+" keeping:"+keep[i]);
+							//OptimizedDebug.Log ("i:"+i+" keeping:"+keep[i]);
 							keepPaths.Add (pc.GetPath( keep[i] ));
 						}
 

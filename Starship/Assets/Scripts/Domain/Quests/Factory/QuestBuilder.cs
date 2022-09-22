@@ -4,6 +4,7 @@ using GameDatabase.DataModel;
 using GameServices.Player;
 using Services.InternetTime;
 using Session;
+using Utils;
 
 namespace Domain.Quests
 {
@@ -39,7 +40,7 @@ namespace Domain.Quests
 
             if (nodes.Count == 0)
             {
-                UnityEngine.Debug.LogException(new ArgumentException("QuestBuilder: quest has no nodes - " + _model.Id));
+                OptimizedDebug.LogException(new ArgumentException("QuestBuilder: quest has no nodes - " + _model.Id));
                 return null;
             }
 

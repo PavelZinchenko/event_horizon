@@ -6,6 +6,7 @@ using GameDatabase.Enums;
 using GameDatabase.Serializable;
 using GameDatabase.Model;
 using UnityEngine;
+using Utils;
 
 namespace GameDatabase.Utils
 {
@@ -18,7 +19,7 @@ namespace GameDatabase.Utils
             var count = serializableBarrels?.Length ?? 0;
 
             if (indices.Count != count)
-                Debug.LogException(new ArgumentOutOfRangeException("serializableBarrels", $"barrels do not fit layout"));
+                OptimizedDebug.LogException(new ArgumentOutOfRangeException("serializableBarrels", $"barrels do not fit layout"));
 
             for (var i = 0; i < count && i < indices.Count; ++i)
                 barrels.Add(new Barrel(serializableBarrels[i], null, indices[i]));

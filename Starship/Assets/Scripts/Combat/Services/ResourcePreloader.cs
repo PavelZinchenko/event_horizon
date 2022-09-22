@@ -4,6 +4,7 @@ using GameDatabase;
 using Services.ObjectPool;
 using Services.Reources;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace Combat.Services
@@ -13,7 +14,7 @@ namespace Combat.Services
         [Inject]
         private void Initialize(IObjectPool objectPool, IDatabase database, PrefabCache prefabCache, IResourceLocator resourceLocator, ICombatModel combatModel)
         {
-            UnityEngine.Debug.Log("Preloading objects");
+            OptimizedDebug.Log("Preloading objects");
 
             objectPool.PreloadObjects(prefabCache.LoadResourcePrefab("Combat/Effects/DamageText"), 5);
             objectPool.PreloadObjects(prefabCache.LoadResourcePrefab("Combat/Effects/Flash"), 10);

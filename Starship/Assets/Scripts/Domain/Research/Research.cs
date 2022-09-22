@@ -8,6 +8,7 @@ using GameDatabase.Model;
 using GameServices.Database;
 using Session;
 using Services.Messenger;
+using Utils;
 using Zenject;
 
 namespace GameServices.Research
@@ -103,7 +104,7 @@ namespace GameServices.Research
                 var tech = _technologies.Get(new ItemId<Technology>(item));
                 if (tech == null)
                 {
-                    UnityEngine.Debug.Log("unknown tech: " + item);
+                    OptimizedDebug.Log("unknown tech: " + item);
                     continue;
                     //ExceptionHandler.HandleException(new System.ArgumentOutOfRangeException("unknown tech: " + item));
                 }

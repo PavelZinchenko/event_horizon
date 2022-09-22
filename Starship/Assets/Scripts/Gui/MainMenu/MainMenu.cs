@@ -14,6 +14,7 @@ using GameServices.Gui;
 using GameServices.Settings;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 using Zenject;
 
 namespace Gui.MainMenu
@@ -75,13 +76,13 @@ namespace Gui.MainMenu
             int shipId;
             ShipBuild build = null;
             if (!int.TryParse(_inputField.text.Replace("*", string.Empty), out shipId))
-                UnityEngine.Debug.Log("invalid id: " + _inputField.text);
+                OptimizedDebug.Log("invalid id: " + _inputField.text);
             else
                 build = _database.GetShipBuild(new ItemId<ShipBuild>(shipId));
 
             if (build == null)
             {
-                UnityEngine.Debug.Log("ship not found: " + _inputField.text);
+                OptimizedDebug.Log("ship not found: " + _inputField.text);
                 build = _database.ShipBuildList.FirstOrDefault();
             }
 
@@ -134,7 +135,7 @@ namespace Gui.MainMenu
         private void UpdateButtons()
         {
             var gameExists = _gameSession.IsGameStarted;
-            UnityEngine.Debug.Log("MainMenu.UpdateButtons - " + gameExists);
+            OptimizedDebug.Log("MainMenu.UpdateButtons - " + gameExists);
 
             _startGameButton.gameObject.SetActive(!gameExists);
             _continueGameButton.gameObject.SetActive(gameExists);

@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using GameServices.Player;
 using Services.Reources;
+using Utils;
 using Zenject;
 
 namespace ViewModel
@@ -18,7 +19,7 @@ namespace ViewModel
 
 		public void StartButtonClicked()
 		{
-			UnityEngine.Debug.Log("ChallengePanel.StartButtonClicked");
+			OptimizedDebug.Log("ChallengePanel.StartButtonClicked");
             _motherShip.CurrentStar.Challenge.Attack();
 		}
 

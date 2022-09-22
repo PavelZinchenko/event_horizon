@@ -4,6 +4,7 @@ using UnityEngine;
 using GameServices.Player;
 using Services.Messenger;
 using Services.Reources;
+using Utils;
 using Zenject;
 
 namespace StarSystem
@@ -34,7 +35,7 @@ namespace StarSystem
             }
             catch (System.Exception e)
             {
-                Debug.LogException(e);
+	            OptimizedDebug.LogException(e);
             }
         }
 

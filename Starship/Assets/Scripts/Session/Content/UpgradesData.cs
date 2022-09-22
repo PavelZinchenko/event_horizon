@@ -99,7 +99,7 @@ namespace Session.Content
             var resetRequired = false;
 			if (version != CurrentVersion && !TryUpgrade(ref buffer, version, out resetRequired))
 			{
-				UnityEngine.Debug.Log("UpgradesData: incorrect data version");
+				OptimizedDebug.Log("UpgradesData: incorrect data version");
                 throw new ArgumentException();
             }
 

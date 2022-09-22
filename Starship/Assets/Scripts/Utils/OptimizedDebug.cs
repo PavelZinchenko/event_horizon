@@ -245,5 +245,14 @@ namespace Utils
             Debug.LogAssertionFormat(context, format, args);
 #endif
         }
+        
+        // ReSharper disable Unity.PerformanceAnalysis
+        [Conditional("DEVELOPMENT_BUILD"), Conditional("UNITY_EDITOR")]
+        public static void Break()
+        {
+#if DEVELOPMENT_BUILD || UNITY_EDITOR
+            Debug.Break();
+#endif
+        }
     }
 }

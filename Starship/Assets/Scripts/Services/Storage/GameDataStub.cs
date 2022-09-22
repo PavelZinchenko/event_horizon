@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameModel.Serialization;
+using Utils;
 
 namespace Services.Storage
 {
@@ -53,7 +54,7 @@ namespace Services.Storage
             }
             catch (Exception e)
             {
-                UnityEngine.Debug.Log(e.Message);
+                OptimizedDebug.Log(e.Message);
                 return false;
             }
         }

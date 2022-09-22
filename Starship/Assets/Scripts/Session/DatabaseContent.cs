@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Session.Content;
 using GameModel.Serialization;
 using System.Linq;
+using Utils;
 
 namespace Session
 {
@@ -37,7 +38,7 @@ namespace Session
 #if UNITY_EDITOR
                 foreach (var item in Data)
                     if (item.IsChanged)
-                        UnityEngine.Debug.Log("IsChanged: " + item.FileName);
+                        OptimizedDebug.Log("IsChanged: " + item.FileName);
 #endif
                 //_version++;
             }
@@ -140,7 +141,7 @@ namespace Session
             }
             catch (Exception e)
             {
-                UnityEngine.Debug.LogException(e);
+                OptimizedDebug.LogException(e);
                 return null;
             }
 
@@ -152,7 +153,7 @@ namespace Session
             switch (key)
             {
                 default:
-                    UnityEngine.Debug.Log("DatabaseContent: unknown key - " + key);
+                    OptimizedDebug.Log("DatabaseContent: unknown key - " + key);
                     break;
             }
         }

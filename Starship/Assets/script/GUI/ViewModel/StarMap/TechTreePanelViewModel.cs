@@ -13,6 +13,7 @@ using Services.Audio;
 using Services.Localization;
 using Services.ObjectPool;
 using Services.Reources;
+using Utils;
 using Zenject;
 
 namespace ViewModel
@@ -325,10 +326,8 @@ namespace ViewModel
 				
 				if (index >= 1000)
 				{
-					Debug.LogError("BuildTechTree: bad tech data");
-#if UNITY_EDITOR
-					Debug.Break();
-#endif
+					OptimizedDebug.LogError("BuildTechTree: bad tech data");
+					OptimizedDebug.Break();
 				}
 				
 				return items;
@@ -385,7 +384,7 @@ namespace ViewModel
 							var force1 = current.Force;
 							var force2 = next.Force;
 
-							//UnityEngine.Debug.Log((current.Technology == null ? "null" : current.Technology.Id) + ":" + force1 + " > " + (next.Technology == null ? "null" : next.Technology.Id) + ":" + force2);
+							//UnityEngine.OptimizedDebug.Log((current.Technology == null ? "null" : current.Technology.Id) + ":" + force1 + " > " + (next.Technology == null ? "null" : next.Technology.Id) + ":" + force2);
 
 							if (force1 > 0 && (i < 5 || force1 > force2))
 								current.MoveForward();
@@ -401,7 +400,7 @@ namespace ViewModel
 							var force1 = current.Force;
 							var force2 = next.Force;
 
-							//UnityEngine.Debug.Log((current.Technology == null ? "null" : current.Technology.Id) + ":" + force1 + " > " + (next.Technology == null ? "null" : next.Technology.Id) + ":" + force2);
+							//UnityEngine.OptimizedDebug.Log((current.Technology == null ? "null" : current.Technology.Id) + ":" + force1 + " > " + (next.Technology == null ? "null" : next.Technology.Id) + ":" + force2);
 
 							if (0 > force2 && (i < 5 || force1 > force2))
 								current.MoveForward();

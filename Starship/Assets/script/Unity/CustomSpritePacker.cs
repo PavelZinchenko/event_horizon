@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using Utils;
 
 public class CustomSpritePacker : UnityEditor.Sprites.IPackerPolicy
 {
@@ -115,11 +116,11 @@ public class CustomSpritePacker : UnityEditor.Sprites.IPackerPolicy
             foreach (var settingsGroup in settingsGroups)
             {
                 var key = settingsGroup.Key;
-                UnityEngine.Debug.Log("settings group " + page);
-                UnityEngine.Debug.Log("format = " + key.format);
-                UnityEngine.Debug.Log("compressionQuality = " + key.compressionQuality);
-                UnityEngine.Debug.Log("generateMipMaps = " + key.generateMipMaps);
-                UnityEngine.Debug.Log("allowsAlphaSplitting = " + key.allowsAlphaSplitting);
+                OptimizedDebug.Log("settings group " + page);
+                OptimizedDebug.Log("format = " + key.format);
+                OptimizedDebug.Log("compressionQuality = " + key.compressionQuality);
+                OptimizedDebug.Log("generateMipMaps = " + key.generateMipMaps);
+                OptimizedDebug.Log("allowsAlphaSplitting = " + key.allowsAlphaSplitting);
 
                 string atlasName = atlasGroup.Key;
                 if (settingsGroups.Count() > 1)

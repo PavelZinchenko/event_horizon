@@ -7,6 +7,7 @@ using Constructor.Ships;
 using GameDatabase.Enums;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 using Zenject;
 
 namespace Gui.StarMap
@@ -32,7 +33,7 @@ namespace Gui.StarMap
 
         public void OnBeginShipDrag(ShipListItem item)
         {
-            UnityEngine.Debug.Log("OnBeginDrag: " + item.Ship.Name);
+            OptimizedDebug.Log("OnBeginDrag: " + item.Ship.Name);
             _draggableShip = item;
         }
 
@@ -49,7 +50,7 @@ namespace Gui.StarMap
 
         public void OnEndShipDrag(Vector2 position)
         {
-            UnityEngine.Debug.Log("OnEndDrag");
+            OptimizedDebug.Log("OnEndDrag");
 
             var selectedSlotId = -1;
             var corners = new Vector3[4];

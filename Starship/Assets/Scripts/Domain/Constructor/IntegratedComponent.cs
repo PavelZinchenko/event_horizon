@@ -7,6 +7,7 @@ using GameDatabase.DataModel;
 using GameDatabase.Enums;
 using GameDatabase.Model;
 using Session.Content;
+using Utils;
 using Helpers = GameModel.Serialization.Helpers;
 
 namespace Constructor
@@ -51,7 +52,7 @@ namespace Constructor
                 var component = database.GetComponent(new ItemId<GameDatabase.DataModel.Component>(item.Id));
                 if (component == null)
                 {
-                    UnityEngine.Debug.LogException(new ArgumentException("Unknown component - " + item.Id));
+                    OptimizedDebug.LogException(new ArgumentException("Unknown component - " + item.Id));
                     continue;
                 }
 

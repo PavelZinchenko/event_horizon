@@ -183,9 +183,9 @@ namespace GameServices.Player
                 }
                 catch (System.Exception e)
                 {
-                    UnityEngine.Debug.LogException(e);
+                    OptimizedDebug.LogException(e);
                     ships.Add(null);
-                    UnityEngine.Debug.Log("Unknown ship: " + item.Id);
+                    OptimizedDebug.Log("Unknown ship: " + item.Id);
                 }
 
                 if (!added)
@@ -206,20 +206,20 @@ namespace GameServices.Player
             _activeShips.Clear();
             foreach (var item in _session.Fleet.Hangar)
             {
-                UnityEngine.Debug.Log("group:" + item.Index + " ship:" + item.ShipId);
+                OptimizedDebug.Log("group:" + item.Index + " ship:" + item.ShipId);
                 _activeShips[item.Index] = ships[item.ShipId];
             }
 
             _explorationShip = _session.Fleet.ExplorationShipId >= 0 ? ships[_session.Fleet.ExplorationShipId] : null;
 
-            UnityEngine.Debug.Log("PlayerFleet.Load: " + _ships.Count + " ships");
+            OptimizedDebug.Log("PlayerFleet.Load: " + _ships.Count + " ships");
 
             DataChanged = false;
         }
 
         private void SaveShips()
         {
-            UnityEngine.Debug.Log("PlayerFleet.SaveShips - " + _ships.Count);
+            OptimizedDebug.Log("PlayerFleet.SaveShips - " + _ships.Count);
 
             _session.Fleet.Ships.Clear();
 
@@ -283,7 +283,7 @@ namespace GameServices.Player
 
         private void OnSessionAboutToSave()
         {
-            UnityEngine.Debug.Log("PlayerFleet.OnSessionAboutToSave");
+            OptimizedDebug.Log("PlayerFleet.OnSessionAboutToSave");
 
             if (DataChanged)
                 SaveShips();

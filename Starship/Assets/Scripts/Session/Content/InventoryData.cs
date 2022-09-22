@@ -71,7 +71,7 @@ namespace Session.Content
 
             if (version != CurrentVersion && !TryUpgrade(ref buffer, version))
             {
-                UnityEngine.Debug.Log("InventoryData: incorrect data version");
+                OptimizedDebug.Log("InventoryData: incorrect data version");
                 throw new ArgumentException();
             }
 
@@ -124,7 +124,7 @@ namespace Session.Content
 
         private static IEnumerable<byte> Upgrade_1_2(byte[] buffer)
         {
-            UnityEngine.Debug.Log("InventoryData.Upgrade_1_2");
+            OptimizedDebug.Log("InventoryData.Upgrade_1_2");
 
             var index = 0;
             Helpers.DeserializeInt(buffer, ref index);
@@ -167,7 +167,7 @@ namespace Session.Content
 
         private static IEnumerable<byte> Upgrade_2_3(byte[] buffer)
         {
-            UnityEngine.Debug.Log("InventoryData.Upgrade_2_3");
+            OptimizedDebug.Log("InventoryData.Upgrade_2_3");
 
             var index = 0;
             Helpers.DeserializeInt(buffer, ref index);

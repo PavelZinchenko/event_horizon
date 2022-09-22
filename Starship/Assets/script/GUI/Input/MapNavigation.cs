@@ -37,11 +37,7 @@ namespace ViewModel
 
 		protected override bool IsAllowedPointerPosition(int pointerId, Vector2 position)
 		{
-#if UNITY_EDITOR
-			return !EventSystem.current.IsPointerOverGameObject();
-#else
 			return !EventSystem.current.IsPointerOverGameObject(pointerId);
-#endif
 		}
 
 		protected override void Update()

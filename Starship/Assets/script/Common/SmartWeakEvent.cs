@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using Utils;
 
 namespace SmartWeakEvent
 {
@@ -142,7 +143,7 @@ namespace SmartWeakEvent
 	        catch (Exception e)
 	        {
                 for (var ex = e; ex != null; ex = ex.InnerException)
-	                UnityEngine.Debug.LogException(e);
+	                OptimizedDebug.LogException(e);
 
 	            return false;
 	        }

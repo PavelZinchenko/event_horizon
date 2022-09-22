@@ -201,7 +201,7 @@ namespace Session.Content
 			var version = Helpers.DeserializeInt(buffer, ref index);
 			if (version != CurrentVersion && !TryUpgrade(ref buffer, version))
 			{
-				UnityEngine.Debug.Log("StarMapData: incorrect data version");
+				OptimizedDebug.Log("StarMapData: incorrect data version");
                 throw new ArgumentException();
             }
 

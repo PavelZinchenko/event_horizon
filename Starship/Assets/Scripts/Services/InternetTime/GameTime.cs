@@ -2,6 +2,7 @@
 using GameServices.GameManager;
 using GameStateMachine;
 using Session;
+using Utils;
 using Zenject;
 
 namespace Services.InternetTime
@@ -39,7 +40,7 @@ namespace Services.InternetTime
         {
             if (_session.Game.TotalPlayTime > _totalPlayTime)
             {
-                UnityEngine.Debug.LogException(new InvalidOperationException());
+                OptimizedDebug.LogException(new InvalidOperationException());
                 return;
             }
 

@@ -26,13 +26,9 @@ namespace Galaxy.StarContent
             if (!IsActive(starId))
                 throw new System.InvalidOperationException();
 
-#if UNITY_EDITOR
-            _questEventTrigger.Fire(QuestEventFactory.CreateBeaconEventContext(starId, new System.Random().Next()));
-#else
             var seed = starId + (int)_session.Events.CompletedTime(starId) + _random.Seed;
             _questEventTrigger.Fire(QuestEventFactory.CreateBeaconEventContext(starId, seed));
             _session.Events.Complete(starId);
-#endif
             _starContentChangedTrigger.Fire(starId);
         }
 

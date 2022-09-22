@@ -13,6 +13,7 @@ using Services.Account;
 using Services.Storage;
 using Session;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace GameStateMachine.States
@@ -49,16 +50,16 @@ namespace GameStateMachine.States
             QualitySettings.SetQualityLevel(_settings.LowQualityMode ? 0 : 1);
 #endif
 
-            Debug.Log (SystemInfo.operatingSystem);
-            Debug.Log (SystemInfo.deviceModel);
-            Debug.Log (SystemInfo.deviceType.ToString ());
-            Debug.Log (SystemInfo.deviceName);
+            OptimizedDebug.Log (SystemInfo.operatingSystem);
+            OptimizedDebug.Log (SystemInfo.deviceModel);
+            OptimizedDebug.Log (SystemInfo.deviceType.ToString ());
+            OptimizedDebug.Log (SystemInfo.deviceName);
 
             var mod = _settings.ActiveMod;
             string error;
             if (!string.IsNullOrEmpty(mod) && _database.TryLoad(mod, out error))
             {
-                Debug.Log("Mod loaded - " + mod);
+                OptimizedDebug.Log("Mod loaded - " + mod);
             }
             else
             {
@@ -71,7 +72,7 @@ namespace GameStateMachine.States
 		{
 		    if (_database.IsEditable)
 		    {
-		        Debug.Log("Checking ships...");
+		        OptimizedDebug.Log("Checking ships...");
 
 		        //var ships = Resources.LoadAll<Constructor.ShipBuild> ("Prefabs/Constructor/Builds");
 		        //var drones = Resources.LoadAll<Constructor.ShipBuild> ("Prefabs/Constructor/DroneBuilds");
@@ -83,16 +84,16 @@ namespace GameStateMachine.States
 		            var layout = new Constructor.ShipLayout(item.Ship.Layout, item.Ship.Barrels, ship.Components, debug);
 		            if (layout.Components.Count() != ship.Components.Count)
 		            {
-		                Debug.LogError("invalid ship layout: " + item.Id);
-		                Debug.Break();
+		                OptimizedDebug.LogError("invalid ship layout: " + item.Id);
+		                OptimizedDebug.Break();
 		            }
 
 		            if (item.Ship.ShipCategory != ShipCategory.Special &&
 		                item.Ship.ShipCategory != ShipCategory.Starbase && !item.NotAvailableInGame &&
 		                !ShipValidator.IsShipViable(new CommonShip(item), _database.ShipSettings))
 		            {
-		                Debug.LogError("invalid build: " + item.Id);
-		                Debug.Break();
+		                OptimizedDebug.LogError("invalid build: " + item.Id);
+		                OptimizedDebug.Break();
 		            }
 		        }
 
@@ -105,12 +106,12 @@ namespace GameStateMachine.States
 		            var layout = new ShipLayout(item.Satellite.Layout, item.Satellite.Barrels, components, debug);
 		            if (layout.Components.Count() != components.Length)
 		            {
-		                Debug.LogError("invalid companion layout: " + item.Id);
-		                Debug.Break();
+		                OptimizedDebug.LogError("invalid companion layout: " + item.Id);
+		                OptimizedDebug.Break();
 		            }
 		        }
 
-		        Debug.Log("Checking techs...");
+		        OptimizedDebug.Log("Checking techs...");
 
 		        foreach (var tech in _database.TechnologyList)
 		        {
@@ -118,23 +119,23 @@ namespace GameStateMachine.States
                     if (index >= 0)
 		            {
 		                _debugManager.CreateLog(tech.Id.ToString()).Write("unknown dependency - " + index);
-		                Debug.LogError("invalid tech: " + tech.Id);
+		                OptimizedDebug.LogError("invalid tech: " + tech.Id);
 		            }
                 }
 
-		        Debug.Log("...done");
+		        OptimizedDebug.Log("...done");
 		    }
 
-		    Debug.Log("InitializationState: signin - " + _settings.SignedIn);
+		    OptimizedDebug.Log("InitializationState: signin - " + _settings.SignedIn);
 			if (_settings.SignedIn)
 			{
 				_account.SignIn();
 			}
 
 		    if (_localStorage.TryLoad(_sessionData, _database.Id))
-		        Debug.Log("Saved game loaded");
+		        OptimizedDebug.Log("Saved game loaded");
 		    else if (_database.IsEditable && _localStorage.TryImportOriginalSave(_sessionData, _database.Id))
-		        Debug.Log("Original saved game imported");
+		        OptimizedDebug.Log("Original saved game imported");
 		    else
 		        _sessionData.CreateNewGame(_database.Id);
 

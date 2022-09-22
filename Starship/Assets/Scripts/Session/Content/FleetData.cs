@@ -82,7 +82,7 @@ namespace Session.Content
 
             if (version != CurrentVersion && !TryUpgrade(ref buffer, version, database))
             {
-                UnityEngine.Debug.Log("FleetData: incorrect data version");
+                OptimizedDebug.Log("FleetData: incorrect data version");
                 throw new ArgumentException();
             }
 

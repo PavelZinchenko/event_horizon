@@ -137,7 +137,7 @@ namespace Session.Content
 			var version = Helpers.DeserializeInt(buffer, ref index);
 			if (version != CurrentVersion && !TryUpgrade(ref buffer, version))
 			{
-				UnityEngine.Debug.Log("ResourcesData: incorrect data version");
+				OptimizedDebug.Log("ResourcesData: incorrect data version");
                 throw new ArgumentException();
             }
 
@@ -148,10 +148,10 @@ namespace Session.Content
 		    _resources.Assign(Helpers.DeserializeDictionary(buffer, ref index));
 
 #if UNITY_EDITOR
-			UnityEngine.Debug.Log("ResourcesData: money = " + _money);
-			UnityEngine.Debug.Log("ResourcesData: fuel = " + _fuel);
-			UnityEngine.Debug.Log("ResourcesData: stars = " + _stars);
-            UnityEngine.Debug.Log("ResourcesData: tokens = " + _tokens);
+			OptimizedDebug.Log("ResourcesData: money = " + _money);
+			OptimizedDebug.Log("ResourcesData: fuel = " + _fuel);
+			OptimizedDebug.Log("ResourcesData: stars = " + _stars);
+            OptimizedDebug.Log("ResourcesData: tokens = " + _tokens);
 #endif
 
             IsChanged = false;

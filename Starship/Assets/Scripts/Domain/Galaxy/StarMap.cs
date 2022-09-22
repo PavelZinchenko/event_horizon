@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using GameModel;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace Galaxy
@@ -75,7 +76,7 @@ namespace Galaxy
                 if (id >= 0) return id;
             }
 
-            UnityEngine.Debug.Log("max iterations reached");
+            OptimizedDebug.Log("max iterations reached");
             return -1;
         }
 

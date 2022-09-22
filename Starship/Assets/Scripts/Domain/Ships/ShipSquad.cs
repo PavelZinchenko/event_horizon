@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using GameDatabase.Enums;
 using GameServices.Player;
+using Utils;
 
 namespace Constructor.Ships
 {
@@ -117,7 +118,7 @@ namespace Constructor.Ships
                 }
                 else
                 {
-                    UnityEngine.Debug.Log("Rearrange(): ship removed - " + ship.Name);
+                    OptimizedDebug.Log("Rearrange(): ship removed - " + ship.Name);
                 }
             }
 

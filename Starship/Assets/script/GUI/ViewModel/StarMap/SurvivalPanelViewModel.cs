@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using GameServices.Player;
 using Constructor.Ships;
 using Services.Reources;
+using Utils;
 using Zenject;
 
 namespace ViewModel
@@ -19,7 +20,7 @@ namespace ViewModel
 
 		public void StartButtonClicked()
 		{
-			UnityEngine.Debug.Log("SurvivalPanelViewModel.StartButtonClicked");
+			OptimizedDebug.Log("SurvivalPanelViewModel.StartButtonClicked");
             _motherShip.CurrentStar.Survival.Attack();
 		}
 		

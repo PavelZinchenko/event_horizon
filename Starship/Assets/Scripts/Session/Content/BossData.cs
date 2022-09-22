@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using GameModel.Serialization;
+using Utils;
 using Zenject;
 
 namespace Session.Content
@@ -77,7 +78,7 @@ namespace Session.Content
 			var version = Helpers.DeserializeInt(buffer, ref index);
 			if (version != CurrentVersion && !TryUpgrade(ref buffer, version))
 			{
-				UnityEngine.Debug.Log("BossData: incorrect data version");
+				OptimizedDebug.Log("BossData: incorrect data version");
                 throw new ArgumentException();
             }
 
@@ -107,7 +108,7 @@ namespace Session.Content
 
 		private static IEnumerable<byte> Upgrade_1_2(byte[] buffer)
 		{
-			UnityEngine.Debug.Log("BossData.Upgrade_1_2");
+			OptimizedDebug.Log("BossData.Upgrade_1_2");
 			
 			int index = 0;
 			

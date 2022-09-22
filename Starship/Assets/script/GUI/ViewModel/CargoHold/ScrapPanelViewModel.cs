@@ -8,6 +8,7 @@ using GameServices.Player;
 using Services.Audio;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 using Zenject;
 using AudioClip = UnityEngine.AudioClip;
 using ComponentInfo = Constructor.ComponentInfo;
@@ -76,7 +77,7 @@ namespace ViewModel
 
 		private void OnEnable()
 		{
-            UnityEngine.Debug.Log("ScrapPanelViewModel.OnEnable");
+            OptimizedDebug.Log("ScrapPanelViewModel.OnEnable");
             UpdateItems();
 		}
 

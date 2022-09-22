@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace GameServices.Settings
@@ -39,7 +40,7 @@ namespace GameServices.Settings
         public void Initialize()
         {
             AppStartCounter++;
-            UnityEngine.Debug.Log("AppStartCounter: " + AppStartCounter);
+            OptimizedDebug.Log("AppStartCounter: " + AppStartCounter);
         }
 
         public float MusicVolume

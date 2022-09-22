@@ -13,6 +13,7 @@ using GameDatabase.Extensions;
 using GameDatabase.Model;
 using Services.Localization;
 using UnityEngine;
+using Utils;
 using IComponent = Constructor.Component.IComponent;
 
 namespace Constructor
@@ -146,13 +147,13 @@ namespace Constructor
             #if UNITY_EDITOR
             if (Data.Id.Value < 0 || Data.Id.Value > 0x3fff)
             {
-                Debug.LogError("Bad component id - " + Data.Id.Value);
-                UnityEngine.Debug.Break();
+                OptimizedDebug.LogError("Bad component id - " + Data.Id.Value);
+                OptimizedDebug.Break();
             }
             if ((int)_modificationType < 0 || (int)_modificationType > 0xff)
             {
-                Debug.LogError("Bad modification type " + _modificationType);
-                UnityEngine.Debug.Break();
+                OptimizedDebug.LogError("Bad modification type " + _modificationType);
+                OptimizedDebug.Break();
             }
             #endif
 
@@ -169,11 +170,11 @@ namespace Constructor
         {
 #if UNITY_EDITOR
             if ((int)_modificationType < 0 || (int)_modificationType > 0xff)
-                Debug.Break();
+                OptimizedDebug.Break();
             if ((int)_quality < 0 || (int)_quality > 0xff)
-                Debug.Break();
+                OptimizedDebug.Break();
             if ((int)_level < 0 || (int)_level > 0xff)
-                Debug.Break();
+                OptimizedDebug.Break();
 #endif
 
             long value = Data.Id.Value;

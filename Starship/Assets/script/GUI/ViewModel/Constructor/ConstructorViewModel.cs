@@ -159,42 +159,42 @@ namespace ViewModel
 
 		public void ShowWeapons()
 		{
-			UnityEngine.Debug.Log("ShowWeapons");
+			OptimizedDebug.Log("ShowWeapons");
             ShowComponentList();
 		    _componentList.ShowWeapon();
 		}
 
 		public void ShowEnergy()
 		{
-			UnityEngine.Debug.Log("ShowEnergy");
+			OptimizedDebug.Log("ShowEnergy");
 		    ShowComponentList();
 		    _componentList.ShowEnergy();
 		}
 
 		public void ShowDefense()
 		{
-			UnityEngine.Debug.Log("ShowDefense");
+			OptimizedDebug.Log("ShowDefense");
 		    ShowComponentList();
 		    _componentList.ShowArmor();
 		}
 
 		public void ShowEngine()
 		{
-			UnityEngine.Debug.Log("ShowEngine");
+			OptimizedDebug.Log("ShowEngine");
 		    ShowComponentList();
 		    _componentList.ShowEngine();
 		}
         
         public void ShowDrones()
 		{
-			UnityEngine.Debug.Log("ShowDrones");
+			OptimizedDebug.Log("ShowDrones");
 		    ShowComponentList();
 		    _componentList.ShowDrone();
 		}
 
 		public void ShowSpecial()
 		{
-			UnityEngine.Debug.Log("ShowSpecial");
+			OptimizedDebug.Log("ShowSpecial");
 		    ShowComponentList();
 		    _componentList.ShowSpecial();
 		}
@@ -231,7 +231,7 @@ namespace ViewModel
 
 	            if (!command.TryRollback())
 	            {
-	                UnityEngine.Debug.Log("Undo - failed");
+	                OptimizedDebug.Log("Undo - failed");
                     _commands.Clear();
 	            }
 	        }

@@ -54,14 +54,14 @@ namespace GameServices.Gui
 
         private void OnShowMessage(string message)
         {
-            UnityEngine.Debug.Log("OnShowMessage: " + message);
+            OptimizedDebug.Log("OnShowMessage: " + message);
 
             _guiManager.OpenWindow(global::Gui.Notifications.WindowNames.MessageWindow, new WindowArgs(message));
         }
 
         private void OnDebugMessage(string message)
         {
-            UnityEngine.Debug.Log("OnDebugMessage: " + message);
+            OptimizedDebug.Log("OnDebugMessage: " + message);
             _guiManager.OpenWindow(global::Gui.Notifications.WindowNames.DebugLogWindow, new WindowArgs(message));
         }
 

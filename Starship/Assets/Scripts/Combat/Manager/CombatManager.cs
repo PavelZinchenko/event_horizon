@@ -20,6 +20,7 @@ using Maths;
 using Model.Military;
 using Services.ObjectPool;
 using Services.Reources;
+using Utils;
 using Zenject;
 
 
@@ -68,7 +69,7 @@ namespace Combat.Manager
 
         public void Initialize()
         {
-            UnityEngine.Debug.Log("OnCombatStarted");
+            OptimizedDebug.Log("OnCombatStarted");
 
             var random = new System.Random();
 
@@ -155,10 +156,10 @@ namespace Combat.Manager
                 : new Computer.Factory(_scene, _combatModel.EnemyFleet.Level);
 
             ship.Create(_shipFactory, controllerFactory, position);
-            //UnityEngine.Debug.Log("CreateShip.start - " + ship.Name);
+            //OptimizedDebug.Log("CreateShip.start - " + ship.Name);
             //var context = new FactoryContext(_scene, _bindingManager, _soundPlayer, _objectPool, _resourceLocator, _settings);
             //var shipModel = fleet.ActivateShip(ship, position, Random.Range(0, 360), _gameSettings.ShowDamage, _playerSkills, _messenger, context, _aiManager, _database);
-            ////UnityEngine.Debug.Log("CreateShip.end");
+            ////OptimizedDebug.Log("CreateShip.end");
             //return shipModel;
         }
 
@@ -272,7 +273,7 @@ namespace Combat.Manager
                         _combatModel.EnemyFleet.Ships.FirstOrDefault(item => item.Status == ShipStatus.Ready);
                     if (shipInfo == null)
                     {
-                        UnityEngine.Debug.Log("No more ships");
+                        OptimizedDebug.Log("No more ships");
                         Exit();
                         return;
                     }
@@ -289,7 +290,7 @@ namespace Combat.Manager
 
                     if (!_combatModel.PlayerFleet.IsAnyShipLeft())
                     {
-                        UnityEngine.Debug.Log("No more ships");
+                        OptimizedDebug.Log("No more ships");
                         Exit();
                     }
                     else if (_combatModel.Rules.CanSelectShips)

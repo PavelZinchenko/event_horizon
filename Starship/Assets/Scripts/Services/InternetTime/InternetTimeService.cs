@@ -38,7 +38,7 @@ namespace Services.InternetTime
             _dateTime = time;
             HasBeenReceived = true;
             _timeReceivedTrigger.Fire(_dateTime);
-            Debug.Log("Internet time received - " + _dateTime);
+            OptimizedDebug.Log("Internet time received - " + _dateTime);
         }
 
         private static DateTime RequestTime(long _)
@@ -47,7 +47,7 @@ namespace Services.InternetTime
             using (var streamReader = new StreamReader(client.GetStream()))
             {
                 var response = streamReader.ReadToEnd();
-                Debug.Log("InternetTimeService: Response - " + response);
+                OptimizedDebug.Log("InternetTimeService: Response - " + response);
                 var utcDateTimeString = response.Substring(7, 17);
                 return DateTime.ParseExact(utcDateTimeString, "yy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal);
             }

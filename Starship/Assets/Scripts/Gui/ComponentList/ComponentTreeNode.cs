@@ -4,6 +4,7 @@ using Constructor;
 using GameDatabase.DataModel;
 using GameDatabase.Enums;
 using GameDatabase.Model;
+using Utils;
 
 namespace Gui.ComponentList
 {
@@ -162,7 +163,7 @@ namespace Gui.ComponentList
             var weapon = componentInfo.Data.Weapon;
             if (weapon == null)
             {
-                UnityEngine.Debug.LogError("WeaponNode: component is not weapon - " + componentInfo.Data.Id);
+                OptimizedDebug.LogError("WeaponNode: component is not weapon - " + componentInfo.Data.Id);
                 return;
             }
 
@@ -243,7 +244,7 @@ namespace Gui.ComponentList
         {
             if (componentInfo.Data.Id != _component.Id)
             {
-                UnityEngine.Debug.LogError("ComponentNode: wrong component id - " + componentInfo.Data.Id);
+                OptimizedDebug.LogError("ComponentNode: wrong component id - " + componentInfo.Data.Id);
                 return;
             }
 

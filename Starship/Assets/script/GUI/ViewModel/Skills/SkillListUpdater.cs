@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using GameModel.Skills;
 using UnityEngine;
+using Utils;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -20,7 +21,7 @@ namespace ViewModel.Skills
 
             base.OnTransformChildrenChanged();
             
-            UnityEngine.Debug.Log("OnDataChanged");
+            OptimizedDebug.Log("OnDataChanged");
 
             ValidateTree();
             //var prefab = Resources.Load<SkillInfoList>("Prefabs/Skills/SkillInfoList");

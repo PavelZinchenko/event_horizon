@@ -52,13 +52,13 @@ namespace Session
         {
             try
             {
-                UnityEngine.Debug.Log("SessionData.TryDeserialize");
+                OptimizedDebug.Log("SessionData.TryDeserialize");
 
                 var content = DatabaseContent.TryDeserialize(data, startIndex, _contentFactory);
                 if (content == null)
                     return false;
 
-                UnityEngine.Debug.Log("SessionData.TryDeserialize - success " + content.Game.GameStartTime + "/" + dataVersion);
+                OptimizedDebug.Log("SessionData.TryDeserialize - success " + content.Game.GameStartTime + "/" + dataVersion);
 
                 GameId = gameId;
                 TimePlayed = timePlayed;
@@ -68,7 +68,7 @@ namespace Session
             }
             catch (Exception e)
             {
-                UnityEngine.Debug.Log(e.Message);
+                OptimizedDebug.Log(e.Message);
                 return false;
             }
 
@@ -79,7 +79,7 @@ namespace Session
             }
             catch (Exception e)
             {
-                UnityEngine.Debug.LogException(e);
+                OptimizedDebug.LogException(e);
             }
 
             return true;
@@ -87,7 +87,7 @@ namespace Session
 
         public void CreateNewGame(string modId, bool keepPurchases = true)
         {
-            UnityEngine.Debug.Log("SessionData.CreateNewGame");
+            OptimizedDebug.Log("SessionData.CreateNewGame");
 
             _content = new DatabaseContent(_contentFactory);
 

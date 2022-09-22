@@ -80,7 +80,7 @@ namespace Combat.Ai
 			_strategy = StrategySelector./*BestAvailable*/Random(_ship, _enemy, _level, new System.Random(), _scene);
 			_strategyUpdateCooldown = StrategyUpdateInterval;
 
-			//UnityEngine.Debug.Log("Strategy: " + _strategy.GetType().Name);
+			//OptimizedDebug.Log("Strategy: " + _strategy.GetType().Name);
 			return _strategy;
 		}
 

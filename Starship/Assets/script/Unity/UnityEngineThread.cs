@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using GameServices.LevelManager;
+using Utils;
 using Zenject;
 
 public class UnityEngineThread : UnityEngine.MonoBehaviour
@@ -17,7 +18,7 @@ public class UnityEngineThread : UnityEngine.MonoBehaviour
 	{
 	    if (_self == null)
 	    {
-	        UnityEngine.Debug.Log("UnityEngineThread not yet initialized");
+	        OptimizedDebug.Log("UnityEngineThread not yet initialized");
             action.Invoke();
             return;
 	    }
@@ -26,7 +27,7 @@ public class UnityEngineThread : UnityEngine.MonoBehaviour
 	    if (!ReferenceEquals(target, null))
 	        target.Enqueue(action);
 	    else
-	        UnityEngine.Debug.Log("UnityEngineThread.Execute: object not initialized");
+	        OptimizedDebug.Log("UnityEngineThread.Execute: object not initialized");
 	}
 
 	private void Update()
@@ -37,23 +38,23 @@ public class UnityEngineThread : UnityEngine.MonoBehaviour
 		Action action;
 		while ((action = Dequeue()) != null)
 		{
-            //UnityEngine.Debug.Log("UnityEngineThread: ExecuteAction");
+            //OptimizedDebug.Log("UnityEngineThread: ExecuteAction");
             action();
-            //UnityEngine.Debug.Log("UnityEngineThread: ExecuteAction - done");
+            //OptimizedDebug.Log("UnityEngineThread: ExecuteAction - done");
         }
     }
 	
 	private void Enqueue(Action action)
 	{
-        //UnityEngine.Debug.Log("UnityEngineThread: Enqueue");
+        //OptimizedDebug.Log("UnityEngineThread: Enqueue");
 
         if (!Monitor.TryEnter(_lockObject, TimeSpan.FromSeconds(1)))
-            UnityEngine.Debug.LogException(new Exception("Deadlock"));
+            OptimizedDebug.LogException(new Exception("Deadlock"));
 
         try
         {
             _objects.Enqueue(action);
-            //UnityEngine.Debug.Log("UnityEngineThread: Enqueue - " + _objects.Count);
+            //OptimizedDebug.Log("UnityEngineThread: Enqueue - " + _objects.Count);
         }
         finally
         {
@@ -64,14 +65,14 @@ public class UnityEngineThread : UnityEngine.MonoBehaviour
 	private Action Dequeue()
 	{
         if (!Monitor.TryEnter(_lockObject, TimeSpan.FromSeconds(1)))
-            UnityEngine.Debug.LogException(new Exception("Deadlock"));
+            OptimizedDebug.LogException(new Exception("Deadlock"));
 
         try
         {
             if (_objects.Count == 0)
                 return null;
 
-            //UnityEngine.Debug.Log("UnityEngineThread: Dequeue - " + (_objects.Count - 1));
+            //OptimizedDebug.Log("UnityEngineThread: Dequeue - " + (_objects.Count - 1));
             return _objects.Dequeue();
         }
         finally

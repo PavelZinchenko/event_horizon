@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading;
-using Debug = UnityEngine.Debug;
+using Debug = Utils.OptimizedDebug;
 
 #endif
 

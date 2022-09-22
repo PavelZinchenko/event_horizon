@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using Utils;
 
 namespace ViewModel
 {
@@ -77,7 +78,7 @@ namespace ViewModel
 
 	        if (value >= _toggles.Count)
 	        {
-	            Debug.LogError("RadioGroup: invalid value " + value);
+		        OptimizedDebug.LogError("RadioGroup: invalid value " + value);
 	            return;
 	        }
 

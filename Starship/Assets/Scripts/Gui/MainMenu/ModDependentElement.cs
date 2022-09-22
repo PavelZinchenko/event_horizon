@@ -2,6 +2,7 @@ using System;
 using GameDatabase;
 using Services.Messenger;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace Gui.MainMenu
@@ -31,8 +32,8 @@ namespace Gui.MainMenu
 
         public void UpdateState(IDatabase database)
         {
-            Debug.Log("Is database editable?");
-            Debug.Log(database.IsEditable);
+            OptimizedDebug.Log("Is database editable?");
+            OptimizedDebug.Log(database.IsEditable);
             if (database.IsEditable)
                 gameObject.SetActive(VisibleWhenModEditable);
             else if (database.Id != ModInfo.Default.Id)

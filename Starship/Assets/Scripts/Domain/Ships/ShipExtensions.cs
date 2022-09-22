@@ -12,6 +12,7 @@ using GameServices.Player;
 using Maths;
 using Session.Content;
 using UnityEngine;
+using Utils;
 using Random = System.Random;
 
 namespace Constructor.Ships
@@ -77,7 +78,7 @@ namespace Constructor.Ships
             var shipWrapper = database.GetShip(new ItemId<Ship>(shipData.Id));
             if (shipWrapper == null)
             {
-                Debug.LogError($"Ship with id {shipData.Id} is not found");
+                OptimizedDebug.LogError($"Ship with id {shipData.Id} is not found");
                 orphanedComponents?.AddRange(shipData.Components.Components);
                 orphanedComponents?.AddRange(shipData.Satellite1.Components.Components);
                 orphanedComponents?.AddRange(shipData.Satellite2.Components.Components);

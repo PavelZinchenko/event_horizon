@@ -73,7 +73,7 @@ namespace Services.Messenger
 
         public void Broadcast<T>(EventType eventType, T arg1)
         {
-            //UnityEngine.Debug.Log("Broadcast - " + eventType);
+            //OptimizedDebug.Log("Broadcast - " + eventType);
 
             Delegate d;
             if (!_listeners.TryGetValue(eventType, out d))
@@ -89,12 +89,12 @@ namespace Services.Messenger
                 throw new ArgumentException();
             }
 
-            //UnityEngine.Debug.Log("Broadcast - done - " + eventType);
+            //OptimizedDebug.Log("Broadcast - done - " + eventType);
         }
 
         public void Broadcast<T, U>(EventType eventType, T arg1, U arg2)
         {
-            //UnityEngine.Debug.Log("Broadcast - " + eventType);
+            //OptimizedDebug.Log("Broadcast - " + eventType);
 
             Delegate d;
             if (!_listeners.TryGetValue(eventType, out d))
@@ -110,12 +110,12 @@ namespace Services.Messenger
                 throw new ArgumentException();
             }
 
-            //UnityEngine.Debug.Log("Broadcast - done - " + eventType);
+            //OptimizedDebug.Log("Broadcast - done - " + eventType);
         }
 
         public void Broadcast<T, U, V>(EventType eventType, T arg1, U arg2, V arg3)
         {
-            //UnityEngine.Debug.Log("Broadcast - " + eventType);
+            //OptimizedDebug.Log("Broadcast - " + eventType);
 
             Delegate d;
             if (!_listeners.TryGetValue(eventType, out d))
@@ -131,7 +131,7 @@ namespace Services.Messenger
                 throw new ArgumentException();
             }
 
-            //UnityEngine.Debug.Log("Broadcast - done - " + eventType);
+            //OptimizedDebug.Log("Broadcast - done - " + eventType);
         }
 
         private void Cleanup()

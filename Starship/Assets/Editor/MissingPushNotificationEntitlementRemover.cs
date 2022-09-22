@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEditor.Callbacks;
 using System.IO;
 using System.Text.RegularExpressions;
+using Utils;
 
 public class MissingPushNotificationEntitlementRemover {
 
@@ -28,7 +29,7 @@ public class MissingPushNotificationEntitlementRemover {
 		private static string regexpForNotificationMethods = "-\\s?\\(void\\)application:\\(UIApplication\\s?\\*\\)application\\sdid.+RemoteNotification.+\\n?{[^-|#.+]+";
 
 		public static void remove(string pathToBuiltProject) {
-			Debug.Log("Running Push Notification Entitlement Warning Remover...");
+			OptimizedDebug.Log("Running Push Notification Entitlement Warning Remover...");
 
 			// check if app controller file exists
 			string classesDirectory = Path.Combine(pathToBuiltProject, "Classes");
@@ -37,7 +38,7 @@ public class MissingPushNotificationEntitlementRemover {
 			bool fileExists = File.Exists(pathToAppController);
 
 			if (!fileExists) {
-				Debug.Log("App Controller file doesn't exist.");
+				OptimizedDebug.Log("App Controller file doesn't exist.");
 				return;
 			}
 
@@ -45,7 +46,7 @@ public class MissingPushNotificationEntitlementRemover {
 			string codeWithDeletedNotificationsMethod = Regex.Replace(code, regexpForNotificationMethods, "");
 
 			File.WriteAllText(pathToAppController, codeWithDeletedNotificationsMethod);
-			Debug.Log("Push Notification Entitlement Warning Remover Completed");
+			OptimizedDebug.Log("Push Notification Entitlement Warning Remover Completed");
 		}
 	}
 
@@ -56,7 +57,7 @@ public class MissingPushNotificationEntitlementRemover {
 
 		public static void remove(string pathToBuiltProject) {
 
-			Debug.Log("Running Push Notification Entitlement Warning Remover...");
+			OptimizedDebug.Log("Running Push Notification Entitlement Warning Remover...");
 
 			// check if app controller file exists
 			string classesDirectory = Path.Combine(pathToBuiltProject, "Classes");
@@ -65,7 +66,7 @@ public class MissingPushNotificationEntitlementRemover {
 			bool fileExists = File.Exists(pathToPreprocessorHeader);
 
 			if (!fileExists) {
-				Debug.Log("Preprocessor file doesn't exist.");
+				OptimizedDebug.Log("Preprocessor file doesn't exist.");
 				return;
 			}
 
@@ -73,7 +74,7 @@ public class MissingPushNotificationEntitlementRemover {
 			string codeWithUnsetdNotificationsDeclaration = Regex.Replace(code, regexpForNotificationMethods, "define UNITY_USES_REMOTE_NOTIFICATIONS 0");
 
 			File.WriteAllText(pathToPreprocessorHeader, codeWithUnsetdNotificationsDeclaration);
-			Debug.Log("Push Notification Entitlement Warning Remover Completed");
+			OptimizedDebug.Log("Push Notification Entitlement Warning Remover Completed");
 		}
 	}
 		

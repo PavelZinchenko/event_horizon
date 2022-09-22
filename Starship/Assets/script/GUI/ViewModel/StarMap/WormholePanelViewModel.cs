@@ -1,5 +1,6 @@
 using UnityEngine;
 using GameServices.Player;
+using Utils;
 using Zenject;
 
 namespace ViewModel
@@ -10,7 +11,7 @@ namespace ViewModel
 
 		public void EnterButtonClicked()
 		{
-			UnityEngine.Debug.Log("WormholePanelViewModel.EnterButtonClicked");
+			OptimizedDebug.Log("WormholePanelViewModel.EnterButtonClicked");
             _motherShip.CurrentStar.Wormhole.Enter();
 		}
 	}

@@ -106,7 +106,7 @@ namespace Services.Localization
 	        }
             catch (Exception e)
 	        {
-	            Debug.LogError("Unable to load localization from database: " + e.Message);
+	            OptimizedDebug.LogError("Unable to load localization from database: " + e.Message);
 	        }
         }
 
@@ -133,7 +133,7 @@ namespace Services.Localization
 			    }
                 catch (Exception e)
 			    {
-                    Debug.LogError("Unable to load localization file: " + e.Message);
+                    OptimizedDebug.LogError("Unable to load localization file: " + e.Message);
 			    }
 			}
 
@@ -150,7 +150,7 @@ namespace Services.Localization
 	        {
 	            if (_keys.ContainsKey(item.name))
 	            {
-	                UnityEngine.Debug.Log("LocalizationManager: duplicate name - " + item.name);
+	                OptimizedDebug.Log("LocalizationManager: duplicate name - " + item.name);
                     continue;
                 }
 

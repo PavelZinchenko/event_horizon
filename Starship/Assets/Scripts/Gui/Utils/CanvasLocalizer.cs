@@ -1,6 +1,7 @@
 ﻿using Services.Localization;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 using Zenject;
 
 namespace Gui.Utils
@@ -27,7 +28,7 @@ namespace Gui.Utils
                         obj = obj.parent;
                     }
 
-                    UnityEngine.Debug.Log(sb.ToString());
+                    OptimizedDebug.Log(sb.ToString());
                 }
 #endif
                 text.text = localized;

@@ -7,6 +7,7 @@ using Gui.Windows;
 using Services.Gui;
 using Services.Reources;
 using UnityEngine;
+using Utils;
 using ViewModel;
 using Zenject;
 
@@ -181,7 +182,7 @@ namespace Gui.Combat
                 RectTransform item;
                 if (!items.TryGetValue(id, out item))
                 {
-                    UnityEngine.Debug.Log("Button not found: " + id);
+                    OptimizedDebug.Log("Button not found: " + id);
                     continue;
                 }
 

@@ -4,6 +4,7 @@ using GameDatabase.DataModel;
 using GameDatabase.Extensions;
 using Session;
 using UnityEngine;
+using Utils;
 
 namespace GameModel
 {
@@ -50,7 +51,7 @@ namespace GameModel
 
 		public void OnFleetDefeated()
 		{
-			UnityEngine.Debug.Log("RegionFleetDefeated: " + Id);
+			OptimizedDebug.Log("RegionFleetDefeated: " + Id);
 
 			if (Id == UnoccupiedRegionId)
 				return;

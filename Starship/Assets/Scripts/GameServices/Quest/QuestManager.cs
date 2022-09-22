@@ -66,9 +66,9 @@ namespace GameServices.Quests
                 if (--counter == 0)
                 {
                     var currentQuest = _recentlyUpdatedQuests.Last();
-                    UnityEngine.Debug.LogException(new InvalidOperationException(
+                    OptimizedDebug.LogException(new InvalidOperationException(
                         "QuestManager - infinite loop. Quest:" + currentQuest.Id + " Node:" + currentQuest.NodeId));
-                    UnityEngine.Debug.Break();
+                    OptimizedDebug.Break();
                     break;
                 }
 
@@ -142,19 +142,19 @@ namespace GameServices.Quests
 
 	        if (questModel.StartCondition != StartCondition.Manual)
 	        {
-	            UnityEngine.Debug.LogException(new ArgumentException("QuestManager.StartQuest: Wrong start condition - " + questModel.StartCondition));
+	            OptimizedDebug.LogException(new ArgumentException("QuestManager.StartQuest: Wrong start condition - " + questModel.StartCondition));
 	            return;
 	        }
 
             if (!questModel.CanBeStarted(_session.Quests, starId))
 	        {
-	            UnityEngine.Debug.LogError(new ArgumentException("QuestManager.StartQuest: Quest can't be started - " + questModel.Id.Value));
+	            OptimizedDebug.LogError(new ArgumentException("QuestManager.StartQuest: Quest can't be started - " + questModel.Id.Value));
                 return;
 	        }
 
 	        if (!_requirementsFactory.CreateForQuest(questModel.Requirement, seed).CanStart(starId, seed))
 	        {
-	            UnityEngine.Debug.LogError(new ArgumentException("QuestManager.StartQuest: Requirements are not met - " + questModel.Id.Value));
+	            OptimizedDebug.LogError(new ArgumentException("QuestManager.StartQuest: Requirements are not met - " + questModel.Id.Value));
 	            return;
 	        }
 
@@ -165,11 +165,11 @@ namespace GameServices.Quests
 	    {
 	        if (quest == null)
 	        {
-	            //UnityEngine.Debug.LogException(new ArgumentException("QuestManager: quest is null"));
+	            //OptimizedDebug.LogException(new ArgumentException("QuestManager: quest is null"));
                 return;
 	        }
 
-	        UnityEngine.Debug.Log("new quest: " + quest.Model.Name);
+	        OptimizedDebug.Log("new quest: " + quest.Model.Name);
 
 	        _quests.Add(quest);
             _recentlyUpdatedQuests.Add(quest);
@@ -258,7 +258,7 @@ namespace GameServices.Quests
 	                break;
                 case QuestStatus.Error:
                 default:
-                    UnityEngine.Debug.LogException(new InvalidOperationException("QuestManager: Error has occured - " + quest.Model.Name));
+                    OptimizedDebug.LogException(new InvalidOperationException("QuestManager: Error has occured - " + quest.Model.Name));
                     _session.Quests.CancelQuest(quest.Id, quest.StarId);
                     break;
             }

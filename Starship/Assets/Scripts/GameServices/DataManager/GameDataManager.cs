@@ -43,7 +43,7 @@ namespace GameServices.GameManager
 
         ~GameDataManager()
         {
-            UnityEngine.Debug.Log("GameDataManager: destructor");
+            OptimizedDebug.Log("GameDataManager: destructor");
         }
 
         public void LoadMod(string id = null, bool force = false)
@@ -61,9 +61,9 @@ namespace GameServices.GameManager
                     throw new Exception(error);
 
                 if (_localStorage.TryLoad(_sessionData, _database.Id))
-                    UnityEngine.Debug.Log("Saved game loaded");
+                    OptimizedDebug.Log("Saved game loaded");
                 else if (_database.IsEditable && _localStorage.TryImportOriginalSave(_sessionData, _database.Id))
-                    UnityEngine.Debug.Log("Original saved game imported");
+                    OptimizedDebug.Log("Original saved game imported");
                 else
                     _sessionData.CreateNewGame(_database.Id);
 
@@ -91,14 +91,14 @@ namespace GameServices.GameManager
 
         public void SaveGameToCloud(string filename)
         {
-            UnityEngine.Debug.Log("GameDataManager.SaveGameToCloud: " + filename);
+            OptimizedDebug.Log("GameDataManager.SaveGameToCloud: " + filename);
             _localStorage.Save(_sessionData);
             _cloudStorage.Save(filename, _sessionData);
         }
 
         public void SaveGameToCloud(ISavedGame game)
         {
-            UnityEngine.Debug.Log("GameDataManager.SaveGameToCloud: " + game.Name);
+            OptimizedDebug.Log("GameDataManager.SaveGameToCloud: " + game.Name);
             _sessionAboutToSaveTrigger.Fire();
             _localStorage.Save(_sessionData);
             game.Save(_sessionData);
@@ -106,13 +106,13 @@ namespace GameServices.GameManager
 
         public void LoadGameFromCloud(ISavedGame game)
         {
-            UnityEngine.Debug.Log("GameDataManager.LoadGameFromCloud: " + game.Name);
+            OptimizedDebug.Log("GameDataManager.LoadGameFromCloud: " + game.Name);
             game.Load(_sessionData, _database.Id);
         }
 
         public void LoadGameFromLocalCopy()
         {
-            UnityEngine.Debug.Log("GameDataManager.LoadGameFromLocalCopy");
+            OptimizedDebug.Log("GameDataManager.LoadGameFromLocalCopy");
             _cloudStorage.TryLoadFromCopy(_sessionData, _database.Id);
         }
 
@@ -121,8 +121,8 @@ namespace GameServices.GameManager
             if (!_sessionData.IsGameStarted)
                 return;
 
-            UnityEngine.Debug.Log("SessionData.TimePlayed = " + _sessionData.TimePlayed);
-            UnityEngine.Debug.Log("GameStartTime = " + _sessionData.Game.GameStartTime);
+            OptimizedDebug.Log("SessionData.TimePlayed = " + _sessionData.TimePlayed);
+            OptimizedDebug.Log("GameStartTime = " + _sessionData.Game.GameStartTime);
 
             _sessionAboutToSaveTrigger.Fire();
             _localStorage.Save(_sessionData);
@@ -180,7 +180,7 @@ namespace GameServices.GameManager
 
         private void Cleanup()
         {
-            UnityEngine.Debug.Log("Cleanup");
+            OptimizedDebug.Log("Cleanup");
             Resources.UnloadUnusedAssets();
             System.GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
         }

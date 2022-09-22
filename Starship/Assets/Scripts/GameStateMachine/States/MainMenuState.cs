@@ -95,12 +95,8 @@ namespace GameStateMachine.States
             var random = new System.Random();
             var fleet1 = _database.ShipBuildList.RandomUniqueElements(12, random);
             var fleet2 = _database.ShipBuildList.RandomUniqueElements(12, random);
-
-#if UNITY_EDITOR
-            if (testShip != null)
-#else
+            
             if (_database.IsEditable && testShip != null)
-#endif
             {
                 var playerFleet = Enumerable.Repeat(testShip, 1).Concat(fleet1);
                 var enemyFleet = testShipId.Contains('*') ? Enumerable.Repeat(testShip,1) : Enumerable.Repeat(testShip,1).Concat(fleet2);

@@ -25,6 +25,7 @@ using Services.Audio;
 using Services.ObjectPool;
 using Services.Reources;
 using UnityEngine;
+using Utils;
 using Zenject;
 using IShip = Combat.Component.Ship.IShip;
 using Ship = Combat.Component.Ship.Ship;
@@ -61,7 +62,7 @@ namespace Combat.Factory
             UnitSide unitSide,
             bool createShadow)
         {
-            UnityEngine.Debug.Log("CreateShip: " + spec.Type.Id);
+            OptimizedDebug.Log("CreateShip: " + spec.Type.Id);
 
             bool isDrone = motherShip != null;
 

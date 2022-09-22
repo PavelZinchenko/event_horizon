@@ -5,6 +5,7 @@ using Economy.ItemType;
 using GameDatabase;
 using GameDatabase.DataModel;
 using GameDatabase.Model;
+using Utils;
 using Zenject;
 
 namespace GameServices.Database
@@ -33,7 +34,7 @@ namespace GameServices.Database
             if (_technologies.TryGetValue(id.Value, out technology))
                 return technology;
 
-            UnityEngine.Debug.Log("Technology not found: " + id);
+            OptimizedDebug.Log("Technology not found: " + id);
             return null;
         }
 

@@ -6,6 +6,7 @@ using GameDatabase.DataModel;
 using GameDatabase.Enums;
 using GameDatabase.Model;
 using GameModel.Serialization;
+using Utils;
 using Zenject;
 
 namespace Session.Content
@@ -76,7 +77,7 @@ namespace Session.Content
 			var version = Helpers.DeserializeInt(buffer, ref index);
 			if (version != CurrentVersion && !TryUpgrade(ref buffer, version))
 			{
-				UnityEngine.Debug.Log("ResearchData: incorrect data version");
+				OptimizedDebug.Log("ResearchData: incorrect data version");
                 throw new ArgumentException();
             }
 

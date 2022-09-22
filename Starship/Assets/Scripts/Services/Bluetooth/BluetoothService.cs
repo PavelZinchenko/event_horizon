@@ -81,7 +81,7 @@ namespace Services.Bluetooth
             get { return _state; }
             private set
             {
-                UnityEngine.Debug.Log("BT: Adapter state changed - " + value);
+                OptimizedDebug.Log("BT: Adapter state changed - " + value);
                 _state = value;
                 //_messenger.Broadcast<AdapterState>(EventType.BluetoothAdapterStateChanged, _state);
 
@@ -92,7 +92,7 @@ namespace Services.Bluetooth
 
         public void SendMessage(byte[] data, bool reliable, int offset, int length)
         {
-            UnityEngine.Debug.Log("BT: SendMessage");
+            OptimizedDebug.Log("BT: SendMessage");
 
             if (State != AdapterState.Connected)
                 return;
@@ -102,7 +102,7 @@ namespace Services.Bluetooth
 
         public void Disconnect()
         {
-            UnityEngine.Debug.Log("BT: SendMessage");
+            OptimizedDebug.Log("BT: SendMessage");
 
             if (State != AdapterState.Connected)
                 return;
@@ -177,37 +177,37 @@ namespace Services.Bluetooth
 
         //private void OnBTEnableApproved()
         //{
-        //    UnityEngine.Debug.Log("OnBTEnableApproved");
+        //    OptimizedDebug.Log("OnBTEnableApproved");
         //}
 
         //private void OnBTEnableCancelled()
         //{
-        //    UnityEngine.Debug.Log("OnBTEnableCancelled");
+        //    OptimizedDebug.Log("OnBTEnableCancelled");
         //}
 
         //private void OnBTEnabled()
         //{
-        //    UnityEngine.Debug.Log("OnBTEnabled");
+        //    OptimizedDebug.Log("OnBTEnabled");
         //}
 
         //private void OnBTDisabled()
         //{
-        //    UnityEngine.Debug.Log("OnBTDisabled");
+        //    OptimizedDebug.Log("OnBTDisabled");
         //}
 
         //private void OnBTBondStateChanged(int currentState, int previousState)
         //{
-        //    UnityEngine.Debug.Log("OnBTBondStateChanged: " + previousState + " -> " + currentState);
+        //    OptimizedDebug.Log("OnBTBondStateChanged: " + previousState + " -> " + currentState);
         //}
 
         private void OnMessageSent(string msg)
         {
-            UnityEngine.Debug.Log("BT: message sent - " + msg);
+            OptimizedDebug.Log("BT: message sent - " + msg);
         }
 
         private void OnMessageReceived(string msg)
         {
-            UnityEngine.Debug.Log("BT: message received - " + msg);
+            OptimizedDebug.Log("BT: message received - " + msg);
 
             if (Observer != null)
                 Observer.OnMessage(System.Convert.FromBase64String(msg));
@@ -215,19 +215,19 @@ namespace Services.Bluetooth
 
         private void OnBTDeviceConnectingFailed(LWBluetoothDevice device)
         {
-            UnityEngine.Debug.Log("OnBTDeviceConnectingFailed");
+            OptimizedDebug.Log("OnBTDeviceConnectingFailed");
             State = AdapterState.UnableToConnect;
         }
 
         private void OnBTDeviceConnecting(LWBluetoothDevice device)
         {
-            UnityEngine.Debug.Log("OnBTDeviceConnecting");
+            OptimizedDebug.Log("OnBTDeviceConnecting");
             State = AdapterState.Connecting;
         }
 
         private void OnBtDeviceConnected(LWBluetoothDevice device)
         {
-            UnityEngine.Debug.Log("OnBtDeviceConnected");
+            OptimizedDebug.Log("OnBtDeviceConnected");
             State = AdapterState.Connected;
 
             if (Observer != null)
@@ -236,7 +236,7 @@ namespace Services.Bluetooth
 
         private void OnBtDeviceDisconnected(LWBluetoothDevice device)
         {
-            UnityEngine.Debug.Log("OnBtDeviceDisconnected");
+            OptimizedDebug.Log("OnBtDeviceDisconnected");
             State = AdapterState.Idle;
 
             if (Observer != null)
@@ -245,46 +245,46 @@ namespace Services.Bluetooth
 
         //private void OnBTAdapterDiscoveryCanceled(IList<LWBluetoothDevice> devices)
         //{
-        //    UnityEngine.Debug.Log("OnBTAdapterDiscoveryCanceled: " + devices.Count);
+        //    OptimizedDebug.Log("OnBTAdapterDiscoveryCanceled: " + devices.Count);
         //}
 
         private void OnBTAdapterDiscoveryFinished(IList<LWBluetoothDevice> devices)
         {
-            UnityEngine.Debug.Log("OnBTAdapterDiscoveryFinished: " + devices.Count);
+            OptimizedDebug.Log("OnBTAdapterDiscoveryFinished: " + devices.Count);
         }
 
         //private void OnBTAdapterDiscoveryStarted()
         //{
-        //    UnityEngine.Debug.Log("OnBTAdapterDiscoveryStarted");
+        //    OptimizedDebug.Log("OnBTAdapterDiscoveryStarted");
         //    AssignDevices(null);
         //    _messenger.Broadcast<bool>(EventType.BluetoothDiscovering, true);
         //}
 
         private void OnBTDeviceListening(string id)
         {
-            UnityEngine.Debug.Log("OnBTDeviceListening: " + id);
+            OptimizedDebug.Log("OnBTDeviceListening: " + id);
         }
 
         private void OnBTDeviceFound(LWBluetoothDevice device)
         {
-            UnityEngine.Debug.Log("OnBTDeviceFound - " + device.GetName());
+            OptimizedDebug.Log("OnBTDeviceFound - " + device.GetName());
             _devices.Add(device);
             //_messenger.Broadcast(EventType.BluetoothDeviceListChanged);
         }
 
         //private void OnBTPaired(LWBluetoothDevice device)
         //{
-        //    UnityEngine.Debug.Log("OnBTPaired - " + device.GetName());
+        //    OptimizedDebug.Log("OnBTPaired - " + device.GetName());
         //}
 
         //private void OnBTPairingFailed(LWBluetoothDevice device)
         //{
-        //    UnityEngine.Debug.Log("OnBTPairingFailed - " + device.GetName());
+        //    OptimizedDebug.Log("OnBTPairingFailed - " + device.GetName());
         //}
 
         //private void OnBTPairingRequest(LWBluetoothDevice device)
         //{
-        //    UnityEngine.Debug.Log("OnBTPairingRequest - " + device.GetName());
+        //    OptimizedDebug.Log("OnBTPairingRequest - " + device.GetName());
         //}
 
         //private void AssignDevices(IEnumerable<LWBluetoothDevice> devices)
