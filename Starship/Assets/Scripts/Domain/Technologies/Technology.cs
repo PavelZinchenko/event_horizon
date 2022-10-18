@@ -15,8 +15,10 @@ using GameDatabase.Extensions;
 using GameServices.Database;
 using Services.Localization;
 using Services.Reources;
+using UnityEngine;
 using UnityEngine.Assertions;
 using Utils;
+using Random = System.Random;
 
 namespace DataModel.Technology
 {
@@ -34,21 +36,15 @@ namespace DataModel.Technology
 
 		public ItemId<GameDatabase.DataModel.Technology> Id { get; private set; }
 
-	    public IEnumerable<ITechnology> Requirements
-	    {
-	        get
-	        {
-	            return _requirementList ?? (_requirementList = _requirements.Select<ItemId<GameDatabase.DataModel.Technology>, ITechnology>(_technologies.Get).ToList());
-	        }
-	    }
+	    public IEnumerable<ITechnology> Requirements => _requirementList ?? (_requirementList = _requirements.Select(_technologies.Get).ToList());
 
 	    public abstract CraftingPrice GetCraftPrice(CraftItemQuality quality);
         public abstract string GetName(ILocalization localization);
-	    public abstract UnityEngine.Sprite GetImage(IResourceLocator resourceLocator);
+	    public abstract Sprite GetImage(IResourceLocator resourceLocator);
 	    public abstract string GetDescription(ILocalization localization);
-		public abstract UnityEngine.Color Color { get; }
+		public abstract Color Color { get; }
 		public abstract Faction Faction { get; }
-		public abstract IProduct CreateItem(CraftItemQuality quality, System.Random random);
+		public abstract IProduct CreateItem(CraftItemQuality quality, Random random);
 		public bool Hidden { get; private set; }
 	    public bool Special { get; private set; }
         public int Price { get; private set; }

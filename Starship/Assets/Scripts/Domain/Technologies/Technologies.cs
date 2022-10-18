@@ -25,20 +25,31 @@ namespace GameServices.Database
         public void Initialize()
         {
             foreach (var item in _database.TechnologyList)
-                _technologies.Add(item.Id.Value, item.Create(this));
+            {
+                var tech = item.Create(this);
+                _technologies.Add(item.Id.Value, tech);
+                foreach (var dependency in item.Dependencies)
+                {
+                    _dependants.GetOrCreateNew(dependency.Id).Add(tech);
+                }
+            }
         }
 
         public ITechnology Get(ItemId<Technology> id)
         {
-            ITechnology technology;
-            if (_technologies.TryGetValue(id.Value, out technology))
+            if (_technologies.TryGetValue(id.Value, out var technology))
                 return technology;
 
             OptimizedDebug.Log("Technology not found: " + id);
             return null;
         }
 
-        public IEnumerable<ITechnology> All { get { return _technologies.Values; } }
+        public IEnumerable<ITechnology> All => _technologies.Values;
+
+        public IEnumerable<ITechnology> Dependants(ITechnology root)
+        {
+            return _dependants.GetOrCreateNew(root.Id);
+        }
 
         public bool TryGetComponentTechnology(Component component, out ITechnology technology)
         {
@@ -46,14 +57,11 @@ namespace GameServices.Database
 
             foreach (var item in _technologies)
             {
-                var tech = item.Value as ComponentTechnology;
-                if (tech == null)
+                if (!(item.Value is ComponentTechnology tech))
                     continue;
-                if (tech.Component.Id == id)
-                {
-                    technology = tech;
-                    return true;
-                }
+                if (tech.Component.Id != id) continue;
+                technology = tech;
+                return true;
             }
 
             technology = null;
@@ -64,14 +72,11 @@ namespace GameServices.Database
         {
             foreach (var item in _technologies)
             {
-                var tech = item.Value as ShipTechnology;
-                if (tech == null)
+                if (!(item.Value is ShipTechnology tech))
                     continue;
-                if (tech.Ship.Id == id)
-                {
-                    technology = tech;
-                    return true;
-                }
+                if (tech.Ship.Id != id) continue;
+                technology = tech;
+                return true;
             }
 
             technology = null;
@@ -96,11 +101,15 @@ namespace GameServices.Database
         private void OnDatabaseLoaded()
         {
             _technologies.Clear();
+            _dependants.Clear();
             Initialize();
         }
 
         private readonly GameDatabaseLoadedSignal _databaseLoadedSignal;
         private readonly Dictionary<int, ITechnology> _technologies = new Dictionary<int, ITechnology>();
+
+        private readonly Dictionary<ItemId<Technology>, HashSet<ITechnology>> _dependants =
+            new Dictionary<ItemId<Technology>, HashSet<ITechnology>>();
     }
 
     public static class TechnologyListExtensions
