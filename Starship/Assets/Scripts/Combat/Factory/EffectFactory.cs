@@ -73,7 +73,7 @@ namespace Combat.Factory
             else if (damage < 1e12f)
                 damageText = (long)(damage / 1e9f) + "B";
             else
-                damageText = ((double)damage).ToInGameString();
+                damageText = ((double)damage).ToInGameString(BigFormat.Truncated);
             
 
             gameObject.Name = damageText;

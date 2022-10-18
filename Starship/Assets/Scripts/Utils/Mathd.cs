@@ -30,48 +30,74 @@ namespace Utils
             return (int)Math.Floor(Math.Log10(Math.Abs(value)) + 1);
         }
 
-        public static string ToSignedInGameString(this double val)
+        public static string ToInGameString(this double val, BigFormat format)
         {
-            return (val > 0 ? "+" : "") + ToInGameString(val);
+            switch (format)
+            {
+                case BigFormat.Truncated:
+                    return ToTruncatedInGameString(val);
+                case BigFormat.Expanded:
+                    return ToExpandedInGameString(val);
+                case BigFormat.Decimal:
+                    return ToDecimalInGameString(val);
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(format), format, null);
+            }
         }
 
-        public static string ToInGameString(this double val)
+        public static string ToSignedInGameString(this double val, BigFormat format)
+        {
+            return (val > 0 ? "+" : "") + val.ToInGameString(format);
+        }
+
+        public static string ToTruncatedInGameString(this double val)
         {
             // We don't format very small values for now
             if (Math.Abs(val) < 1) return Math.Truncate(val).ToString(CultureInfo.InvariantCulture);
             // Get amount of digits in steps of 3
             var digs = (DigitsInDouble(val) - 1) / 3 * 3;
-            // Rounding might lead to getting stuff like 1000K if input is 999999, which is not ideal, so
-            // we handle this separately
-            var display = (int) Math.Round(val / Math.Pow(10, digs));
-            if (display == 1000)
-            {
-                display = 1;
-                digs += 3;
-            }
+            val /= Math.Pow(10, digs);
+            return Math.Floor(val).ToString(CultureInfo.InvariantCulture) + GetDigitsSuffix(digs);
+        }
 
+        public static string ToExpandedInGameString(this double val)
+        {
+            if (Math.Abs(val) < 1e5) return Math.Floor(val).ToString(CultureInfo.InvariantCulture);
+            var digs = DigitsInDouble(val) / 3 * 3 - 3;
+            val /= Math.Pow(10, digs);
+            return Math.Floor(val).ToString(CultureInfo.InvariantCulture) + GetDigitsSuffix(digs);
+        }
+
+        public static string ToDecimalInGameString(this double val, int significant = 3)
+        {
+            significant = Math.Max(significant, 1);
+            // We don't format small values for now
+            if (Math.Abs(val) < 1e5) return Math.Truncate(val).ToString(CultureInfo.InvariantCulture);
+            // Get amount of digits in steps of 3
+            var digs = (DigitsInDouble(val) - 1) / 3 * 3;
+
+            var significantDigits = DigitsInDouble(val) - significant;
+            var result = Math.Floor(val / Math.Pow(10, significantDigits)) * Math.Pow(10, significantDigits - digs);
+
+            return result.ToString(CultureInfo.InvariantCulture) + GetDigitsSuffix(digs);
+        }
+
+        private static string GetDigitsSuffix(int digits)
+        {
             // Currently hardcoded endings
-            string ending;
-            switch (digs)
+            switch (digits)
             {
                 case 0:
-                    ending = "";
-                    break;
+                    return "";
                 case 3:
-                    ending = "K";
-                    break;
+                    return "K";
                 case 6:
-                    ending = "M";
-                    break;
+                    return "M";
                 case 9:
-                    ending = "B";
-                    break;
+                    return "B";
                 default:
-                    ending = "e" + digs;
-                    break;
+                    return "e" + digits;
             }
-
-            return display + ending;
         }
 
         /// <summary>
@@ -97,5 +123,23 @@ namespace Utils
             if (value <= int.MinValue) return int.MinValue;
             return (int)Math.Round(value);
         }
+    }
+
+    public enum BigFormat
+    {
+        /// <summary>
+        /// Truncated numerical format, aka 1, 12, 123, 1K, 12K, 123K, 1M
+        /// </summary>
+        Truncated,
+
+        /// <summary>
+        /// Expanded numerical format, aka 1, 12, 123, 1234, 12345, 123K, 1234K, 12345K, 123M
+        /// </summary>
+        Expanded,
+
+        /// <summary>
+        /// Decimal numerical format, aka 1, 12, 123, 1234, 123K, 1.23M, 12.3M, 123M 
+        /// </summary>
+        Decimal,
     }
 }

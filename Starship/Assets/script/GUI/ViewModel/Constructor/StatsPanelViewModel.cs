@@ -152,11 +152,12 @@ namespace ViewModel
 
         public void UpdateStats(IShipSpecification spec)
         {
-            HitPointsSummaryText.text = Mathd.ToInGameString(spec.Stats.ArmorPoints);
+            HitPointsSummaryText.text = Mathd.ToInGameString(spec.Stats.ArmorPoints, BigFormat.Decimal);
             HitPointsSummaryText.color = spec.Stats.ArmorPoints > 0 ? NormalColor : ErrorColor;
 
-            EnergySummaryText.text = Mathd.ToInGameString(spec.Stats.EnergyPoints) + " [" +
-                                     Mathd.ToSignedInGameString(spec.Stats.EnergyRechargeRate) + "]";
+            EnergySummaryText.text = Mathd.ToInGameString(spec.Stats.EnergyPoints, BigFormat.Decimal) + " [" +
+                                     Mathd.ToSignedInGameString(spec.Stats.EnergyRechargeRate, BigFormat.Decimal) +
+                                     "]";
             EnergySummaryText.color = spec.Stats.EnergyRechargeRate > 0 ? NormalColor : ErrorColor;
             VelocitySummaryText.text =
                 spec.Stats.EnginePower.ToString("N1") + " / " + spec.Stats.TurnRate.ToString("N1");

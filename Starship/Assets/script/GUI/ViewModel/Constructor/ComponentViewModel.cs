@@ -446,14 +446,14 @@ namespace ViewModel
 
         private static string FormatFloat(float value)
         {
-            var formatted = value < 1e6 ? value.ToString(_floatFormat) : Mathd.ToInGameString(value);
+            var formatted = value < 1e6 ? value.ToString(_floatFormat) : Mathd.ToInGameString(value, BigFormat.Decimal);
             return (value >= 0 ? "+" : "") + formatted;
         }
 
         private static string FormatPercent(float value)
         {
             var percents = 100 * value;
-            var formatted = percents < 1e6 ? Mathf.RoundToInt(percents).ToString() : Mathd.ToInGameString(percents);
+            var formatted = percents < 1e6 ? Mathf.RoundToInt(percents).ToString() : Mathd.ToInGameString(percents, BigFormat.Decimal);
             return (value >= 0 ? "+" : "") + formatted + "%";
         }
 

@@ -70,7 +70,7 @@ namespace GameDatabase.Model
         {
             var percents = 100 * _value;
             return (_value >= 0 ? "+" : "") +
-                   (percents < 1e6 ? Mathf.RoundToInt(percents).ToString() : Mathd.ToInGameString(percents))+
+                   (percents < 1e6 ? Mathf.RoundToInt(percents).ToString() : Mathd.ToInGameString(percents, BigFormat.Decimal))+
                    "%";
         }
 
