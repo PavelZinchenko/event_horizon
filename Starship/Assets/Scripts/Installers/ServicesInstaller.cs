@@ -12,6 +12,7 @@ using Services.Localization;
 using Services.Messenger;
 using Services.ObjectPool;
 using Services.Reources;
+using Services.Screenshots;
 using Services.Storage;
 using Services.Unity;
 using UnityEngine;
@@ -41,6 +42,7 @@ namespace Installers
             Container.Bind<IMessenger>().To<Messenger>().AsSingle();
 
             Container.Bind<ILocalization>().To<LocalizationManager>().AsSingle();
+            Container.Bind<ISharingManager>().To<SharingManager>().AsSingle();
 
 // #if UNITY_STANDALONE_WIN && !UNITY_EDITOR
 //             Container.BindAllInterfaces<DiscordController>().To<DiscordController>().AsSingle().NonLazy();
@@ -129,6 +131,7 @@ namespace Installers
 
             Container.Bind<IMessenger>().To<Messenger>().AsSingle();
             Container.Bind<ILocalization>().To<LocalizationManager>().AsSingle();
+            Container.Bind<ISharingManager>().To<SharingManager>().AsSingle();
             Container.Bind<ICoroutineManager>().To<CoroutineManager>().FromGameObject().AsSingle();
 
             Container.BindAllInterfaces<MusicPlayer>().To<MusicPlayer>().FromInstance(_musicPlayer);

@@ -163,4 +163,8 @@
     <string name="DailyReward">Daily reward</string>
     <string name="TakeMission">Take a mission</string>
     <string name="Reputation">Your reputation:</string>
+    <string name="ScreenshotSaved">File was saved to $1</string>
+    <string name="ScreenshotShared">Shared successfully</string>
+    <string name="ScreenshotSharedCanceled">Sharing was canceled</string>
+    <string name="ScreenshotSharedCanceled">Sharing status is unknown</string>
 </resources>

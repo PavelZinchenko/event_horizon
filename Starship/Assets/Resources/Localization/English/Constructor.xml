@@ -55,6 +55,7 @@
     <string name="Exit">Exit</string>
     <string name="AvailableSpace">Free space: $1 / $2</string>
     <string name="MoreInfo">More info</string>
+    <string name="ShareBuild">Share build</string>
     <string name="MinEnergy">Turn on if more than $1% energy</string>
     <string name="Automatic">Automatic</string>
     <string name="KeyBinding">Action key</string>
