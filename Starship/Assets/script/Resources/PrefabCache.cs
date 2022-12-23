@@ -33,22 +33,22 @@ public class PrefabCache : MonoBehaviour
     }
 
     public GameObject LoadPrefab(string path)
-	{
-		GameObject prefab;
-		if (!_prefabs.TryGetValue(path, out prefab))
-		{
-			prefab = Resources.Load<GameObject>("Prefabs/" + path);
-		    if (prefab == null)
-		    {
+    {
+        GameObject prefab;
+        if (!_prefabs.TryGetValue(path, out prefab))
+        {
+            prefab = Resources.Load<GameObject>("Prefabs/" + path);
+            if (prefab == null)
+            {
                 OptimizedDebug.LogException(new ArgumentException("prefab not found: " + path));
-		        return null;
-		    }
+                return null;
+            }
 
-		    _prefabs[path] = prefab;
-		}
+            _prefabs[path] = prefab;
+        }
 
-		return prefab;
-	}
+        return prefab;
+    }
 
     public GameObject LoadPrefab(PrefabId prefabId)
     {
@@ -76,13 +76,27 @@ public class PrefabCache : MonoBehaviour
         else
             switch (data.Shape)
             {
-                case BulletShape.Projectile: commonPrefab = LoadPrefab(new PrefabId("CommonProjectile", PrefabId.Type.Bullet)); break;
-                case BulletShape.Rocket: commonPrefab = LoadPrefab(new PrefabId("CommonRocket", PrefabId.Type.Bullet)); break;
-                case BulletShape.LaserBeam: commonPrefab = LoadPrefab(new PrefabId("Laser", PrefabId.Type.Bullet)); break;
-                case BulletShape.LightningBolt: commonPrefab = LoadPrefab(new PrefabId("Lightning", PrefabId.Type.Bullet)); break;
-                case BulletShape.EnergyBeam: commonPrefab = LoadPrefab(new PrefabId("EnergyBeam", PrefabId.Type.Bullet)); break;
-                case BulletShape.Spark: commonPrefab = LoadPrefab(new PrefabId("Spark", PrefabId.Type.Bullet)); break;
-                case BulletShape.Mine: commonPrefab = LoadPrefab(new PrefabId("Mine", PrefabId.Type.Bullet)); break;
+                case BulletShape.Projectile:
+                    commonPrefab = LoadPrefab(new PrefabId("CommonProjectile", PrefabId.Type.Bullet));
+                    break;
+                case BulletShape.Rocket:
+                    commonPrefab = LoadPrefab(new PrefabId("CommonRocket", PrefabId.Type.Bullet));
+                    break;
+                case BulletShape.LaserBeam:
+                    commonPrefab = LoadPrefab(new PrefabId("Laser", PrefabId.Type.Bullet));
+                    break;
+                case BulletShape.LightningBolt:
+                    commonPrefab = LoadPrefab(new PrefabId("Lightning", PrefabId.Type.Bullet));
+                    break;
+                case BulletShape.EnergyBeam:
+                    commonPrefab = LoadPrefab(new PrefabId("EnergyBeam", PrefabId.Type.Bullet));
+                    break;
+                case BulletShape.Spark:
+                    commonPrefab = LoadPrefab(new PrefabId("Spark", PrefabId.Type.Bullet));
+                    break;
+                case BulletShape.Mine:
+                    commonPrefab = LoadPrefab(new PrefabId("Mine", PrefabId.Type.Bullet));
+                    break;
                 default: return null;
             }
 
@@ -97,7 +111,7 @@ public class PrefabCache : MonoBehaviour
 
     public GameObject GetEffectPrefab(VisualEffectElement data)
     {
-        var id = (int)data.Type + data.Image.Id;
+        var id = (int)data.Type + data.Image.NumericalId * 100;
         GameObject prefab;
         if (_effectPrefabs.TryGetValue(id, out prefab))
             return prefab;
@@ -105,11 +119,21 @@ public class PrefabCache : MonoBehaviour
         GameObject commonPrefab;
         switch (data.Type)
         {
-            case VisualEffectType.Flash: commonPrefab = LoadPrefab(new PrefabId("Flash", PrefabId.Type.Effect)); break;
-            case VisualEffectType.FlashAdditive: commonPrefab = LoadPrefab(new PrefabId("FlashAdditive", PrefabId.Type.Effect)); break;
-            case VisualEffectType.Shockwave: commonPrefab = LoadPrefab(new PrefabId("Wave", PrefabId.Type.Effect)); break;
-            case VisualEffectType.Smoke: commonPrefab = LoadPrefab(new PrefabId("Smoke", PrefabId.Type.Effect)); break;
-            case VisualEffectType.SmokeAdditive: commonPrefab = LoadPrefab(new PrefabId("SmokeAdditive", PrefabId.Type.Effect)); break;
+            case VisualEffectType.Flash:
+                commonPrefab = LoadPrefab(new PrefabId("Flash", PrefabId.Type.Effect));
+                break;
+            case VisualEffectType.FlashAdditive:
+                commonPrefab = LoadPrefab(new PrefabId("FlashAdditive", PrefabId.Type.Effect));
+                break;
+            case VisualEffectType.Shockwave:
+                commonPrefab = LoadPrefab(new PrefabId("Wave", PrefabId.Type.Effect));
+                break;
+            case VisualEffectType.Smoke:
+                commonPrefab = LoadPrefab(new PrefabId("Smoke", PrefabId.Type.Effect));
+                break;
+            case VisualEffectType.SmokeAdditive:
+                commonPrefab = LoadPrefab(new PrefabId("SmokeAdditive", PrefabId.Type.Effect));
+                break;
             default: return null;
         }
 
@@ -124,5 +148,6 @@ public class PrefabCache : MonoBehaviour
 
     private readonly Dictionary<string, GameObject> _prefabs = new Dictionary<string, GameObject>();
     private readonly Dictionary<int, GameObject> _bulletPrefabs = new Dictionary<int, GameObject>();
-    private readonly Dictionary<string, GameObject> _effectPrefabs = new Dictionary<string, GameObject>();
+    private readonly Dictionary<int, GameObject> _effectPrefabs = new Dictionary<int, GameObject>();
+    private readonly Dictionary<string, int> _stringNameMappings = new Dictionary<string, int>();
 }

@@ -87,9 +87,11 @@ namespace Combat.Scene
 
             lock (shipList.LockObject)
             {
-                foreach (var ship in shipList.Items)
+                for (var i = 0; i < shipList.Items.Count; i++)
                 {
-                    if (!ship.IsActive() || ship.Type.Side.IsAlly(unit.Type.Side) || ship.Features.TargetPriority == TargetPriority.None || ship.Type.Class == UnitClass.Limb)
+                    var ship = shipList.Items[i];
+                    if (!ship.IsActive() || ship.Type.Side.IsAlly(unit.Type.Side) ||
+                        ship.Features.TargetPriority == TargetPriority.None || ship.Type.Class == UnitClass.Limb)
                         continue;
                     if (options.IgnoreDrones && ship.Type.Class == UnitClass.Drone)
                         continue;
@@ -103,7 +105,8 @@ namespace Combat.Scene
                     {
                         if (ship.Type.Class == UnitClass.Drone)
                         {
-                            if (ship.Type.Owner != null && ship.Type.Owner.Body.Position.Distance(ship.Body.Position) > options.MaxDistance)
+                            if (ship.Type.Owner != null && ship.Type.Owner.Body.Position.Distance(ship.Body.Position) >
+                                options.MaxDistance)
                                 continue;
                         }
                         else if (range > options.MaxDistance)
@@ -112,7 +115,8 @@ namespace Combat.Scene
 
                     if (maxDeviation < 180)
                     {
-                        var deviation = Mathf.Abs(Mathf.DeltaAngle(RotationHelpers.Angle(dir), unit.Body.Rotation + rotation));
+                        var deviation =
+                            Mathf.Abs(Mathf.DeltaAngle(RotationHelpers.Angle(dir), unit.Body.Rotation + rotation));
                         if (deviation > maxDeviation)
                             continue;
                     }
@@ -131,10 +135,12 @@ namespace Combat.Scene
                         continue;
                     }
 
-                    if (options.UsePriority && minRange < maxRange && ship.Features.TargetPriority < enemy.Features.TargetPriority)
+                    if (options.UsePriority && minRange < maxRange &&
+                        ship.Features.TargetPriority < enemy.Features.TargetPriority)
                         continue;
 
-                    if (range < minRange || (range < maxRange && options.UsePriority && ship.Features.TargetPriority > enemy.Features.TargetPriority))
+                    if (range < minRange || (range < maxRange && options.UsePriority &&
+                                             ship.Features.TargetPriority > enemy.Features.TargetPriority))
                     {
                         minRange = range;
                         enemy = ship;

@@ -9,10 +9,14 @@ namespace Combat.Component.Body
         public void Initialize(IBody parent, Vector2 position, float rotation, float scale, Vector2 velocity,
             float angularVelocity, float weight, bool frozen = false)
         {
+            _transformCache = transform;
+            _rigidbody = GetComponent<Rigidbody2D>();
             if (parent != null)
-                parent.AddChild(transform);
+                parent.AddChild(_transformCache);
             else
-                transform.parent = null;
+            {
+                if ((object) _transformCache.parent != null) _transformCache.parent = null;
+            }
 
             Parent = parent;
             Position = position;
@@ -30,42 +34,49 @@ namespace Combat.Component.Body
 
         public IBody Parent
         {
-            get { return _parent; }
+            get => _parent;
             private set
             {
                 if (_parent == value)
                     return;
 
-                GetComponent<Rigidbody2D>().isKinematic = value != null;
+                _rigidbody.isKinematic = value != null;
                 _parent = value;
             }
         }
 
         public Vector2 Position
         {
-            get { return _cachedPosition; }
+            get => _cachedPosition;
             set
             {
                 _cachedPosition = value;
-                var transformCache = transform;
-                if (!this || !transformCache) return;
+                // We assume (dangerous) that we are always disposed upon destruction, and so cache was deleted
+                if (ReferenceEquals(_transformCache, null)) return;
                 var targetPos = _parent?.ChildPosition(value) ?? value;
-                if (transformCache.localPosition.x != targetPos.x || transformCache.localPosition.y != targetPos.y)
-                    gameObject.Move(targetPos);
+                // Frozen objects are the only one who are realistically gonna do a lot of calls with unchanging value
+                if (!_frozen || _transformCache.localPosition.x != targetPos.x ||
+                    _transformCache.localPosition.y != targetPos.y)
+                {
+                    _transformCache.localPosition = new Vector3(targetPos.x, targetPos.y, _cachedZ);
+                }
             }
         }
 
         public float Rotation
         {
-            get { return _cachedRotation; }
+            get => _cachedRotation;
             set
             {
                 _cachedRotation = value;
-                var transformCache = transform;
-                if (!this || !transformCache) return;
+                // We assume (dangerous) that we are always disposed upon destruction, and so cache was deleted
+                if (ReferenceEquals(_transformCache, null)) return;
                 var targetAngle = Mathf.Repeat(value, 360);
-                if (transformCache.localRotation.z != targetAngle)
-                    transform.localEulerAngles = new Vector3(0, 0, targetAngle);
+                // Frozen objects are the only one who are realistically gonna do a lot of calls with unchanging value
+                if (!_frozen || _transformCache.localRotation.z != targetAngle)
+                {
+                    _transformCache.rotation = Quaternion.Euler(0, 0, targetAngle);
+                }
             }
         }
 
@@ -73,7 +84,7 @@ namespace Combat.Component.Body
 
         public Vector2 Velocity
         {
-            get { return Parent == null ? _cachedVelocity : Vector2.zero; }
+            get => Parent == null ? _cachedVelocity : Vector2.zero;
             set
             {
                 if (Parent == null)
@@ -86,29 +97,31 @@ namespace Combat.Component.Body
 
         public float AngularVelocity
         {
-            get { return Parent == null ? _rigidbody.angularVelocity : 0f; }
+            get => Parent == null ? _rigidbody.angularVelocity : 0f;
             set
             {
-                if (Parent == null && _rigidbody)
+                if (Parent == null)
                     _rigidbody.angularVelocity = value;
             }
         }
 
         public float Weight
         {
-            get { return _rigidbody.mass; }
-            set { _rigidbody.mass = value; }
+            get => _rigidbody.mass;
+            set => _rigidbody.mass = value;
         }
 
         public float Scale
         {
-            get { return _scale; }
+            get => _scale;
             set
             {
                 _scale = value;
-                if (transform)
-                    transform.localScale =
-                        Parent == null ? Vector3.one * value : Vector3.one * (Parent.WorldScale() * value);
+                if (!ReferenceEquals(_transformCache, null))
+                {
+                    _transformCache.localScale =
+                        Parent == null ? new Vector3(value, value, value) : Vector3.one * (Parent.WorldScale() * value);
+                }
             }
         }
 
@@ -155,7 +168,10 @@ namespace Combat.Component.Body
             Scale = size;
         }
 
-        public void Dispose() { }
+        public void Dispose()
+        {
+            _transformCache = null;
+        }
 
         public void UpdatePhysics(float elapsedTime)
         {
@@ -165,38 +181,44 @@ namespace Combat.Component.Body
                 Rotation = _cachedRotation;
             }
 
-            var velocity = _rigidbody.velocity;
-            if (_maxVelocity > 0 && velocity.sqrMagnitude > _maxVelocity * _maxVelocity)
+            if(_maxVelocity > 0)
             {
-                velocity = velocity.normalized * _maxVelocity;
-                _rigidbody.velocity = velocity;
+                var velocity = _rigidbody.velocity;
+                if (velocity.sqrMagnitude > _maxVelocity * _maxVelocity)
+                {
+                    velocity = velocity.normalized * _maxVelocity;
+                    _rigidbody.velocity = velocity;
+                }
+                _cachedVelocity = velocity;
             }
 
-            var angularVelocity = _rigidbody.angularVelocity;
-            if (_maxAngularVelocity > 0 && Math.Abs(angularVelocity) > _maxAngularVelocity)
+            if(_maxAngularVelocity > 0)
             {
-                _rigidbody.angularVelocity = _maxAngularVelocity * Mathf.Sign(angularVelocity);
+                var angularVelocity = _rigidbody.angularVelocity;
+                if (Math.Abs(angularVelocity) > _maxAngularVelocity)
+                {
+                    _rigidbody.angularVelocity = _maxAngularVelocity * Mathf.Sign(angularVelocity);
+                }
             }
-
-            _cachedVelocity = velocity;
         }
 
         public void UpdateView(float elapsedTime)
         {
             if (_frozen) return;
-            var transform1 = transform;
-            _cachedPosition = transform1.localPosition;
-            _cachedRotation = transform1.localEulerAngles.z;
+            if (ReferenceEquals(_transformCache, null))
+            {
+                _transformCache = transform;
+            }
+
+            var pos = _transformCache.localPosition;
+            _cachedPosition = pos;
+            _cachedZ = pos.z;
+            _cachedRotation = _transformCache.localEulerAngles.z;
         }
 
         public void AddChild(Transform child)
         {
-            child.parent = transform;
-        }
-
-        private void Awake()
-        {
-            _rigidbody = GetComponent<Rigidbody2D>();
+            child.parent = _transformCache;
         }
 
         //private void Update()
@@ -209,7 +231,9 @@ namespace Combat.Component.Body
         //}
 
         private Rigidbody2D _rigidbody;
+        private Transform _transformCache;
         private Vector2 _cachedPosition;
+        private float _cachedZ;
         private float _cachedRotation;
         private Vector2 _cachedVelocity;
         private float _scale;

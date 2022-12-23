@@ -42,7 +42,7 @@ namespace Combat.Component.View
 
         protected override void UpdateRotation(float rotation)
         {
-            _spriteRenderer.transform.localEulerAngles = new Vector3(0,0,rotation);
+            _spriteRenderer.transform.rotation = Quaternion.Euler(0,0,rotation);
         }
 
         protected override void UpdateSize(float size)
@@ -54,6 +54,7 @@ namespace Combat.Component.View
         {
             color = _colorMode.Apply(_baseColor, color);
             color.a *= _alphaScale;
+            // _spriteRenderer.color = color;
             _spriteRenderer.material.color = color;
         }
 

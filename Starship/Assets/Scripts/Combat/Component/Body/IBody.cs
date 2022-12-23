@@ -37,7 +37,11 @@ namespace Combat.Component.Body
     {
         public static Vector2 WorldPosition(this IBody body)
         {
-            var position = body.Position + RotationHelpers.Direction(body.Rotation)*body.Offset;
+            var position = body.Position;
+            if (body.Offset != 0)
+            {
+                position += RotationHelpers.Direction(body.Rotation) * body.Offset;
+            }
 
             if (body.Parent == null)
                 return position;

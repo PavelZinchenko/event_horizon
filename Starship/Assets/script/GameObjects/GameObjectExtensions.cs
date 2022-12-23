@@ -61,7 +61,12 @@ public static class GameObjectExtensions
 
     public static void Move(this GameObject gameObject, Vector2 position)
     {
-        gameObject.transform.localPosition = new Vector3(position.x, position.y, gameObject.transform.localPosition.z);
+        var transform = gameObject.transform;
+        transform.localPosition = new Vector3(position.x, position.y, transform.localPosition.z);
+    }
+    public static void Move(this Transform transform, Vector2 position)
+    {
+        transform.localPosition = new Vector3(position.x, position.y, transform.localPosition.z);
     }
 
     public static void Cleanup(this GameObject gameObject)

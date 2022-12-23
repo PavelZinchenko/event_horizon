@@ -65,8 +65,7 @@ namespace Combat.Component.Bullet
             if (State != UnitState.Active)
                 return;
 
-            if (Controller != null)
-                Controller.UpdatePhysics(elapsedTime);
+            Controller?.UpdatePhysics(elapsedTime);
 
             Body.UpdatePhysics(elapsedTime);
             Lifetime.Update(elapsedTime);

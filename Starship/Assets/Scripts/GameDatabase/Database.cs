@@ -117,6 +117,7 @@ namespace GameDatabase
             }
             catch (Exception e)
             {
+                OptimizedDebug.LogError(e);
                 OptimizedDebug.LogError("Database.TryLoad() Error: " + e.Message);
                 error = e.Message;
                 return false;

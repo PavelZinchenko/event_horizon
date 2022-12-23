@@ -1,34 +1,23 @@
 ﻿using System.Collections.Generic;
 using Combat.Component.Body;
 using Combat.Factory;
+using Combat.Helpers;
 using Combat.Scene;
 using GameDatabase.DataModel;
 using GameDatabase.Enums;
 using GameDatabase.Extensions;
+using Services.ObjectPool;
 using UnityEngine;
 
 namespace Combat.Effects
 {
     public class CompositeEffect : MonoBehaviour, IEffect
     {
-        public static CompositeEffect Create(VisualEffect effectData, EffectFactory factory, IBody parent)
+        public static readonly GameObject Prefab = new GameObject("CompositeVisualEffect");
+
+        static CompositeEffect()
         {
-            var gameObject = new GameObject(effectData.Id.ToString());
-
-            if (parent == null)
-            {
-                gameObject.transform.localPosition = new Vector3(0, 0, -3);
-            }
-            else
-            {
-                parent.AddChild(gameObject.transform);
-                gameObject.transform.localPosition = new Vector3(parent.Offset, 0, 0);
-            }
-
-            var composite = gameObject.AddComponent<CompositeEffect>();
-            composite.Initialize(parent, effectData, factory);
-
-            return composite;
+            Prefab.AddComponent<CompositeEffect>();
         }
 
         public void Detach()
@@ -56,11 +45,55 @@ namespace Combat.Effects
             }
         }
 
-        public Vector2 Position { get { return _position; } set { _position = value; _positionChanged = true; } }
-        public float Rotation { get { return _rotation; } set { _rotation = value; _positionChanged = true; } }
-        public float Size { get { return _size; } set { _size = value; _sizeChanged = true; } }
-        public Color Color { get { return _color; } set { _color = value; _colorChanged = true; } }
-        public float Life { get { return _life; } set { _life = value; _lifeChanged = true; } }
+        public Vector2 Position
+        {
+            get { return _position; }
+            set
+            {
+                _position = value;
+                _positionChanged = true;
+            }
+        }
+
+        public float Rotation
+        {
+            get { return _rotation; }
+            set
+            {
+                _rotation = value;
+                _positionChanged = true;
+            }
+        }
+
+        public float Size
+        {
+            get { return _size; }
+            set
+            {
+                _size = value;
+                _sizeChanged = true;
+            }
+        }
+
+        public Color Color
+        {
+            get { return _color; }
+            set
+            {
+                _color = value;
+                _colorChanged = true;
+            }
+        }
+
+        public float Life
+        {
+            get { return _life; }
+            set
+            {
+                _life = value;
+                _lifeChanged = true;
+            }
+        }
 
         public bool IsAlive { get; private set; }
 
@@ -73,8 +106,11 @@ namespace Combat.Effects
             _isAutomatic = true;
         }
 
-        public void Initialize(IBody parent, VisualEffect effectData, EffectFactory factory)
+        public void Initialize(GameObjectHolder objectHolder, IBody parent, VisualEffect effectData,
+            EffectFactory factory)
         {
+            _effects.Clear();
+            _gameObjectHolder = objectHolder;
             _data = effectData;
             _parent = parent;
 
@@ -195,7 +231,7 @@ namespace Combat.Effects
             foreach (var effect in _effects)
                 effect.Dispose();
 
-            Destroy(gameObject);
+            _gameObjectHolder.Dispose();
             IsAlive = false;
         }
 
@@ -224,5 +260,6 @@ namespace Combat.Effects
         private float _lifetimeMax;
         private VisualEffect _data;
         private readonly List<IEffect> _effects = new List<IEffect>();
+        private GameObjectHolder _gameObjectHolder;
     }
 }

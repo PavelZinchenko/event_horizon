@@ -9,27 +9,45 @@ namespace Combat.Helpers
     {
         public GameObjectHolder(GameObject prefab, IObjectPool objectPool, bool injectDependencies = true)
         {
+            if (!injectDependencies) objectPool = objectPool.NoInjections;
             _objectPool = objectPool;
-            _gameObject = objectPool.GetObject(prefab, injectDependencies);
+            _gameObject = objectPool.GetObject(prefab);
         }
 
-        public bool IsActive { get { return _gameObject.activeSelf; } set { _gameObject.SetActive(value); } }
-        public Layer Layer { get { return (Layer)_gameObject.layer; } set { _gameObject.layer = (int)value; } }
-        public string Name { get { return _gameObject.name; } set { _gameObject.name = value; } }
+        public bool IsActive
+        {
+            get { return _gameObject.activeSelf; }
+            set { _gameObject.SetActive(value); }
+        }
+
+        public Layer Layer
+        {
+            get { return (Layer)_gameObject.layer; }
+            set { _gameObject.layer = (int)value; }
+        }
+
+        public string Name
+        {
+            get { return _gameObject.name; }
+            set { _gameObject.name = value; }
+        }
 
         public T GetComponent<T>(bool recursive = false)
         {
             return recursive ? _gameObject.GetComponentInChildren<T>() : _gameObject.GetComponent<T>();
         }
 
-        public T AddComponent<T>() where T: UnityEngine.Component
+        public T AddComponent<T>() where T : UnityEngine.Component
         {
             var component = _gameObject.AddComponent<T>();
             _components.Add(component);
             return component;
         }
 
-        public Transform Transform { get { return _gameObject.transform; } }
+        public Transform Transform
+        {
+            get { return _gameObject.transform; }
+        }
 
         public void Dispose()
         {

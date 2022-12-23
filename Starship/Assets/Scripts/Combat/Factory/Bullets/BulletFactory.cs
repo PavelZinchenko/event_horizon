@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using Combat.Collision.Behaviour;
 using Combat.Collision.Behaviour.Action;
 using Combat.Component.Body;
@@ -153,7 +151,7 @@ namespace Combat.Factory
             var scale = _stats.BodySize;
             var frozen = false;
 
-            if (_ammunition.Body.Type == GameDatabase.Enums.BulletType.Continuous && !parent.IsTemporary)
+            if (_ammunition.Body.Type == BulletType.Continuous && !parent.IsTemporary)
             {
                 parentBody = parent.Body;
                 position = new Vector2(offset, 0);
@@ -162,7 +160,11 @@ namespace Combat.Factory
             else
             {
                 rotation = parent.Body.WorldRotation() + (UnityEngine.Random.value - 0.5f) * spread + deltaAngle;
-                position = parent.Body.WorldPosition() + RotationHelpers.Direction(rotation) * offset;
+                position = parent.Body.WorldPosition();
+                if (offset != 0)
+                {
+                    position += (RotationHelpers.Direction(rotation) * offset);
+                }
             }
 
             if (_ammunition.Body.Type != GameDatabase.Enums.BulletType.Continuous)

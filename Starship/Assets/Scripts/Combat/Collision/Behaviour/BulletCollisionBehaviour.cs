@@ -11,15 +11,16 @@ namespace Combat.Collision.Behaviour
             var count = _actions.Count;
             for (var i = 0; i < count; ++i)
             {
-                var action = _actions[i];
-                action.Invoke(self, target, collisionData, ref selfImpact, ref targetImpact);
+                _actions[i].Invoke(self, target, collisionData, ref selfImpact, ref targetImpact);
             }
         }
 
         public void Dispose()
         {
-            foreach (var action in _actions)
-                action.Dispose();
+            for (var i = 0; i < _actions.Count; i++)
+            {
+                _actions[i].Dispose();
+            }
         }
 
         public void AddAction(ICollisionAction action)

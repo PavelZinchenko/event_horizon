@@ -21,7 +21,7 @@ namespace Combat.Component.View
         protected override void UpdateLife(float life)
         {
             base.UpdateLife(life);
-            if (!Mathf.Approximately(_endSize, _startSize))
+            if (_needScaling)
                 Scale = Mathf.Lerp(_endSize, _startSize, life);
         }
 
@@ -32,9 +32,11 @@ namespace Combat.Component.View
 
             _speed = _random ? random.NextFloatSigned()*_rotationSpeed : _rotationSpeed;
             _extraRotation = random.Next(360);
+            _needScaling = !Mathf.Approximately(_endSize, _startSize);
         }
 
         private float _speed;
         private float _extraRotation;
+        private bool _needScaling;
     }
 }

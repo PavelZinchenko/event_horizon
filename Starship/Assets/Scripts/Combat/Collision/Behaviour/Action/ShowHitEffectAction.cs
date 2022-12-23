@@ -31,7 +31,7 @@ namespace Combat.Collision.Behaviour.Action
         {
             if (_effect == null || !_effect.IsAlive)
             {
-                _effect = _visualEffect != null ? CompositeEffect.Create(_visualEffect, _effectFactory, null) : _effectFactory.CreateEffect(_prefabId);
+                _effect = _visualEffect != null ? _effectFactory.CreateCompositeEffect(_visualEffect, null) : _effectFactory.CreateEffect(_prefabId);
                 _effect.Color = _color;
                 _effect.Size = _size;
             }

@@ -2,6 +2,7 @@
 using Combat.Effects;
 using Combat.Helpers;
 using Combat.Scene;
+using GameDatabase.DataModel;
 using GameDatabase.Enums;
 using GameDatabase.Model;
 using Services.ObjectPool;
@@ -57,7 +58,8 @@ namespace Combat.Factory
             return gameObject != null ? CreateEffect(gameObject, parent) : new EmptyEffect();
         }
 
-        public IEffect CreateDamageTextEffect(float damage, Color color, Vector2 position, Vector2 velocity, IBody parent = null)
+        public IEffect CreateDamageTextEffect(float damage, Color color, Vector2 position, Vector2 velocity,
+            IBody parent = null)
         {
             var gameObject = CreateGameObject("DamageText");
 
@@ -74,7 +76,7 @@ namespace Combat.Factory
                 damageText = (long)(damage / 1e9f) + "B";
             else
                 damageText = ((double)damage).ToInGameString(BigFormat.Truncated);
-            
+
 
             gameObject.Name = damageText;
             var effect = CreateEffect(gameObject, parent);
@@ -125,6 +127,25 @@ namespace Combat.Factory
 
             effect.Initialize(gameObject);
             return effect;
+        }
+
+        public CompositeEffect CreateCompositeEffect(VisualEffect effectData, IBody parent)
+        {
+            var holder = new GameObjectHolder(CompositeEffect.Prefab, _objectPool, false);
+            if (parent == null)
+            {
+                holder.Transform.localPosition = new Vector3(0, 0, -3);
+            }
+            else
+            {
+                parent.AddChild(holder.Transform);
+                holder.Transform.localPosition = new Vector3(parent.Offset, 0, 0);
+            }
+
+            var composite = holder.GetComponent<CompositeEffect>();
+            composite.Initialize(holder, parent, effectData, this);
+
+            return composite;
         }
     }
 }

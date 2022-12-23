@@ -9,7 +9,8 @@ namespace Combat.Component.Bullet.Action
 {
     public class PlayEffectAction : IAction
     {
-        public PlayEffectAction(IUnit unit, EffectFactory effectFactory, VisualEffect effectData, Color color, float size, float lifetime, ConditionType condition)
+        public PlayEffectAction(IUnit unit, EffectFactory effectFactory, VisualEffect effectData, Color color,
+            float size, float lifetime, ConditionType condition)
         {
             _effectFactory = effectFactory;
             _unit = unit;
@@ -25,14 +26,17 @@ namespace Combat.Component.Bullet.Action
         public void Dispose()
         {
             if (_effect != null && _effect.IsAlive)
+            {
                 _effect.Detach();
+                _effect.Dispose();;
+            }
         }
 
         public CollisionEffect Invoke()
         {
             if (_effect == null || !_effect.IsAlive)
             {
-                _effect = CompositeEffect.Create(_visualEffect, _effectFactory, _unit.Body);
+                _effect = _effectFactory.CreateCompositeEffect(_visualEffect, _unit.Body);
                 _effect.Color = _color;
                 _effect.Size = _size;
             }
