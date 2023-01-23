@@ -120,12 +120,14 @@ namespace ViewModel
             description = description ?? "";
             // List of stats that may get replaced
             var stats = GetDescription(component, localization).ToList();
-            var statsDict = stats.ToDictionary(e => e.Item1, e => e.Item2);
+            var statsDict = new Dictionary<string, string>();
+            foreach (var (key, value) in stats) statsDict[key] = value;
             AddExtraFields(component, localization, statsDict);
             if (description.EndsWith("|"))
             {
                 description = description.Substring(0, description.Length - 1);
             }
+
             if (description.Contains('|'))
             {
                 // Original stats values
@@ -453,7 +455,9 @@ namespace ViewModel
         private static string FormatPercent(float value)
         {
             var percents = 100 * value;
-            var formatted = percents < 1e6 ? Mathf.RoundToInt(percents).ToString() : Mathd.ToInGameString(percents, BigFormat.Decimal);
+            var formatted = percents < 1e6
+                ? Mathf.RoundToInt(percents).ToString()
+                : Mathd.ToInGameString(percents, BigFormat.Decimal);
             return (value >= 0 ? "+" : "") + formatted + "%";
         }
 
