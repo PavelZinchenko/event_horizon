@@ -7,7 +7,7 @@ namespace Combat.Component.Systems.Devices
     {
         // TODO: This should use lifetime too, but that requires breaking change to the vanilla DB
         public PointDefenseSystem(IShip ship, DeviceStats deviceSpec, int keyBinding)
-            : base(keyBinding, deviceSpec.ControlButtonIcon, ship, 0, deviceSpec.EnergyConsumption)
+            : base(keyBinding, deviceSpec.ControlButtonIcon, ship, 0, 0, deviceSpec.EnergyConsumption)
         {
             MaxCooldown = deviceSpec.Cooldown;
         }
