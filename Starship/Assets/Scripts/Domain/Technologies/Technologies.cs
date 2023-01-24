@@ -30,7 +30,7 @@ namespace GameServices.Database
                 _technologies.Add(item.Id.Value, tech);
                 foreach (var dependency in item.Dependencies)
                 {
-                    _dependants.GetOrCreateNew(dependency.Id).Add(tech);
+                    _dependants.GetOrCreateNew(dependency.Id.Value).Add(tech);
                 }
             }
         }
@@ -48,7 +48,7 @@ namespace GameServices.Database
 
         public IEnumerable<ITechnology> Dependants(ITechnology root)
         {
-            return _dependants.GetOrCreateNew(root.Id);
+            return _dependants.GetOrCreateNew(root.Id.Value);
         }
 
         public bool TryGetComponentTechnology(Component component, out ITechnology technology)
@@ -108,8 +108,8 @@ namespace GameServices.Database
         private readonly GameDatabaseLoadedSignal _databaseLoadedSignal;
         private readonly Dictionary<int, ITechnology> _technologies = new Dictionary<int, ITechnology>();
 
-        private readonly Dictionary<ItemId<Technology>, HashSet<ITechnology>> _dependants =
-            new Dictionary<ItemId<Technology>, HashSet<ITechnology>>();
+        private readonly Dictionary<int, HashSet<ITechnology>> _dependants =
+            new Dictionary<int, HashSet<ITechnology>>();
     }
 
     public static class TechnologyListExtensions
