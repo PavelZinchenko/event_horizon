@@ -101,7 +101,7 @@ namespace Utils
 
         public static void ClearConsole()
         {
-#if DEVELOPMENT_BUILD || UNITY_EDITOR
+#if UNITY_EDITOR
             var assembly = Assembly.GetAssembly(typeof(Editor));
             var type = assembly.GetType("UnityEditor.LogEntries");
             var method = type.GetMethod("Clear");
