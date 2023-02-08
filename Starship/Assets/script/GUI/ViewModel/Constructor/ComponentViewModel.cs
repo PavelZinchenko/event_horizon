@@ -402,12 +402,13 @@ namespace ViewModel
         }
 
         private static IEnumerable<(string, string)> GetWeaponDamageText(Ammunition ammunition,
-            WeaponStatModifier statModifier, ILocalization localization)
+            WeaponStatModifier statModifier, ILocalization localization, int depth = 5)
         {
-            var effect = ammunition.Effects.FirstOrDefault(item =>
+            var effects = ammunition.Effects.Where(item =>
                 item.Type == ImpactEffectType.Damage || item.Type == ImpactEffectType.SiphonHitPoints);
-            if (effect != null && effect.Power > 0)
+            foreach (var effect in effects)
             {
+                if (effect.Power <= 0) continue;
                 yield return ("$DamageType", localization.GetString(effect.DamageType.Name()));
                 var damage = effect.Power * statModifier.DamageMultiplier.Value;
                 yield return (ammunition.ImpactType == BulletImpactType.DamageOverTime ? "$WeaponDPS" : "$WeaponDamage",
@@ -415,10 +416,18 @@ namespace ViewModel
                 yield break;
             }
 
-            var trigger = ammunition.Triggers.OfType<BulletTrigger_SpawnBullet>().FirstOrDefault();
-            if (trigger?.Ammunition != null)
-                foreach (var item in GetWeaponDamageText(trigger.Ammunition, statModifier, localization))
+            if (depth <= 0) yield break;
+            var triggers = ammunition.Triggers.OfType<BulletTrigger_SpawnBullet>();
+            foreach (var trigger in triggers)
+            {
+                if (trigger.Ammunition == null) continue;
+                var items = GetWeaponDamageText(trigger.Ammunition, statModifier, localization, depth - 1).ToList();
+                if (items.Count == 0) continue;
+                foreach (var item in items)
                     yield return item;
+
+                yield break;
+            }
         }
 
         private static IEnumerable<(string, string)> GetDroneBayDescription(
