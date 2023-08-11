@@ -179,7 +179,7 @@ namespace Combat.Manager
 
         public void Exit()
         {
-            _gameFlow.Pause();
+            _gameFlow.Pause(null);
             _exitTrigger.Fire();
         }
 

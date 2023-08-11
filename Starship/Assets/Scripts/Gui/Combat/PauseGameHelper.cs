@@ -10,12 +10,12 @@ namespace Gui.Combat
 
         public void PauseGame()
         {
-            _gameFlow.Pause();
+            _gameFlow.Pause(gameObject);
         }
 
         public void ResumeGame()
         {
-            _gameFlow.Resume();
+            _gameFlow.Resume(gameObject);
         }
     }
 }
