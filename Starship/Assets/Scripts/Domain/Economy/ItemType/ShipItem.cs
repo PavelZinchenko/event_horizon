@@ -118,7 +118,8 @@ namespace Economy.ItemType
             for (var i = 0; i < ship.Components.Count; i++)
             {
                 var component = ship.Components[i];
-                if (!component.Locked) ship.Components.RemoveAt(i);
+                if (component.Locked) continue;
+                ship.Components.RemoveAt(i);
                 i--;
             }
         }
